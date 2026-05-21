@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>État des Lieux Digital — Belga Solar · Poush</title>
+<link href="./État des Lieux Digital — Belga Solar · Poush_files/css2" rel="stylesheet">
+<style>
+:root{--black:#030505;--blue:#1c2b96;--yellow:#fabd05;--red:#fa3b2e;--green:#2eb078;--pink:#fa8fa3;--white:#ffffff;--gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#e9ecef;--gray-400:#adb5bd;--gray-600:#6c757d;--gray-800:#343a40;--orange:#f59e0b;--font:"DM Sans",sans-serif;--mono:"DM Mono",monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#111;color:var(--black)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px}
+.nav-brand{display:flex;align-items:center;gap:12px}
+.nav-dots{display:flex;gap:5px}
+.nav-dot{width:9px;height:9px;border-radius:50%}
+.nav-logo{color:#fff;font-size:17px;font-weight:700;letter-spacing:-.3px}
+.nav-divider{width:1px;height:20px;background:#333}
+.nav-title{color:var(--yellow);font-size:13px;font-weight:500}
+.nav-pills{display:flex;gap:4px;overflow-x:auto}
+.nav-pill{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;color:#888;cursor:pointer;white-space:nowrap;transition:all .15s;border:1px solid transparent;text-decoration:none}
+.nav-pill:hover,.nav-pill.active{color:#fff;background:#222;border-color:#333}
+main{padding-top:56px}
+.slide{min-height:100vh;position:relative;overflow:hidden}
+.slide-inner{max-width:1100px;margin:0 auto;padding:64px 40px;width:100%}
+.slide-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+.slide-h1{font-size:36px;font-weight:700;line-height:1.1;margin-bottom:8px}
+.slide-sub{font-size:15px;color:var(--gray-600);margin-bottom:32px}
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--gray-200);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-title{font-size:13px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gray-100)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gauge-label{font-size:11px;font-weight:600;color:#555;text-align:center;line-height:1.3}
+.gauge-status{font-size:10px;font-weight:700;letter-spacing:.5px;text-align:center}
+.alert-box{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:14px 16px;margin-bottom:20px}
+.metric-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:8px;margin-bottom:5px}
+.metric-name{font-size:12px;font-weight:500;color:var(--gray-800);display:flex;align-items:center;gap:8px}
+.metric-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.metric-val{font-size:12px;font-weight:700;font-family:var(--mono)}
+.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.kpi-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px;text-align:center}
+.kpi-val{font-size:40px;font-weight:800;line-height:1;margin-bottom:4px}
+.kpi-label{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.4px}
+.kpi-sub{font-size:11px;color:#aaa;margin-top:4px}
+.badge-inline{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-top:8px}
+.prog-wrap{margin-bottom:12px}
+.prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-label{font-size:11px;font-weight:600;color:#555}
+.prog-val{font-size:11px;font-weight:700;font-family:var(--mono)}
+.prog-track{height:7px;background:var(--gray-100);border-radius:4px;overflow:hidden}
+.prog-fill{height:100%;border-radius:4px}
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:4px;background:#f8f9fa}
+.bl-domain{font-size:12px;color:#444;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.tf-badge{padding:3px 9px;border-radius:12px;font-size:11px;font-weight:800;font-family:var(--mono);flex-shrink:0;margin-left:8px}
+.bar-chart{position:relative;height:130px;display:flex;align-items:flex-end;gap:2px;padding-bottom:20px;padding-left:32px}
+.bar-item{flex:1;border-radius:3px 3px 0 0}
+.axis-y{position:absolute;left:0;top:0;bottom:20px;display:flex;flex-direction:column;justify-content:space-between}
+.axis-label{font-size:9px;color:#ccc;font-family:var(--mono)}
+.axis-x{display:flex;justify-content:space-between;padding-left:32px;margin-top:4px}
+.axis-x span{font-size:9px;color:#bbb}
+.grid-line{position:absolute;left:32px;right:0;height:1px;background:#f1f3f5}
+.legend-row{display:flex;gap:12px;margin-top:10px}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#888}
+.leg-dot{width:10px;height:10px;border-radius:2px}
+.phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.phase{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 12px;text-align:center}
+.phase-label{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.3px;margin-bottom:3px}
+.phase-val{font-size:12px;font-weight:700}
+.phase-desc{font-size:11px;color:#aaa;margin-top:2px}
+.kw-table{width:100%;border-collapse:collapse}
+.kw-table th{background:var(--black);color:var(--yellow);font-size:10px;font-weight:700;letter-spacing:1px;padding:10px 14px;text-align:left;text-transform:uppercase}
+.kw-table td{padding:10px 14px;font-size:12px;border-bottom:1px solid var(--gray-100)}
+.kw-table tr:hover td{background:var(--gray-50)}
+.pos-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;font-size:12px;font-weight:800;color:#fff}
+.missing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mkw{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 12px}
+.mkw-name{font-size:12px;font-weight:600;color:#444;margin-bottom:4px}
+.mkw-vol{font-size:11px;color:#888;font-family:var(--mono)}
+.mkw-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;margin-top:4px}
+.ux-item{display:flex;gap:14px;padding:16px 18px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);margin-bottom:10px}
+.ux-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:1px}
+.ux-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px}
+.ux-desc{font-size:12px;color:#666;line-height:1.6}
+.ux-tag{display:inline-flex;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-top:6px}
+.geo-card{background:#fff;border-radius:12px;padding:18px;position:relative;overflow:hidden;border:1px solid var(--gray-200)}
+.geo-bar{position:absolute;top:0;left:0;right:0;height:3px}
+.geo-platform{font-size:15px;font-weight:800;color:var(--black);margin-bottom:6px;margin-top:4px}
+.geo-status{font-size:13px;font-weight:700;margin-bottom:10px}
+.geo-desc{font-size:12px;color:#666;line-height:1.6}
+.social-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;margin-bottom:6px}
+.s-left{display:flex;align-items:center;gap:10px}
+.s-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.s-name{font-size:13px;font-weight:700;color:var(--black)}
+.s-stats{font-size:11px;color:#888;margin-top:1px}
+.opp-card{display:flex;gap:16px;padding:18px;background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 1px 4px rgba(0,0,0,.04);margin-bottom:12px}
+.opp-num{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.opp-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:5px}
+.opp-desc{font-size:12px;color:#666;line-height:1.6}
+.opp-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.opp-tag{padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700}
+.impact-badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0;align-self:flex-start}
+.blue-box{background:var(--blue);border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;margin-top:16px}
+.blue-box-title{font-size:13px;font-weight:800;color:var(--yellow);margin-bottom:6px}
+.blue-box-desc{font-size:12px;color:#ccc;line-height:1.7}
+.explainer-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px}
+.exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.exp-name{font-size:14px;font-weight:800;color:var(--black)}
+.exp-abbr{font-size:11px;font-weight:600;color:#888;margin-top:2px;font-family:var(--mono)}
+.exp-badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.exp-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:10px}
+.exp-impact{font-size:12px;color:#444;line-height:1.5;background:var(--gray-50);border-radius:8px;padding:10px 12px;border-left:3px solid var(--gray-200)}
+.exp-analogy{background:var(--gray-50);border-radius:10px;padding:12px;margin-top:10px;display:flex;gap:10px;align-items:flex-start}
+.analogy-icon{font-size:18px;flex-shrink:0}
+.analogy-text{font-size:12px;color:#666;line-height:1.6;font-style:italic}
+.exp-scale{display:flex;gap:4px;margin-top:10px}
+.exp-scale-item{flex:1;border-radius:4px;padding:4px 6px;text-align:center;font-size:10px;font-weight:700}
+.slide-explain-tag{display:inline-flex;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:#fff8e0;color:#b45309;margin-bottom:12px}
+.cover-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.cover-bar{width:8px;display:flex;flex-direction:column;flex-shrink:0}
+.cover-bar-seg{flex:1}
+.cover-body{padding:80px 60px;flex:1}
+.cover-eyebrow{font-size:11px;font-weight:700;color:var(--yellow);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.cover-name{font-size:68px;font-weight:800;line-height:.9;color:#fff;margin-bottom:10px}
+.cover-url{font-family:var(--mono);font-size:16px;color:#555;margin-bottom:36px}
+.cover-line{width:70px;height:3px;background:var(--yellow);margin-bottom:24px}
+.cover-desc{font-size:14px;color:#888;margin-bottom:10px}
+.cover-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
+.cover-pill{padding:6px 16px;border:1px solid #333;border-radius:20px;font-size:13px;font-weight:500;color:#ccc}
+.cover-meta{font-size:12px;color:#444}
+.cover-bcorp{position:absolute;right:60px;bottom:80px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.bcorp-badge{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#2eb078,#1a6b47);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;text-align:center;line-height:1.3}
+.bcorp-label{font-size:10px;color:#444;text-align:center}
+.closing-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.closing-body{padding:80px 60px;flex:1}
+.closing-sub{font-size:24px;color:#555;font-weight:300;margin-bottom:8px}
+.closing-title{font-size:56px;font-weight:800;color:#fff;line-height:.92;margin-bottom:20px}
+.closing-sep{width:70px;height:3px;background:var(--yellow);margin-bottom:28px}
+.closing-desc{font-size:14px;color:#999;max-width:560px;line-height:1.8;margin-bottom:36px}
+.closing-services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+.closing-svc{background:#111;border:1px solid #222;border-radius:12px;padding:16px}
+.closing-svc-icon{font-size:22px;margin-bottom:8px}
+.closing-svc-name{font-size:12px;font-weight:700;color:#fff;line-height:1.4}
+.closing-baseline{font-size:18px;font-weight:800;color:var(--yellow);margin-bottom:12px}
+.closing-contact{font-size:12px;color:#444;line-height:1.9}
+.closing-contact strong{color:#888}
+.bg-white{background:#fff}
+.bg-light{background:var(--gray-50)}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dots">
+      <div class="nav-dot" style="background:#fa3b2e"></div>
+      <div class="nav-dot" style="background:#fabd05"></div>
+      <div class="nav-dot" style="background:#fa8fa3"></div>
+      <div class="nav-dot" style="background:#2eb078"></div>
+      <div class="nav-dot" style="background:#1c2b96"></div>
+    </div>
+    <span class="nav-logo">poush</span>
+    <div class="nav-divider"></div>
+    <span class="nav-title">État des Lieux Digital — Belga Solar</span>
+  </div>
+  <div class="nav-pills">
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#cover">Cover</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#perf">Performances</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#crawl">Crawl</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#config">Config. Technique</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#autorite">Autorité SEO</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#trafic">Trafic</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#keywords">Mots-clés</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#ux">UX</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#geo">GEO / IA</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#gmb">GMB &amp; Social</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#opps">Opportunités</a>
+    <a class="nav-pill active" href="file:///Users/michaeldebecker/Downloads/BelgaSolar_Poush_v2.html#closing">Poush</a>
+  </div>
+</nav>
+<main>
+<section id="cover" class="cover-slide">
+  <div class="cover-bar">
+    <div class="cover-bar-seg" style="background:#fa3b2e"></div>
+    <div class="cover-bar-seg" style="background:#fabd05"></div>
+    <div class="cover-bar-seg" style="background:#fa8fa3"></div>
+    <div class="cover-bar-seg" style="background:#2eb078"></div>
+    <div class="cover-bar-seg" style="background:#1c2b96"></div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">État des lieux digital · Mai 2026</div>
+    <div class="cover-name">Belga<br>Solar</div>
+    <div class="cover-url">www.belgasolar.com</div>
+    <div class="cover-line"></div>
+    <div class="cover-desc">Une analyse complète de votre écosystème digital :</div>
+    <div class="cover-pills">
+      <span class="cover-pill">🌐 Site Web</span>
+      <span class="cover-pill">🔍 SEO</span>
+      <span class="cover-pill">🤖 GEO / IA</span>
+      <span class="cover-pill">📍 Google My Business</span>
+      <span class="cover-pill">📱 Réseaux Sociaux</span>
+    </div>
+    <div class="cover-meta">Préparé par Poush · michael@poush.be · +32 (0)486 892 956</div>
+  </div>
+  <div class="cover-bcorp">
+    <div class="bcorp-badge">B<br>Corp<br>✓</div>
+    <div class="bcorp-label">Score 95,7<br>Certifié 2024</div>
+  </div>
+</section>
+
+<section id="perf" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff0ee;color:#fa3b2e">⚡ Performances &amp; Core Web Vitals</div>
+  <h2 class="slide-h1">Rapport PageSpeed Insights</h2>
+  <p class="slide-sub">Rapport du 20 mai 2026 · belgasolar.com</p>
+  <div class="alert-box" style="background:#fff0ee;border:1px solid #fca59e;margin-bottom:28px">
+    <span style="font-size:18px;flex-shrink:0">⚠️</span>
+    <div><div style="font-size:14px;font-weight:700;color:#c0392b">Évaluation Core Web Vitals : ÉCHEC (Mobile &amp; Desktop)</div><div style="font-size:13px;color:#999;margin-top:2px">CLS mobile critique (0,63) — la vidéo hero génère des décalages de mise en page importants</div></div>
+  </div>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">🖥️ Desktop <span style="font-size:10px;color:#bbb;font-weight:400">· analyse ordinateur</span></div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#fa3b2e" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="94" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#fa3b2e" font-family="sans-serif">53</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#fa3b2e">FAIBLE</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="32" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">84</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="8" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#2eb078" font-family="sans-serif">96</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">EXCELLENT</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+    <div class="card"><div class="card-title">📱 Mobile <span style="font-size:10px;color:#bbb;font-weight:400">· analyse mobile</span></div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#fa3b2e" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="82" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#fa3b2e" font-family="sans-serif">59</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#fa3b2e">FAIBLE</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="34" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">83</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="8" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#2eb078" font-family="sans-serif">96</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">EXCELLENT</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+  </div>
+</div>
+</section>
+
+<section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que mesurent ces scores</h2>
+  <p class="slide-sub">PageSpeed Insights analyse votre site comme le ferait un vrai utilisateur — et comme Google le juge.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Score de Performance</div><div class="exp-abbr">PERFORMANCE</div></div><div class="exp-badge" style="background:#fff0ee;color:#fa3b2e">53 Desktop · 59 Mobile</div></div><div class="exp-desc">Mesure la rapidité globale de chargement. Un score faible signifie que vos visiteurs attendent — et qu'ils partent avant même de voir votre contenu.</div><div class="exp-impact"><strong>Impact concret :</strong> 1 seconde de délai = -7% de conversions. Google pénalise les sites lents.</div><div class="exp-scale"><div class="exp-scale-item" style="background:#fff0ee;color:#fa3b2e">0–49 Faible</div><div class="exp-scale-item" style="background:#fff8e0;color:#b45309">50–89 Moyen</div><div class="exp-scale-item" style="background:#f0fff8;color:#2eb078">90–100 Bon</div></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Accessibilité</div><div class="exp-abbr">ACCESSIBILITY</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">84 Desktop · 83 Mobile</div></div><div class="exp-desc">Évalue si votre site est utilisable par tous — y compris les personnes en situation de handicap.</div><div class="exp-impact"><strong>Impact concret :</strong> En Belgique, l'accessibilité numérique est une obligation légale pour certaines entités. 15% de la population a un handicap.</div><div class="exp-scale"><div class="exp-scale-item" style="background:#fff0ee;color:#fa3b2e">0–49 Critique</div><div class="exp-scale-item" style="background:#fff8e0;color:#b45309">50–89 À améliorer</div><div class="exp-scale-item" style="background:#f0fff8;color:#2eb078">90–100 Bon</div></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Bonnes pratiques</div><div class="exp-abbr">BEST PRACTICES</div></div><div class="exp-badge" style="background:#f0fff8;color:#2eb078">96 · Excellent</div></div><div class="exp-desc">Vérifie que le site respecte les standards modernes : sécurité HTTPS, absence de code obsolète, compatibilité navigateurs.</div><div class="exp-impact"><strong>Impact concret :</strong> Un score élevé rassure Google sur la fiabilité technique. Belga Solar est au top.</div><div class="exp-scale"><div class="exp-scale-item" style="background:#fff0ee;color:#fa3b2e">0–49 Risqué</div><div class="exp-scale-item" style="background:#fff8e0;color:#b45309">50–89 Passable</div><div class="exp-scale-item" style="background:#f0fff8;color:#2eb078">90–100 Excellent</div></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Score SEO Lighthouse</div><div class="exp-abbr">SEO TECHNIQUE</div></div><div class="exp-badge" style="background:#f0fff8;color:#2eb078">100 · Parfait</div></div><div class="exp-desc">Analyse les éléments techniques de base : balises title, meta, structure HTML, mobile-friendliness.</div><div class="exp-impact"><strong>Impact concret :</strong> Un 100/100 est rare et excellent — Google peut lire et comprendre parfaitement votre site.</div><div class="exp-scale"><div class="exp-scale-item" style="background:#fff0ee;color:#fa3b2e">0–49 Invisible</div><div class="exp-scale-item" style="background:#fff8e0;color:#b45309">50–89 Partiel</div><div class="exp-scale-item" style="background:#f0fff8;color:#2eb078">90–100 Parfait</div></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:20px;flex-shrink:0">💡</div><div><div class="blue-box-title">Les Core Web Vitals — les 3 signaux vitaux de Google</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px"><div style="background:rgba(255,255,255,.08);border-radius:8px;padding:12px"><div style="font-size:12px;font-weight:800;color:#fff;margin-bottom:4px">LCP <span style="color:#f59e0b">⚠ 3,6s mobile</span></div><div style="font-size:11px;color:#aaa;line-height:1.5">Temps avant que le contenu principal apparaisse. Objectif : sous 2,5s.</div></div><div style="background:rgba(255,255,255,.08);border-radius:8px;padding:12px"><div style="font-size:12px;font-weight:800;color:#fff;margin-bottom:4px">CLS <span style="color:#fa3b2e">✗ 0,63 mobile</span></div><div style="font-size:11px;color:#aaa;line-height:1.5">Les éléments de la page "sautent" pendant le chargement. Objectif : sous 0,1.</div></div><div style="background:rgba(255,255,255,.08);border-radius:8px;padding:12px"><div style="font-size:12px;font-weight:800;color:#fff;margin-bottom:4px">INP <span style="color:#2eb078">✓ 186ms mobile</span></div><div style="font-size:11px;color:#aaa;line-height:1.5">Réactivité au clic. Belga Solar est bon ici : sous 200ms.</div></div></div></div></div>
+</div>
+</section>
+<section id="crawl" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🐸 Audit Technique — Screaming Frog</div>
+  <h2 class="slide-h1">Résultats du crawl complet</h2>
+  <p class="slide-sub">500 URLs analysées · 20 mai 2026</p>
+  <div class="grid-5" style="margin-bottom:24px">
+    <div class="kpi-card" style="border-top:3px solid #1c2b96"><div class="kpi-val" style="color:#1c2b96">500</div><div class="kpi-label">URLs crawlées</div></div>
+    <div class="kpi-card" style="border-top:3px solid #2eb078"><div class="kpi-val" style="color:#2eb078">115</div><div class="kpi-label">Pages HTML</div></div>
+    <div class="kpi-card" style="border-top:3px solid #fa3b2e"><div class="kpi-val" style="color:#fa3b2e">1</div><div class="kpi-label">Erreur 4xx</div></div>
+    <div class="kpi-card" style="border-top:3px solid #f59e0b"><div class="kpi-val" style="color:#f59e0b">4</div><div class="kpi-label">Redirections</div></div>
+    <div class="kpi-card" style="border-top:3px solid #2eb078"><div class="kpi-val" style="color:#2eb078">100%</div><div class="kpi-label">HTTPS</div></div>
+  </div>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">🏷️ Balises &amp; On-page</div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Title manquant</div><span class="metric-val" style="color:#2eb078">0 / 110</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Title en doublon</div><span class="metric-val" style="color:#f59e0b">17 / 110</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Title &gt; 60 caractères</div><span class="metric-val" style="color:#f59e0b">37 / 110</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>Meta description manquante</div><span class="metric-val" style="color:#fa3b2e">21 / 110</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Meta description en doublon</div><span class="metric-val" style="color:#f59e0b">12 / 110</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>H1 manquant</div><span class="metric-val" style="color:#f59e0b">6 / 110</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>H1 multiple sur une page</div><span class="metric-val" style="color:#f59e0b">8 / 110</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Canonical manquant</div><span class="metric-val" style="color:#f59e0b">19 / 129</span></div>
+    </div>
+    <div class="card"><div class="card-title">🖼️ Images, Contenu &amp; Structure</div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>Images sans texte alt</div><span class="metric-val" style="color:#fa3b2e">94 / 209</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Images sans attributs taille</div><span class="metric-val" style="color:#f59e0b">66 / 209</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Images &gt; 100 Ko</div><span class="metric-val" style="color:#f59e0b">81 / 209</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Pages à faible contenu</div><span class="metric-val" style="color:#f59e0b">20 / 129</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Lisibilité difficile</div><span class="metric-val" style="color:#f59e0b">23 / 129</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Profondeur max. 3 clics</div><span class="metric-val" style="color:#2eb078">71,8% depth 3</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Hreflang FR / NL / EN</div><span class="metric-val" style="color:#2eb078">100% couvert</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>En-têtes sécurité manquants</div><span class="metric-val" style="color:#fa3b2e">97% des pages</span></div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèle le crawl technique</h2>
+  <p class="slide-sub">Screaming Frog simule le comportement de Google — il visite chaque page et relève tous les problèmes invisibles à l'œil nu.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Balises Title</div><div class="exp-abbr">TITLE TAG</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">37 trop longues</div></div><div class="exp-desc">Le titre affiché dans Google. S'il dépasse 60 caractères, Google le coupe — votre message perd de l'impact avant même le clic.</div><div class="exp-impact"><strong>Impact concret :</strong> Un title bien rédigé peut augmenter le taux de clic de 20 à 30%.</div><div class="exp-analogy"><span class="analogy-icon">🏷️</span><span class="analogy-text">Le title, c'est le titre de votre annonce dans Google. S'il est coupé, le message est incomplet — comme une pub dont on ne voit que la moitié.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Meta Description</div><div class="exp-abbr">META DESC</div></div><div class="exp-badge" style="background:#fff0ee;color:#fa3b2e">21 manquantes</div></div><div class="exp-desc">Le court texte descriptif sous le titre dans Google. Sans meta description, Google choisit lui-même un extrait — souvent peu engageant.</div><div class="exp-impact"><strong>Impact concret :</strong> 21 pages sans meta = 21 opportunités de convaincre un visiteur manquées.</div><div class="exp-analogy"><span class="analogy-icon">📝</span><span class="analogy-text">La meta description, c'est le sous-titre de votre annonce Google. C'est elle qui donne envie de cliquer — ou pas.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Balise H1</div><div class="exp-abbr">HEADING H1</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">6 manquants · 8 multiples</div></div><div class="exp-desc">Le titre principal de chaque page — une seule par page, obligatoire. C'est le premier signal que Google lit pour comprendre le sujet.</div><div class="exp-impact"><strong>Impact concret :</strong> Une page sans H1 ou avec plusieurs H1 envoie des signaux contradictoires à Google.</div><div class="exp-analogy"><span class="analogy-icon">📌</span><span class="analogy-text">Le H1, c'est le titre d'un chapitre de livre. Il dit à Google — et au lecteur — de quoi parle cette page.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Texte alt images</div><div class="exp-abbr">ALT TEXT</div></div><div class="exp-badge" style="background:#fff0ee;color:#fa3b2e">94 images sans alt</div></div><div class="exp-desc">La description textuelle de chaque image. Google ne "voit" pas les images — il lit leur description.</div><div class="exp-impact"><strong>Impact concret :</strong> 94 images non indexées = autant d'opportunités de trafic via Google Images perdues.</div><div class="exp-analogy"><span class="analogy-icon">🖼️</span><span class="analogy-text">Sans alt text, vos images sont muettes pour Google — comme des photos sans légende dans un catalogue.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Canonical</div><div class="exp-abbr">CANONICAL TAG</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">19 manquants</div></div><div class="exp-desc">Indique à Google quelle est la version "officielle" d'une page en cas de contenu dupliqué. Sans canonical, Google peut pénaliser les deux versions.</div><div class="exp-impact"><strong>Impact concret :</strong> Critique pour WooCommerce — les filtres produits génèrent des URLs identiques qui se font concurrence.</div><div class="exp-analogy"><span class="analogy-icon">☑️</span><span class="analogy-text">Le canonical, c'est dire à Google : "c'est cette version qui compte". Sans ça, il hésite entre plusieurs copies d'une même page.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">En-têtes sécurité</div><div class="exp-abbr">SECURITY HEADERS</div></div><div class="exp-badge" style="background:#fff0ee;color:#fa3b2e">97% manquants</div></div><div class="exp-desc">Des instructions envoyées au navigateur pour protéger les visiteurs contre le piratage, le vol de données et les injections malveillantes.</div><div class="exp-impact"><strong>Impact concret :</strong> Google favorise les sites sécurisés. Les clients B2B vérifient souvent ce point avant de s'engager.</div><div class="exp-analogy"><span class="analogy-icon">🔒</span><span class="analogy-text">Les en-têtes de sécurité, c'est le système d'alarme invisible de votre site. Pas de alarme = porte ouverte aux intrus.</span></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">La bonne nouvelle</div><div class="blue-box-desc">Ces problèmes techniques sont tous <strong style="color:#fff">corrigeables rapidement</strong> — aucun ne nécessite une refonte. Avec un audit SEO ciblé, la majorité peut être résolue en quelques semaines et générer une hausse de visibilité mesurable dès le mois suivant.</div></div></div>
+</div>
+</section><section id="config" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">⚙️ SEO Technique — Configuration</div>
+  <h2 class="slide-h1">Configuration du site</h2>
+  <p class="slide-sub">Vérification des fondations techniques · belgasolar.com · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">🗺️ Indexation &amp; Navigation</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Sitemap XML</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">5 sitemaps Yoast SEO — posts, pages, produits · Dernière MàJ 20/05/2026</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Présent</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Robots.txt</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">Bien configuré · Référence au sitemap · Bloque wp-admin</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Configuré</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>HTTPS / SSL</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">100% des pages sécurisées · Aucun contenu mixte détecté</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Sécurisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Hreflang multilingue</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">FR / NL / EN — 100% des pages couvertes</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Complet</span></div>
+    </div>
+    <div class="card"><div class="card-title">🤖 Accessibilité agents IA &amp; SEO</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>GPTBot (OpenAI / ChatGPT)</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">Non bloqué — ChatGPT peut indexer le site</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Google-Extended (Gemini)</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">Non bloqué — Gemini peut citer le contenu</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>PerplexityBot</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">Non bloqué — Perplexity peut référencer le site</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Anthropic-AI (Claude)</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">Non bloqué — Claude peut accéder au contenu</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Autorisé</span></div>
+      <div style="margin-top:14px;background:#fffbf0;border:1px solid #fcd34d;border-radius:8px;padding:12px">
+        <div style="font-size:12px;font-weight:700;color:#92400e;margin-bottom:8px">⚠ Points à améliorer</div>
+        <div class="metric-row" style="background:#fff0ee;margin-bottom:5px"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>Core Web Vitals mobile</div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">✗ Échec</span></div>
+        <div class="metric-row" style="background:#fffbf0;margin-bottom:5px"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Schema.org / données structurées</div><span class="status-badge" style="background:#fff8e0;color:#d97706">⚠ Partiel</span></div>
+        <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>En-têtes de sécurité HTTP</div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">✗ 97% manquants</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que signifie la configuration technique</h2>
+  <p class="slide-sub">Ces éléments sont invisibles pour vos visiteurs — mais déterminants pour Google et les IA génératives.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Sitemap XML</div><div class="exp-abbr">SITEMAP</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Belga Solar</div></div><div class="exp-desc">La carte de votre site envoyée à Google. Il liste toutes les pages à indexer. Sans sitemap, Google découvre vos pages par hasard.</div><div class="exp-impact"><strong>Impact concret :</strong> Belga Solar a 5 sitemaps Yoast actifs et à jour. Google sait exactement quoi indexer.</div><div class="exp-analogy"><span class="analogy-icon">🗺️</span><span class="analogy-text">Le sitemap, c'est le plan de votre site remis à Google. Avec un bon plan, Google trouve tout — sans plan, il peut rater des pages entières.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Robots.txt</div><div class="exp-abbr">ROBOTS</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Belga Solar</div></div><div class="exp-desc">Le "règlement d'entrée" de votre site pour les robots. Il indique quelles pages peuvent être visitées — y compris par les IA comme ChatGPT ou Gemini.</div><div class="exp-impact"><strong>Impact concret :</strong> Belga Solar n'a bloqué aucun agent IA. GPTBot, Gemini, Perplexity et Claude peuvent tous accéder au contenu — essentiel pour le GEO.</div><div class="exp-analogy"><span class="analogy-icon">🚪</span><span class="analogy-text">Le robots.txt, c'est le règlement d'entrée de votre site pour les robots. Belga Solar laisse entrer tout le monde — y compris les IA qui pourraient vous citer.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Schema.org</div><div class="exp-abbr">DONNÉES STRUCTURÉES</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Partiel</div></div><div class="exp-desc">Un langage que Google et les IA comprennent mieux que le HTML classique. Il permet d'afficher des étoiles, des prix, des FAQ directement dans Google.</div><div class="exp-impact"><strong>Impact concret :</strong> Sans Schema.org complet, Belga Solar rate les "rich snippets" et reste moins visible dans les réponses IA.</div><div class="exp-analogy"><span class="analogy-icon">🏷️</span><span class="analogy-text">Schema.org, c'est étiqueter votre contenu pour que Google et les IA le comprennent instantanément. Sans étiquettes, ils doivent deviner — et parfois ils se trompent.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Agents IA dans robots.txt</div><div class="exp-abbr">GEO READINESS</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Tous autorisés</div></div><div class="exp-desc">Les IA comme ChatGPT ou Perplexity envoient leurs propres robots pour lire votre contenu. Si vous les bloquez, vous devenez invisible dans leurs réponses.</div><div class="exp-impact"><strong>Impact concret :</strong> Belga Solar est ouvert à tous les agents IA. C'est la condition nécessaire pour apparaître dans les réponses ChatGPT ou Gemini.</div><div class="exp-analogy"><span class="analogy-icon">🤖</span><span class="analogy-text">Autoriser les agents IA, c'est ouvrir votre site à un nouveau type de visiteur invisible mais très influent — celui qui nourrit les réponses de ChatGPT et Gemini.</span></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">Ce que ça veut dire pour vous</div><div class="blue-box-desc">Les fondations de Belga Solar sont <strong style="color:#fff">saines</strong> — sitemap, HTTPS, robots.txt, agents IA autorisés. Ce qui manque : Schema.org pour parler aux IA et les en-têtes de sécurité. Deux chantiers courts, impact rapide.</div></div></div>
+</div>
+</section><section id="autorite" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">📊 SEO Technique — Autorité</div>
+  <h2 class="slide-h1">Autorité &amp; Backlinks</h2>
+  <p class="slide-sub">Données SEObserver · Majestic · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">📊 Métriques d'autorité</div>
+      <div class="grid-2" style="margin-bottom:16px">
+        <div class="kpi-card"><div class="kpi-val" style="color:#2eb078">17</div><div class="kpi-label">Trust Flow</div><div class="kpi-sub">Science &amp; Technology</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:#1c2b96">26</div><div class="kpi-label">Citation Flow</div><div class="kpi-sub">Ratio TF/CF : 0,65</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:#030505">86</div><div class="kpi-label">Domaines référents</div><div class="kpi-sub">456 pages référentes</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:#030505">116</div><div class="kpi-label">Pages indexées</div><div class="kpi-sub">Majestic</div></div>
+      </div>
+      <div style="background:#f0fff8;border-radius:10px;padding:14px">
+        <div style="font-size:11px;font-weight:700;color:#2eb078;margin-bottom:10px">📈 Progression Trust Flow</div>
+        <div class="prog-wrap"><div class="prog-head"><span class="prog-label">Mai 2024</span><span class="prog-val" style="color:#aaa">TF 2</span></div><div class="prog-track"><div class="prog-fill" style="width:5%;background:#d1fae5"></div></div></div>
+        <div class="prog-wrap"><div class="prog-head"><span class="prog-label">Jan. 2025</span><span class="prog-val" style="color:#f59e0b">TF 10</span></div><div class="prog-track"><div class="prog-fill" style="width:30%;background:#f59e0b"></div></div></div>
+        <div class="prog-wrap"><div class="prog-head"><span class="prog-label">Jan. 2026</span><span class="prog-val" style="color:#2eb078">TF 15</span></div><div class="prog-track"><div class="prog-fill" style="width:55%;background:#2eb078"></div></div></div>
+        <div class="prog-wrap"><div class="prog-head"><span class="prog-label">Mai 2026</span><span class="prog-val" style="color:#2eb078;font-weight:800">TF 17</span></div><div class="prog-track"><div class="prog-fill" style="width:65%;background:#2eb078"></div></div></div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title">🔗 Top 10 backlinks — Trust Flow</div>
+      <div class="bl-row"><span class="bl-domain">iea-pvps.org</span><span class="tf-badge" style="background:#2eb078;color:#fff">TF 41</span></div>
+      <div class="bl-row"><span class="bl-domain">esmc.solar</span><span class="tf-badge" style="background:#2eb078;color:#fff">TF 37</span></div>
+      <div class="bl-row"><span class="bl-domain">leden.ode.be</span><span class="tf-badge" style="background:#2eb078;color:#fff">TF 28</span></div>
+      <div class="bl-row"><span class="bl-domain">grainedevie.org</span><span class="tf-badge" style="background:#2eb078;color:#fff">TF 21</span></div>
+      <div class="bl-row"><span class="bl-domain">reclamation-sav.be</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 12</span></div>
+      <div class="bl-row"><span class="bl-domain">forgesolar.com</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 11</span></div>
+      <div class="bl-row"><span class="bl-domain">intersolution.be</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 10</span></div>
+      <div class="bl-row"><span class="bl-domain">bep-entreprises.be</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 10</span></div>
+      <div class="bl-row"><span class="bl-domain">planet-business.be</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 9</span></div>
+      <div class="bl-row"><span class="bl-domain">kr.enfsolar.com</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 8</span></div>
+      <div class="blue-box" style="margin-top:14px"><div style="font-size:16px;flex-shrink:0">💡</div><div><div class="blue-box-title" style="font-size:11px">Opportunité</div><div style="font-size:11px;color:#ccc;line-height:1.5">TF progresse bien mais reste modeste. Priorité : presse belge énergie, institutions B Corp et médias solaires pour passer TF 30+.</div></div></div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que mesure l'autorité d'un site</h2>
+  <p class="slide-sub">L'autorité, c'est la réputation de votre site aux yeux de Google. Elle se construit grâce aux liens que d'autres sites font vers vous.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Trust Flow (TF)</div><div class="exp-abbr">CONFIANCE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">17 · Belga Solar</div></div><div class="exp-desc">Mesure la qualité des sites qui font un lien vers vous. Un TF élevé signifie que des sites reconnus vous recommandent.</div><div class="exp-impact"><strong>Impact concret :</strong> Le TF de Belga Solar progresse bien (2 → 17 en 12 mois) mais a encore de la marge vers TF 30+.</div><div class="exp-scale"><div class="exp-scale-item" style="background:#fff0ee;color:#fa3b2e">0–10 Faible</div><div class="exp-scale-item" style="background:#fff8e0;color:#b45309">11–30 Moyen</div><div class="exp-scale-item" style="background:#f0fff8;color:#2eb078">30+ Fort</div></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Citation Flow (CF)</div><div class="exp-abbr">POPULARITÉ</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">26 · Belga Solar</div></div><div class="exp-desc">Mesure la quantité de liens pointant vers votre site. Un CF élevé sans TF élevé peut signaler des liens de mauvaise qualité.</div><div class="exp-impact"><strong>Impact concret :</strong> Le ratio TF/CF de Belga Solar est 0,65 — sain. La majorité des liens proviennent de sources de qualité.</div><div class="exp-scale"><div class="exp-scale-item" style="background:#fff8e0;color:#b45309">CF &gt;&gt; TF = spam</div><div class="exp-scale-item" style="background:#f0fff8;color:#2eb078">TF/CF &gt; 0,5 = sain</div></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Domaines référents</div><div class="exp-abbr">BACKLINKS</div></div><div class="exp-badge" style="background:#f1f3f5;color:#444">86 · Belga Solar</div></div><div class="exp-desc">Le nombre de sites uniques qui font au moins un lien vers vous — le nombre de "votants" qui vous recommandent à Google.</div><div class="exp-impact"><strong>Impact concret :</strong> 86 domaines référents, c'est correct pour une PME belge. Chaque nouveau domaine de qualité renforce votre autorité.</div><div class="exp-analogy"><span class="analogy-icon">🗳️</span><span class="analogy-text">Chaque site qui vous fait un lien vote pour vous auprès de Google. Plus les votants sont influents (TF élevé), plus votre score monte.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Topical Trust Flow</div><div class="exp-abbr">THÉMATIQUE</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">Science &amp; Technology</div></div><div class="exp-desc">La thématique dominante de vos backlinks. Google vérifie que les sites qui vous recommandent sont cohérents avec votre secteur.</div><div class="exp-impact"><strong>Impact concret :</strong> "Science &amp; Technology" est cohérent avec l'activité de Belga Solar. Des liens depuis des médias énergie renforceront encore ce signal.</div><div class="exp-analogy"><span class="analogy-icon">🎯</span><span class="analogy-text">Si un expert en énergie solaire vous recommande, c'est plus fort qu'un généraliste. Google valorise les recommandations thématiquement cohérentes.</span></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">En résumé — l'autorité ça se construit</div><div class="blue-box-desc">Imaginez Google comme un moteur de réputation : plus des sites reconnus parlent de vous, plus il vous fait confiance. Belga Solar part d'une bonne base mais a besoin de <strong style="color:#fff">plus de mentions dans la presse belge et les annuaires sectoriels</strong> pour franchir le cap TF 30+.</div></div></div>
+</div>
+</section><section id="trafic" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📈 Trafic Organique</div>
+  <h2 class="slide-h1">Évolution &amp; Tendances</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · Avr. 2024 → Mai 2026</p>
+  <div class="grid-4" style="margin-bottom:20px">
+    <div class="kpi-card" style="border-top:3px solid #2eb078"><div class="kpi-val" style="color:#2eb078">~450</div><div class="kpi-label">Trafic mensuel</div><div class="kpi-sub">visites / mois</div><div class="badge-inline" style="background:#e6f9f0;color:#2eb078">↑ En hausse</div></div>
+    <div class="kpi-card" style="border-top:3px solid #1c2b96"><div class="kpi-val" style="color:#1c2b96">~25</div><div class="kpi-label">Mots-clés positionnés</div><div class="kpi-sub">Pic : ~45 jan. 2025</div><div class="badge-inline" style="background:#e8ecff;color:#1c2b96">Rebond en cours</div></div>
+    <div class="kpi-card" style="border-top:3px solid #fa3b2e"><div class="kpi-val" style="color:#fa3b2e">10+</div><div class="kpi-label">Positions top 5</div><div class="kpi-sub">requêtes Belgique</div><div class="badge-inline" style="background:#ffecec;color:#fa3b2e">Niche plug &amp; play</div></div>
+    <div class="kpi-card" style="border-top:3px solid #fabd05"><div class="kpi-val">↗</div><div class="kpi-label">Tendance 2026</div><div class="kpi-sub">Pic avr. 2026</div><div class="badge-inline" style="background:#fff8e0;color:#d97706">Après creux jan. 26</div></div>
+  </div>
+  <div class="grid-2">
+    <div class="card"><div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:14px">Trafic organique estimé (visites/mois)</div>
+      <div style="position:relative">
+        <div style="position:absolute;left:32px;right:0;top:0;bottom:20px"><div class="grid-line" style="top:0%"></div><div class="grid-line" style="top:50%"></div></div>
+        <div class="axis-y"><span class="axis-label">500</span><span class="axis-label">250</span><span class="axis-label">0</span></div>
+        <div class="bar-chart"><div class="bar-item" style="height:12%;background:#bfdbfe"></div><div class="bar-item" style="height:14%;background:#bfdbfe"></div><div class="bar-item" style="height:12%;background:#bfdbfe"></div><div class="bar-item" style="height:10%;background:#bfdbfe"></div><div class="bar-item" style="height:13%;background:#bfdbfe"></div><div class="bar-item" style="height:17%;background:#93c5fd"></div><div class="bar-item" style="height:22%;background:#93c5fd"></div><div class="bar-item" style="height:28%;background:#60a5fa"></div><div class="bar-item" style="height:35%;background:#3b82f6"></div><div class="bar-item" style="height:24%;background:#93c5fd"></div><div class="bar-item" style="height:40%;background:#3b82f6"></div><div class="bar-item" style="height:48%;background:#2563eb"></div><div class="bar-item" style="height:55%;background:#2563eb"></div><div class="bar-item" style="height:62%;background:#1d4ed8"></div><div class="bar-item" style="height:70%;background:#1d4ed8"></div><div class="bar-item" style="height:74%;background:#1d4ed8"></div><div class="bar-item" style="height:66%;background:#2563eb"></div><div class="bar-item" style="height:58%;background:#2563eb"></div><div class="bar-item" style="height:63%;background:#2563eb"></div><div class="bar-item" style="height:72%;background:#1d4ed8"></div><div class="bar-item" style="height:76%;background:#1d4ed8"></div><div class="bar-item" style="height:54%;background:#2563eb"></div><div class="bar-item" style="height:80%;background:#1c2b96"></div><div class="bar-item" style="height:90%;background:#1c2b96"></div><div class="bar-item" style="height:100%;background:#fa3b2e"></div><div class="bar-item" style="height:90%;background:#fabd05"></div></div>
+        <div class="axis-x"><span>Avr.24</span><span>Oct.24</span><span>Avr.25</span><span>Oct.25</span><span>Mai 26</span></div>
+      </div>
+      <div class="legend-row"><div class="leg-item"><div class="leg-dot" style="background:#1c2b96"></div>Trafic</div><div class="leg-item"><div class="leg-dot" style="background:#fa3b2e"></div>Pic (avr.26 ~500)</div><div class="leg-item"><div class="leg-dot" style="background:#fabd05"></div>Actuel (~450)</div></div>
+    </div>
+    <div class="card"><div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:14px">Mots-clés positionnés (SEMrush)</div>
+      <div style="position:relative">
+        <div style="position:absolute;left:32px;right:0;top:0;bottom:20px"><div class="grid-line" style="top:0%"></div><div class="grid-line" style="top:50%"></div></div>
+        <div class="axis-y"><span class="axis-label">50</span><span class="axis-label">25</span><span class="axis-label">0</span></div>
+        <div class="bar-chart"><div class="bar-item" style="height:76%;background:#bbf7d0"></div><div class="bar-item" style="height:78%;background:#bbf7d0"></div><div class="bar-item" style="height:80%;background:#86efac"></div><div class="bar-item" style="height:82%;background:#86efac"></div><div class="bar-item" style="height:80%;background:#86efac"></div><div class="bar-item" style="height:84%;background:#86efac"></div><div class="bar-item" style="height:86%;background:#4ade80"></div><div class="bar-item" style="height:88%;background:#4ade80"></div><div class="bar-item" style="height:90%;background:#22c55e"></div><div class="bar-item" style="height:100%;background:#16a34a"></div><div class="bar-item" style="height:96%;background:#16a34a"></div><div class="bar-item" style="height:90%;background:#22c55e"></div><div class="bar-item" style="height:84%;background:#4ade80"></div><div class="bar-item" style="height:78%;background:#86efac"></div><div class="bar-item" style="height:72%;background:#86efac"></div><div class="bar-item" style="height:68%;background:#86efac"></div><div class="bar-item" style="height:60%;background:#bbf7d0"></div><div class="bar-item" style="height:50%;background:#bbf7d0"></div><div class="bar-item" style="height:44%;background:#fde68a"></div><div class="bar-item" style="height:38%;background:#fbbf24"></div><div class="bar-item" style="height:34%;background:#f59e0b"></div><div class="bar-item" style="height:26%;background:#fa3b2e"></div><div class="bar-item" style="height:40%;background:#fbbf24"></div><div class="bar-item" style="height:46%;background:#fbbf24"></div><div class="bar-item" style="height:50%;background:#fabd05"></div><div class="bar-item" style="height:50%;background:#fabd05"></div></div>
+        <div class="axis-x"><span>Avr.24</span><span>Oct.24</span><span>Avr.25</span><span>Oct.25</span><span>Mai 26</span></div>
+      </div>
+      <div class="legend-row"><div class="leg-item"><div class="leg-dot" style="background:#16a34a"></div>Pic (~45 jan.25)</div><div class="leg-item"><div class="leg-dot" style="background:#fa3b2e"></div>Creux (~13 jan.26)</div><div class="leg-item"><div class="leg-dot" style="background:#fabd05"></div>Actuel (~25)</div></div>
+    </div>
+  </div>
+  <div class="phase-grid">
+    <div class="phase"><div class="phase-label">Phase 1 · Avr–Nov 2024</div><div class="phase-val" style="color:#aaa">Démarrage lent</div><div class="phase-desc">~38 KW stables · trafic faible</div></div>
+    <div class="phase"><div class="phase-label">Phase 2 · Déc 2024–Jul 2025</div><div class="phase-val" style="color:#2eb078">Montée en puissance</div><div class="phase-desc">Pic 45 KW · trafic ×5</div></div>
+    <div class="phase"><div class="phase-label">Phase 3 · Aoû 2025–Mai 2026</div><div class="phase-val" style="color:#fa3b2e">Chute &amp; rebond</div><div class="phase-desc">Creux 13 KW · rebond à 25</div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:18px;flex-shrink:0">💡</div><div style="font-size:11px;color:#ccc;line-height:1.6">La chute de mots-clés positionnés (45 → 13) entre juil. 2025 et jan. 2026 explique le creux de trafic. La cause probable : une mise à jour Google. Le rebond est encourageant mais <strong style="color:#fff">le potentiel reste très sous-exploité</strong> — les requêtes génériques solaires (1 300+ rech./mois) sont encore hors de portée.</div></div>
+</div>
+</section><section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèlent les données de trafic</h2>
+  <p class="slide-sub">Le trafic organique, c'est le nombre de visiteurs qui arrivent sur votre site via Google — sans que vous ayez payé pour ça.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Trafic organique</div><div class="exp-abbr">VISITES NATURELLES</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">~450/mois</div></div><div class="exp-desc">Le nombre de visites mensuelles provenant de Google, sans publicité. C'est votre "vitrine gratuite" — plus vous êtes bien positionné, plus des clients potentiels vous trouvent naturellement.</div><div class="exp-impact"><strong>Impact concret :</strong> 450 visites/mois c'est un bon départ, mais le potentiel est bien plus large. "Panneaux solaires belgique" représente 1 300 recherches/mois — soit 3x le trafic actuel.</div><div class="exp-analogy"><span class="analogy-icon">🏪</span><span class="analogy-text">Imaginez une boutique physique : le trafic organique, c'est le nombre de passants qui entrent spontanément parce qu'ils ont vu votre enseigne dans la rue Google.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Mots-clés positionnés</div><div class="exp-abbr">KEYWORDS RANKED</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">~25 actuellement</div></div><div class="exp-desc">Le nombre de requêtes Google sur lesquelles votre site apparaît. Chaque mot-clé positionné est une porte d'entrée vers votre site.</div><div class="exp-impact"><strong>Impact concret :</strong> Belga Solar était positionné sur ~45 mots-clés en jan. 2025, puis a chuté à 13. Le rebond à 25 est positif — l'objectif est 100+.</div><div class="exp-analogy"><span class="analogy-icon">🔑</span><span class="analogy-text">Chaque mot-clé positionné, c'est une clé qui ouvre une porte vers votre site. Plus vous avez de clés, plus vous avez de chances que des clients vous trouvent.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Mises à jour Google</div><div class="exp-abbr">CORE UPDATES</div></div><div class="exp-badge" style="background:#ffecec;color:#fa3b2e">Chute juil. 2025</div></div><div class="exp-desc">Google met régulièrement à jour son algorithme — ce qui peut faire monter ou descendre des sites sans qu'ils aient rien changé.</div><div class="exp-impact"><strong>Impact concret :</strong> La chute de 45 à 13 mots-clés est probablement liée à une mise à jour Google. Une stratégie de contenu solide protège contre ces fluctuations.</div><div class="exp-analogy"><span class="analogy-icon">🌊</span><span class="analogy-text">Les mises à jour Google, c'est comme une vague en mer : si votre site est solide, vous surfez dessus. Sinon, vous coulez.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Longue traîne</div><div class="exp-abbr">LONG TAIL KEYWORDS</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">Opportunité clé</div></div><div class="exp-desc">Les requêtes longues et spécifiques ont moins de volume mais des visiteurs plus qualifiés — prêts à acheter. C'est là que Belga Solar excelle aujourd'hui.</div><div class="exp-impact"><strong>Impact concret :</strong> Belga Solar est n°1 sur "kit solaire plug and play belgique" mais absent sur "panneaux solaires belgique" (1 300/mois). L'enjeu est d'élargir vers les requêtes génériques.</div><div class="exp-analogy"><span class="analogy-icon">🎯</span><span class="analogy-text">La longue traîne, c'est viser un public restreint mais très ciblé. Belga Solar est champion de niche — il faut maintenant élargir le terrain de jeu.</span></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">Le potentiel inexploité de Belga Solar</div><div class="blue-box-desc">Avec ~450 visites/mois, Belga Solar capte une infime partie du trafic disponible. Des requêtes comme "installation panneaux solaires belgique" (880/mois) sont accessibles avec la bonne stratégie. <strong style="color:#fff">Le potentiel de croissance est estimé à ×3 minimum en 12 mois.</strong></div></div></div>
+</div>
+</section><section id="keywords" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🎯 Mots-clés &amp; Positionnement</div>
+  <h2 class="slide-h1">Top positions SEObserver</h2>
+  <p class="slide-sub">Belgique 🇧🇪 · Source SEObserver keywords · Mai 2026</p>
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px">
+    <table class="kw-table"><thead><tr><th>Mot-clé</th><th>Position</th><th>Volume / mois</th><th>CPC</th><th>Compétition</th></tr></thead><tbody><tr><td>belga solar</td><td><span class="pos-badge" style="background:#2eb078">1</span></td><td>320</td><td>1,52 €</td><td style="color:#2eb078;font-size:11px;font-weight:600">Faible</td></tr><tr><td>kit solaire plug and play belgique</td><td><span class="pos-badge" style="background:#2eb078">1</span></td><td>110</td><td>0,64 €</td><td style="color:#fa3b2e;font-size:11px;font-weight:600">Haute</td></tr><tr><td>kits solaire plug and play</td><td><span class="pos-badge" style="background:#2eb078">2</span></td><td>140</td><td>0,67 €</td><td style="color:#fa3b2e;font-size:11px;font-weight:600">Haute</td></tr><tr><td>panneau solaire plug and play belgique</td><td><span class="pos-badge" style="background:#2eb078">2</span></td><td>590</td><td>0,49 €</td><td style="color:#fa3b2e;font-size:11px;font-weight:600">Haute</td></tr><tr><td>belage</td><td><span class="pos-badge" style="background:#1c2b96">3</span></td><td>170</td><td>0,00 €</td><td style="color:#2eb078;font-size:11px;font-weight:600">Faible</td></tr><tr><td>panneaux solaires plug and play belgique</td><td><span class="pos-badge" style="background:#f59e0b">4</span></td><td>390</td><td>0,49 €</td><td style="color:#fa3b2e;font-size:11px;font-weight:600">Haute</td></tr><tr><td>panneau plug and play belgique</td><td><span class="pos-badge" style="background:#f59e0b">4</span></td><td>210</td><td>0,47 €</td><td style="color:#fa3b2e;font-size:11px;font-weight:600">Haute</td></tr><tr><td>panneaux solaires plug and play</td><td><span class="pos-badge" style="background:#f59e0b">5</span></td><td>1 000</td><td>0,74 €</td><td style="color:#fa3b2e;font-size:11px;font-weight:600">Haute</td></tr><tr><td>panneau solaire plug and play</td><td><span class="pos-badge" style="background:#f59e0b">5</span></td><td>1 300</td><td>0,74 €</td><td style="color:#fa3b2e;font-size:11px;font-weight:600">Haute</td></tr><tr><td>solar for solar</td><td><span class="pos-badge" style="background:#f59e0b">5</span></td><td>1 300</td><td>1,69 €</td><td style="color:#2eb078;font-size:11px;font-weight:600">Faible</td></tr></tbody></table>
+  </div>
+  <div class="alert-box" style="background:#fffbf0;border:1px solid #fcd34d;margin-bottom:16px"><span style="font-size:18px">⚠️</span><div><div style="font-size:13px;font-weight:700;color:#92400e;margin-bottom:4px">Fort sur la niche — absent sur les requêtes génériques à fort volume</div><div style="font-size:12px;color:#888">Belga Solar domine le "plug &amp; play" mais n'apparaît pas sur les requêtes commerciales génériques qui concentrent le plus grand volume de recherche.</div></div></div>
+  <div class="card"><div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:12px">Requêtes stratégiques non positionnées — opportunités prioritaires</div>
+    <div class="missing-grid">
+      <div class="mkw"><div class="mkw-name">panneaux solaires belgique</div><div class="mkw-vol">1 300 rech./mois</div><div class="mkw-badge" style="background:#fff0ee;color:#fa3b2e">Non positionné</div></div>
+      <div class="mkw"><div class="mkw-name">installation solaire belgique</div><div class="mkw-vol">880 rech./mois</div><div class="mkw-badge" style="background:#fff0ee;color:#fa3b2e">Non positionné</div></div>
+      <div class="mkw"><div class="mkw-name">fabricant panneaux solaires</div><div class="mkw-vol">720 rech./mois</div><div class="mkw-badge" style="background:#fff0ee;color:#fa3b2e">Non positionné</div></div>
+      <div class="mkw"><div class="mkw-name">prix panneaux solaires belgique</div><div class="mkw-vol">590 rech./mois</div><div class="mkw-badge" style="background:#fff0ee;color:#fa3b2e">Non positionné</div></div>
+      <div class="mkw"><div class="mkw-name">panneau solaire made in belgium</div><div class="mkw-vol">320 rech./mois</div><div class="mkw-badge" style="background:#fff0ee;color:#fa3b2e">Non positionné</div></div>
+      <div class="mkw"><div class="mkw-name">énergie solaire belgique</div><div class="mkw-vol">880 rech./mois</div><div class="mkw-badge" style="background:#fff0ee;color:#fa3b2e">Non positionné</div></div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que signifient les données de positionnement</h2>
+  <p class="slide-sub">Être bien positionné sur Google, c'est apparaître en haut des résultats quand un client potentiel tape une requête liée à votre activité.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Position Google</div><div class="exp-abbr">RANKING</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">Top 1–2 sur la niche</div></div><div class="exp-desc">La position 1 capte ~30% des clics, la position 5 seulement 7%, au-delà de la page 1 c'est quasi invisible.</div><div class="exp-impact"><strong>Impact concret :</strong> Belga Solar est n°1 sur "kit solaire plug and play belgique" — excellent. Mais absent de la page 1 sur "panneaux solaires belgique" (1 300 rech./mois).</div><div class="exp-analogy"><span class="analogy-icon">🏆</span><span class="analogy-text">Être au n°1 Google, c'est la devanture la plus visible de la rue commerçante. Au-delà de la page 1, c'est une ruelle que personne ne connaît.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Volume de recherche</div><div class="exp-abbr">SEARCH VOLUME</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">Jusqu'à 1 300/mois</div></div><div class="exp-desc">Le nombre de fois par mois que des internautes tapent une requête dans Google — le "marché potentiel" de chaque mot-clé.</div><div class="exp-impact"><strong>Impact concret :</strong> "Panneau solaire plug and play" = 1 300 recherches/mois. Être n°1 dessus pourrait générer ~400 visites supplémentaires par mois.</div><div class="exp-analogy"><span class="analogy-icon">🌊</span><span class="analogy-text">Le volume de recherche, c'est la taille de la vague. Un mot-clé à 1 300 recherches/mois, c'est une grosse vague — si vous savez la surfer, vous gagnez beaucoup de visiteurs.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Compétition</div><div class="exp-abbr">KEYWORD DIFFICULTY</div></div><div class="exp-badge" style="background:#ffecec;color:#fa3b2e">Haute sur la niche</div></div><div class="exp-desc">Mesure à quel point il est difficile de se positionner. Une compétition haute signifie que des concurrents bien établis occupent déjà les premières places.</div><div class="exp-impact"><strong>Impact concret :</strong> Belga Solar est déjà bien positionné sur des mots-clés haute compétition — preuve de la légitimité du site sur cette niche.</div><div class="exp-analogy"><span class="analogy-icon">🥊</span><span class="analogy-text">Compétition haute = adversaires coriaces en place. Stratégie : commencer par les mots-clés moins concurrencés pour gagner en autorité, puis attaquer les plus gros.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">CPC (Coût par clic)</div><div class="exp-abbr">VALEUR COMMERCIALE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">Signal de valeur</div></div><div class="exp-desc">Le prix que des annonceurs paient pour apparaître en publicité. Plus le CPC est élevé, plus la requête est commercialement attractive.</div><div class="exp-impact"><strong>Impact concret :</strong> "Solar for solar" à 1,69€/clic = forte intention d'achat. Être bien positionné gratuitement dessus représente une vraie valeur économique.</div><div class="exp-analogy"><span class="analogy-icon">💰</span><span class="analogy-text">Le CPC, c'est le thermomètre de la valeur d'un mot-clé. Si des entreprises paient 1,52€ par clic, c'est que ce clic vaut de l'argent — et vous l'obtenez gratuitement via le SEO.</span></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">La stratégie : défendre la niche, conquérir le générique</div><div class="blue-box-desc">Belga Solar domine la niche "plug &amp; play" — base solide à protéger. L'étape suivante : créer du contenu ciblant les requêtes génériques pour <strong style="color:#fff">multiplier le trafic par 3 à 5 en 12 mois.</strong></div></div></div>
+</div>
+</section><section id="ux" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fde8f0;color:#c2185b">🎨 Analyse UX Heuristique</div>
+  <h2 class="slide-h1">Audit du site web</h2>
+  <p class="slide-sub">Analyse heuristique réalisée en direct · belgasolar.com · Mai 2026</p>
+  <div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Navigation &amp; Architecture</div><div class="ux-desc">Double navigation (B2C / B2B / International) claire. CTA "Demandez votre devis" visible en permanence. Bon maillage interne.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Point fort</div></div></div><div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Message de marque fort</div><div class="ux-desc">"Proudly Made in Belgium" — différenciation immédiatement perceptible. Certification B Corp (95,7) mise en avant. Storytelling convaincant.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Point fort</div></div></div><div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">Vitesse mobile perçue</div><div class="ux-desc">La vidéo hero en autoplay ralentit le rendu mobile. Le CLS critique (0,63) génère des sauts de mise en page visibles — expérience dégradée dès le premier contact.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">À améliorer</div></div></div><div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">SEO éditorial insuffisant</div><div class="ux-desc">Contenu riche sur les produits mais peu de pages optimisées pour les requêtes commerciales génériques. Blog peu actif — 20 pages à faible contenu.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">À améliorer</div></div></div><div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">Conversion à optimiser</div><div class="ux-desc">Formulaire devis présent mais sans outil de qualification. Opportunité d'augmenter le taux de conversion via un configurateur simple.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">À améliorer</div></div></div><div class="ux-item" style="border-left:4px solid #fa3b2e"><div class="ux-icon" style="background:#fff0ee;color:#fa3b2e">✗</div><div><div class="ux-title">Balises META sous-pages manquantes</div><div class="ux-desc">21 pages sans meta description — principalement les pages produits WooCommerce. Chaque page sans meta perd une opportunité d'accroche dans Google.</div><div class="ux-tag" style="background:#ffecec;color:#fa3b2e">Critique</div></div></div>
+</div>
+</section><section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèle l'analyse UX</h2>
+  <p class="slide-sub">L'UX mesure à quel point votre site est agréable, intuitif et efficace pour un visiteur — et donc pour Google aussi.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Analyse heuristique</div><div class="exp-abbr">HEURISTIC REVIEW</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">Méthode d'expert</div></div><div class="exp-desc">Une évaluation par un expert qui navigue sur le site comme un vrai utilisateur et identifie les frictions, les points forts et les opportunités d'amélioration.</div><div class="exp-impact"><strong>Impact concret :</strong> Cette analyse révèle ce que les chiffres ne montrent pas : pourquoi un visiteur quitte une page, ce qui le convainc ou le freine avant de demander un devis.</div><div class="exp-analogy"><span class="analogy-icon">🔍</span><span class="analogy-text">C'est comme faire appel à un client mystère pour tester votre boutique — il identifie ce qui fonctionne et ce qui frustre, avec un regard neuf et expert.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Taux de conversion</div><div class="exp-abbr">CONVERSION RATE</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">À optimiser</div></div><div class="exp-desc">Le pourcentage de visiteurs qui effectuent l'action souhaitée — demander un devis, appeler. Un site peut avoir du trafic et très peu de conversions si l'expérience n'est pas fluide.</div><div class="exp-impact"><strong>Impact concret :</strong> Ajouter un configurateur simple (surface, consommation, type de toit) avant le formulaire devis peut doubler le taux de conversion.</div><div class="exp-analogy"><span class="analogy-icon">🚪</span><span class="analogy-text">Le trafic amène des visiteurs à la porte — l'UX décide s'ils entrent et restent. Un site mal conçu, c'est une porte bloquée même si la rue est pleine de monde.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">CLS — Layout Shift</div><div class="exp-abbr">STABILITÉ VISUELLE</div></div><div class="exp-badge" style="background:#ffecec;color:#fa3b2e">0,63 · Critique</div></div><div class="exp-desc">Quand une page charge, des éléments peuvent "sauter" — un bouton se déplace, du texte disparaît. C'est frustrant pour l'utilisateur et pénalisé par Google.</div><div class="exp-impact"><strong>Impact concret :</strong> Sur mobile, un CLS de 0,63 signifie que les visiteurs voient régulièrement des éléments bouger — créant de la méfiance et augmentant le taux de rebond.</div><div class="exp-analogy"><span class="analogy-icon">📄</span><span class="analogy-text">Imaginez lire un journal dont les articles se déplacent pendant que vous lisez. C'est exactement ce que ressent un visiteur sur une page avec un CLS élevé.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">SEO éditorial</div><div class="exp-abbr">CONTENT STRATEGY</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">À développer</div></div><div class="exp-desc">Les articles, guides, FAQ et pages thématiques qui répondent aux questions de vos clients potentiels. C'est ce qui attire le trafic générique et établit votre expertise.</div><div class="exp-impact"><strong>Impact concret :</strong> Une page "Guide complet des panneaux solaires en Belgique" peut générer des centaines de visites mensuelles supplémentaires.</div><div class="exp-analogy"><span class="analogy-icon">📚</span><span class="analogy-text">Le contenu éditorial, c'est votre expertise mise en mots sur internet. Plus vous répondez aux questions de vos clients avant même qu'ils vous appellent, plus Google vous considère comme une référence.</span></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">Un site solide avec un potentiel de conversion inexploité</div><div class="blue-box-desc">Belga Solar a un site bien structuré avec un message de marque fort. Les axes d'amélioration sont ciblés : <strong style="color:#fff">corriger le CLS mobile, compléter les meta descriptions et créer 3 à 5 pages de contenu stratégiques.</strong></div></div></div>
+</div>
+</section>
+<!-- GEO -->
+<section id="geo" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fabd0520;color:#b45309;border:1px solid #fabd0540">🤖 Visibilité GEO / IA</div>
+  <h2 class="slide-h1">Présence dans les IA génératives</h2>
+  <p class="slide-sub">Analyse réalisée en mai 2026 · Requêtes testées :</p>
+  <div style="font-size:11px;color:#aaa;margin-bottom:24px;font-family:var(--mono);background:#fff;border:1px solid #e9ecef;border-radius:8px;padding:10px 14px">"fabricant panneaux solaires belgique" · "panneau solaire made in belgium" · "belga solar" · "installation solaire belgique"</div>
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="geo-card"><div class="geo-bar" style="background:#f59e0b"></div><div class="geo-platform">ChatGPT</div><div class="geo-status" style="color:#f59e0b">⚠ Faible</div><div class="geo-desc">Cité uniquement sur requête de marque exacte "belga solar". Absent sur toutes les requêtes génériques liées au solaire en Belgique.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#f59e0b"></div><div class="geo-platform">Gemini (Google)</div><div class="geo-status" style="color:#f59e0b">⚠ Faible</div><div class="geo-desc">Apparaît dans certains snippets Google SGE mais sans fiche enrichie. Schema.org permettrait d'améliorer rapidement la visibilité.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">Perplexity</div><div class="geo-status" style="color:#fa3b2e">✗ Absent</div><div class="geo-desc">Non référencé dans les réponses sur l'énergie solaire en Belgique. Aucune citation détectée, même sur requête de marque directe.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">Copilot (Microsoft)</div><div class="geo-status" style="color:#fa3b2e">✗ Absent</div><div class="geo-desc">Invisible sur les requêtes commerciales. Le manque de contenu structuré (FAQ, données chiffrées, Schema.org) nuit directement à l'indexation IA.</div></div>
+  </div>
+  <div style="background:#e8f8f0;border:1px solid #2eb07840;border-radius:12px;padding:18px;display:flex;gap:12px;align-items:flex-start">
+    <span style="font-size:20px;flex-shrink:0">💡</span>
+    <div><div style="font-size:13px;font-weight:800;color:#2eb078;margin-bottom:6px">Une opportunité GEO exceptionnelle — le bon timing</div><div style="font-size:12px;color:#444;line-height:1.6">Belga Solar est le <strong>seul fabricant belge de panneaux photovoltaïques standards</strong> — une position unique, idéale pour dominer les réponses IA. Les robots.txt autorisent déjà tous les agents IA. Il manque uniquement le contenu structuré pour s'imposer dans ChatGPT, Gemini et Perplexity.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- GEO EXPLAINER -->
+<section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce qu'est le GEO et pourquoi c'est crucial</h2>
+  <p class="slide-sub">Le GEO (Generative Engine Optimization) c'est le SEO de demain — être visible dans les réponses des IA comme ChatGPT, Gemini ou Perplexity.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Qu'est-ce que le GEO ?</div><div class="exp-abbr">GENERATIVE ENGINE OPTIMIZATION</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">Nouveau canal</div></div><div class="exp-desc">Quand quelqu'un pose une question à ChatGPT ou Gemini, l'IA génère une réponse en citant des sources. Le GEO, c'est l'art d'être cité dans ces réponses.</div><div class="exp-impact"><strong>Impact concret :</strong> En 2026, plus de 30% des recherches passent par des IA génératives. Un prospect qui demande "quel fabricant solaire belge choisir ?" à ChatGPT et ne voit pas Belga Solar est potentiellement perdu.</div><div class="exp-analogy"><span class="analogy-icon">🤖</span><span class="analogy-text">Si le SEO c'est apparaître dans Google, le GEO c'est être mentionné par les IA quand elles répondent à vos clients. C'est le bouche-à-oreille du futur — à grande échelle.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Comment les IA choisissent leurs sources</div><div class="exp-abbr">CITATION LOGIC</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">Contenu structuré</div></div><div class="exp-desc">Les IA citent les sources qui répondent clairement aux questions, avec des données précises, des FAQ bien rédigées et des données structurées (Schema.org).</div><div class="exp-impact"><strong>Impact concret :</strong> Une page FAQ "Pourquoi choisir des panneaux solaires fabriqués en Belgique ?" avec des chiffres clés (CO₂, rendement, garantie) a beaucoup plus de chances d'être citée.</div><div class="exp-analogy"><span class="analogy-icon">📖</span><span class="analogy-text">Les IA fonctionnent comme un étudiant qui prépare un exposé : elles citent les sources les plus claires et les mieux structurées. Votre site doit être cette source de référence.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Schema.org</div><div class="exp-abbr">DONNÉES STRUCTURÉES</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Partiel</div></div><div class="exp-desc">Un langage technique qui aide Google et les IA à comprendre votre contenu : "ceci est un produit", "ceci est une FAQ", "ceci est une entreprise".</div><div class="exp-impact"><strong>Impact concret :</strong> Ajouter Schema.org "Organization", "Product" et "FAQPage" permettrait aux IA de mieux comprendre Belga Solar et de le citer plus facilement.</div><div class="exp-analogy"><span class="analogy-icon">🏷️</span><span class="analogy-text">Schema.org, c'est étiqueter votre contenu pour que Google et les IA le comprennent instantanément. Sans étiquettes, ils doivent deviner — et parfois se trompent.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">L'avantage unique de Belga Solar</div><div class="exp-abbr">UNIQUE POSITIONING</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">Opportunité rare</div></div><div class="exp-desc">Être le seul fabricant belge de panneaux solaires standards est un fait factuel, vérifiable et différenciant. Les IA adorent ce type d'information unique.</div><div class="exp-impact"><strong>Impact concret :</strong> Une simple page "Pourquoi Belga Solar est le seul fabricant belge ?" avec des données positionnerait immédiatement Belga Solar dans les réponses IA.</div><div class="exp-analogy"><span class="analogy-icon">🌟</span><span class="analogy-text">Dans un marché où tous les installateurs se ressemblent, être "le seul fabricant belge" c'est une réponse unique à une question précise. Les IA adorent les réponses uniques.</span></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">Belga Solar a tout pour dominer le GEO — il manque juste le contenu</div><div class="blue-box-desc">Les robots IA sont déjà autorisés à crawler le site. Le positionnement "seul fabricant belge" est un atout GEO exceptionnel. Avec <strong style="color:#fff">3 à 5 pages de contenu structuré</strong>, Belga Solar pourrait s'imposer dans ChatGPT, Gemini et Perplexity en moins de 3 mois.</div></div></div>
+</div>
+</section>
+
+<!-- GMB -->
+<section id="gmb" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📍 GMB &amp; Réseaux Sociaux</div>
+  <h2 class="slide-h1">Présence locale &amp; sociale</h2>
+  <p class="slide-sub">Analyse réalisée en direct · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">📍 Google My Business</div>
+      <div class="grid-2" style="margin-bottom:16px">
+        <div class="kpi-card" style="border-top:3px solid #2eb078"><div style="font-size:16px;color:#fabd05;margin-bottom:4px">★★★★★</div><div class="kpi-val" style="color:#2eb078">4,9</div><div class="kpi-label">Note moyenne</div><div class="kpi-sub">sur 5</div></div>
+        <div class="kpi-card" style="border-top:3px solid #1c2b96"><div class="kpi-val" style="color:#1c2b96">46</div><div class="kpi-label">Avis Google</div><div class="kpi-sub">Volume crédible</div></div>
+      </div>
+      <div style="background:#f0fff8;border:1px solid #b3e8d0;border-radius:8px;padding:12px;font-size:12px;color:#2eb078;font-weight:600;margin-bottom:10px">✓ Fiche GMB complète — adresse, horaires, photos, catégories, lien site web</div>
+      <div style="background:#fffbf0;border:1px solid #fcd34d;border-radius:8px;padding:12px;font-size:12px;color:#d97706;margin-bottom:12px">⚠ Points à améliorer : posts GMB réguliers · Questions/Réponses absentes · Photos usine à enrichir</div>
+      <div style="background:#e8ecff;border:1px solid #b3c0f0;border-radius:8px;padding:12px"><div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:4px">🏆 B Corp Certifié · Score 95,7</div><div style="font-size:11px;color:#666">Certifié sept. 2024. Différenciateur rare dans le secteur solaire — encore peu exploité dans la stratégie digitale.</div></div>
+    </div>
+    <div class="card"><div class="card-title">📱 Réseaux Sociaux</div>
+      <div class="social-row" style="background:#f0fff8"><div class="s-left"><div class="s-icon" style="background:#e8f0fe;color:#0077b5">in</div><div><div class="s-name">LinkedIn</div><div class="s-stats">Page entreprise active · publications B2B régulières</div></div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Actif</span></div>
+      <div class="social-row" style="background:#f0fff8"><div class="s-left"><div class="s-icon" style="background:#e8f0fe;color:#1877f2">f</div><div><div class="s-name">Facebook</div><div class="s-stats">578 followers · dernier post 29/04/2026</div></div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Actif</span></div>
+      <div class="social-row" style="background:#f0fff8"><div class="s-left"><div class="s-icon" style="background:#fce8f3;color:#e1306c">📷</div><div><div class="s-name">Instagram</div><div class="s-stats">192 followers · 50 publications · actif</div></div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Actif</span></div>
+      <div class="social-row" style="background:#fffbf0"><div class="s-left"><div class="s-icon" style="background:#fff0ee;color:#ff0000">▶</div><div><div class="s-name">YouTube</div><div class="s-stats">Chaîne présente · peu de vidéos optimisées SEO</div></div></div><span class="status-badge" style="background:#fff8e0;color:#d97706">⚠ Peu optimisé</span></div>
+      <div class="social-row" style="background:#fff0ee;opacity:.8"><div class="s-left"><div class="s-icon" style="background:#f1f3f5;color:#888">♪</div><div><div class="s-name">TikTok</div><div class="s-stats">Aucune présence détectée</div></div></div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">✗ Absent</span></div>
+      <div style="background:#f8f9fa;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:11px;color:#888;line-height:1.5">💡 Le contenu vidéo (chantiers, usine, plug &amp; play) a un fort potentiel viral sur TikTok et YouTube — segment jeunes propriétaires 25-40 ans.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- GMB EXPLAINER -->
+<section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèle la présence locale &amp; sociale</h2>
+  <p class="slide-sub">Votre visibilité ne se limite pas à Google — la fiche GMB et les réseaux sociaux jouent un rôle clé dans la décision d'achat.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Google My Business</div><div class="exp-abbr">FICHE LOCALE GOOGLE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">4,9★ · 46 avis</div></div><div class="exp-desc">La fiche qui apparaît dans Google quand quelqu'un cherche votre entreprise. Elle affiche horaires, adresse, photos, avis et lien. C'est souvent le premier contact avec un prospect.</div><div class="exp-impact"><strong>Impact concret :</strong> 46 avis à 4,9/5 c'est excellent. Mais sans posts réguliers ni Q&amp;A, la fiche perd en dynamisme et Google la met moins en avant.</div><div class="exp-analogy"><span class="analogy-icon">🏪</span><span class="analogy-text">La fiche GMB, c'est votre vitrine Google. Une vitrine entretenue avec des photos récentes et des avis attire plus de clients qu'une vitrine figée depuis 6 mois.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Note &amp; avis Google</div><div class="exp-abbr">REPUTATION EN LIGNE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">Excellent · 4,9/5</div></div><div class="exp-desc">Les avis Google sont lus par 93% des consommateurs avant un achat. Une note élevée avec de nombreux avis récents rassure les prospects et améliore votre visibilité locale.</div><div class="exp-impact"><strong>Impact concret :</strong> Avec 4,9/5 et 46 avis, Belga Solar a une réputation solide. L'objectif est d'atteindre 100+ avis pour renforcer encore la crédibilité B2B.</div><div class="exp-analogy"><span class="analogy-icon">⭐</span><span class="analogy-text">Les avis Google, c'est le bouche-à-oreille numérique. Un client satisfait qui laisse un avis 5 étoiles vaut des dizaines de prospects rassurés.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Réseaux sociaux</div><div class="exp-abbr">SOCIAL MEDIA</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">3 canaux actifs</div></div><div class="exp-desc">LinkedIn, Facebook et Instagram sont actifs. Les réseaux sociaux humanisent la marque, montrent les coulisses de l'usine et génèrent des leads indirects via la notoriété.</div><div class="exp-impact"><strong>Impact concret :</strong> 578 abonnés Facebook et 192 sur Instagram. Ces chiffres restent modestes — un plan de contenu régulier peut les multiplier rapidement.</div><div class="exp-analogy"><span class="analogy-icon">📢</span><span class="analogy-text">Les réseaux sociaux, c'est votre mégaphone de marque. Un contenu authentique (vidéos d'usine, installations) crée de la confiance bien avant que le prospect visite votre site.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">TikTok &amp; YouTube</div><div class="exp-abbr">VIDEO CONTENT</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">Opportunité forte</div></div><div class="exp-desc">La vidéo est le format le plus consommé en 2026. TikTok touche les 25-40 ans — la cible principale des acheteurs solaires. YouTube génère du trafic SEO durable.</div><div class="exp-impact"><strong>Impact concret :</strong> Une vidéo "Comment nos panneaux solaires sont fabriqués en Belgique" peut générer des milliers de vues organiques et des leads qualifiés — sans budget pub.</div><div class="exp-analogy"><span class="analogy-icon">🎬</span><span class="analogy-text">Une vidéo d'usine Made in Belgium vaut mille pages produit. Les gens achètent à des humains, pas à des logos — la vidéo crée ce lien mieux que tout autre format.</span></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">Une réputation solide, une présence à amplifier</div><div class="blue-box-desc">Belga Solar part d'une excellente base — 4,9★, fiche GMB complète, 3 réseaux actifs. L'enjeu : <strong style="color:#fff">posts GMB réguliers, stratégie vidéo YouTube &amp; TikTok, et activation de la certification B Corp</strong> comme argument différenciant sur tous les canaux.</div></div></div>
+</div>
+</section>
+
+<!-- OPPORTUNITÉS -->
+<section id="opps" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309;border:1px solid #fabd0540">🎯 Opportunités Prioritaires</div>
+  <h2 class="slide-h1">Top 5 axes d'action</h2>
+  <p class="slide-sub">Classés par impact potentiel sur l'efficacité digitale de Belga Solar</p>
+  <div class="opp-card"><div class="opp-num" style="background:#fa3b2e">01</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Corriger le CLS mobile (0,63 → &lt; 0,1)</div><span class="impact-badge" style="background:#ffecec;color:#fa3b2e">Impact immédiat</span></div><div class="opp-desc">Optimiser la vidéo hero (lazy load, poster image statique), stabiliser la mise en page au chargement. Impact direct sur le ranking Google et l'expérience mobile — où 65% du trafic se joue.</div><div class="opp-tags"><span class="opp-tag" style="background:#ffecec;color:#fa3b2e">Technique</span><span class="opp-tag" style="background:#f1f3f5;color:#666">2-4 semaines</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#1c2b96">02</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Conquérir les requêtes SEO génériques à fort volume</div><span class="impact-badge" style="background:#e8ecff;color:#1c2b96">+600 visites/mois</span></div><div class="opp-desc">"Panneaux solaires belgique" (1 300/mois), "installation solaire belgique" (880/mois) : créer des pages piliers et clusters de contenu. Potentiel de tripler le trafic organique en 12 mois.</div><div class="opp-tags"><span class="opp-tag" style="background:#e8ecff;color:#1c2b96">Contenu SEO</span><span class="opp-tag" style="background:#f1f3f5;color:#666">3-6 mois</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#2eb078">03</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Déployer une stratégie GEO / IA complète</div><span class="impact-badge" style="background:#e6f9f0;color:#2eb078">Avantage concurrentiel</span></div><div class="opp-desc">Schema.org enrichi, FAQ structurées, données chiffrées (CO₂, rendement, garantie). Belga Solar est idéalement positionné pour dominer les réponses IA sur le solaire belge en moins de 3 mois.</div><div class="opp-tags"><span class="opp-tag" style="background:#e6f9f0;color:#2eb078">GEO</span><span class="opp-tag" style="background:#f1f3f5;color:#666">1-3 mois</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fabd05">04</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title" style="color:#030505">Capitaliser sur la certification B Corp</div><span class="impact-badge" style="background:#fff8e0;color:#b45309">Notoriété &amp; backlinks</span></div><div class="opp-desc">Score 95,7 — exceptionnel dans le secteur. Créer du contenu dédié, viser des backlinks médias belges (Trends, L'Echo) et institutionnels. Fort potentiel de confiance et de différenciation B2B.</div><div class="opp-tags"><span class="opp-tag" style="background:#fff8e0;color:#b45309">Notoriété</span><span class="opp-tag" style="background:#f1f3f5;color:#666">Continu</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fa8fa3">05</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Activer TikTok &amp; optimiser YouTube SEO</div><span class="impact-badge" style="background:#fde8f0;color:#c2185b">Audience jeune</span></div><div class="opp-desc">Vidéos chantiers, usine, installation plug &amp; play — fort potentiel viral. YouTube optimisé génère du trafic SEO durable. TikTok cible les 25-40 ans, segment clé des acheteurs solaires résidentiels.</div><div class="opp-tags"><span class="opp-tag" style="background:#fde8f0;color:#c2185b">Vidéo &amp; Social</span><span class="opp-tag" style="background:#f1f3f5;color:#666">1-2 mois</span></div></div></div>
+</div>
+</section>
+
+<!-- CLOSING -->
+<section id="closing" class="closing-slide">
+  <div class="cover-bar">
+    <div class="cover-bar-seg" style="background:#fa3b2e"></div>
+    <div class="cover-bar-seg" style="background:#fabd05"></div>
+    <div class="cover-bar-seg" style="background:#fa8fa3"></div>
+    <div class="cover-bar-seg" style="background:#2eb078"></div>
+    <div class="cover-bar-seg" style="background:#1c2b96"></div>
+  </div>
+  <div class="closing-body">
+    <div class="closing-sub">Et si on développait</div>
+    <div class="closing-title">votre potentiel<br>digital ?</div>
+    <div class="closing-sep"></div>
+    <div class="closing-desc">Chez Poush, on ne fait pas d'audit pour faire de l'audit. On identifie ce qui freine votre <strong style="color:#ccc">efficacité</strong> en ligne — et on vous propose un plan d'action concret, réaliste, adapté à votre secteur et à vos ambitions.</div>
+    <div class="closing-services">
+      <div class="closing-svc"><div class="closing-svc-icon">📈</div><div class="closing-svc-name">Stratégie &amp; audit digital de performances</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🔄</div><div class="closing-svc-name">Optimisation continue &amp; reporting SEO / GEO</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🌐</div><div class="closing-svc-name">Refonte de site web</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">📱</div><div class="closing-svc-name">Community Management</div></div>
+    </div>
+    <div class="closing-baseline">Développeurs de votre potentiel</div>
+    <div class="closing-contact">
+      <strong>Michael</strong> · michael@poush.be · www.poush.be · +32 (0)486 892 956<br>
+      Rue de la Croix Limont 11, B-5590 Ciney
+    </div>
+  </div>
+</section>
+
+</main>
+<script>
+const sections=document.querySelectorAll("section[id]");
+const pills=document.querySelectorAll(".nav-pill");
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove("active"));const a=document.querySelector(`.nav-pill[href="#${e.target.id}"]`);if(a){a.classList.add("active");a.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});}}});},{threshold:0.3});
+sections.forEach(s=>obs.observe(s));
+</script>
+
+</body></html>
