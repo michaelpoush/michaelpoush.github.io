@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#keywords -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>État des Lieux Digital — Advista · Poush</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+:root{--black:#030505;--blue:#1c2b96;--yellow:#fabd05;--red:#fa3b2e;--green:#2eb078;--pink:#fa8fa3;--gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#e9ecef;--gray-600:#6c757d;--orange:#f59e0b;--font:"DM Sans",sans-serif;--mono:"DM Mono",monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#111;color:var(--black)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px}
+.nav-brand{display:flex;align-items:center;gap:12px}.nav-dots{display:flex;gap:5px}.nav-dot{width:9px;height:9px;border-radius:50%}
+.nav-logo{color:#fff;font-size:17px;font-weight:700;letter-spacing:-.3px}.nav-divider{width:1px;height:20px;background:#333}.nav-title{color:var(--yellow);font-size:13px;font-weight:500}
+.nav-pills{display:flex;gap:4px;overflow-x:auto}.nav-pill{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;color:#888;cursor:pointer;white-space:nowrap;transition:all .15s;border:1px solid transparent;text-decoration:none}
+.nav-pill:hover,.nav-pill.active{color:#fff;background:#222;border-color:#333}
+main{padding-top:56px}.slide{min-height:100vh;position:relative;overflow:hidden}.slide-inner{max-width:1100px;margin:0 auto;padding:64px 40px;width:100%}
+.slide-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+.slide-h1{font-size:36px;font-weight:700;line-height:1.1;margin-bottom:8px}.slide-sub{font-size:15px;color:var(--gray-600);margin-bottom:32px}
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--gray-200);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-title{font-size:13px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gray-100)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gauge-label{font-size:11px;font-weight:600;color:#555;text-align:center;line-height:1.3}.gauge-status{font-size:10px;font-weight:700;letter-spacing:.5px;text-align:center}
+.alert-box{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:14px 16px;margin-bottom:20px}
+.metric-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:8px;margin-bottom:5px}
+.metric-name{font-size:12px;font-weight:500;color:#444;display:flex;align-items:center;gap:8px}.metric-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.metric-val{font-size:12px;font-weight:700;font-family:var(--mono)}.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.kpi-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px;text-align:center}
+.kpi-val{font-size:40px;font-weight:800;line-height:1;margin-bottom:4px}.kpi-label{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.4px}.kpi-sub{font-size:11px;color:#aaa;margin-top:4px}
+.badge-inline{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-top:8px}
+.prog-wrap{margin-bottom:12px}.prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-label{font-size:11px;font-weight:600;color:#555}.prog-val{font-size:11px;font-weight:700;font-family:var(--mono)}
+.prog-track{height:7px;background:var(--gray-100);border-radius:4px;overflow:hidden}.prog-fill{height:100%;border-radius:4px}
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:4px;background:#f8f9fa}
+.bl-domain{font-size:12px;color:#444;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.tf-badge{padding:3px 9px;border-radius:12px;font-size:11px;font-weight:800;font-family:var(--mono);flex-shrink:0;margin-left:8px}
+.bar-chart{position:relative;height:130px;display:flex;align-items:flex-end;gap:2px;padding-bottom:20px;padding-left:32px}
+.bar-item{flex:1;border-radius:3px 3px 0 0}.axis-y{position:absolute;left:0;top:0;bottom:20px;display:flex;flex-direction:column;justify-content:space-between}
+.axis-label{font-size:9px;color:#ccc;font-family:var(--mono)}.axis-x{display:flex;justify-content:space-between;padding-left:32px;margin-top:4px}.axis-x span{font-size:9px;color:#bbb}
+.grid-line{position:absolute;left:32px;right:0;height:1px;background:#f1f3f5}
+.legend-row{display:flex;gap:12px;margin-top:10px}.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#888}.leg-dot{width:10px;height:10px;border-radius:2px}
+.ux-item{display:flex;gap:14px;padding:16px 18px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);margin-bottom:10px}
+.ux-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:1px}
+.ux-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px}.ux-desc{font-size:12px;color:#666;line-height:1.6}
+.ux-tag{display:inline-flex;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-top:6px}
+.geo-card{background:#fff;border-radius:12px;padding:18px;position:relative;overflow:hidden;border:1px solid var(--gray-200)}
+.geo-bar{position:absolute;top:0;left:0;right:0;height:3px}.geo-platform{font-size:15px;font-weight:800;color:var(--black);margin-bottom:6px;margin-top:4px}
+.geo-status{font-size:13px;font-weight:700;margin-bottom:10px}.geo-desc{font-size:12px;color:#666;line-height:1.6}
+.social-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;margin-bottom:6px}
+.s-left{display:flex;align-items:center;gap:10px}.s-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.s-name{font-size:13px;font-weight:700;color:var(--black)}.s-stats{font-size:11px;color:#888;margin-top:1px}
+.opp-card{display:flex;gap:16px;padding:18px;background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 1px 4px rgba(0,0,0,.04);margin-bottom:12px}
+.opp-num{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.opp-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:5px}.opp-desc{font-size:12px;color:#666;line-height:1.6}
+.opp-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.opp-tag{padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700}
+.impact-badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0;align-self:flex-start}
+.blue-box{background:var(--blue);border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;margin-top:16px}
+.blue-box-title{font-size:13px;font-weight:800;color:var(--yellow);margin-bottom:6px}.blue-box-desc{font-size:12px;color:#ccc;line-height:1.7}
+.explainer-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px}
+.exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.exp-name{font-size:14px;font-weight:800;color:var(--black)}.exp-abbr{font-size:11px;font-weight:600;color:#888;margin-top:2px;font-family:var(--mono)}
+.exp-badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.exp-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:10px}
+.exp-impact{font-size:12px;color:#444;line-height:1.5;background:var(--gray-50);border-radius:8px;padding:10px 12px;border-left:3px solid var(--gray-200)}
+.exp-analogy{background:var(--gray-50);border-radius:10px;padding:12px;margin-top:10px;display:flex;gap:10px;align-items:flex-start}
+.analogy-icon{font-size:18px;flex-shrink:0}.analogy-text{font-size:12px;color:#666;line-height:1.6;font-style:italic}
+.exp-scale{display:flex;gap:4px;margin-top:10px}.exp-scale-item{flex:1;border-radius:4px;padding:4px 6px;text-align:center;font-size:10px;font-weight:700}
+.slide-explain-tag{display:inline-flex;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:#fff8e0;color:#b45309;margin-bottom:12px}
+.cover-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.cover-bar{width:8px;display:flex;flex-direction:column;flex-shrink:0}.cover-bar-seg{flex:1}
+.cover-body{padding:80px 60px;flex:1}
+.cover-eyebrow{font-size:11px;font-weight:700;color:var(--yellow);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.cover-name{font-size:68px;font-weight:800;line-height:.9;color:#fff;margin-bottom:10px}
+.cover-url{font-family:var(--mono);font-size:16px;color:#555;margin-bottom:36px}
+.cover-line{width:70px;height:3px;background:var(--yellow);margin-bottom:24px}
+.cover-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
+.cover-pill{padding:6px 16px;border:1px solid #333;border-radius:20px;font-size:13px;font-weight:500;color:#ccc}
+.cover-meta{font-size:12px;color:#444}
+.closing-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.closing-body{padding:80px 60px;flex:1}
+.closing-sub{font-size:24px;color:#555;font-weight:300;margin-bottom:8px}
+.closing-title{font-size:56px;font-weight:800;color:#fff;line-height:.92;margin-bottom:20px}
+.closing-sep{width:70px;height:3px;background:var(--yellow);margin-bottom:28px}
+.closing-desc{font-size:14px;color:#999;max-width:560px;line-height:1.8;margin-bottom:36px}
+.closing-services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+.closing-svc{background:#111;border:1px solid #222;border-radius:12px;padding:16px}
+.closing-svc-icon{font-size:22px;margin-bottom:8px}.closing-svc-name{font-size:12px;font-weight:700;color:#fff;line-height:1.4}
+.closing-baseline{font-size:18px;font-weight:800;color:var(--yellow);margin-bottom:12px}
+.closing-contact{font-size:12px;color:#444;line-height:1.9}.closing-contact strong{color:#888}
+.bg-white{background:#fff}.bg-light{background:var(--gray-50)}
+.missing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mkw{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 12px}
+.mkw-name{font-size:12px;font-weight:600;color:#444;margin-bottom:4px}.mkw-vol{font-size:11px;color:#888;font-family:var(--mono)}
+.mkw-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;margin-top:4px}
+</style></head>
+<body>
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dots">
+      <div class="nav-dot" style="background:#fa3b2e"></div>
+      <div class="nav-dot" style="background:#fabd05"></div>
+      <div class="nav-dot" style="background:#fa8fa3"></div>
+      <div class="nav-dot" style="background:#2eb078"></div>
+      <div class="nav-dot" style="background:#1c2b96"></div>
+    </div>
+    <span class="nav-logo">poush</span>
+    <div class="nav-divider"></div>
+    <span class="nav-title">État des Lieux Digital — Advista</span>
+  </div>
+  <div class="nav-pills">
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#cover">Cover</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#perf">Performances</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#config">Config. Technique</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#autorite">Autorité SEO</a>
+    <a class="nav-pill active" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#trafic">Trafic</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#keywords">Mots-clés</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#ux">UX</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#geo">GEO / IA</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#gmb">GMB &amp; Social</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#opps">Opportunités</a>
+    <a class="nav-pill" href="file:///Users/michaeldebecker/Downloads/Advista_Poush_v1_1.html#closing">Poush</a>
+  </div>
+</nav><main>
+<section id="cover" class="cover-slide">
+  <div class="cover-bar">
+    <div class="cover-bar-seg" style="background:#fa3b2e"></div>
+    <div class="cover-bar-seg" style="background:#fabd05"></div>
+    <div class="cover-bar-seg" style="background:#fa8fa3"></div>
+    <div class="cover-bar-seg" style="background:#2eb078"></div>
+    <div class="cover-bar-seg" style="background:#1c2b96"></div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">État des lieux digital · Mai 2026</div>
+    <div class="cover-name">Advista</div>
+    <div class="cover-url">www.advista.be</div>
+    <div class="cover-line"></div>
+    <div style="font-size:14px;color:#888;margin-bottom:10px">Une analyse complète de votre écosystème digital :</div>
+    <div class="cover-pills">
+      <span class="cover-pill">🌐 Site Web</span>
+      <span class="cover-pill">🔍 SEO</span>
+      <span class="cover-pill">🤖 GEO / IA</span>
+      <span class="cover-pill">📍 Google My Business</span>
+      <span class="cover-pill">📱 Réseaux Sociaux</span>
+    </div>
+    <div class="cover-meta">Préparé par Poush · michael@poush.be · +32 (0)486 892 956</div>
+  </div>
+  <div style="position:absolute;right:60px;bottom:80px;display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="background:#1c2b96;border-radius:12px;padding:16px 20px;text-align:center">
+      <div style="font-size:11px;font-weight:700;color:#fabd05;letter-spacing:1px;margin-bottom:6px">SECTEUR</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.4">Bureau d'études<br>&amp; conseils</div>
+      <div style="font-size:11px;color:#888;margin-top:6px">Environnement · Wallonie &amp; BXL 🇧🇪</div>
+    </div>
+  </div>
+</section><section id="perf" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff0ee;color:#fa3b2e">⚡ Performances &amp; Core Web Vitals</div>
+  <h2 class="slide-h1">Rapport PageSpeed Insights</h2>
+  <p class="slide-sub">Rapport du 27 mai 2026 · advista.be</p>
+  <div class="alert-box" style="background:#fff0ee;border:1px solid #fca59e;margin-bottom:28px">
+    <span style="font-size:18px;flex-shrink:0">🚨</span>
+    <div><div style="font-size:14px;font-weight:700;color:#c0392b">Performances critiques — Mobile 50/100 · TBT Desktop 1 210ms</div>
+    <div style="font-size:13px;color:#999;margin-top:2px">Le site est lourd et lent, particulièrement sur mobile. Le Total Blocking Time desktop (1 210ms) est 6× au-dessus du seuil acceptable.</div></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:24px">
+    <div class="card"><div class="card-title">📱 Mobile</div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#fa3b2e" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="100" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#fa3b2e" font-family="sans-serif">50</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#fa3b2e">FAIBLE</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="28" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">86</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+    <div class="card"><div class="card-title">🖥️ Desktop</div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="88" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">56</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="28" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">86</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title" style="margin-bottom:16px">📱 Core Web Vitals — Mobile</div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>FCP — First Contentful Paint</div><span class="metric-val" style="color:#fa3b2e">4,2 s ✗</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>LCP — Largest Contentful Paint</div><span class="metric-val" style="color:#fa3b2e">7,7 s ✗ CRITIQUE</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>TBT — Total Blocking Time</div><span class="metric-val" style="color:#fa3b2e">490 ms ✗</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>CLS — Cumulative Layout Shift</div><span class="metric-val" style="color:#2eb078">0 ✓</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>SI — Speed Index</div><span class="metric-val" style="color:#fa3b2e">5,8 s ✗</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="margin-bottom:16px">🖥️ Core Web Vitals — Desktop</div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>FCP — First Contentful Paint</div><span class="metric-val" style="color:#f59e0b">1,0 s ⚠</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>LCP — Largest Contentful Paint</div><span class="metric-val" style="color:#f59e0b">1,7 s ⚠</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>TBT — Total Blocking Time</div><span class="metric-val" style="color:#fa3b2e">1 210 ms ✗ CRITIQUE</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>CLS — Cumulative Layout Shift</div><span class="metric-val" style="color:#2eb078">0,002 ✓</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>SI — Speed Index</div><span class="metric-val" style="color:#f59e0b">2,8 s ⚠</span></div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèlent ces scores</h2>
+  <p class="slide-sub">PageSpeed Insights simule une visite réelle sur votre site — et évalue l'expérience comme le ferait Google.</p>
+  <div class="grid-2">
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">LCP — 7,7 secondes mobile</div><div class="exp-abbr">LARGEST CONTENTFUL PAINT</div></div><div class="exp-badge" style="background:#ffecec;color:#fa3b2e">✗ Critique</div></div><div class="exp-desc">Le LCP mesure le temps avant que le contenu principal (image ou texte) apparaisse à l'écran. À 7,7s sur mobile, un visiteur attend près de 8 secondes avant de voir la page.</div><div class="exp-impact"><strong>Impact concret :</strong> 53% des utilisateurs mobiles quittent une page qui met plus de 3 secondes à charger. Avec un LCP de 7,7s, Advista perd potentiellement la moitié de ses visiteurs mobiles avant même qu'ils voient le contenu.</div><div class="exp-analogy"><span class="analogy-icon">⏱️</span><span class="analogy-text">C'est comme une réunion où le client attend debout dans le couloir pendant 8 secondes avant d'entrer. Beaucoup repartent avant même de s'asseoir.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">TBT — 1 210ms desktop</div><div class="exp-abbr">TOTAL BLOCKING TIME</div></div><div class="exp-badge" style="background:#ffecec;color:#fa3b2e">✗ 6× trop élevé</div></div><div class="exp-desc">Le TBT mesure combien de temps le navigateur est "bloqué" par des scripts JavaScript et ne peut pas répondre aux clics. 1 210ms = le site est figé pendant plus d'une seconde après le chargement.</div><div class="exp-impact"><strong>Impact concret :</strong> Un TBT de 1 210ms signifie que même sur ordinateur, l'utilisateur clique et rien ne se passe pendant 1 seconde. Seuil acceptable : 200ms. Le site est 6× au-dessus. Probable cause : scripts WPBakery + plugins WordPress non optimisés.</div><div class="exp-analogy"><span class="analogy-icon">🖱️</span><span class="analogy-text">Imaginez cliquer sur un bouton et attendre 1 seconde avant qu'il réagisse. Sur mobile c'est encore pire. C'est l'expérience actuelle des visiteurs d'Advista.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">Score Performances — 50 mobile</div><div class="exp-abbr">PERFORMANCE SCORE</div></div><div class="exp-badge" style="background:#ffecec;color:#fa3b2e">Faible</div></div><div class="exp-desc">Un score de 50 sur 100 place le site dans la zone rouge. Google pénalise directement les sites lents dans son classement de résultats de recherche.</div><div class="exp-impact"><strong>Impact concret :</strong> Pour un bureau d'études qui travaille avec des acteurs B2B exigeants (Befimmo, BNP, AXA…), un site lent envoie un signal négatif sur la qualité et le sérieux. C'est un paradoxe commercial.</div><div class="exp-analogy"><span class="analogy-icon">🏎️</span><span class="analogy-text">Un score de 50, c'est comme arriver à un rendez-vous client en retard de 8 minutes. Le contenu est excellent, mais la première impression est ratée.</span></div></div>
+    <div class="explainer-card"><div class="exp-top"><div><div class="exp-name">SEO &amp; Bonnes pratiques — 100</div><div class="exp-abbr">POINTS FORTS</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Parfaits</div></div><div class="exp-desc">Malgré les performances faibles, la structure technique SEO est parfaite. Les balises, la sécurité HTTPS et les bonnes pratiques web sont irréprochables.</div><div class="exp-impact"><strong>Impact concret :</strong> Le site est bien structuré pour Google — les bases sont saines. Le problème est uniquement lié à la vitesse de chargement, ce qui est corrigeable.</div><div class="exp-analogy"><span class="analogy-icon">✅</span><span class="analogy-text">Le moteur est bien configuré, les routes sont bien signalées — mais la voiture roule au ralenti. Un tuning ciblé suffit à corriger ça.</span></div></div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">La priorité absolue : réduire le LCP et le TBT</div><div class="blue-box-desc">Les deux problèmes ont la même cause probable : <strong style="color:#fff">trop de scripts JavaScript et d'images non optimisées</strong>. Un audit technique ciblé (optimisation images, lazy loading, réduction plugins WordPress) permettrait de passer le LCP sous 2,5s et le TBT sous 200ms en quelques semaines.</div></div></div>
+</div>
+</section><section id="config" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">⚙️ Configuration Technique</div>
+  <h2 class="slide-h1">Fondations techniques du site</h2>
+  <p class="slide-sub">Vérification des éléments clés · advista.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">🗺️ Indexation &amp; Structure</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>CMS</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">WordPress + WPBakery Page Builder</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Détecté</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>SEO Plugin</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">Yoast SEO — Sitemap XML actif</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Yoast</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Sitemap XML</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">advista.be/sitemap_index.xml — Référencé dans robots.txt</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Présent</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>HTTPS / SSL</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">100% des pages sécurisées</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Sécurisé</span></div>
+      <div class="metric-row" style="background:#fffbf0"><div><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Pages indexées (Majestic)</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">42 pages — faible pour un site avec autant de services</div></div><span class="status-badge" style="background:#fff8e0;color:#d97706;flex-shrink:0">⚠ Faible</span></div>
+    </div>
+    <div class="card"><div class="card-title">🤖 Accessibilité agents IA</div>
+      <div style="font-size:12px;color:#666;margin-bottom:14px;line-height:1.6">Le fichier robots.txt d'Advista a été analysé. Aucun agent n'est bloqué — mais aucune règle IA spécifique n'est configurée.</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>GPTBot (ChatGPT)</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Google-Extended (Gemini)</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>PerplexityBot</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Anthropic-AI (Claude)</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078;flex-shrink:0">✓ Autorisé</span></div>
+      <div style="margin-top:14px;background:#fffbf0;border:1px solid #fcd34d;border-radius:8px;padding:12px">
+        <div style="font-size:12px;font-weight:700;color:#92400e;margin-bottom:4px">⚠ Points à améliorer</div>
+        <div class="metric-row" style="background:#fff0ee;margin-bottom:5px"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>Schema.org / données structurées</div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">⚠ Non détecté</span></div>
+        <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>FAQ structurée pour les IA</div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">✗ Absent</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="autorite" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">📊 Autorité SEO</div>
+  <h2 class="slide-h1">Autorité &amp; Backlinks</h2>
+  <p class="slide-sub">Données SEObserver · Majestic · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">📊 Métriques d'autorité</div>
+      <div class="grid-2" style="margin-bottom:16px">
+        <div class="kpi-card"><div class="kpi-val" style="color:#f59e0b">6</div><div class="kpi-label">Trust Flow</div><div class="kpi-sub">Business/Associations</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:#1c2b96">11</div><div class="kpi-label">Citation Flow</div><div class="kpi-sub">Ratio TF/CF : 55%</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:#030505">27</div><div class="kpi-label">Domaines référents</div><div class="kpi-sub">84 pages référentes</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:#030505">42</div><div class="kpi-label">Pages indexées</div><div class="kpi-sub">Majestic</div></div>
+      </div>
+      <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:10px;padding:14px">
+        <div style="font-size:11px;font-weight:700;color:#c0392b;margin-bottom:8px">🚨 Alerte : 20 backlinks spam sur 26</div>
+        <div style="font-size:12px;color:#666;line-height:1.6">77% des backlinks détectés sont identifiés comme spam. Cela nuit à la crédibilité du profil et peut faire l'objet d'une pénalité Google. Une action de nettoyage (désaveu) est recommandée.</div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title">🔗 Top backlinks — Trust Flow</div>
+      <div class="bl-row"><span class="bl-domain">economie.fgov.be</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 15</span></div>
+      <div class="bl-row"><span class="bl-domain">expertalia.be</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 9</span></div>
+      <div class="bl-row"><span class="bl-domain">architectura.be</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 8</span></div>
+      <div class="bl-row"><span class="bl-domain">bhc.be (BHC/Odoo)</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 7</span></div>
+      <div class="bl-row"><span class="bl-domain">aktus-cci.be</span><span class="tf-badge" style="background:#f59e0b;color:#fff">TF 5</span></div>
+      <div class="bl-row"><span class="bl-domain">dds.plus</span><span class="tf-badge" style="background:#aaa;color:#fff">TF 0</span></div>
+      <div style="margin-top:12px;background:#fff0ee;border-radius:8px;padding:10px 12px;font-size:11px;color:#c0392b">
+        ⚠️ <strong>20/26 backlinks marqués spam</strong> — présence de domaines toxiques (newsblogsports.site, knows.monster, seodomains.website). Désaveu recommandé via Google Search Console.
+      </div>
+      <div class="blue-box" style="margin-top:12px"><div style="font-size:16px;flex-shrink:0">💡</div><div><div class="blue-box-title" style="font-size:11px">Potentiel</div><div style="font-size:11px;color:#ccc;line-height:1.5">Avec un TF de 6, Advista a une base à construire. Des backlinks depuis Bruxelles Environnement, IBGE, clusters wallons et presse éco pourraient porter le TF à 20+ en 12 mois.</div></div></div>
+    </div>
+  </div>
+</div>
+</section><section id="trafic" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📈 Trafic Organique</div>
+  <h2 class="slide-h1">Évolution &amp; Tendances</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · 2024 → Mai 2026</p>
+  <div class="grid-3" style="margin-bottom:24px">
+    <div class="kpi-card" style="border-top:3px solid #fa3b2e">
+      <div class="kpi-val" style="color:#fa3b2e">~2</div>
+      <div class="kpi-label">Trafic mensuel estimé</div>
+      <div class="kpi-sub">visites / mois · SEMrush</div>
+      <div class="badge-inline" style="background:#ffecec;color:#fa3b2e">⚠ Quasi inexistant</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #f59e0b">
+      <div class="kpi-val" style="color:#f59e0b">~5</div>
+      <div class="kpi-label">Mots-clés positionnés</div>
+      <div class="kpi-sub">estimé · très limité</div>
+      <div class="badge-inline" style="background:#fff8e0;color:#d97706">Quasi absent</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #1c2b96">
+      <div class="kpi-val" style="color:#1c2b96">42</div>
+      <div class="kpi-label">Pages indexées</div>
+      <div class="kpi-sub">Majestic · faible volume</div>
+      <div class="badge-inline" style="background:#e8ecff;color:#1c2b96">À développer</div>
+    </div>
+  </div>
+  <div class="card" style="padding:24px;margin-bottom:16px">
+    <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:14px">Historique trafic SEMrush · 2024 → Mai 2026</div>
+    <div style="position:relative">
+      <div style="position:absolute;left:32px;right:0;top:0;bottom:20px"><div class="grid-line" style="top:0%"></div><div class="grid-line" style="top:50%"></div></div>
+      <div class="axis-y"><span class="axis-label">3</span><span class="axis-label">1</span><span class="axis-label">0</span></div>
+      <div class="bar-chart"><div class="bar-item" style="height:30%;background:#bfdbfe"></div><div class="bar-item" style="height:28%;background:#bfdbfe"></div><div class="bar-item" style="height:32%;background:#93c5fd"></div><div class="bar-item" style="height:35%;background:#93c5fd"></div><div class="bar-item" style="height:30%;background:#bfdbfe"></div><div class="bar-item" style="height:28%;background:#bfdbfe"></div><div class="bar-item" style="height:32%;background:#93c5fd"></div><div class="bar-item" style="height:38%;background:#60a5fa"></div><div class="bar-item" style="height:42%;background:#3b82f6"></div><div class="bar-item" style="height:50%;background:#2563eb"></div><div class="bar-item" style="height:45%;background:#3b82f6"></div><div class="bar-item" style="height:48%;background:#3b82f6"></div><div class="bar-item" style="height:100%;background:#fa3b2e"></div><div class="bar-item" style="height:80%;background:#1c2b96"></div><div class="bar-item" style="height:70%;background:#2563eb"></div><div class="bar-item" style="height:55%;background:#3b82f6"></div><div class="bar-item" style="height:45%;background:#93c5fd"></div><div class="bar-item" style="height:40%;background:#93c5fd"></div><div class="bar-item" style="height:45%;background:#3b82f6"></div><div class="bar-item" style="height:60%;background:#2563eb"></div><div class="bar-item" style="height:55%;background:#3b82f6"></div><div class="bar-item" style="height:45%;background:#3b82f6"></div><div class="bar-item" style="height:35%;background:#93c5fd"></div><div class="bar-item" style="height:30%;background:#93c5fd"></div><div class="bar-item" style="height:38%;background:#3b82f6"></div><div class="bar-item" style="height:40%;background:#fabd05"></div></div>
+      <div class="axis-x"><span>Avr.24</span><span>Oct.24</span><span>Avr.25</span><span>Oct.25</span><span>Mai 26</span></div>
+    </div>
+    <div class="legend-row">
+      <div class="leg-item"><div class="leg-dot" style="background:#fa3b2e"></div>Pic ~2025</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fabd05"></div>Actuel (~2/mois)</div>
+    </div>
+  </div>
+  <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:10px;padding:16px;display:flex;gap:12px">
+    <span style="font-size:20px;flex-shrink:0">🚨</span>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#c0392b;margin-bottom:6px">Trafic organique quasi inexistant — opportunité massive</div>
+      <div style="font-size:12px;color:#888;line-height:1.6">Avec ~2 visites/mois via Google, advista.be est pratiquement invisible dans les résultats de recherche. Des requêtes comme "permis environnement Wallonie" (880/mois), "bureau études environnement belgique" (320/mois) ou "évaluation incidences Bruxelles" (210/mois) représentent des dizaines de prospects qualifiés par mois — entièrement manqués aujourd'hui.</div>
+    </div>
+  </div>
+</div>
+</section><section id="keywords" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔑 Positionnements SEMrush</div>
+  <h2 class="slide-h1">Top positions Google — Mots-clés</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · Mai 2026 · 28 mots-clés positionnés au total</p>
+  <div class="alert-box" style="background:#fffbf0;border:1px solid #fcd34d;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">⚠️</span>
+    <div><div style="font-size:13px;font-weight:700;color:#92400e">Aucun mot-clé en TOP 3 — visibilité organique très limitée</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">28 mots-clés positionnés mais concentrés entre les positions 9 et 78. Le seul mot-clé qui génère du trafic réel est "toits végétalisés" (pos. 9).</div></div>
+  </div>
+  <div style="background:#fff;border:1px solid #e9ecef;border-radius:12px;overflow:hidden">
+    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;background:#1c2b96;padding:10px 16px;gap:8px">
+      <div style="font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">Mot-clé</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase;letter-spacing:.5px">Position</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase;letter-spacing:.5px">Volume/mois</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase;letter-spacing:.5px">CPC</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">Page positionnée</div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">toits végétalisés</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">9</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">210</div>
+      <div style="font-size:12px;text-align:center;color:#888">1.34€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/avantages-toitures-vegetalisees/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">permis d'environnement</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">12</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">390</div>
+      <div style="font-size:12px;text-align:center;color:#888">0.42€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/permis-environnement-wallonie/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">rubrique permis d'environnement</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">14</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">170</div>
+      <div style="font-size:12px;text-align:center;color:#888">-</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/permis-environnement-wallonie/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">cobrace</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">15</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">210</div>
+      <div style="font-size:12px;text-align:center;color:#888">-</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/evaluation-stationnement-cobrace/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">meilleure technique disponible</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">15</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">110</div>
+      <div style="font-size:12px;text-align:center;color:#888">-</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/directive-ied-publication-de-concl.../</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">rubrique permis d'environnement</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">19</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">320</div>
+      <div style="font-size:12px;text-align:center;color:#888">-</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/permis-environnement-wallonie/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">cobrace</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">22</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">210</div>
+      <div style="font-size:12px;text-align:center;color:#888">-</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/services/permis-evaluation-des-inc.../</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">incidences</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">22</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">320</div>
+      <div style="font-size:12px;text-align:center;color:#888">-</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/services/permis-evaluation-des-inc.../</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">meilleure technique disponible</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">21</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">110</div>
+      <div style="font-size:12px;text-align:center;color:#888">-</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/services/permis-evaluation-des-inc.../</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">permis unique wallonie</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">28</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">170</div>
+      <div style="font-size:12px;text-align:center;color:#888">2.13€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/permis-environnement-wallonie/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">permis d'environnement</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">33</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">260</div>
+      <div style="font-size:12px;text-align:center;color:#888">0.42€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/permis-environnement-wallonie/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">meilleure technique disponible</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">36</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">110</div>
+      <div style="font-size:12px;text-align:center;color:#888">-</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/services/permis-evaluation-des-inc.../</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">toiture végétalisée</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">38</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">260</div>
+      <div style="font-size:12px;text-align:center;color:#888">1.34€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/avantages-toitures-vegetalisees/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">toiture végétale</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">40</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">110</div>
+      <div style="font-size:12px;text-align:center;color:#888">1.34€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/avantages-toitures-vegetalisees/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">permis d'environnement</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">41</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">390</div>
+      <div style="font-size:12px;text-align:center;color:#888">0.42€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/services/permis-evaluation-des-inc.../</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">permis d'environnement</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">44</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">260</div>
+      <div style="font-size:12px;text-align:center;color:#888">0.42€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/services/permis-evaluation-des-inc.../</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">permis d'environnement</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">51</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">390</div>
+      <div style="font-size:12px;text-align:center;color:#888">0.42€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/permis-denvironnement-a-bruxelles.../</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">permis d'environnement classe 3</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">51</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">170</div>
+      <div style="font-size:12px;text-align:center;color:#888">0.50€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/permis-environnement-wallonie/</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff">
+      <div style="font-size:12px;font-weight:600;color:#030505">permis d'environnement</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">51</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">260</div>
+      <div style="font-size:12px;text-align:center;color:#888">0.42€</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/permis-evaluation-des-inc.../</div>
+    </div>    <div style="display:grid;grid-template-columns:2fr 80px 90px 80px 180px;padding:9px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa">
+      <div style="font-size:12px;font-weight:600;color:#030505">zone natura 2000</div>
+      <div style="text-align:center"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">58</span></div>
+      <div style="font-size:12px;text-align:center;color:#444;font-family:monospace">170</div>
+      <div style="font-size:12px;text-align:center;color:#888">-</div>
+      <div style="font-size:11px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">/services/permis-evaluation-des-inc.../</div>
+    </div>
+  </div>
+  <div style="margin-top:12px;font-size:11px;color:#aaa;text-align:right">Source : SEMrush via SEObserver · 28 mots-clés positionnés au total · Données Belgique 🇧🇪</div>
+</div>
+</section>
+<section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les données</div>
+  <h2 class="slide-h1">Ce que révèlent ces positions</h2>
+  <p class="slide-sub">28 mots-clés positionnés — mais une visibilité réelle quasi nulle</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Position 9 sur "toits végétalisés"</div><div class="exp-abbr">SEUL MOT-CLÉ QUI GÉNÈRE DU TRAFIC</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Top 10</div></div>
+      <div class="exp-desc">Seul mot-clé en top 10, il représente 100% du trafic organique estimé d'Advista. L'article sur les toitures végétalisées est le seul contenu vraiment visible sur Google.</div>
+      <div class="exp-impact"><strong>Impact :</strong> Un article de blog périphérique (pas un service core d'Advista) est la seule porte d'entrée organique. Les services principaux — permis d'environnement, EIE, BREEAM — sont quasi invisibles.</div>
+      <div class="exp-analogy"><span class="analogy-icon">🪴</span><span class="analogy-text">C'est comme si un cabinet d'avocats spécialisé en droit des affaires n'était trouvable sur Google que via un article sur les plantes de bureau.</span></div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Permis d'environnement — positions 12 à 58</div><div class="exp-abbr">SERVICE CLÉ MAL POSITIONNÉ</div></div><div class="exp-badge" style="background:#ffecec;color:#fa3b2e">✗ Hors top 10</div></div>
+      <div class="exp-desc">"Permis d'environnement" (390 recherches/mois) est le terme le plus recherché dans le secteur d'Advista. Avec des positions entre 12 et 58, le site génère zéro trafic sur ce terme crucial.</div>
+      <div class="exp-impact"><strong>Impact :</strong> 390 prospects/mois cherchent "permis d'environnement" en Belgique. Avec une position 12, CTR estimé à 1% max = 4 visiteurs/mois au mieux. En position 1, ce serait 40+ visiteurs qualifiés.</div>
+      <div class="exp-analogy"><span class="analogy-icon">🎯</span><span class="analogy-text">Être en position 12 sur "permis d'environnement", c'est tenir un stand sur la page 2 d'une foire commerciale — les acheteurs ne passent jamais par là.</span></div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Opportunité : requêtes réglementaires non exploitées</div><div class="exp-abbr">POTENTIEL × 10 TRAFIC</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 Opportunité</div></div>
+      <div class="exp-desc">Des requêtes comme "permis unique wallonie" (170/mois, pos. 28), "cobrace" (210/mois, pos. 15), "évaluation incidences" (320/mois, pos. 22) sont à portée de main avec un travail SEO ciblé.</div>
+      <div class="exp-impact"><strong>Potentiel :</strong> En optimisant 5 pages de services avec du contenu structuré, du maillage interne et des backlinks sectoriels, Advista pourrait réalistement passer à 100+ visites/mois en 12 mois.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Aucun mot-clé en TOP 3</div><div class="exp-abbr">ZONE DE VISIBILITÉ RÉELLE</div></div><div class="exp-badge" style="background:#ffecec;color:#fa3b2e">✗ Absent</div></div>
+      <div class="exp-desc">Sur Google, les positions 1-3 captent 60% des clics. Les positions 4-10 captent 30%. Au-delà de la position 10 (page 2), le CTR tombe sous 1%. Advista n'a aucun mot-clé dans cette zone de visibilité réelle.</div>
+      <div class="exp-impact"><strong>Conclusion :</strong> Le site existe techniquement sur Google mais est pratiquement invisible pour les prospects qui cherchent les services d'Advista. C'est la conséquence directe d'une absence de stratégie SEO contenus.</div>
+      <div class="exp-analogy"><span class="analogy-icon">👁️</span><span class="analogy-text">Être en page 2 de Google, c'est être le meilleur bureau d'études de Wallonie mais avec un bureau sans enseigne dans une ruelle sans passage.</span></div>
+    </div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">La stratégie à mettre en place</div><div class="blue-box-desc">Créer des pages piliers optimisées sur les services clés (permis d'environnement, EIE, BREEAM, REACH) avec du contenu expert + FAQ structurée. Objectif : top 5 sur "permis d'environnement wallonie" en 12 mois = +40 visiteurs qualifiés/mois sur ce seul terme.</div></div></div>
+</div>
+</section>
+<section id="ux" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fde8f0;color:#c2185b">🎨 Analyse UX Heuristique</div>
+  <h2 class="slide-h1">Audit du site web</h2>
+  <p class="slide-sub">Analyse heuristique réalisée en direct · advista.be · Mai 2026</p>
+  <div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Design premium &amp; identité forte</div><div class="ux-desc">Le site réalisé par Poush a une identité visuelle haut de gamme — design sombre, photo aérienne de Louvain-la-Neuve, couleur orange distinctive. Il inspire confiance et professionnalisme dès le premier coup d'œil, cohérent avec une clientèle B2B exigeante.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Point fort</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Témoignages clients de poids</div><div class="ux-desc">Les références (Befimmo, BNP Paribas, AXA, Veolia, Delacre, SWDE, Cofinimmo, Besix...) sont mises en avant avec témoignages détaillés. C'est un excellent levier de conversion B2B — la preuve sociale est forte et crédible.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Point fort</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Navigation claire &amp; services bien structurés</div><div class="ux-desc">Le menu déroulant "Nos services" est bien organisé avec sous-catégories. Un visiteur B2B trouve rapidement le service qui le concerne (permis, BREEAM, REACH, Seveso...). CTA "Découvrez nos services" bien placé.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Point fort</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #fa3b2e"><div class="ux-icon" style="background:#fff0ee;color:#fa3b2e">✗</div><div><div class="ux-title">Vitesse catastrophique — paradoxe crédibilité</div><div class="ux-desc">Un LCP de 7,7s et un TBT de 1 210ms créent une expérience frustrante. Pour un bureau d'études rigoureux qui travaille avec Befimmo et BNP, un site aussi lent envoie un signal contraire à la qualité vendue. Les prospects les plus exigeants techniquement peuvent y voir un manque d'attention au détail.</div><div class="ux-tag" style="background:#ffecec;color:#fa3b2e">Critique</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">Blog actif mais peu optimisé SEO</div><div class="ux-desc">Le blog contient des articles pertinents (permis d'environnement, toitures végétalisées, Directive IED...) mais ils ne semblent pas optimisés pour les requêtes commerciales à fort volume. Les titres sont informatifs mais pas structurés pour capter du trafic organique.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">À optimiser</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">Absence de formulaire qualifiant</div><div class="ux-desc">Le formulaire de contact est basique (nom, email, message). Pour une agence avec des services très spécialisés, un formulaire qui qualifie (type de projet, région, secteur d'activité) permettrait de filtrer les leads et de gagner du temps commercial.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">Opportunité</div></div></div>
+</div>
+</section><section id="geo" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fabd0520;color:#b45309;border:1px solid #fabd0540">🤖 Visibilité GEO / IA</div>
+  <h2 class="slide-h1">Présence dans les IA génératives</h2>
+  <p class="slide-sub">Analyse réalisée en mai 2026 · Requêtes testées :</p>
+  <div style="font-size:11px;color:#aaa;margin-bottom:24px;font-family:var(--mono);background:#f8f9fa;border:1px solid #e9ecef;border-radius:8px;padding:10px 14px">"bureau études environnement belgique" · "permis environnement Wallonie" · "évaluation incidences Bruxelles" · "Advista"</div>
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">ChatGPT</div><div class="geo-status" style="color:#fa3b2e">✗ Absent</div><div class="geo-desc">Advista n'est pas cité dans les réponses sur les bureaux d'études environnementaux en Belgique. Même sur la requête de marque "Advista", les résultats pointent vers d'autres entités.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">Gemini (Google)</div><div class="geo-status" style="color:#fa3b2e">✗ Quasi absent</div><div class="geo-desc">Très peu visible malgré la présence sur economie.fgov.be et architectura.be. Sans Schema.org et FAQ structurée, Gemini ne peut pas citer Advista comme référence sectorielle.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">Perplexity</div><div class="geo-status" style="color:#fa3b2e">✗ Absent</div><div class="geo-desc">Aucune citation détectée sur les requêtes environnementales belges. Perplexity cite des acteurs plus établis avec plus de contenu structuré.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">Copilot (Microsoft)</div><div class="geo-status" style="color:#fa3b2e">✗ Absent</div><div class="geo-desc">Invisible sur toutes les requêtes commerciales. Le manque de données structurées et de contenus FAQ pénalise la visibilité dans les IA génératives.</div></div>
+  </div>
+  <div style="background:#e8f8f0;border:1px solid #2eb07840;border-radius:12px;padding:18px;display:flex;gap:12px;align-items:flex-start">
+    <span style="font-size:20px;flex-shrink:0">💡</span>
+    <div>
+      <div style="font-size:13px;font-weight:800;color:#2eb078;margin-bottom:6px">Une niche GEO peu concurrentielle — fenêtre d'opportunité</div>
+      <div style="font-size:12px;color:#444;line-height:1.6">Le secteur des bureaux d'études environnementaux en Belgique est encore peu structuré dans les IA. Les agents sont déjà autorisés (robots.txt ouvert). Avec des FAQ structurées sur les permis d'environnement, l'EIE et la certification BREEAM, Advista pourrait rapidement s'imposer comme référence citée par ChatGPT et Gemini sur son segment.</div>
+    </div>
+  </div>
+</div>
+</section><section id="gmb" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📍 GMB &amp; Réseaux Sociaux</div>
+  <h2 class="slide-h1">Présence locale &amp; sociale</h2>
+  <p class="slide-sub">Analyse réalisée en direct · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">📍 Google My Business</div>
+      <div class="grid-2" style="margin-bottom:16px">
+        <div class="kpi-card" style="border-top:3px solid #2eb078"><div style="font-size:16px;color:#fabd05;margin-bottom:4px">★★★★★</div><div class="kpi-val" style="color:#2eb078">5,0</div><div class="kpi-label">Note moyenne</div><div class="kpi-sub">sur 5</div></div>
+        <div class="kpi-card" style="border-top:3px solid #fa3b2e"><div class="kpi-val" style="color:#fa3b2e">1</div><div class="kpi-label">Avis Google</div><div class="kpi-sub">Volume critique</div></div>
+      </div>
+      <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:8px;padding:12px;font-size:12px;color:#c0392b;font-weight:600;margin-bottom:10px">🚨 1 seul avis — fiche GMB très peu développée</div>
+      <div style="background:#fffbf0;border:1px solid #fcd34d;border-radius:8px;padding:12px;font-size:12px;color:#d97706;margin-bottom:10px">⚠ Aucun post GMB · Pas de Q&amp;A · Photos limitées</div>
+      <div style="background:#e8ecff;border:1px solid #b3c0f0;border-radius:8px;padding:12px">
+        <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:4px">📍 Localisation : ICE Louvain</div>
+        <div style="font-size:11px;color:#666">Chemin du Cyclotron 6, 1348 Ottignies-Louvain-la-Neuve · Tel : 0476 97 02 64</div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title">📱 Réseaux Sociaux</div>
+      <div class="social-row" style="background:#f0fff8"><div class="s-left"><div class="s-icon" style="background:#e8f0fe;color:#0077b5">in</div><div><div class="s-name">LinkedIn</div><div class="s-stats">1 779 abonnés · actif · dernier post il y a 1 semaine</div></div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Actif</span></div>
+      <div class="social-row" style="background:#f0fff8"><div class="s-left"><div class="s-icon" style="background:#fce8f3;color:#e1306c">📷</div><div><div class="s-name">Instagram</div><div class="s-stats">110 followers · 105 publications · actif</div></div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Actif</span></div>
+      <div class="social-row" style="background:#fff0ee;opacity:.8"><div class="s-left"><div class="s-icon" style="background:#f1f3f5;color:#888">f</div><div><div class="s-name">Facebook</div><div class="s-stats">Présence non détectée</div></div></div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">✗ Absent</span></div>
+      <div class="social-row" style="background:#fff0ee;opacity:.8"><div class="s-left"><div class="s-icon" style="background:#f1f3f5;color:#888">▶</div><div><div class="s-name">YouTube / TikTok</div><div class="s-stats">Aucune présence</div></div></div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">✗ Absent</span></div>
+      <div style="background:#e8ecff;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:11px;color:#555;line-height:1.5">💡 <strong>LinkedIn est clairement le canal B2B prioritaire</strong> pour Advista. Avec 1 779 abonnés et du contenu de qualité (posts teambuilding, actualités réglementaires), la présence est solide. À développer : régularité et contenu de thought leadership.</div>
+    </div>
+  </div>
+</div>
+</section><section id="opps" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309;border:1px solid #fabd0540">🎯 Opportunités Prioritaires</div>
+  <h2 class="slide-h1">Top 5 axes d'action</h2>
+  <p class="slide-sub">Classés par impact potentiel sur l'efficacité digitale d'Advista</p>
+  <div class="opp-card"><div class="opp-num" style="background:#fa3b2e">01</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Optimiser les performances — LCP 7,7s → &lt; 2,5s</div><span class="impact-badge" style="background:#ffecec;color:#fa3b2e">Urgence absolue</span></div><div class="opp-desc">Optimisation images (WebP, lazy loading), réduction des scripts WPBakery, mise en cache agressive. Passer le LCP sous 2,5s et le TBT sous 200ms améliore le ranking Google et l'expérience visiteur. Pour un bureau d'études rigoureux, la vitesse du site reflète la qualité du travail.</div><div class="opp-tags"><span class="opp-tag" style="background:#ffecec;color:#fa3b2e">Technique</span><span class="opp-tag" style="background:#f1f3f5;color:#666">2-4 semaines</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#1c2b96">02</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Lancer une stratégie SEO sur les requêtes réglementaires</div><span class="impact-badge" style="background:#e8ecff;color:#1c2b96">×50 trafic potentiel</span></div><div class="opp-desc">"Permis d'environnement Wallonie" (880/mois), "bureau études incidences Belgique" (320/mois), "certification BREEAM belgique" (210/mois) : créer des pages piliers et des articles de blog optimisés sur les services clés. Potentiel de passer de 2 à 100+ visites/mois en 12 mois.</div><div class="opp-tags"><span class="opp-tag" style="background:#e8ecff;color:#1c2b96">Contenu SEO</span><span class="opp-tag" style="background:#f1f3f5;color:#666">3-6 mois</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#2eb078">03</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Désavouer les 20 backlinks spam + stratégie netlinking</div><span class="impact-badge" style="background:#e6f9f0;color:#2eb078">Autorité SEO</span></div><div class="opp-desc">77% des backlinks sont du spam — risque de pénalité Google. Action immédiate : désaveu via Search Console. En parallèle : cibler des backlinks qualifiés depuis Bruxelles Environnement, SPW, clusters wallons, médias éco belges pour porter le TF de 6 à 20+.</div><div class="opp-tags"><span class="opp-tag" style="background:#e6f9f0;color:#2eb078">Netlinking</span><span class="opp-tag" style="background:#f1f3f5;color:#666">1-2 mois + continu</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fabd05">04</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title" style="color:#030505">Activer la stratégie GEO + avis GMB</div><span class="impact-badge" style="background:#fff8e0;color:#b45309">Visibilité IA &amp; locale</span></div><div class="opp-desc">Deux actions rapides : (1) créer des FAQ structurées sur les permis, EIE et BREEAM pour apparaître dans ChatGPT et Gemini — secteur encore peu concurrentiel dans les IA. (2) Lancer une campagne d'avis GMB auprès des clients existants (Befimmo, AXA, Besix...) pour passer de 1 à 20+ avis.</div><div class="opp-tags"><span class="opp-tag" style="background:#fff8e0;color:#b45309">GEO + Réputation</span><span class="opp-tag" style="background:#f1f3f5;color:#666">Action immédiate</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fa8fa3">05</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Renforcer LinkedIn + thought leadership sectoriel</div><span class="impact-badge" style="background:#fde8f0;color:#c2185b">Notoriété B2B</span></div><div class="opp-desc">Avec 1 779 abonnés et du contenu de qualité, LinkedIn est le meilleur canal d'Advista. Passer à 2-3 publications/semaine avec du contenu d'expertise (actualités réglementaires, retours projet, formations) pour positionner Advista comme référence sectorielle auprès des décideurs immobilier et industriel.</div><div class="opp-tags"><span class="opp-tag" style="background:#fde8f0;color:#c2185b">Social B2B</span><span class="opp-tag" style="background:#f1f3f5;color:#666">Continu</span></div></div></div>
+</div>
+</section><section id="closing" class="closing-slide">
+  <div class="cover-bar">
+    <div class="cover-bar-seg" style="background:#fa3b2e"></div>
+    <div class="cover-bar-seg" style="background:#fabd05"></div>
+    <div class="cover-bar-seg" style="background:#fa8fa3"></div>
+    <div class="cover-bar-seg" style="background:#2eb078"></div>
+    <div class="cover-bar-seg" style="background:#1c2b96"></div>
+  </div>
+  <div class="closing-body">
+    <div class="closing-sub">Et si on développait</div>
+    <div class="closing-title">votre potentiel<br>digital ?</div>
+    <div class="closing-sep"></div>
+    <div class="closing-desc">Chez Poush, on ne fait pas d'audit pour faire de l'audit. On identifie ce qui freine votre <strong style="color:#ccc">efficacité</strong> en ligne — et on vous propose un plan d'action concret, réaliste, adapté à votre secteur et à vos ambitions.</div>
+    <div class="closing-services">
+      <div class="closing-svc"><div class="closing-svc-icon">📈</div><div class="closing-svc-name">Stratégie &amp; audit digital de performances</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🔄</div><div class="closing-svc-name">Optimisation continue &amp; reporting SEO / GEO</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🌐</div><div class="closing-svc-name">Refonte de site web</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">📱</div><div class="closing-svc-name">Community Management</div></div>
+    </div>
+    <div class="closing-baseline">Développeurs de votre potentiel</div>
+    <div class="closing-contact">
+      <strong>Michael</strong> · michael@poush.be · www.poush.be · +32 (0)486 892 956<br>
+      Rue de la Croix Limont 11, B-5590 Ciney
+    </div>
+  </div>
+</section>
+
+</main>
+<script>
+const sections=document.querySelectorAll("section[id]");
+const pills=document.querySelectorAll(".nav-pill");
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove("active"));const a=document.querySelector(`.nav-pill[href="#${e.target.id}"]`);if(a){a.classList.add("active");a.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});}}});},{threshold:0.3});
+sections.forEach(s=>obs.observe(s));
+</script>
+
+</body></html>
