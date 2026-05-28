@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)file:///Users/michaeldebecker/Downloads/AEFeuVert_Poush_v1_1.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>État des Lieux Digital — Auto-école Feu Vert · Poush</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+:root{--black:#030505;--blue:#1c2b96;--yellow:#fabd05;--red:#fa3b2e;--green:#2eb078;--pink:#fa8fa3;--gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#e9ecef;--gray-600:#6c757d;--orange:#f59e0b;--font:"DM Sans",sans-serif;--mono:"DM Mono",monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#111;color:var(--black)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px}
+.nav-brand{display:flex;align-items:center;gap:12px}.nav-dots{display:flex;gap:5px}.nav-dot{width:9px;height:9px;border-radius:50%}
+.nav-logo{color:#fff;font-size:17px;font-weight:700;letter-spacing:-.3px}.nav-divider{width:1px;height:20px;background:#333}.nav-title{color:var(--yellow);font-size:13px;font-weight:500}
+.nav-pills{display:flex;gap:4px;overflow-x:auto}.nav-pill{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;color:#888;cursor:pointer;white-space:nowrap;transition:all .15s;border:1px solid transparent;text-decoration:none}
+.nav-pill:hover,.nav-pill.active{color:#fff;background:#222;border-color:#333}
+main{padding-top:56px}.slide{min-height:100vh;position:relative;overflow:hidden}.slide-inner{max-width:1100px;margin:0 auto;padding:64px 40px;width:100%}
+.slide-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+.slide-h1{font-size:36px;font-weight:700;line-height:1.1;margin-bottom:8px}.slide-sub{font-size:15px;color:var(--gray-600);margin-bottom:32px}
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--gray-200);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-title{font-size:13px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gray-100)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gauge-label{font-size:11px;font-weight:600;color:#555;text-align:center;line-height:1.3}.gauge-status{font-size:10px;font-weight:700;letter-spacing:.5px;text-align:center}
+.alert-box{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:14px 16px;margin-bottom:20px}
+.metric-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:8px;margin-bottom:5px}
+.metric-name{font-size:12px;font-weight:500;color:#444;display:flex;align-items:center;gap:8px}.metric-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.metric-val{font-size:12px;font-weight:700;font-family:var(--mono)}.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.kpi-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px;text-align:center}
+.kpi-val{font-size:40px;font-weight:800;line-height:1;margin-bottom:4px}.kpi-label{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.4px}.kpi-sub{font-size:11px;color:#aaa;margin-top:4px}
+.badge-inline{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-top:8px}
+.prog-wrap{margin-bottom:12px}.prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-label{font-size:11px;font-weight:600;color:#555}.prog-val{font-size:11px;font-weight:700;font-family:var(--mono)}
+.prog-track{height:7px;background:var(--gray-100);border-radius:4px;overflow:hidden}.prog-fill{height:100%;border-radius:4px}
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:4px;background:#f8f9fa}
+.bl-domain{font-size:12px;color:#444;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.tf-badge{padding:3px 9px;border-radius:12px;font-size:11px;font-weight:800;font-family:var(--mono);flex-shrink:0;margin-left:8px}
+.bar-chart{position:relative;height:130px;display:flex;align-items:flex-end;gap:2px;padding-bottom:20px;padding-left:32px}
+.bar-item{flex:1;border-radius:3px 3px 0 0}.axis-y{position:absolute;left:0;top:0;bottom:20px;display:flex;flex-direction:column;justify-content:space-between}
+.axis-label{font-size:9px;color:#ccc;font-family:var(--mono)}.axis-x{display:flex;justify-content:space-between;padding-left:32px;margin-top:4px}.axis-x span{font-size:9px;color:#bbb}
+.grid-line{position:absolute;left:32px;right:0;height:1px;background:#f1f3f5}
+.legend-row{display:flex;gap:12px;margin-top:10px}.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#888}.leg-dot{width:10px;height:10px;border-radius:2px}
+.ux-item{display:flex;gap:14px;padding:16px 18px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);margin-bottom:10px}
+.ux-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:1px}
+.ux-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px}.ux-desc{font-size:12px;color:#666;line-height:1.6}
+.ux-tag{display:inline-flex;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-top:6px}
+.geo-card{background:#fff;border-radius:12px;padding:18px;position:relative;overflow:hidden;border:1px solid var(--gray-200)}
+.geo-bar{position:absolute;top:0;left:0;right:0;height:3px}.geo-platform{font-size:15px;font-weight:800;color:var(--black);margin-bottom:6px;margin-top:4px}
+.geo-status{font-size:13px;font-weight:700;margin-bottom:10px}.geo-desc{font-size:12px;color:#666;line-height:1.6}
+.social-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;margin-bottom:6px}
+.s-left{display:flex;align-items:center;gap:10px}.s-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.s-name{font-size:13px;font-weight:700;color:var(--black)}.s-stats{font-size:11px;color:#888;margin-top:1px}
+.opp-card{display:flex;gap:16px;padding:18px;background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 1px 4px rgba(0,0,0,.04);margin-bottom:12px}
+.opp-num{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.opp-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:5px}.opp-desc{font-size:12px;color:#666;line-height:1.6}
+.opp-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.opp-tag{padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700}
+.impact-badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0;align-self:flex-start}
+.blue-box{background:var(--blue);border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;margin-top:16px}
+.blue-box-title{font-size:13px;font-weight:800;color:var(--yellow);margin-bottom:6px}.blue-box-desc{font-size:12px;color:#ccc;line-height:1.7}
+.explainer-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px}
+.exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.exp-name{font-size:14px;font-weight:800;color:var(--black)}.exp-abbr{font-size:11px;font-weight:600;color:#888;margin-top:2px;font-family:var(--mono)}
+.exp-badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.exp-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:10px}
+.exp-impact{font-size:12px;color:#444;line-height:1.5;background:var(--gray-50);border-radius:8px;padding:10px 12px;border-left:3px solid var(--gray-200)}
+.exp-analogy{background:var(--gray-50);border-radius:10px;padding:12px;margin-top:10px;display:flex;gap:10px;align-items:flex-start}
+.analogy-icon{font-size:18px;flex-shrink:0}.analogy-text{font-size:12px;color:#666;line-height:1.6;font-style:italic}
+.exp-scale{display:flex;gap:4px;margin-top:10px}.exp-scale-item{flex:1;border-radius:4px;padding:4px 6px;text-align:center;font-size:10px;font-weight:700}
+.slide-explain-tag{display:inline-flex;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:#fff8e0;color:#b45309;margin-bottom:12px}
+.cover-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.cover-bar{width:8px;display:flex;flex-direction:column;flex-shrink:0}.cover-bar-seg{flex:1}
+.cover-body{padding:80px 60px;flex:1}
+.cover-eyebrow{font-size:11px;font-weight:700;color:var(--yellow);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.cover-name{font-size:68px;font-weight:800;line-height:.9;color:#fff;margin-bottom:10px}
+.cover-url{font-family:var(--mono);font-size:16px;color:#555;margin-bottom:36px}
+.cover-line{width:70px;height:3px;background:var(--yellow);margin-bottom:24px}
+.cover-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
+.cover-pill{padding:6px 16px;border:1px solid #333;border-radius:20px;font-size:13px;font-weight:500;color:#ccc}
+.cover-meta{font-size:12px;color:#444}
+.closing-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.closing-body{padding:80px 60px;flex:1}
+.closing-sub{font-size:24px;color:#555;font-weight:300;margin-bottom:8px}
+.closing-title{font-size:56px;font-weight:800;color:#fff;line-height:.92;margin-bottom:20px}
+.closing-sep{width:70px;height:3px;background:var(--yellow);margin-bottom:28px}
+.closing-desc{font-size:14px;color:#999;max-width:560px;line-height:1.8;margin-bottom:36px}
+.closing-services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+.closing-svc{background:#111;border:1px solid #222;border-radius:12px;padding:16px}
+.closing-svc-icon{font-size:22px;margin-bottom:8px}.closing-svc-name{font-size:12px;font-weight:700;color:#fff;line-height:1.4}
+.closing-baseline{font-size:18px;font-weight:800;color:var(--yellow);margin-bottom:12px}
+.closing-contact{font-size:12px;color:#444;line-height:1.9}.closing-contact strong{color:#888}
+.bg-white{background:#fff}.bg-light{background:var(--gray-50)}
+.missing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mkw{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 12px}
+.mkw-name{font-size:12px;font-weight:600;color:#444;margin-bottom:4px}.mkw-vol{font-size:11px;color:#888;font-family:var(--mono)}
+.mkw-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;margin-top:4px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dots"><div class="nav-dot" style="background:#fa3b2e"></div><div class="nav-dot" style="background:#fabd05"></div><div class="nav-dot" style="background:#fa8fa3"></div><div class="nav-dot" style="background:#2eb078"></div><div class="nav-dot" style="background:#1c2b96"></div></div>
+    <span class="nav-logo">poush</span><div class="nav-divider"></div>
+    <span class="nav-title">État des Lieux Digital — Auto-école Feu Vert</span>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill" data-id="cover" onclick="document.getElementById(&#39;cover&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Cover</button><button class="nav-pill" data-id="perf" onclick="document.getElementById(&#39;perf&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Performances</button><button class="nav-pill" data-id="config" onclick="document.getElementById(&#39;config&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Config. Technique</button><button class="nav-pill" data-id="autorite" onclick="document.getElementById(&#39;autorite&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Autorité SEO</button><button class="nav-pill" data-id="trafic" onclick="document.getElementById(&#39;trafic&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Trafic</button><button class="nav-pill" data-id="keywords" onclick="document.getElementById(&#39;keywords&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Mots-clés</button><button class="nav-pill" data-id="ux" onclick="document.getElementById(&#39;ux&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">UX</button><button class="nav-pill" data-id="geo" onclick="document.getElementById(&#39;geo&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GEO / IA</button><button class="nav-pill" data-id="gmb" onclick="document.getElementById(&#39;gmb&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GMB &amp; Social</button><button class="nav-pill" data-id="opps" onclick="document.getElementById(&#39;opps&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Opportunités</button><button class="nav-pill active" data-id="closing" onclick="document.getElementById(&#39;closing&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Poush</button>
+  </div>
+</nav>
+<main>
+<section id="cover" class="cover-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#fa3b2e"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div></div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">État des lieux digital · Mai 2026</div>
+    <div class="cover-name">Auto-école Feu Vert</div>
+    <div class="cover-url">www.aefeuvert.be</div>
+    <div class="cover-line"></div>
+    <div style="font-size:14px;color:#888;margin-bottom:10px">Une analyse complète de votre écosystème digital :</div>
+    <div class="cover-pills">
+      <span class="cover-pill">🌐 Site Web</span><span class="cover-pill">🔍 SEO</span>
+      <span class="cover-pill">🤖 GEO / IA</span><span class="cover-pill">📍 Google My Business</span>
+      <span class="cover-pill">📱 Réseaux Sociaux</span>
+    </div>
+    <div class="cover-meta">Préparé par Poush · michael@poush.be · +32 (0)486 892 956</div>
+  </div>
+  <div style="position:absolute;right:60px;bottom:80px">
+    <div style="background:#1c2b96;border-radius:12px;padding:16px 20px;text-align:center">
+      <div style="font-size:11px;font-weight:700;color:#fabd05;letter-spacing:1px;margin-bottom:6px">SECTEUR</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.4">Réseau d'auto-écoles<br>9 centres · Belgique 🇧🇪</div>
+      <div style="font-size:11px;color:#888;margin-top:6px">Permis voiture · Moto · Camion</div>
+    </div>
+  </div>
+</section><section id="perf" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff0ee;color:#fa3b2e">⚡ Performances</div>
+  <h2 class="slide-h1">Rapport PageSpeed Insights</h2>
+  <p class="slide-sub">Rapport du 28 mai 2026 · aefeuvert.be</p>
+  <div class="alert-box" style="background:#fffbf0;border:1px solid #fabd0540;margin-bottom:28px">
+    <span style="font-size:18px;flex-shrink:0">💡</span>
+    <div><div style="font-size:14px;font-weight:700;color:#92400e">Profil homogène mobile/desktop — marges de progression sur les performances et l'accessibilité</div>
+    <div style="font-size:13px;color:#999;margin-top:2px">Les scores sont identiques sur mobile et desktop (61/100 Performances, 86/100 Accessibilité). Le SEO technique est parfait (100/100). Les Bonnes pratiques (96/100) sont très proches du score maximal.</div></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:24px">
+    <div class="card"><div class="card-title">📱 Mobile</div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="78" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">61</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#f59e0b">À AMÉLIORER</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="28" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">86</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="8" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#2eb078" font-family="sans-serif">96</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">BON</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+    <div class="card"><div class="card-title">🖥️ Desktop</div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="78" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">61</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#f59e0b">À AMÉLIORER</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="28" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">86</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="8" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#2eb078" font-family="sans-serif">96</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">BON</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+  </div>
+</div>
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que mesurent ces 4 scores</h2>
+  <p class="slide-sub">Scores identiques mobile et desktop · aefeuvert.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Performances — 61/100</div><div class="exp-abbr">VITESSE DE CHARGEMENT GLOBALE</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ 61/100</div></div>
+      <div class="exp-desc">Le score Performances mesure la rapidité globale du site. Un score de 61 place le site dans la zone "à améliorer" (seuil vert : 90+). Fait notable : le score est identique sur mobile et desktop, ce qui suggère un problème générique (JavaScript lourd, images non optimisées, plugins) plutôt qu'un problème spécifiquement mobile.</div>
+      <div class="exp-impact"><strong>Pour AE Feu Vert :</strong> Un prospect qui recherche une auto-école en urgence (permis à passer bientôt) consulte principalement sur mobile. Un site lent à charger peut l'inciter à aller chez un concurrent. L'amélioration des performances est un levier direct sur les inscriptions.</div>
+      <div class="exp-analogy"><span class="analogy-icon">🚗</span><span class="analogy-text">C'est comme une voiture d'auto-école qui démarre trop lentement — le moniteur est là, la voiture aussi, mais on perd du temps avant de pouvoir partir.</span></div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Accessibilité — 86/100</div><div class="exp-abbr">UTILISABILITÉ POUR TOUS LES PUBLICS</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ 86/100</div></div>
+      <div class="exp-desc">L'accessibilité mesure si le site est utilisable par tous : personnes malvoyantes, daltoniens, utilisateurs de lecteurs d'écran. Un score de 86 indique des points à corriger — probablement des contrastes insuffisants ou des attributs alt manquants sur certaines images.</div>
+      <div class="exp-impact"><strong>Pour AE Feu Vert :</strong> Les candidats au permis sont de tous âges et profils. Une bonne accessibilité est aussi un signal de qualité pour Google, qui en tient compte dans son ranking. Passer de 86 à 95+ est généralement rapide — quelques ajustements CSS et attributs HTML.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Bonnes pratiques — 96/100</div><div class="exp-abbr">QUALITÉ &amp; SÉCURITÉ TECHNIQUE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ 96/100</div></div>
+      <div class="exp-desc">Les bonnes pratiques évaluent la qualité technique du code : HTTPS, absence d'erreurs JavaScript, compatibilité avec les standards modernes. Un score de 96 est excellent — seul un point mineur empêche le 100/100. La base technique est très saine.</div>
+      <div class="exp-impact"><strong>Point fort :</strong> Presque parfait. Le site respecte quasi intégralement les standards web modernes. C'est une fondation solide pour toutes les optimisations futures.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">SEO — 100/100</div><div class="exp-abbr">OPTIMISATION MOTEURS DE RECHERCHE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ 100/100</div></div>
+      <div class="exp-desc">Le score SEO technique vérifie que le site est correctement configuré pour être indexé par Google : balises title/meta présentes, structure de titres logique, compatibilité mobile, aucune directive "noindex" accidentelle.</div>
+      <div class="exp-impact"><strong>Point fort :</strong> Un 100/100 en SEO technique confirme que la structure du site ne crée aucun frein à l'indexation. Toutes les pages sont potentiellement indexables. C'est une base parfaite pour une stratégie de contenu locale (pages par centre, pages guides permis).</div>
+    </div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">Priorités d'amélioration : performances (61→80+) et accessibilité (86→95+)</div><div class="blue-box-desc">Optimiser les images en WebP, activer un plugin de cache WordPress (WP Rocket), et corriger les contrastes CSS. Ces actions sont réalisables en 1-2 semaines et amélioreraient l'expérience sur les 9 centres du réseau simultanément.</div></div></div>
+</div>
+</section><section id="config" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">⚙️ Configuration Technique</div>
+  <h2 class="slide-h1">Fondations techniques — WordPress</h2>
+  <p class="slide-sub">robots.txt · sitemap · agents IA · aefeuvert.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">🗺️ Indexation &amp; Structure</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>CMS</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">WordPress + Yoast SEO</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ WordPress</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Sitemap XML</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">3 sitemaps : général · news · index</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Complet</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>HTTPS / SSL</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Sécurisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Score SEO Lighthouse</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 100/100</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Crawl Majestic</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#fff8e0"><div><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Pages indexées Majestic</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">1 514 pages référentes · bon volume</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 1 514</span></div>
+    </div>
+    <div class="card"><div class="card-title">🤖 Accessibilité Agents IA</div>
+      <div style="font-size:12px;color:#555;line-height:1.6;margin-bottom:14px">Robots.txt Yoast standard — 3 sitemaps configurés (général, news, index). Aucun agent IA bloqué.</div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>GPTBot (ChatGPT)</div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Google-Extended (Gemini)</div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>PerplexityBot</div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>Schema.org / données structurées</div></div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">⚠ Partiel</span></div>
+    </div>
+  </div>
+
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les indicateurs</div>
+  <h2 class="slide-h1">Ce que révèlent les fondations techniques</h2>
+  <p class="slide-sub">Configuration technique d'aefeuvert.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">CMS — WordPress + Yoast SEO</div><div class="exp-abbr">SYSTÈME DE GESTION DE CONTENU</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Solide</div></div>
+      <div class="exp-desc">WordPress est le CMS le plus utilisé au monde. Yoast SEO automatise la génération du sitemap, optimise les balises meta et structure les données pour Google. Pour un réseau de 9 centres avec des actualités et des pages locales, cette stack permet une gestion éditoriale autonome et scalable.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Sitemap XML — 3 sitemaps</div><div class="exp-abbr">CARTE DU SITE POUR GOOGLE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Complet</div></div>
+      <div class="exp-desc">AE Feu Vert dispose de 3 sitemaps : un général (toutes les pages), un news (articles d'actualité) et un index (liste des sitemaps). C'est une configuration avancée qui permet à Google d'indexer rapidement les nouvelles pages et articles — idéal pour un site avec du contenu régulier sur les 9 centres.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">HTTPS / SSL</div><div class="exp-abbr">SÉCURITÉ DE LA CONNEXION</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Sécurisé</div></div>
+      <div class="exp-desc">Le HTTPS garantit que toutes les communications entre le visiteur et le site sont chiffrées. C'est un prérequis pour Google (critère de ranking) et pour la confiance des candidats qui s'inscrivent en ligne ou partagent leurs données personnelles (réservation de cours, coordonnées).</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Score SEO Lighthouse — 100/100</div><div class="exp-abbr">FONDATIONS SEO TECHNIQUES</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Parfait</div></div>
+      <div class="exp-desc">Un 100/100 confirme que toutes les pages sont correctement balisées, que la structure de titres est logique et qu'aucune page n'est bloquée accidentellement. C'est la condition technique nécessaire pour ranker — particulièrement important pour les pages locales de chaque centre (Anderlecht, Wavre, Mons...).</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Crawl Majestic · 1 514 pages référentes</div><div class="exp-abbr">ACCESSIBILITÉ &amp; SURFACE INDEXÉE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Bon volume</div></div>
+      <div class="exp-desc">Majestic crawle librement le site (pas de restriction robots.txt) et a détecté 1 514 pages pointant vers aefeuvert.be. C'est un bon volume pour un réseau d'auto-écoles — signe que le site reçoit des mentions depuis de nombreuses sources locales et sectorielles.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Agents IA — GPTBot, Gemini, Perplexity</div><div class="exp-abbr">ACCESSIBILITÉ AUX IA GÉNÉRATIVES</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisés</div></div>
+      <div class="exp-desc">Aucun agent IA n'est bloqué dans le robots.txt. AE Feu Vert peut donc être cité dans les réponses de ChatGPT, Gemini ou Perplexity sur des requêtes comme "meilleure auto-école Bruxelles" ou "auto-école avec réservation en ligne Belgique". Le sitemap news renforce encore cette visibilité pour le contenu récent.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Schema.org — Données structurées</div><div class="exp-abbr">BALISAGE SÉMANTIQUE · CHECK 28 MAI 2026</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Partiel</div></div>
+      <div class="exp-desc">Le test Google Rich Results (28 mai 2026) ne détecte qu'un seul type de donnée structurée : le <strong>Fil d'Ariane (BreadcrumbList)</strong>.</div>
+      <div class="exp-impact"><strong>Ce qui manque pour un réseau d'auto-écoles :</strong> <code>LocalBusiness</code> / <code>EducationalOrganization</code> sur chaque centre (adresse, note, horaires, téléphone), <code>Organization</code> (logo, coordonnées réseau), <code>FAQPage</code> sur les pages permis et tarifs, et <code>Review</code> pour mettre en avant les 8 271 avis Google. Ces données permettraient l'affichage de rich snippets (étoiles, prix, horaires) directement dans les résultats Google.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Sitemap News — Atout contenu</div><div class="exp-abbr">INDEXATION RAPIDE DES ACTUALITÉS</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Actif</div></div>
+      <div class="exp-desc">La présence d'un sitemap News est un signal fort : Google l'utilise pour indexer les nouveaux articles en quelques heures. Pour AE Feu Vert, cela signifie que les actualités sur les changements de réglementation permis, les ouvertures de centres ou les promotions sont indexées très rapidement — un avantage concurrentiel si le blog est actif.</div>
+    </div>
+  </div>
+</div>
+</section><section id="autorite" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">📊 Autorité SEO</div>
+  <h2 class="slide-h1">Autorité &amp; Backlinks</h2>
+  <p class="slide-sub">Données SEObserver · Majestic · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">📊 Métriques d'autorité</div>
+      <div class="grid-2" style="margin-bottom:16px">
+        <div class="kpi-card" style="border-top:3px solid #f59e0b"><div class="kpi-val" style="color:#f59e0b">6</div><div class="kpi-label">Trust Flow</div><div class="kpi-sub">Reference / Education</div></div>
+        <div class="kpi-card" style="border-top:3px solid #1c2b96"><div class="kpi-val" style="color:#1c2b96">31</div><div class="kpi-label">Citation Flow</div><div class="kpi-sub">Ratio TF/CF : 19%</div></div>
+        <div class="kpi-card" style="border-top:3px solid #2eb078"><div class="kpi-val" style="color:#2eb078">252</div><div class="kpi-label">Domaines référents</div><div class="kpi-sub">1 514 pages référentes</div></div>
+        <div class="kpi-card" style="border-top:3px solid #f59e0b"><div class="kpi-val" style="color:#f59e0b">6</div><div class="kpi-label">TF en progression</div><div class="kpi-sub">Hausse depuis 2025</div></div>
+      </div>
+      <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:10px;padding:14px">
+        <div style="font-size:11px;font-weight:700;color:#c0392b;margin-bottom:6px">⚠ 235 backlinks spam sur 249 (94%)</div>
+        <div style="font-size:11px;color:#666;line-height:1.6">Le ratio TF/CF de 19% indique que la grande majorité des liens entrants sont des annuaires automatisés ou des sites Telegram spam. Seuls 14 liens "zero spam" apportent de la valeur SEO réelle.</div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title">🔗 Top 10 backlinks — par Trust Flow</div>
+      <div style="border:1px solid #e9ecef;border-radius:10px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;background:#1c2b96;padding:8px 14px;gap:8px">
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Domaine source</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Ancre</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:right;text-transform:uppercase">TF</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">royalcanter.be</div><div style="font-size:10px;color:#aaa;margin-top:1px">École d'équitation</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">capture d'écran 2023</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">13</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">cttroyalalpa.be</div><div style="font-size:10px;color:#aaa;margin-top:1px">Centre de formation</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">auto école feu vert</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">13</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">visite-medicale-permis-conduire.org</div><div style="font-size:10px;color:#aaa;margin-top:1px">Portail santé &amp; permis</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">benoit dupont</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">11</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">nexioe.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">aefeuvert.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">6</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">ziptet.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">aefeuvert.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">6</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">yexhub.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">aefeuvert.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">6</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">webgoz.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">aefeuvert.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">6</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">dotiqo.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">aefeuvert.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">4</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">byteyo.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">aefeuvert.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">4</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">telegram @seo_anomaly <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Réseau Telegram spam</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic"></div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div>
+      </div>
+      <div style="font-size:10px;color:#aaa;margin-top:6px;text-align:right">249 backlinks au total · 14 zero spam · 235 spam</div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèle le profil de backlinks</h2>
+  <p class="slide-sub">Données Majestic via SEObserver · aefeuvert.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">TrustFlow (TF) — 6</div><div class="exp-abbr">QUALITÉ DES LIENS ENTRANTS</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Faible · En progression</div></div>
+      <div class="exp-desc">Le TrustFlow mesure la qualité des liens pointant vers le site. Un TF de 6 est bas pour un réseau national de 9 centres avec 40 000+ candidats formés. La progression récente (hausse marquée en 2025-2026) est encourageante mais le potentiel reste largement sous-exploité.</div>
+      <div class="exp-impact"><strong>Contexte sectoriel :</strong> Une auto-école bien référencée devrait viser un TF entre 15 et 30. Des backlinks depuis les mairies, la FEBIAC, les journaux locaux (DH, RTL, La Meuse), les sites de mobilité ou les associations de jeunes permettraient d'atteindre ce niveau en 12 mois.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">CitationFlow (CF) — 31 · Ratio 19%</div><div class="exp-abbr">VOLUME VS QUALITÉ</div></div><div class="exp-badge" style="background:#ffecec;color:#fa3b2e">✗ Ratio très bas</div></div>
+      <div class="exp-desc">Le CF de 31 est beaucoup plus élevé que le TF de 6 — ce qui signifie que le site reçoit beaucoup de liens mais de très faible qualité. Le ratio TF/CF de 19% reflète la domination des liens spam (Telegram, annuaires automatisés). Plus ce ratio est proche de 100%, plus les liens sont qualitatifs.</div>
+      <div class="exp-impact"><strong>Action recommandée :</strong> Soumettre un fichier Disavow via Google Search Console pour les 235 domaines spam. Cette action assainit le profil et réduit le risque d'une évaluation négative par l'algorithme Google.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">252 domaines référents — bonne diversité</div><div class="exp-abbr">LARGEUR DU PROFIL</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Diversifié</div></div>
+      <div class="exp-desc">252 domaines différents pointent vers aefeuvert.be — c'est une bonne diversité pour un réseau d'auto-écoles. Cela reflète la présence sur des annuaires locaux, des forums de candidats au permis, et des liens organiques générés par les 9 centres.</div>
+      <div class="exp-impact"><strong>Opportunité :</strong> La plupart de ces 252 domaines sont des annuaires à faible valeur. Convertir même 20 de ces liens en liens éditoriaux de qualité (presse, institutions) doublerait le TrustFlow.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Liens sectoriels de qualité identifiés</div><div class="exp-abbr">BACKLINKS LÉGITIMES</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ 3 liens solides</div></div>
+      <div class="exp-desc">Les 3 backlinks "zero spam" de valeur sont : <strong>royalcanter.be</strong> (école d'équitation, TF13), <strong>cttroyalalpa.be</strong> (centre de formation, TF13) et <strong>visite-medicale-permis-conduire.org</strong> (portail santé &amp; permis, TF11). Ce dernier est particulièrement pertinent — c'est un site sectoriel direct.</div>
+      <div class="exp-impact"><strong>Cibles prioritaires pour de nouveaux backlinks :</strong> permis.be, FEBIAC, communes des 9 centres (Anderlecht, Wavre, Mons...), journaux locaux, sites d'info jeunes, portails emploi et formation.</div>
+    </div>
+  </div>
+</div>
+</section><section id="trafic" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📈 Trafic Organique</div>
+  <h2 class="slide-h1">Évolution &amp; Tendances</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · 2024 → Mai 2026</p>
+  <div class="alert-box" style="background:#e8f8f0;border:1px solid #2eb07840;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">✅</span>
+    <div><div style="font-size:13px;font-weight:700;color:#2eb078">Forte croissance organique — trafic multiplié par 2 en 18 mois</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Le trafic est passé de ~3 000 à ~7 000 visites/mois entre mi-2024 et mai 2026 — une progression de +130%. C'est une dynamique remarquable qui témoigne d'une visibilité en ligne en plein essor.</div></div>
+  </div>
+  <div class="grid-3" style="margin-bottom:24px">
+    <div class="kpi-card" style="border-top:3px solid #2eb078">
+      <div class="kpi-val" style="color:#2eb078">~7 000</div>
+      <div class="kpi-label">Trafic mensuel estimé</div>
+      <div class="kpi-sub">visites/mois · SEMrush</div>
+      <div class="badge-inline" style="background:#e8f8f0;color:#2eb078">📈 +130% en 18 mois</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #1c2b96">
+      <div class="kpi-val" style="color:#1c2b96">10+</div>
+      <div class="kpi-label">Mots-clés positionnés</div>
+      <div class="kpi-sub">Tous en top 1-4</div>
+      <div class="badge-inline" style="background:#e8ecff;color:#1c2b96">Dominance branded</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #f59e0b">
+      <div class="kpi-val" style="color:#f59e0b">18 100</div>
+      <div class="kpi-label">Recherches/mois</div>
+      <div class="kpi-sub">"feu vert" seul</div>
+      <div class="badge-inline" style="background:#fff8e0;color:#d97706">Marque forte</div>
+    </div>
+  </div>
+  <div class="card" style="padding:24px">
+    <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:14px">Historique trafic SEMrush · 2024 → Mai 2026</div>
+    <div style="position:relative">
+      <div style="position:absolute;left:32px;right:0;top:0;bottom:20px"><div class="grid-line" style="top:0%"></div><div class="grid-line" style="top:50%"></div></div>
+      <div class="axis-y"><span class="axis-label">7 000</span><span class="axis-label">3 500</span><span class="axis-label">0</span></div>
+      <div class="bar-chart"><div class="bar-item" style="height:42%;background:#60a5fa"></div><div class="bar-item" style="height:44%;background:#60a5fa"></div><div class="bar-item" style="height:46%;background:#3b82f6"></div><div class="bar-item" style="height:48%;background:#3b82f6"></div><div class="bar-item" style="height:50%;background:#3b82f6"></div><div class="bar-item" style="height:48%;background:#60a5fa"></div><div class="bar-item" style="height:50%;background:#3b82f6"></div><div class="bar-item" style="height:52%;background:#3b82f6"></div><div class="bar-item" style="height:54%;background:#2563eb"></div><div class="bar-item" style="height:56%;background:#2563eb"></div><div class="bar-item" style="height:60%;background:#2563eb"></div><div class="bar-item" style="height:58%;background:#2563eb"></div><div class="bar-item" style="height:62%;background:#1d4ed8"></div><div class="bar-item" style="height:65%;background:#1d4ed8"></div><div class="bar-item" style="height:68%;background:#1d4ed8"></div><div class="bar-item" style="height:72%;background:#1d4ed8"></div><div class="bar-item" style="height:78%;background:#1c2b96"></div><div class="bar-item" style="height:85%;background:#1c2b96"></div><div class="bar-item" style="height:92%;background:#1c2b96"></div><div class="bar-item" style="height:95%;background:#fabd05"></div><div class="bar-item" style="height:98%;background:#fabd05"></div><div class="bar-item" style="height:96%;background:#1c2b96"></div><div class="bar-item" style="height:95%;background:#1c2b96"></div><div class="bar-item" style="height:98%;background:#fabd05"></div><div class="bar-item" style="height:100%;background:#fabd05"></div></div>
+      <div class="axis-x"><span>Mid 24</span><span>Oct 24</span><span>Déb 25</span><span>Mid 25</span><span>Mai 26</span></div>
+    </div>
+    <div class="legend-row">
+      <div class="leg-item"><div class="leg-dot" style="background:#3b82f6"></div>Trafic initial (~3 000/mois)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#1c2b96"></div>Croissance forte</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fabd05"></div>Pic actuel (~7 000/mois)</div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèle cette croissance</h2>
+  <p class="slide-sub">+130% de trafic en 18 mois · aefeuvert.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">+130% de trafic en 18 mois</div><div class="exp-abbr">CROISSANCE ORGANIQUE FORTE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Excellent signal</div></div>
+      <div class="exp-desc">Passer de ~3 000 à ~7 000 visites/mois organiques en 18 mois sans publicité payante est une performance remarquable. Cela signifie que Google accorde de plus en plus de confiance au site — probablement grâce au contenu des pages centres, à la réservation en ligne, et à la notoriété croissante de la marque Feu Vert.</div>
+      <div class="exp-impact"><strong>Implication :</strong> Cette tendance est auto-renforçante. Plus le site reçoit de trafic, plus Google lui accorde d'autorité, et plus il rankera sur de nouveaux termes. L'enjeu est de capitaliser sur cette dynamique en ajoutant du contenu local et générique.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">"Feu vert" — 18 100 recherches/mois</div><div class="exp-abbr">PUISSANCE DE LA MARQUE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Marque très connue</div></div>
+      <div class="exp-desc">Le terme "feu vert" est cherché 18 100 fois par mois en Belgique. AE Feu Vert est positionné en #4 sur ce terme très concurrentiel — derrière probablement Feu Vert France, le feu tricolore... La marque est suffisamment connue pour drainer du trafic organique sur ces requêtes génériques.</div>
+      <div class="exp-impact"><strong>Opportunité :</strong> Chaque centre dispose de sa propre requête locale ("feu vert mons", "feu vert wavre", etc.) avec des centaines de recherches/mois. Ces 9 requêtes locales sont toutes en top 1 — c'est un avantage concurrentiel fort à maintenir.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Trafic "branded" dominant</div><div class="exp-abbr">NATURE DU TRAFIC</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">💡 À diversifier</div></div>
+      <div class="exp-desc">La quasi-totalité du trafic provient de recherches incluant "feu vert" — ce qui signifie que les visiteurs connaissent déjà la marque. Le trafic "non-branded" (candidats qui cherchent "auto-école permis B Bruxelles" sans connaître Feu Vert) est encore marginal.</div>
+      <div class="exp-impact"><strong>Potentiel de croissance :</strong> En adressant les requêtes génériques ("auto-école Anderlecht", "prix permis conduite Belgique", "comment passer permis B Belgique"), AE Feu Vert pourrait doubler son trafic et capter des prospects qui ne connaissent pas encore la marque.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">9 centres = 9 opportunités SEO local</div><div class="exp-abbr">STRATÉGIE MULTI-SITE</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 Fort potentiel</div></div>
+      <div class="exp-desc">Chaque centre (Anderlecht, Wavre, Mons, Schaerbeek, Waterloo, Ixelles, Braine-le-Comte, Dour, Tournai) est une opportunité SEO locale indépendante. Une page optimisée par centre avec contenu unique, témoignages locaux, et Schema.org LocalBusiness permettrait de capter le trafic local de chaque ville.</div>
+      <div class="exp-impact"><strong>Calcul simple :</strong> Si chaque centre génère 200 visites/mois supplémentaires via le SEO local, c'est +1 800 visites/mois sur l'ensemble du réseau — soit une progression de +25% du trafic actuel.</div>
+    </div>
+  </div>
+</div>
+</section><section id="keywords" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔑 Positionnements SEMrush</div>
+  <h2 class="slide-h1">Top positions Google</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · Mai 2026</p>
+  <div class="alert-box" style="background:#e8f8f0;border:1px solid #2eb07840;margin-bottom:16px">
+    <span style="font-size:18px;flex-shrink:0">✅</span>
+    <div><div style="font-size:13px;font-weight:700;color:#2eb078">Dominance absolue sur les requêtes de marque — top 1 sur tous les centres</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">AE Feu Vert est #1 sur toutes les requêtes incluant "feu vert" + ville. La marque est solidement ancrée dans les résultats Google locaux. L'enjeu est maintenant de conquérir les requêtes génériques sans marque.</div></div>
+  </div>
+  <div style="background:#fff;border:1px solid #e9ecef;border-radius:12px;overflow:hidden;margin-bottom:10px">
+    <div style="display:grid;grid-template-columns:2fr 70px 80px 120px;background:#1c2b96;padding:10px 16px;gap:8px">
+      <div style="font-size:11px;font-weight:700;color:#fff;text-transform:uppercase">Mot-clé</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Position</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Volume</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Type</div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">590/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert mons</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">320/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert wavre</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">260/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert mons</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">210/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">4</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">18 100/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque générique</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert waterloo</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">170/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert wavre</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">480/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert tournai</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">140/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert anderlecht</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">390/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert braine le comte</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">320/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert schaerbeek</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">210/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert ixelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">170/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert dour</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">140/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert anderlecht</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">260/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert schaerbeek</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">110/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert waterloo</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">170/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">aefeuvert</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">390/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert tournai</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">110/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert ixelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">170/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feuvert</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">2</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">590/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque</span></div>
+</div><div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">590/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert mons</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">320/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert wavre</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">260/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert mons</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">210/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">4</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">18 100/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque générique</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert waterloo</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">170/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert wavre</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">480/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert tournai</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">140/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">auto ecole feu vert anderlecht</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">390/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">feu vert braine le comte</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">320/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque · Local</span></div>
+</div>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#2eb078;display:inline-block"></span>Top 1-3</div>
+    <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block"></span>Top 4-10</div>
+    <div style="margin-left:auto;font-size:10px;color:#aaa">Source : SEMrush via SEObserver · Belgique 🇧🇪</div>
+  </div>
+
+</section><section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les données</div>
+  <h2 class="slide-h1">Ce que révèlent ces positions</h2>
+  <p class="slide-sub">Dominance branded · opportunité non-branded massive</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Top 1 sur toutes les requêtes locales</div><div class="exp-abbr">DOMINATION BRANDED LOCALE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Top 1</div></div>
+      <div class="exp-desc">Chaque requête "feu vert + ville" est en position #1. C'est le résultat logique d'une présence locale forte et d'un site bien structuré avec une page par centre. Personne ne peut "voler" ces positions à Feu Vert — ce sont des requêtes de marque.</div>
+      <div class="exp-impact"><strong>Volume cumulé :</strong> En additionnant les volumes des 9 requêtes locales (feu vert + chaque ville), on atteint environ 2 500 recherches/mois qui mènent directement au site. C'est la base stable du trafic organique.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">"Feu vert" #4 — 18 100 recherches/mois</div><div class="exp-abbr">REQUÊTE GÉNÉRIQUE À FORT VOLUME</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Position 4</div></div>
+      <div class="exp-desc">Être en position 4 sur "feu vert" (18 100/mois) est un résultat remarquable — la concurrence inclut probablement le groupe Feu Vert France, des articles encyclopédiques et des résultats liés aux feux tricolores. Passer de la position 4 à la position 1-2 sur ce terme multiplierait le trafic sur cette seule requête.</div>
+      <div class="exp-impact"><strong>Impact potentiel :</strong> La position 1 sur "feu vert" représente environ 30% de clics soit ~5 400 visites/mois supplémentaires — quasi autant que le trafic total actuel.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Requêtes génériques permis — absentes</div><div class="exp-abbr">TRAFIC NON-BRANDED INEXPLOITÉ</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 Opportunité majeure</div></div>
+      <div class="exp-desc">AE Feu Vert n'est positionné sur aucune requête générique comme "auto-école Bruxelles", "prix permis conduite Belgique", "comment passer permis B" ou "auto-école pas chère Belgique". Ces requêtes représentent des milliers de recherches mensuelles de prospects qui ne connaissent pas encore Feu Vert.</div>
+      <div class="exp-impact"><strong>Stratégie de contenu :</strong> Des guides pratiques ("Tout savoir sur le permis B en Belgique"), des pages comparatives ("Prix permis conduite Belgique 2026") et des pages FAQ par centre capteraient ce trafic non-branded à forte intention de conversion.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">9 pages centres = 9 leviers SEO local</div><div class="exp-abbr">ARCHITECTURE MULTI-CENTRES</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Base en place</div></div>
+      <div class="exp-desc">La structure actuelle (une page par centre) est la bonne base pour le SEO local. Pour aller plus loin, chaque page centre devrait intégrer : Schema.org LocalBusiness, un avis Google embarqué, une FAQ locale, et du contenu unique sur les particularités du centre (moniteurs, résultats aux examens, accès).</div>
+      <div class="exp-impact"><strong>Résultat visé :</strong> Apparaître dans le "Pack 3 Local" de Google pour "auto-école + ville" dans chacun des 9 bassins géographiques — sans même que le candidat cherche "feu vert".</div>
+    </div>
+  </div>
+</div>
+</section><section id="ux" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fde8f0;color:#c2185b">🎨 Analyse UX Heuristique</div>
+  <h2 class="slide-h1">Audit du site web</h2>
+  <p class="slide-sub">Analyse heuristique · aefeuvert.be · Mai 2026 · Réseau 9 centres · Réservation en ligne</p>
+  <div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Réservation de cours en ligne — fonctionnalité différenciante</div><div class="ux-desc">Le système de réservation en ligne (unique sur le marché selon la charte Feu Vert) permet aux candidats d'annuler et de réserver leurs cours autonomement 24h/24. C'est un avantage concurrentiel fort et un générateur de trafic récurrent : les élèves reviennent régulièrement sur le site.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Différenciation majeure</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Structure par centres bien organisée</div><div class="ux-desc">Chaque centre dispose de sa propre page avec équipe, horaires et contact. Cette architecture est à la fois bonne pour l'UX (un candidat trouve rapidement son centre) et pour le SEO local (une page indexable par ville). La charte et les valeurs sont bien mises en avant.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Point fort</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Charte anti-harcèlement — signal de confiance fort</div><div class="ux-desc">AE Feu Vert est la seule auto-école en Belgique francophone à former systématiquement ses moniteurs contre le harcèlement. C'est un argument de différenciation puissant, particulièrement auprès des parents de jeunes candidats. Ce contenu génère aussi des backlinks et des mentions spontanées dans la presse.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Différenciation</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">Performances 61/100 — chargement perfectible</div><div class="ux-desc">Un score de 61/100 identique sur mobile et desktop indique un problème générique non spécifiquement mobile. Probablement des plugins WordPress lourds ou des images non optimisées. Pour un site avec des candidats qui reviennent régulièrement réserver leurs cours, la fluidité est importante.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">À optimiser</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">Réseaux sociaux — présence à amplifier</div><div class="ux-desc">AE Feu Vert dispose d'une présence sociale structurée (pages Facebook par centre, Instagram général @auto_ecole_feu_vert_officiel avec 46 posts). Cependant, avec seulement 103 abonnés Instagram pour une marque qui forme des milliers de candidats par an, le potentiel est largement sous-exploité. Les témoignages de réussite, before/after examen et conseils code de la route fonctionnent très bien sur ces plateformes auprès des 18-25 ans.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">À amplifier</div></div></div>
+</div>
+</section><section id="geo" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fabd0520;color:#b45309;border:1px solid #fabd0540">🤖 Visibilité GEO / IA</div>
+  <h2 class="slide-h1">Présence dans les IA génératives</h2>
+  <p class="slide-sub">Analyse mai 2026 · Requêtes : "meilleure auto-école Bruxelles" · "auto-école avec réservation en ligne Belgique" · "feu vert auto-école"</p>
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="geo-card"><div class="geo-bar" style="background:#f59e0b"></div><div class="geo-platform">ChatGPT</div><div class="geo-status" style="color:#f59e0b">⚠ Partiel</div><div class="geo-desc">ChatGPT connaît AE Feu Vert — la marque est suffisamment connue et bien documentée sur le web. Sur la requête directe "auto-école feu vert belgique", la marque est citée. Sur "meilleure auto-école Bruxelles", la visibilité est plus incertaine car elle dépend du contenu éditorial disponible.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#f59e0b"></div><div class="geo-platform">Gemini (Google)</div><div class="geo-status" style="color:#f59e0b">⚠ Partiel</div><div class="geo-desc">Le trafic organique croissant et le bon SEO technique favorisent l'indexation par Gemini. Cependant, l'absence de Schema.org LocalBusiness sur les pages centres limite l'affichage de données structurées dans les réponses (adresse, note, horaires).</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">Perplexity</div><div class="geo-status" style="color:#fa3b2e">✗ Faible</div><div class="geo-desc">L'absence de contenu FAQ structuré et de Schema.org limite la citation dans Perplexity. Des articles de type "Comment choisir son auto-école en Belgique" ou "Quel est le prix du permis conduite en 2026" positionneraient Feu Vert comme référence citée.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#2eb078"></div><div class="geo-platform">Opportunité GEO locale</div><div class="geo-status" style="color:#2eb078">💡 Fort potentiel</div><div class="geo-desc">Le secteur des auto-écoles en Belgique est encore peu structuré dans les IA. Avec 8 271 avis Google, une réservation en ligne unique et une charte anti-harcèlement, AE Feu Vert dispose d'éléments différenciants forts pour s'imposer comme référence IA du secteur.</div></div>
+  </div>
+  <div style="background:#e8f8f0;border:1px solid #2eb07840;border-radius:12px;padding:18px;display:flex;gap:12px">
+    <span style="font-size:20px;flex-shrink:0">💡</span>
+    <div>
+      <div style="font-size:13px;font-weight:800;color:#2eb078;margin-bottom:6px">3 actions pour dominer la GEO du secteur auto-école en Belgique</div>
+      <div style="font-size:12px;color:#444;line-height:1.6">1. Ajouter Schema.org <code>EducationalOrganization</code> + <code>LocalBusiness</code> sur chaque centre avec note et horaires. 2. Créer des FAQ structurées sur le permis B (prix, durée, conditions). 3. Mettre en avant les 8 271 avis via Schema.org <code>Review</code>. Ces 3 actions rendraient AE Feu Vert incontournable dans les réponses IA sur le permis de conduire en Belgique francophone.</div>
+    </div>
+  </div>
+</div>
+</section><section id="gmb" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📍 GMB &amp; Réseaux Sociaux</div>
+  <h2 class="slide-h1">Présence locale &amp; sociale</h2>
+  <p class="slide-sub">Analyse réalisée en direct · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">📍 Google My Business — 9 fiches</div>
+      <div style="background:#e6f9f0;border:1px solid #2eb07840;border-radius:10px;padding:14px;margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="font-size:28px;font-weight:800;color:#2eb078;line-height:1">4,5</div>
+          <div>
+            <div style="color:#fabd05;font-size:16px;letter-spacing:2px">★★★★½</div>
+            <div style="font-size:11px;color:#888;margin-top:2px">8 271 avis Google · ensemble des centres</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#2eb078;font-weight:700;margin-bottom:4px">✅ Excellente réputation en ligne</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">4,5★ sur 8 271 avis est une performance remarquable pour un réseau d'auto-écoles. C'est l'un des meilleurs indicateurs de satisfaction client dans ce secteur.</div>
+      </div>
+      <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:10px">📍 Les 9 centres</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;color:#555">📍 Anderlecht (siège)</div>
+        <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;color:#555">📍 Wavre</div>
+        <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;color:#555">📍 Mons</div>
+        <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;color:#555">📍 Schaerbeek</div>
+        <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;color:#555">📍 Waterloo</div>
+        <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;color:#555">📍 Ixelles</div>
+        <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;color:#555">📍 Braine-le-Comte</div>
+        <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;color:#555">📍 Dour</div>
+        <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;color:#555">📍 Tournai</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📱 Réseaux Sociaux</div>
+      <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:10px;padding:12px;margin-bottom:12px">
+        <div style="font-size:12px;font-weight:700;color:#c0392b;margin-bottom:6px">🚨 Absence quasi-totale sur les réseaux sociaux</div>
+        <div style="font-size:11px;color:#666;line-height:1.6">Pour une marque qui s'adresse à des jeunes adultes (18-25 ans) passant leur permis, l'absence sur Instagram et TikTok est un écart avec les habitudes du cœur de cible. Les concurrents présents sur ces canaux captent une audience que Feu Vert ne touche pas digitalement.</div>
+      </div>
+      <div style="margin-bottom:8px;background:#f8f9fa;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#fce8f3;display:flex;align-items:center;justify-content:center;color:#e1306c;font-size:14px;flex-shrink:0">📷</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Instagram — @auto_ecole_feu_vert_officiel</div><div style="font-size:10px;color:#aaa">Compte général officiel</div></div>
+          <span class="status-badge" style="background:#fff8e0;color:#d97706">⚠ À développer</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px">
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#e1306c">103</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#e1306c">46</div><div style="font-size:10px;color:#aaa">publications</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:11px;font-weight:600;color:#555;line-height:1.4">Auto-école<br>actif</div></div>
+        </div>
+        <div style="font-size:11px;color:#888;font-style:italic">"Nous vous accompagnons jusqu'à la réussite de votre permis 🚙🚛🏍️" · www.aefeuvert.be</div>
+      </div>
+      <div style="margin-bottom:8px;background:#f8f9fa;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;color:#1877f2;font-weight:700;flex-shrink:0">f</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Facebook — Pages par centre</div><div style="font-size:10px;color:#aaa">Stratégie locale multi-pages</div></div>
+          <span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Actif</span>
+        </div>
+        <div style="font-size:11px;color:#555;line-height:1.7;margin-bottom:8px">Chaque centre dispose de sa propre page Facebook active :</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+          <div style="background:#fff;border-radius:6px;padding:5px 8px;font-size:10px;color:#555">📍 Wavre · actif</div>
+          <div style="background:#fff;border-radius:6px;padding:5px 8px;font-size:10px;color:#555">📍 Mons · actif · 9 avis 100%</div>
+          <div style="background:#fff;border-radius:6px;padding:5px 8px;font-size:10px;color:#555">📍 Waterloo · actif</div>
+          <div style="background:#fff;border-radius:6px;padding:5px 8px;font-size:10px;color:#555">📍 Braine-le-Comte · actif</div>
+          <div style="background:#fff;border-radius:6px;padding:5px 8px;font-size:10px;color:#555">📍 + autres centres</div>
+          <div style="background:#fff;border-radius:6px;padding:5px 8px;font-size:10px;color:#555">📍 Schaerbeek · Ixelles · Dour</div>
+        </div>
+      </div>
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;color:#0077b5;font-weight:700;flex-shrink:0">in</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">LinkedIn</div><div style="font-size:10px;color:#aaa">Page non officielle</div></div>
+          <span class="status-badge" style="background:#ffecec;color:#fa3b2e">⚠ Non homologuée</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#888">33</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:11px;font-weight:600;color:#555">Page non<br>homologuée</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="opps" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309;border:1px solid #fabd0540">🎯 Opportunités Prioritaires</div>
+  <h2 class="slide-h1">Top 5 axes d'action</h2>
+  <p class="slide-sub">Classés par impact pour AE Feu Vert · réseau 9 centres · Belgique francophone</p>
+  <div class="opp-card"><div class="opp-num" style="background:#fa3b2e">01</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Schema.org par centre — LocalBusiness + avis</div><span class="impact-badge" style="background:#ffecec;color:#fa3b2e">Impact SEO &amp; GEO immédiat</span></div><div class="opp-desc">Ajouter Schema.org EducationalOrganization et LocalBusiness sur chacune des 9 pages centres (adresse, téléphone, horaires, note Google, catégorie). Intégrer les 8 271 avis via Schema.org Review. Ces données permettraient l'affichage d'étoiles et d'infos directement dans Google Search et rendraient Feu Vert incontournable dans les réponses IA sur les auto-écoles belges.</div><div class="opp-tags"><span class="opp-tag" style="background:#ffecec;color:#fa3b2e">Schema.org · WordPress</span><span class="opp-tag" style="background:#f1f3f5;color:#666">1-2 semaines</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#1c2b96">02</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Contenu générique permis — capter les prospects non-brandés</div><span class="impact-badge" style="background:#e8ecff;color:#1c2b96">+2 000 visites/mois potentielles</span></div><div class="opp-desc">Créer des guides pratiques ciblant les prospects qui ne connaissent pas encore Feu Vert : "Prix permis conduite Belgique 2026", "Comment choisir son auto-école", "Tout savoir sur le permis B", "Auto-école à Anderlecht — guide complet". Ces pages combineraient trafic non-branded et conversion directe vers les inscriptions en ligne.</div><div class="opp-tags"><span class="opp-tag" style="background:#e8ecff;color:#1c2b96">Contenu SEO</span><span class="opp-tag" style="background:#f1f3f5;color:#666">3-6 mois</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#2eb078">03</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Amplifier Instagram &amp; Facebook — cœur de cible 18-25 ans</div><span class="impact-badge" style="background:#e6f9f0;color:#2eb078">Notoriété jeunes</span></div><div class="opp-desc">AE Feu Vert dispose déjà d'une base (Instagram 103 abonnés, 46 posts · Facebook par centre actif). L'enjeu est de passer à la vitesse supérieure : publications régulières (3x/semaine), témoignages vidéo de réussite, Reels "coulisses des cours", challenges code de la route. Avec une audience cible de 18-25 ans, Instagram Reels et TikTok sont les canaux les plus efficaces pour générer des inscriptions organiques.</div><div class="opp-tags"><span class="opp-tag" style="background:#e6f9f0;color:#2eb078">Instagram · Facebook · Jeunes</span><span class="opp-tag" style="background:#f1f3f5;color:#666">Immédiat</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fabd05">04</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title" style="color:#030505">Désaveu des 235 backlinks spam</div><span class="impact-badge" style="background:#fff8e0;color:#b45309">Assainissement profil</span></div><div class="opp-desc">235 des 249 backlinks (94%) sont spam — Telegram, annuaires automatisés... Soumettre un fichier Disavow via Google Search Console pour ces domaines assainit le profil et réduit le risque algorithmique. Cette action est sans impact sur les positions actuelles mais sécurise la dynamique de croissance en cours.</div><div class="opp-tags"><span class="opp-tag" style="background:#fff8e0;color:#b45309">SEO technique</span><span class="opp-tag" style="background:#f1f3f5;color:#666">2-4 semaines</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fa8fa3">05</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Homologuer et activer la page LinkedIn officielle</div><span class="impact-badge" style="background:#fde8f0;color:#c2185b">Recrutement &amp; partenariats</span></div><div class="opp-desc">La page LinkedIn actuelle (33 abonnés) n'est pas homologuée — elle peut être revendiquée par n'importe qui. Créer une page officielle est prioritaire pour le recrutement de moniteurs, la communication B2B (partenariats écoles, communes, entreprises) et la crédibilité institutionnelle du réseau.</div><div class="opp-tags"><span class="opp-tag" style="background:#fde8f0;color:#c2185b">LinkedIn · B2B</span><span class="opp-tag" style="background:#f1f3f5;color:#666">Immédiat</span></div></div></div>
+</div>
+</section><section id="closing" class="closing-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#fa3b2e"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div></div>
+  <div class="closing-body">
+    <div class="closing-sub">Et si on développait</div>
+    <div class="closing-title">votre potentiel<br>digital ?</div>
+    <div class="closing-sep"></div>
+    <div class="closing-desc">Chez Poush, on ne fait pas d'audit pour faire de l'audit. On identifie ce qui freine votre <strong style="color:#ccc">efficacité</strong> en ligne — et on vous propose un plan d'action concret, réaliste, adapté à votre secteur et à vos ambitions.</div>
+    <div class="closing-services">
+      <div class="closing-svc"><div class="closing-svc-icon">📈</div><div class="closing-svc-name">SEO local multi-centres</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🤖</div><div class="closing-svc-name">Schema.org &amp; GEO / IA</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">📱</div><div class="closing-svc-name">Instagram &amp; Social jeunes</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">✍️</div><div class="closing-svc-name">Contenu permis &amp; guides</div></div>
+    </div>
+    <div class="closing-baseline">Développeurs de votre potentiel</div>
+    <div class="closing-contact"><strong>Michael</strong> · michael@poush.be · www.poush.be · +32 (0)486 892 956<br>Rue de la Croix Limont 11, B-5590 Ciney</div>
+  </div>
+</section>
+</main>
+<script>
+const sections=document.querySelectorAll("section[id]");
+const pills=document.querySelectorAll(".nav-pill");
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove("active"));const a=document.querySelector(`.nav-pill[data-id="${e.target.id}"]`);if(a){a.classList.add("active");a.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})}}});},{threshold:0.3});
+sections.forEach(s=>obs.observe(s));
+</script>
+
+</body></html>
