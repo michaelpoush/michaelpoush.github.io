@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///Users/michaeldebecker/Downloads/Artone_Poush_v1_11.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>État des Lieux Digital — Artone · Poush</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+:root{--black:#030505;--blue:#1c2b96;--yellow:#fabd05;--red:#fa3b2e;--green:#2eb078;--pink:#fa8fa3;--gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#e9ecef;--gray-600:#6c757d;--orange:#f59e0b;--font:"DM Sans",sans-serif;--mono:"DM Mono",monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#111;color:var(--black)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px}
+.nav-brand{display:flex;align-items:center;gap:12px}.nav-dots{display:flex;gap:5px}.nav-dot{width:9px;height:9px;border-radius:50%}
+.nav-logo{color:#fff;font-size:17px;font-weight:700;letter-spacing:-.3px}.nav-divider{width:1px;height:20px;background:#333}.nav-title{color:var(--yellow);font-size:13px;font-weight:500}
+.nav-pills{display:flex;gap:4px;overflow-x:auto}.nav-pill{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;color:#888;cursor:pointer;white-space:nowrap;transition:all .15s;border:1px solid transparent;text-decoration:none}
+.nav-pill:hover,.nav-pill.active{color:#fff;background:#222;border-color:#333}
+main{padding-top:56px}.slide{min-height:100vh;position:relative;overflow:hidden}.slide-inner{max-width:1100px;margin:0 auto;padding:64px 40px;width:100%}
+.slide-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+.slide-h1{font-size:36px;font-weight:700;line-height:1.1;margin-bottom:8px}.slide-sub{font-size:15px;color:var(--gray-600);margin-bottom:32px}
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--gray-200);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-title{font-size:13px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gray-100)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gauge-label{font-size:11px;font-weight:600;color:#555;text-align:center;line-height:1.3}.gauge-status{font-size:10px;font-weight:700;letter-spacing:.5px;text-align:center}
+.alert-box{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:14px 16px;margin-bottom:20px}
+.metric-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:8px;margin-bottom:5px}
+.metric-name{font-size:12px;font-weight:500;color:#444;display:flex;align-items:center;gap:8px}.metric-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.metric-val{font-size:12px;font-weight:700;font-family:var(--mono)}.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.kpi-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px;text-align:center}
+.kpi-val{font-size:40px;font-weight:800;line-height:1;margin-bottom:4px}.kpi-label{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.4px}.kpi-sub{font-size:11px;color:#aaa;margin-top:4px}
+.badge-inline{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-top:8px}
+.prog-wrap{margin-bottom:12px}.prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-label{font-size:11px;font-weight:600;color:#555}.prog-val{font-size:11px;font-weight:700;font-family:var(--mono)}
+.prog-track{height:7px;background:var(--gray-100);border-radius:4px;overflow:hidden}.prog-fill{height:100%;border-radius:4px}
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:4px;background:#f8f9fa}
+.bl-domain{font-size:12px;color:#444;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.tf-badge{padding:3px 9px;border-radius:12px;font-size:11px;font-weight:800;font-family:var(--mono);flex-shrink:0;margin-left:8px}
+.bar-chart{position:relative;height:130px;display:flex;align-items:flex-end;gap:2px;padding-bottom:20px;padding-left:32px}
+.bar-item{flex:1;border-radius:3px 3px 0 0}.axis-y{position:absolute;left:0;top:0;bottom:20px;display:flex;flex-direction:column;justify-content:space-between}
+.axis-label{font-size:9px;color:#ccc;font-family:var(--mono)}.axis-x{display:flex;justify-content:space-between;padding-left:32px;margin-top:4px}.axis-x span{font-size:9px;color:#bbb}
+.grid-line{position:absolute;left:32px;right:0;height:1px;background:#f1f3f5}
+.legend-row{display:flex;gap:12px;margin-top:10px}.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#888}.leg-dot{width:10px;height:10px;border-radius:2px}
+.ux-item{display:flex;gap:14px;padding:16px 18px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);margin-bottom:10px}
+.ux-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:1px}
+.ux-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px}.ux-desc{font-size:12px;color:#666;line-height:1.6}
+.ux-tag{display:inline-flex;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-top:6px}
+.geo-card{background:#fff;border-radius:12px;padding:18px;position:relative;overflow:hidden;border:1px solid var(--gray-200)}
+.geo-bar{position:absolute;top:0;left:0;right:0;height:3px}.geo-platform{font-size:15px;font-weight:800;color:var(--black);margin-bottom:6px;margin-top:4px}
+.geo-status{font-size:13px;font-weight:700;margin-bottom:10px}.geo-desc{font-size:12px;color:#666;line-height:1.6}
+.social-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;margin-bottom:6px}
+.s-left{display:flex;align-items:center;gap:10px}.s-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.s-name{font-size:13px;font-weight:700;color:var(--black)}.s-stats{font-size:11px;color:#888;margin-top:1px}
+.opp-card{display:flex;gap:16px;padding:18px;background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 1px 4px rgba(0,0,0,.04);margin-bottom:12px}
+.opp-num{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.opp-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:5px}.opp-desc{font-size:12px;color:#666;line-height:1.6}
+.opp-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.opp-tag{padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700}
+.impact-badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0;align-self:flex-start}
+.blue-box{background:var(--blue);border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;margin-top:16px}
+.blue-box-title{font-size:13px;font-weight:800;color:var(--yellow);margin-bottom:6px}.blue-box-desc{font-size:12px;color:#ccc;line-height:1.7}
+.explainer-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px}
+.exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.exp-name{font-size:14px;font-weight:800;color:var(--black)}.exp-abbr{font-size:11px;font-weight:600;color:#888;margin-top:2px;font-family:var(--mono)}
+.exp-badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.exp-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:10px}
+.exp-impact{font-size:12px;color:#444;line-height:1.5;background:var(--gray-50);border-radius:8px;padding:10px 12px;border-left:3px solid var(--gray-200)}
+.exp-analogy{background:var(--gray-50);border-radius:10px;padding:12px;margin-top:10px;display:flex;gap:10px;align-items:flex-start}
+.analogy-icon{font-size:18px;flex-shrink:0}.analogy-text{font-size:12px;color:#666;line-height:1.6;font-style:italic}
+.exp-scale{display:flex;gap:4px;margin-top:10px}.exp-scale-item{flex:1;border-radius:4px;padding:4px 6px;text-align:center;font-size:10px;font-weight:700}
+.slide-explain-tag{display:inline-flex;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:#fff8e0;color:#b45309;margin-bottom:12px}
+.cover-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.cover-bar{width:8px;display:flex;flex-direction:column;flex-shrink:0}.cover-bar-seg{flex:1}
+.cover-body{padding:80px 60px;flex:1}
+.cover-eyebrow{font-size:11px;font-weight:700;color:var(--yellow);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.cover-name{font-size:68px;font-weight:800;line-height:.9;color:#fff;margin-bottom:10px}
+.cover-url{font-family:var(--mono);font-size:16px;color:#555;margin-bottom:36px}
+.cover-line{width:70px;height:3px;background:var(--yellow);margin-bottom:24px}
+.cover-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
+.cover-pill{padding:6px 16px;border:1px solid #333;border-radius:20px;font-size:13px;font-weight:500;color:#ccc}
+.cover-meta{font-size:12px;color:#444}
+.closing-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.closing-body{padding:80px 60px;flex:1}
+.closing-sub{font-size:24px;color:#555;font-weight:300;margin-bottom:8px}
+.closing-title{font-size:56px;font-weight:800;color:#fff;line-height:.92;margin-bottom:20px}
+.closing-sep{width:70px;height:3px;background:var(--yellow);margin-bottom:28px}
+.closing-desc{font-size:14px;color:#999;max-width:560px;line-height:1.8;margin-bottom:36px}
+.closing-services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+.closing-svc{background:#111;border:1px solid #222;border-radius:12px;padding:16px}
+.closing-svc-icon{font-size:22px;margin-bottom:8px}.closing-svc-name{font-size:12px;font-weight:700;color:#fff;line-height:1.4}
+.closing-baseline{font-size:18px;font-weight:800;color:var(--yellow);margin-bottom:12px}
+.closing-contact{font-size:12px;color:#444;line-height:1.9}.closing-contact strong{color:#888}
+.bg-white{background:#fff}.bg-light{background:var(--gray-50)}
+.missing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mkw{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 12px}
+.mkw-name{font-size:12px;font-weight:600;color:#444;margin-bottom:4px}.mkw-vol{font-size:11px;color:#888;font-family:var(--mono)}
+.mkw-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;margin-top:4px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dots"><div class="nav-dot" style="background:#fa3b2e"></div><div class="nav-dot" style="background:#fabd05"></div><div class="nav-dot" style="background:#fa8fa3"></div><div class="nav-dot" style="background:#2eb078"></div><div class="nav-dot" style="background:#1c2b96"></div></div>
+    <span class="nav-logo">poush</span><div class="nav-divider"></div>
+    <span class="nav-title">État des Lieux Digital — Artone</span>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill" data-id="cover" onclick="document.getElementById(&#39;cover&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Cover</button>
+    <button class="nav-pill" data-id="perf" onclick="document.getElementById(&#39;perf&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Performances</button>
+    <button class="nav-pill" data-id="config" onclick="document.getElementById(&#39;config&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Config. Technique</button>
+    <button class="nav-pill" data-id="autorite" onclick="document.getElementById(&#39;autorite&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Autorité SEO</button>
+    <button class="nav-pill" data-id="trafic" onclick="document.getElementById(&#39;trafic&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Trafic</button>
+    <button class="nav-pill" data-id="keywords" onclick="document.getElementById(&#39;keywords&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Mots-clés</button>
+    <button class="nav-pill" data-id="ux" onclick="document.getElementById(&#39;ux&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">UX</button>
+    <button class="nav-pill" data-id="geo" onclick="document.getElementById(&#39;geo&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GEO / IA</button>
+    <button class="nav-pill" data-id="gmb" onclick="document.getElementById(&#39;gmb&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GMB &amp; Social</button>
+    <button class="nav-pill active" data-id="opps" onclick="document.getElementById(&#39;opps&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Opportunités</button>
+    <button class="nav-pill" data-id="closing" onclick="document.getElementById(&#39;closing&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Poush</button>
+  </div>
+</nav>
+<main>
+<section id="cover" class="cover-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#fa3b2e"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div></div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">État des lieux digital · Mai 2026</div>
+    <div class="cover-name">Artone</div>
+    <div class="cover-url">www.artone.be</div>
+    <div class="cover-line"></div>
+    <div style="font-size:14px;color:#888;margin-bottom:10px">Une analyse complète de votre écosystème digital :</div>
+    <div class="cover-pills">
+      <span class="cover-pill">🌐 Site Web</span><span class="cover-pill">🔍 SEO</span>
+      <span class="cover-pill">🤖 GEO / IA</span><span class="cover-pill">📍 Google My Business</span>
+      <span class="cover-pill">📱 Réseaux Sociaux</span>
+    </div>
+    <div class="cover-meta">Préparé par Poush · michael@poush.be · +32 (0)486 892 956</div>
+  </div>
+  <div style="position:absolute;right:60px;bottom:80px">
+    <div style="background:#1c2b96;border-radius:12px;padding:16px 20px;text-align:center">
+      <div style="font-size:11px;font-weight:700;color:#fabd05;letter-spacing:1px;margin-bottom:6px">SECTEUR</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.4">Promotion Immobilière<br>Développement Urbain</div>
+      <div style="font-size:11px;color:#888;margin-top:6px">Bruxelles · Wallonie · Luxembourg 🇧🇪</div>
+    </div>
+  </div>
+</section><section id="perf" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff0ee;color:#fa3b2e">⚡ Performances &amp; Core Web Vitals</div>
+  <h2 class="slide-h1">Rapport PageSpeed Insights</h2>
+  <p class="slide-sub">Rapport du 27 mai 2026 · artone.be</p>
+  <div class="alert-box" style="background:#fff0ee;border:1px solid #fca59e;margin-bottom:28px">
+    <span style="font-size:18px;flex-shrink:0">⚠️</span>
+    <div><div style="font-size:14px;font-weight:700;color:#c0392b">Performances mobile 46/100 — principal axe d'amélioration</div>
+    <div style="font-size:13px;color:#999;margin-top:2px">Le score mobile (46/100) indique une marge de progression significative, notamment sur les performances et l'accessibilité. Sur desktop, le site est fonctionnel (58/100) avec de bonnes bases techniques (Bonnes pratiques &amp; SEO 100/100).</div></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:24px">
+    <div class="card"><div class="card-title">📱 Mobile</div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="109" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">46</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#f59e0b">À AMÉLIORER</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="44" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">78</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+    <div class="card"><div class="card-title">🖥️ Desktop</div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="84" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">58</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="52" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">74</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+  </div>
+</div>
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que mesurent ces 4 scores</h2>
+  <p class="slide-sub">Les 4 indicateurs Google PageSpeed Insights · artone.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Performances</div><div class="exp-abbr">VITESSE DE CHARGEMENT GLOBALE</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ 46 mobile · 58 desktop</div></div>
+      <div class="exp-desc">Le score Performances mesure la rapidité globale du site : à quelle vitesse les pages se chargent et deviennent utilisables. Il prend en compte la vitesse d'affichage du contenu, la réactivité aux clics et la stabilité visuelle pendant le chargement.</div>
+      <div class="exp-impact"><strong>Impact :</strong> Un site rapide est mieux classé par Google et retient mieux les visiteurs. Le seuil "vert" est 90+. Artone a une marge de progression sur mobile (46) et desktop (58), principalement liée au poids des visuels premium du site.</div>
+      <div class="exp-analogy"><span class="analogy-icon">⚡</span><span class="analogy-text">C'est la note globale de vitesse — comme le chrono d'un coureur. Plus il est élevé, plus le site répond vite aux attentes des visiteurs.</span></div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Accessibilité</div><div class="exp-abbr">UTILISABILITÉ POUR TOUS LES PUBLICS</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ 78 mobile · 74 desktop</div></div>
+      <div class="exp-desc">L'accessibilité mesure si le site est utilisable par tous : personnes malvoyantes, daltoniens, utilisateurs de lecteurs d'écran, personnes naviguant au clavier. Elle vérifie les contrastes de couleurs, les textes alternatifs des images, la structure des titres et les attributs ARIA.</div>
+      <div class="exp-impact"><strong>Impact :</strong> Un score de 78 indique des problèmes de contraste ou d'attributs manquants. Pour un promoteur qui s'adresse à des investisseurs et partenaires institutionnels, l'accessibilité est aussi un signal de qualité et de soin apporté au site.</div>
+      <div class="exp-analogy"><span class="analogy-icon">♿</span><span class="analogy-text">C'est comme s'assurer qu'un bâtiment est accessible à tous — rampes, ascenseurs, signalétique claire. Un site accessible est un site inclusif et professionnel.</span></div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Bonnes pratiques</div><div class="exp-abbr">QUALITÉ &amp; SÉCURITÉ TECHNIQUE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ 100/100</div></div>
+      <div class="exp-desc">Les bonnes pratiques évaluent la qualité technique du code : HTTPS activé, absence d'erreurs JavaScript dans la console, utilisation de bibliothèques sécurisées, compatibilité avec les standards modernes des navigateurs. Un score de 100 signifie que le site respecte tous les standards web actuels.</div>
+      <div class="exp-impact"><strong>Point fort :</strong> Un 100/100 en Bonnes pratiques est un excellent signal de qualité technique. Cela signifie qu'Artone n'a pas de dette technique visible et que le site est sécurisé et moderne. C'est une base solide pour toutes les autres optimisations.</div>
+      <div class="exp-analogy"><span class="analogy-icon">🛡️</span><span class="analogy-text">C'est le contrôle technique du site — comme un bâtiment aux normes, aux câblages conformes et sans risque. Artone est irréprochable sur ce point.</span></div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">SEO</div><div class="exp-abbr">OPTIMISATION POUR LES MOTEURS DE RECHERCHE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ 100/100</div></div>
+      <div class="exp-desc">Le score SEO technique vérifie que le site est correctement configuré pour être indexé par Google : balises title et meta description présentes, structure de titres logique (H1, H2...), liens accessibles, pas de directives "noindex" accidentelles, compatibilité mobile déclarée.</div>
+      <div class="exp-impact"><strong>Point fort :</strong> Un 100/100 en SEO technique signifie que la structure du site ne crée aucun frein à l'indexation. Attention : ce score ne mesure pas le positionnement réel — il valide uniquement les fondations techniques. Le contenu et les backlinks déterminent ensuite le ranking.</div>
+      <div class="exp-analogy"><span class="analogy-icon">🔍</span><span class="analogy-text">C'est la visibilité du bâtiment sur la carte. Un 100 signifie que Google peut trouver, lire et indexer le site sans obstacle — c'est une condition nécessaire mais pas suffisante pour bien se positionner.</span></div>
+    </div>
+  </div>
+</div>
+</section><section id="config" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">⚙️ Configuration Technique</div>
+  <h2 class="slide-h1">Fondations techniques — WordPress</h2>
+  <p class="slide-sub">robots.txt · sitemap · agents IA · artone.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">🗺️ Indexation &amp; Structure</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>CMS</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">WordPress + Yoast SEO</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ WordPress</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Sitemap XML</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">artone.be/sitemap_index.xml · Yoast</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Présent</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>HTTPS / SSL</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Sécurisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Score SEO Lighthouse</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 100/100</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Crawl Majestic</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Pages indexées Majestic</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">17 pages</div></div><span class="status-badge" style="background:#fff8e0;color:#d97706">⚠ 17 pages</span></div>
+    </div>
+    <div class="card"><div class="card-title">🤖 Accessibilité Agents IA</div>
+      <div style="font-size:12px;color:#555;line-height:1.6;margin-bottom:14px">Robots.txt Yoast standard — aucun agent bloqué. Tous les crawlers IA sont autorisés à indexer le contenu d'Artone.</div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>GPTBot (ChatGPT)</div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Google-Extended (Gemini)</div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>PerplexityBot</div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>Schema.org / données structurées</div></div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">⚠ À vérifier</span></div>
+    </div>
+  </div>
+
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les indicateurs</div>
+  <h2 class="slide-h1">Ce que révèlent les fondations techniques</h2>
+  <p class="slide-sub">Analyse de la configuration technique d'artone.be · Mai 2026</p>
+  <div class="grid-2">
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">CMS — WordPress + Yoast SEO</div><div class="exp-abbr">SYSTÈME DE GESTION DE CONTENU</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Solide</div></div>
+      <div class="exp-desc">WordPress est le CMS le plus utilisé au monde (43% des sites). Yoast SEO est le plugin de référence pour optimiser chaque page : balises meta, sitemap automatique, structure des données. Cette stack offre une grande autonomie pour gérer projets, blog et actualités sans dépendre d'un développeur pour chaque mise à jour.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Sitemap XML</div><div class="exp-abbr">CARTE DU SITE POUR GOOGLE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Présent</div></div>
+      <div class="exp-desc">Le sitemap XML est un fichier qui liste toutes les pages du site et indique à Google lesquelles indexer en priorité. Chez Artone, il est généré automatiquement par Yoast SEO et soumis à Google Search Console. Chaque nouveau projet ou article de blog est automatiquement inclus — Google est notifié rapidement des nouvelles pages.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">HTTPS / SSL</div><div class="exp-abbr">SÉCURITÉ DE LA CONNEXION</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Sécurisé</div></div>
+      <div class="exp-desc">Le HTTPS garantit que toutes les communications entre le visiteur et le site sont chiffrées. C'est un prérequis absolu pour Google (critère de ranking depuis 2014) et pour la confiance des visiteurs. Un site sans HTTPS est signalé comme "non sécurisé" par les navigateurs — rédhibitoire pour un promoteur immobilier premium.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Score SEO Lighthouse — 100/100</div><div class="exp-abbr">FONDATIONS SEO TECHNIQUES</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Parfait</div></div>
+      <div class="exp-desc">Le score SEO Lighthouse vérifie que le site est correctement configuré pour être indexé : balises title et meta description présentes et uniques sur chaque page, structure de titres logique (H1 → H2), liens accessibles, compatibilité mobile déclarée, aucune directive "noindex" accidentelle. Un 100/100 valide que les fondations sont saines — c'est une condition nécessaire pour bien ranker, mais le contenu et les backlinks déterminent ensuite les positions.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Crawl Majestic</div><div class="exp-abbr">ACCESSIBILITÉ AUX OUTILS D'ANALYSE SEO</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</div></div>
+      <div class="exp-desc">Majestic est l'un des principaux outils d'analyse de backlinks SEO. Son crawler analyse en permanence les liens entrants et sortants du site pour calculer le TrustFlow et le CitationFlow. Si le crawl est bloqué (via robots.txt), les données de backlinks sont incomplètes et le site peut être mal évalué par les outils SEO. Chez Artone, le crawl est autorisé — les données sont fiables.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Pages indexées Majestic — 17</div><div class="exp-abbr">SURFACE D'INDEXATION CONNUE</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ 17 pages</div></div>
+      <div class="exp-desc">Majestic a découvert 17 pages d'artone.be via ses crawls. Ce chiffre reflète les pages qui ont reçu au moins un backlink — il ne représente pas l'intégralité du site. Pour un promoteur avec de nombreux projets, des pages d'équipe et un blog actif, ce nombre est relativement faible. Cela suggère que beaucoup de pages ne reçoivent pas encore de liens entrants pointant directement vers elles.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Agents IA — GPTBot, Gemini, Perplexity</div><div class="exp-abbr">ACCESSIBILITÉ AUX IA GÉNÉRATIVES</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisés</div></div>
+      <div class="exp-desc">ChatGPT (GPTBot), Gemini (Google-Extended) et Perplexity envoient leurs propres crawlers pour indexer le web et alimenter leurs réponses. Si ces agents sont bloqués dans le robots.txt, le site ne peut jamais être cité dans les réponses IA — même si le contenu est pertinent. Chez Artone, aucun agent n'est bloqué : le contenu est accessible à toutes les IA génératives.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Schema.org — Données structurées</div><div class="exp-abbr">BALISAGE SÉMANTIQUE POUR GOOGLE &amp; IA</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Partiel</div></div>
+      <div class="exp-desc">Les données structurées Schema.org permettent à Google et aux IA de comprendre précisément ce que contient une page : type d'organisation, localisation, projets immobiliers, équipe... Chez Artone, le test Google Rich Results (28 mai 2026) ne détecte qu'un seul type de donnée structurée : le <strong>Fil d'Ariane (BreadcrumbList)</strong> — utile pour la navigation, mais insuffisant.</div>
+      <div class="exp-impact"><strong>Ce qui manque :</strong> <code>Organization</code> (nom, logo, coordonnées, réseaux sociaux), <code>LocalBusiness</code> (adresse, secteur), <code>RealEstateAgent</code> (spécialisation immobilière) et <code>WebSite</code> (SearchAction pour la recherche interne). Ces 4 types de données permettraient à Google d'afficher des résultats enrichis (adresse, logo, liens directs) et aux IA de citer Artone avec précision dans leurs réponses sur l'immobilier bruxellois.</div>
+    </div>
+
+  </div>
+</div>
+</section>
+<section id="autorite" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">📊 Autorité SEO</div>
+  <h2 class="slide-h1">Autorité &amp; Backlinks</h2>
+  <p class="slide-sub">Données SEObserver · Majestic · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">📊 Métriques d'autorité</div>
+      <div class="grid-2" style="margin-bottom:16px">
+        <div class="kpi-card" style="border-top:3px solid #f59e0b"><div class="kpi-val" style="color:#f59e0b">11</div><div class="kpi-label">Trust Flow</div><div class="kpi-sub">Business / Real Estate</div></div>
+        <div class="kpi-card" style="border-top:3px solid #1c2b96"><div class="kpi-val" style="color:#1c2b96">16</div><div class="kpi-label">Citation Flow</div><div class="kpi-sub">Ratio TF/CF : 69%</div></div>
+        <div class="kpi-card" style="border-top:3px solid #2eb078"><div class="kpi-val" style="color:#2eb078">137</div><div class="kpi-label">Domaines référents</div><div class="kpi-sub">555 pages référentes</div></div>
+        <div class="kpi-card" style="border-top:3px solid #f59e0b"><div class="kpi-val" style="color:#f59e0b">17</div><div class="kpi-label">Pages indexées</div><div class="kpi-sub">Majestic</div></div>
+      </div>
+      <div style="background:#e8f8f0;border:1px solid #2eb07840;border-radius:10px;padding:14px">
+        <div style="font-size:11px;font-weight:700;color:#2eb078;margin-bottom:6px">✅ TF en forte progression depuis 2025</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">La courbe historique montre une progression significative du TrustFlow en 2025-2026, signe d'une couverture médiatique et de partenariats sectoriels croissants.</div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title">🔗 Top 10 backlinks — par Trust Flow</div>
+      <div style="border:1px solid #e9ecef;border-radius:10px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;background:#1c2b96;padding:8px 14px;gap:8px">
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Domaine source</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Ancre</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:right;text-transform:uppercase">TF</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">upsi-bvs.be</div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Union Prof. Secteur Immobilier Belge</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic"></div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">28</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">abv-development.com</div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Bureau conseils &amp; études en ingénierie</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic"></div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">17</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">ucclesport.be</div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Club sportif d'Uccle</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic">artone</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">16</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">aperoligue.be</div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Ligue sportive belge</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic">artone</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">9</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">nexioe.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic">artone.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">6</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">ziptet.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic">artone.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">6</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">webgoz.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic">artone.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">6</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">yexhub.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic">artone.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">6</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">fastoq.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic">artone.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">5</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div>
+    <div style="font-size:12px;font-weight:600;color:#030505">gaetanegoethals.be</div>
+    <div style="font-size:10px;color:#aaa;margin-top:1px">Site personnel</div>
+  </div>
+  <div style="font-size:11px;color:#888;font-style:italic">artone</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div>
+      </div>
+      <div style="font-size:10px;color:#aaa;margin-top:6px;text-align:right">133 backlinks au total · 13 zero spam · 120 spam</div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèle le profil de backlinks</h2>
+  <p class="slide-sub">Données Majestic via SEObserver · artone.be · Mai 2026</p>
+  <div class="grid-2">
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">TrustFlow (TF) — 11</div><div class="exp-abbr">QUALITÉ DES LIENS ENTRANTS</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Moyen · En progression</div></div>
+      <div class="exp-desc">Le TrustFlow mesure la qualité des backlinks pointant vers un site, sur une échelle de 0 à 100. Il est calculé à partir de la distance entre le site et un ensemble de sites "de confiance" de référence (grands médias, institutions, universités). Plus un site est proche de ces sources fiables via ses liens, plus son TF est élevé.</div>
+      <div class="exp-impact"><strong>Pour Artone :</strong> Un TF de 11 est correct pour un promoteur immobilier de taille moyenne. La progression récente (TF historiquement bas, hausse marquée en 2025-2026) reflète l'impact des articles de presse (La Libre, L'Echo) et du partenariat UPSI-BVS (TF 28).</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">CitationFlow (CF) — 16</div><div class="exp-abbr">QUANTITÉ DES LIENS ENTRANTS</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Correct</div></div>
+      <div class="exp-desc">Le CitationFlow mesure la quantité de liens pointant vers un site, indépendamment de leur qualité. Un CF élevé avec un TF bas signifie beaucoup de liens peu fiables (spam). Un CF proche du TF signifie un profil sain. Chez Artone, CF 16 vs TF 11 donne un ratio de 69% — acceptable mais perfectible.</div>
+      <div class="exp-impact"><strong>Lecture du ratio :</strong> Plus le ratio TF/CF est proche de 100%, plus les liens entrants sont de qualité. Ici, 69% signifie que le CF (volume) dépasse le TF (qualité) — en grande partie à cause des 120 backlinks spam qui gonflent le CF sans apporter de TF. Un désaveu de ces liens via Google Disavow Tool améliorerait ce ratio.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">137 domaines référents · 555 pages</div><div class="exp-abbr">LARGEUR DU PROFIL DE BACKLINKS</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Bonne base</div></div>
+      <div class="exp-desc">137 domaines différents pointent vers artone.be — c'est une bonne diversité pour un acteur de niche. Le nombre de pages référentes (555) indique que plusieurs pages du site reçoivent des liens, pas seulement la page d'accueil. La diversité des domaines référents est un signal positif pour Google.</div>
+      <div class="exp-impact"><strong>Contexte sectoriel :</strong> Pour un promoteur immobilier bruxellois de 10 ans d'activité, 137 domaines référents est honorable. Un concurrent comme Eaglestone ou BPI Real Estate se situera probablement entre 200 et 500 domaines référents.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">90% de backlinks spam — à désavouer</div><div class="exp-abbr">QUALITÉ DU PROFIL · 120 SPAM / 133</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ À traiter</div></div>
+      <div class="exp-desc">120 des 133 backlinks (90%) proviennent d'annuaires automatisés sans valeur SEO (nexioe.com, ziptet.com, webgoz.com...). Ces liens n'apportent aucune autorité et peuvent, en grande quantité, être interprétés négativement par Google. Les 13 liens "zero spam" sont ceux qui comptent vraiment : UPSI-BVS, ABV Development, Ucclesport, Aperoligue.</div>
+      <div class="exp-impact"><strong>Action recommandée :</strong> Soumettre un fichier Disavow via Google Search Console pour les 120 domaines spam. Cette opération est sans risque pour les positions actuelles et assainit le profil pour les futures évaluations algorithmiques Google.</div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section id="trafic" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📈 Trafic Organique</div>
+  <h2 class="slide-h1">Évolution &amp; Tendances</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · 2024 → Mai 2026</p>
+  <div class="alert-box" style="background:#e8f8f0;border:1px solid #2eb07840;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">✅</span>
+    <div><div style="font-size:13px;font-weight:700;color:#2eb078">Trafic stable et régulier — profil de notoriété de marque</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Artone maintient un trafic organique stable de ~100-200 visites/mois depuis 2024. Le trafic est principalement généré par la marque (terme "artone" #1) et les projets phares. La tendance est légèrement à la hausse en 2026.</div></div>
+  </div>
+  <div class="grid-3" style="margin-bottom:24px">
+    <div class="kpi-card" style="border-top:3px solid #2eb078">
+      <div class="kpi-val" style="color:#2eb078">~150</div>
+      <div class="kpi-label">Trafic mensuel estimé</div>
+      <div class="kpi-sub">visites/mois · SEMrush</div>
+      <div class="badge-inline" style="background:#e8f8f0;color:#2eb078">📈 Stable &amp; croissant</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #1c2b96">
+      <div class="kpi-val" style="color:#1c2b96">20</div>
+      <div class="kpi-label">Mots-clés positionnés</div>
+      <div class="kpi-sub">Belgique · SEMrush</div>
+      <div class="badge-inline" style="background:#e8ecff;color:#1c2b96">Marque + projets</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #f59e0b">
+      <div class="kpi-val" style="color:#f59e0b">11</div>
+      <div class="kpi-label">Trust Flow</div>
+      <div class="kpi-sub">En progression depuis 2025</div>
+      <div class="badge-inline" style="background:#fff8e0;color:#d97706">📈 En hausse</div>
+    </div>
+  </div>
+  <div class="card" style="padding:24px">
+    <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:14px">Historique trafic SEMrush · 2024 → Mai 2026</div>
+    <div style="position:relative">
+      <div style="position:absolute;left:32px;right:0;top:0;bottom:20px"><div class="grid-line" style="top:0%"></div><div class="grid-line" style="top:50%"></div></div>
+      <div class="axis-y"><span class="axis-label">200</span><span class="axis-label">100</span><span class="axis-label">0</span></div>
+      <div class="bar-chart"><div class="bar-item" style="height:85%;background:#3b82f6"></div><div class="bar-item" style="height:90%;background:#3b82f6"></div><div class="bar-item" style="height:100%;background:#2563eb"></div><div class="bar-item" style="height:95%;background:#2563eb"></div><div class="bar-item" style="height:80%;background:#3b82f6"></div><div class="bar-item" style="height:75%;background:#60a5fa"></div><div class="bar-item" style="height:70%;background:#60a5fa"></div><div class="bar-item" style="height:65%;background:#60a5fa"></div><div class="bar-item" style="height:75%;background:#3b82f6"></div><div class="bar-item" style="height:80%;background:#3b82f6"></div><div class="bar-item" style="height:90%;background:#2563eb"></div><div class="bar-item" style="height:85%;background:#2563eb"></div><div class="bar-item" style="height:70%;background:#60a5fa"></div><div class="bar-item" style="height:65%;background:#60a5fa"></div><div class="bar-item" style="height:75%;background:#3b82f6"></div><div class="bar-item" style="height:80%;background:#3b82f6"></div><div class="bar-item" style="height:85%;background:#1c2b96"></div><div class="bar-item" style="height:90%;background:#1c2b96"></div><div class="bar-item" style="height:95%;background:#fabd05"></div><div class="bar-item" style="height:85%;background:#1c2b96"></div><div class="bar-item" style="height:80%;background:#1c2b96"></div><div class="bar-item" style="height:85%;background:#1c2b96"></div><div class="bar-item" style="height:90%;background:#fabd05"></div><div class="bar-item" style="height:95%;background:#fabd05"></div><div class="bar-item" style="height:90%;background:#fabd05"></div></div>
+      <div class="axis-x"><span>Déb.24</span><span>Mid 24</span><span>Déb.25</span><span>Mid 25</span><span>Mai 26</span></div>
+    </div>
+    <div class="legend-row">
+      <div class="leg-item"><div class="leg-dot" style="background:#3b82f6"></div>Trafic stable (~100-150/mois)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fabd05"></div>Hausse récente (~150-200/mois)</div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèle le trafic organique</h2>
+  <p class="slide-sub">Données SEMrush via SEObserver · artone.be · Mai 2026</p>
+  <div class="grid-2">
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Trafic organique estimé</div><div class="exp-abbr">VISITES ISSUES DES MOTEURS DE RECHERCHE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ ~150/mois</div></div>
+      <div class="exp-desc">Le trafic organique représente les visites qui arrivent sur le site via une recherche Google, sans publicité payante. SEMrush l'estime à partir des positions détectées sur les mots-clés et des volumes de recherche associés. C'est une estimation — le trafic réel (visible dans Google Analytics ou Search Console) peut différer.</div>
+      <div class="exp-impact"><strong>Pour Artone :</strong> ~150 visites/mois organiques est cohérent avec un profil de notoriété de marque : les visiteurs connaissent déjà Artone et recherchent directement le site. La majorité du trafic est donc de type "branded" (requêtes incluant le nom Artone).</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Trafic "branded" vs "non-branded"</div><div class="exp-abbr">NATURE DU TRAFIC</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Majoritairement branded</div></div>
+      <div class="exp-desc">Le trafic "branded" vient de recherches contenant le nom de marque ("artone", "artone immobilier"...). Le trafic "non-branded" vient de requêtes génériques ("promoteur immobilier bruxelles", "projet immobilier ixelles"...). Le second est bien plus précieux car il touche des prospects qui ne connaissent pas encore Artone.</div>
+      <div class="exp-impact"><strong>Situation actuelle :</strong> Artone est positionné #1 sur "artone" (210 recherches/mois) mais peu visible sur les requêtes génériques à fort volume. Développer le trafic non-branded est le principal levier de croissance.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">TrustFlow en progression — signal positif</div><div class="exp-abbr">CORRÉLATION TF / TRAFIC</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Tendance haussière</div></div>
+      <div class="exp-desc">La progression du TrustFlow depuis 2025 est un indicateur avancé du trafic futur. Google accorde plus d'autorité aux sites dont le profil de liens s'améliore. La couverture presse récente (La Libre, partenariat frères Lhoist) et le lien UPSI-BVS ont contribué à cette hausse.</div>
+      <div class="exp-impact"><strong>Implication :</strong> Si la tendance se maintient (nouvelles parutions presse, nouveaux projets lancés), le trafic organique devrait continuer à progresser naturellement — même sans action SEO spécifique.</div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Potentiel de croissance du trafic</div><div class="exp-abbr">OPPORTUNITÉ ORGANIQUE</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 Fort potentiel</div></div>
+      <div class="exp-desc">Le marché immobilier bruxellois génère des milliers de recherches mensuelles sur des requêtes commerciales ("promoteur immobilier bruxelles", "nouveau projet ixelles", "achat appartement bruxelles neuf"...). Artone n'adresse aujourd'hui qu'une infime partie de ce potentiel via son SEO organique.</div>
+      <div class="exp-impact"><strong>Scénario de croissance :</strong> Une stratégie de contenu ciblée (blog, guides de quartier, pages projets enrichies) combinée à des backlinks sectoriels pourrait porter le trafic de ~150 à 500+ visites/mois qualifiées en 12 mois.</div>
+    </div>
+
+  </div>
+</div>
+</section>
+<section id="keywords" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔑 Positionnements SEMrush</div>
+  <h2 class="slide-h1">Top 20 positions Google</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · Mai 2026 · 20 mots-clés positionnés au total</p>
+  <div class="alert-box" style="background:#fff8e0;border:1px solid #fabd0540;margin-bottom:16px">
+    <span style="font-size:18px;flex-shrink:0">💡</span>
+    <div><div style="font-size:13px;font-weight:700;color:#92400e">Profil de marque forte — visibilité générique immobilier à développer</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Artone est #1 sur sa marque et bien positionné sur ses projets phares. Les requêtes génériques à fort volume ("immo bruxelles", "promoteur immobilier bruxelles") sont encore peu présentes.</div></div>
+  </div>
+  <div style="background:#fff;border:1px solid #e9ecef;border-radius:12px;overflow:hidden;margin-bottom:10px">
+    <div style="display:grid;grid-template-columns:2fr 70px 80px 90px;background:#1c2b96;padding:10px 16px;gap:8px">
+      <div style="font-size:11px;font-weight:700;color:#fff;text-transform:uppercase">Mot-clé</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Position</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Volume</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Intent</div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">artone</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">210/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">forest green forest</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">3</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">480/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Projet</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">avenue ilya prigogine</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">4</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">260/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Projet</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">green forest</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">4</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">140/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Projet</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">citywalk</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">5</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">110/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Projet</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">rouppeplein brussel</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">15</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">590/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">kots ixelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">31</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">140/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Résidentiel</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">belfius bank foto's</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">35</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">210/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Hors cible</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">immo bruxelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">70</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">590/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Générique</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">promoteur immobilier bruxelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">45</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">320/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Générique</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">projet immobilier bruxelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">55</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">210/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Générique</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">développement immobilier</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">62</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">170/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Générique</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">artone immobilier</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">2</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">90/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">artone bruxelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">3</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">70/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">artwo srl</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">8</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">50/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque liée</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">forest green ixelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">6</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">90/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Projet</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">the crown ixelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">7</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">70/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Projet</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">juliet bruxelles immo</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">9</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">50/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Projet</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">city walk bruxelles</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">11</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">90/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Projet</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 90px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">brownfields belgique</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">18</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">110/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Partenaire</span></div>
+</div>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#2eb078;display:inline-block"></span>Top 3</div>
+    <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block"></span>Top 4-10</div>
+    <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#fa3b2e;display:inline-block"></span>Position 11+</div>
+    <div style="margin-left:auto;font-size:10px;color:#aaa">Source : SEMrush via SEObserver · Belgique 🇧🇪</div>
+  </div>
+</div>
+</section>
+<section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les données</div>
+  <h2 class="slide-h1">Ce que révèlent ces positions</h2>
+  <p class="slide-sub">Marque bien établie — opportunité de développer la visibilité sur les requêtes acheteurs</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">"Artone" #1 — marque forte et bien ancrée</div><div class="exp-abbr">NOTORIÉTÉ DE MARQUE ÉTABLIE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Top 1</div></div>
+      <div class="exp-desc">Artone est en position #1 sur sa propre marque avec un score de visibilité de 74%. C'est excellent — cela signifie que quiconque entend parler d'Artone et le cherche sur Google trouve immédiatement le site officiel.</div>
+      <div class="exp-impact"><strong>Atout :</strong> La couverture presse (La Libre, presse immobilière) et les partenariats (frères Lhoist, Brownfields) renforcent cette notoriété. Le PR et les relations médias contribuent directement au SEO.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Projets bien positionnés — Forest Green, CityWalk</div><div class="exp-abbr">SEO DE PROJETS EFFICACE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Top 3-5</div></div>
+      <div class="exp-desc">"Forest Green Forest" (#3, 480/mois), "CityWalk" (#5), "Avenue Ilya Prigogine" (#4) — les noms de projets sont bien positionnés. Les prospects qui ont vu ces projets en presse ou sur les réseaux les retrouvent facilement.</div>
+      <div class="exp-impact"><strong>Opportunité :</strong> Créer une page dédiée à chaque projet avec contenu riche (caractéristiques, localisation, visuels, avancement) renforcerait ces positions et capterait plus de trafic qualifié.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Requêtes génériques immo peu présentes</div><div class="exp-abbr">OPPORTUNITÉ DE VISIBILITÉ ACQUISITION</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">💡 À développer</div></div>
+      <div class="exp-desc">"Promoteur immobilier Bruxelles" (pos. 45), "immo bruxelles" (pos. 70) — Artone est peu visible sur les requêtes génériques à fort volume. Ce sont pourtant ces termes qui touchent des acheteurs et investisseurs qui ne connaissent pas encore Artone.</div>
+      <div class="exp-impact"><strong>Potentiel :</strong> Une stratégie de contenu ciblée (blog, guides de quartier, articles sur le marché immobilier bruxellois) positionnerait Artone sur ces requêtes à forte intention commerciale.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">"Kots Ixelles" — segment étudiant à exploiter</div><div class="exp-abbr">NICHE LOKALE DÉTECTÉE</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 Niche</div></div>
+      <div class="exp-desc">La position 31 sur "kots ixelles" révèle qu'Artone développe ou a développé des projets de logements étudiants à Ixelles (mentionné dans la presse). C'est une niche à fort volume (140/mois) encore peu exploitée en contenu.</div>
+      <div class="exp-impact"><strong>Contenu cible :</strong> Une page dédiée aux projets de logements étudiants/coliving à Ixelles, avec des informations pratiques sur le quartier ULB, renforcerait ce positionnement et attirerait un public ciblé.</div>
+    </div>
+  </div>
+</div>
+</section><section id="ux" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fde8f0;color:#c2185b">🎨 Analyse UX Heuristique</div>
+  <h2 class="slide-h1">Audit du site web</h2>
+  <p class="slide-sub">Analyse heuristique · artone.be · Mai 2026 · Promoteur immobilier urbain premium</p>
+  <div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Positionnement éditorial fort — "Artisans des quartiers de demain"</div><div class="ux-desc">La ligne éditoriale d'Artone est claire et différenciante dans un secteur souvent perçu comme peu humain. Le storytelling autour de l'impact urbain positif, de la durabilité et du bien-être est cohérent sur le site, LinkedIn et les médias. C'est un vrai atout de conversion pour les acheteurs sensibles aux valeurs ESG.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Point fort</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #2eb078"><div class="ux-icon" style="background:#e8f5ef;color:#2eb078">✓</div><div><div class="ux-title">Structure WordPress saine — CLS 0, SEO 100</div><div class="ux-desc">La structure technique du site est exemplaire. CLS parfait (0), SEO 100/100, Bonnes pratiques 100/100. L'équipe qui maintient ce site maîtrise bien les fondamentaux WordPress/Yoast. C'est une base solide sur laquelle construire.</div><div class="ux-tag" style="background:#e8f5ef;color:#2eb078">Point fort</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">LCP mobile 19,7s — image hero à optimiser</div><div class="ux-desc">L'image ou vidéo hero du site est très lourde sur mobile. Pour un promoteur dont les visuels de projets (rendus 3D, photos de chantier) sont au cœur de la communication, c'est un défi récurrent. La solution est technique et ciblée : WebP + lazy loading + LQIP placeholder.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">À optimiser</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">Accessibilité 78 — contraste et attributs à revoir</div><div class="ux-desc">Un score de 78 indique des problèmes de contraste (texte sur fond coloré ou image) ou d'attributs alt manquants. Pour un site premium qui s'adresse à des investisseurs et partenaires institutionnels, l'accessibilité est aussi un signal de qualité et de professionnalisme.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">À améliorer</div></div></div>
+  <div class="ux-item" style="border-left:4px solid #f59e0b"><div class="ux-icon" style="background:#fff8e0;color:#f59e0b">⚠</div><div><div class="ux-title">Peu de contenu éditorial pour le SEO générique</div><div class="ux-desc">Le site est principalement construit autour des projets et de l'équipe. Il manque du contenu "attraction" pour capter des prospects qui ne connaissent pas encore Artone : articles sur le marché immobilier bruxellois, guides de quartier, insights sur les tendances de l'habitat urbain. Ce contenu nourrirait à la fois le SEO et le positionnement d'expert.</div><div class="ux-tag" style="background:#fff8e0;color:#d97706">Opportunité</div></div></div>
+</div>
+</section><section id="geo" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fabd0520;color:#b45309;border:1px solid #fabd0540">🤖 Visibilité GEO / IA</div>
+  <h2 class="slide-h1">Présence dans les IA génératives</h2>
+  <p class="slide-sub">Analyse mai 2026 · Requêtes : "promoteur immobilier bruxelles" · "artone" · "projet immobilier durable bruxelles"</p>
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="geo-card"><div class="geo-bar" style="background:#f59e0b"></div><div class="geo-platform">ChatGPT</div><div class="geo-status" style="color:#f59e0b">⚠ Partiel</div><div class="geo-desc">Artone est connu de ChatGPT via ses articles de presse (La Libre, L'Echo) et sa présence sur UPSI-BVS. Sur la requête directe "artone promoteur bruxelles", ChatGPT peut citer la marque. Sur "promoteur immobilier durable bruxelles", l'absence de contenu blog limite la visibilité.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#f59e0b"></div><div class="geo-platform">Gemini (Google)</div><div class="geo-status" style="color:#f59e0b">⚠ Partiel</div><div class="geo-desc">Grâce au TF 11 et aux backlinks de presse de qualité, Artone apparaît dans certaines réponses Gemini sur l'immobilier bruxellois. Le Crawl Majestic autorisé et le sitemap Yoast facilitent l'indexation.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">Perplexity</div><div class="geo-status" style="color:#fa3b2e">✗ Faible</div><div class="geo-desc">Peu de contenu structuré (FAQ, articles de fond) limite la citation dans Perplexity. L'absence de Schema.org sur les projets (type "RealEstateListing" ou "Organization") pénalise la visibilité dans les IA.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#2eb078"></div><div class="geo-platform">Opportunité GEO Premium</div><div class="geo-status" style="color:#2eb078">💡 Fort potentiel</div><div class="geo-desc">Le secteur de la promotion immobilière durable à Bruxelles est encore peu structuré dans les IA. Artone, avec son positionnement "artisans des quartiers de demain" et ses 10 ans de track record, est idéalement placé pour s'imposer comme référence citée par les IA sur ce segment.</div></div>
+  </div>
+  <div style="background:#e8f8f0;border:1px solid #2eb07840;border-radius:12px;padding:18px;display:flex;gap:12px">
+    <span style="font-size:20px;flex-shrink:0">💡</span>
+    <div>
+      <div style="font-size:13px;font-weight:800;color:#2eb078;margin-bottom:6px">Stratégie GEO — "Immobilier durable Bruxelles" : un territoire à conquérir</div>
+      <div style="font-size:12px;color:#444;line-height:1.6">Ajouter le Schema.org de type "Organization" et "RealEstateAgent" sur le site, créer un FAQ sur les projets durables, publier des articles de fond sur la reconversion urbaine et les quartiers de demain. Avec le TF 11 et les backlinks médias existants, Artone pourrait rapidement s'imposer comme référence IA sur l'immobilier durable bruxellois.</div>
+    </div>
+  </div>
+</div>
+</section><section id="gmb" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📍 GMB &amp; Réseaux Sociaux</div>
+  <h2 class="slide-h1">Présence locale &amp; sociale</h2>
+  <p class="slide-sub">Analyse réalisée en direct · Mai 2026</p>
+  <div class="grid-2">
+
+    <!-- GMB -->
+    <div class="card">
+      <div class="card-title">📍 Google My Business</div>
+      <div style="background:#e8ecff;border-radius:10px;padding:14px;margin-bottom:14px">
+        <div style="font-size:13px;font-weight:700;color:#1c2b96;margin-bottom:8px">Artone SA — Siège social</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px;color:#555;line-height:1.8">
+          <span style="color:#aaa">📍</span><span>Av. Ilya Prigogine 1, 1180 Uccle</span>
+          <span style="color:#aaa">📞</span><span>02 532 24 05</span>
+          <span style="color:#aaa">🕐</span><span>Ouvert · Ferme à 17h00</span>
+          <span style="color:#aaa">🏢</span><span>Promoteur immobilier · Développement urbain</span>
+        </div>
+      </div>
+
+      <!-- Avis -->
+      <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:10px;padding:14px;margin-bottom:12px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="font-size:28px;font-weight:800;color:#fa3b2e;line-height:1">1,0</div>
+          <div>
+            <div style="color:#fabd05;font-size:16px;letter-spacing:2px">★☆☆☆☆</div>
+            <div style="font-size:11px;color:#888;margin-top:2px">1 avis Google · Mai 2026</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#c0392b;font-weight:600;margin-bottom:4px">⚠ Note très basse — 1 seul avis négatif</div>
+        <div style="font-size:11px;color:#666;line-height:1.6">Avec un seul avis à 1★, la note GMB d'Artone est très défavorable. Pour un promoteur premium, cette note visible dans les résultats Google peut créer de la méfiance chez les prospects qui découvrent Artone. Il est prioritaire de collecter des avis positifs pour diluer cet impact.</div>
+      </div>
+
+      <div style="font-size:11px;color:#888;line-height:1.6;background:#f8f9fa;border-radius:8px;padding:10px 12px">
+        💡 <strong>Optimisations GMB recommandées :</strong> compléter la description avec les projets phares, ajouter des photos pro de réalisations, activer les posts GMB pour les nouveaux projets, et demander des avis aux partenaires et clients satisfaits.
+      </div>
+    </div>
+
+    <!-- Réseaux sociaux -->
+    <div class="card">
+      <div class="card-title">📱 Réseaux Sociaux</div>
+
+      <!-- LinkedIn -->
+      <div class="social-row" style="background:#f0f4ff;margin-bottom:8px;border-radius:10px;padding:12px;display:block">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div class="s-icon" style="background:#e8f0fe;color:#0077b5;flex-shrink:0">in</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:700;color:#030505">LinkedIn</div>
+            <div style="font-size:11px;color:#888">linkedin.com/company/artone</div>
+          </div>
+          <span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Actif</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
+          <div style="background:#fff;border-radius:8px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:800;color:#1c2b96">3 000</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:8px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:800;color:#1c2b96">11-50</div><div style="font-size:10px;color:#aaa">employés</div></div>
+        </div>
+        <div style="font-size:11px;color:#555;font-style:italic">"Artisans des quartiers de demain" · Immobilier · Bruxelles</div>
+      </div>
+
+      <!-- Facebook -->
+      <div style="background:#f0f4ff;margin-bottom:8px;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div class="s-icon" style="background:#e8f0fe;color:#1877f2;flex-shrink:0">f</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:700;color:#030505">Facebook</div>
+            <div style="font-size:11px;color:#888">facebook.com/artone.be</div>
+          </div>
+          <span class="status-badge" style="background:#fff8e0;color:#d97706">⚠ Peu actif</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+          <div style="background:#fff;border-radius:8px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:800;color:#1877f2">91</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:8px;padding:8px;text-align:center"><div style="font-size:11px;font-weight:600;color:#555;line-height:1.4">Real Estate<br>Investment Firm</div></div>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div style="background:#f0f4ff;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div class="s-icon" style="background:#fce8f3;color:#e1306c;flex-shrink:0">📷</div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:700;color:#030505">Instagram</div>
+            <div style="font-size:11px;color:#888">instagram.com/artone.be</div>
+          </div>
+          <span class="status-badge" style="background:#fff8e0;color:#d97706">⚠ Peu actif</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px">
+          <div style="background:#fff;border-radius:8px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:800;color:#e1306c">75</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:8px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:800;color:#e1306c">10</div><div style="font-size:10px;color:#aaa">posts</div></div>
+          <div style="background:#fff;border-radius:8px;padding:8px;text-align:center"><div style="font-size:11px;font-weight:600;color:#555;line-height:1.4">Immo<br>neuf</div></div>
+        </div>
+        <div style="font-size:11px;color:#555;font-style:italic">"We power real estate projects · Investissez dans l'immobilier neuf"</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</section>
+<section id="opps" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309;border:1px solid #fabd0540">🎯 Opportunités Prioritaires</div>
+  <h2 class="slide-h1">Top 5 axes d'action</h2>
+  <p class="slide-sub">Classés par impact pour renforcer la visibilité digitale d'Artone</p>
+  <div class="opp-card"><div class="opp-num" style="background:#fa3b2e">01</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Améliorer les performances mobiles — optimisation des images</div><span class="impact-badge" style="background:#ffecec;color:#fa3b2e">Impact technique immédiat</span></div><div class="opp-desc">Le score mobile de 46/100 est le principal axe d'amélioration technique. La cause probable est une image ou vidéo hero de très haute résolution non optimisée pour mobile. Convertir en WebP avec compression adaptative, définir un placeholder léger et activer le lazy loading résoudrait ce problème en moins d'une semaine. Score mobile passerait de 46 à 70+.</div><div class="opp-tags"><span class="opp-tag" style="background:#ffecec;color:#fa3b2e">WordPress · WebP</span><span class="opp-tag" style="background:#f1f3f5;color:#666">3-5 jours</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#1c2b96">02</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Stratégie de contenu — conquérir les requêtes acheteurs</div><span class="impact-badge" style="background:#e8ecff;color:#1c2b96">Visibilité acquisition</span></div><div class="opp-desc">Artone est invisible sur "promoteur immobilier bruxelles" (vol. élevé), "nouveau projet immobilier ixelles", "logement étudiant bruxelles". Un blog avec 8-10 articles ciblés (guide des quartiers, tendances marché, analyses de projets durables) positionnerait Artone sur ces requêtes à intention commerciale et nourrirait l'autorité de marque.</div><div class="opp-tags"><span class="opp-tag" style="background:#e8ecff;color:#1c2b96">Contenu SEO</span><span class="opp-tag" style="background:#f1f3f5;color:#666">3-6 mois</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#2eb078">03</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Désaveu des 120 backlinks spam — consolider l'autorité</div><span class="impact-badge" style="background:#e6f9f0;color:#2eb078">Qualité profil netlinking</span></div><div class="opp-desc">90% des backlinks sont spam. Avec un TF en progression, nettoyer ce profil via Google Disavow Tool renforcerait le rapport TF/CF (actuellement 69%) et consoliderait l'autorité sur les 13 liens de qualité (UPSI, presse spécialisée). Cette action sécurise aussi contre d'éventuelles pénalités algorithmiques Google.</div><div class="opp-tags"><span class="opp-tag" style="background:#e6f9f0;color:#2eb078">SEO technique</span><span class="opp-tag" style="background:#f1f3f5;color:#666">2-4 semaines</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fabd05">04</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title" style="color:#030505">Schema.org projets immobiliers — visibilité GEO</div><span class="impact-badge" style="background:#fff8e0;color:#b45309">IA &amp; Rich snippets</span></div><div class="opp-desc">Ajouter des données structurées Schema.org sur chaque projet (RealEstateListing, Organization) permettrait à Google et aux IA génératives de mieux comprendre et référencer les projets d'Artone. Les rich snippets (étoiles, prix, localisation) en SERP augmentent le taux de clics de 15-30% sur les requêtes immobilières.</div><div class="opp-tags"><span class="opp-tag" style="background:#fff8e0;color:#b45309">GEO · Schema.org</span><span class="opp-tag" style="background:#f1f3f5;color:#666">1-2 semaines</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fa8fa3">05</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Amplifier LinkedIn — thought leadership immobilier durable</div><span class="impact-badge" style="background:#fde8f0;color:#c2185b">Notoriété B2B</span></div><div class="opp-desc">Avec 3 000 abonnés sur LinkedIn et un positionnement fort sur l'immobilier urbain durable, Artone a une base solide pour devenir une voix de référence sur le marché belge. Des articles LinkedIn réguliers sur la reconversion urbaine, le marché bruxellois, les projets phares et les partenariats toucheraient directement investisseurs, architectes, et décideurs publics.</div><div class="opp-tags"><span class="opp-tag" style="background:#fde8f0;color:#c2185b">LinkedIn · Thought leadership</span><span class="opp-tag" style="background:#f1f3f5;color:#666">Continu</span></div></div></div>
+</div>
+</section><section id="closing" class="closing-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#fa3b2e"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div></div>
+  <div class="closing-body">
+    <div class="closing-sub">Et si on développait</div>
+    <div class="closing-title">votre potentiel<br>digital ?</div>
+    <div class="closing-sep"></div>
+    <div class="closing-desc">Chez Poush, on ne fait pas d'audit pour faire de l'audit. On identifie ce qui freine votre <strong style="color:#ccc">efficacité</strong> en ligne — et on vous propose un plan d'action concret, réaliste, adapté à votre secteur et à vos ambitions.</div>
+    <div class="closing-services">
+      <div class="closing-svc"><div class="closing-svc-icon">📈</div><div class="closing-svc-name">Stratégie &amp; contenu SEO</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🔄</div><div class="closing-svc-name">Optimisation WordPress</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🤖</div><div class="closing-svc-name">Schema.org &amp; GEO / IA</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">📱</div><div class="closing-svc-name">LinkedIn &amp; Thought Leadership</div></div>
+    </div>
+    <div class="closing-baseline">Développeurs de votre potentiel</div>
+    <div class="closing-contact"><strong>Michael</strong> · michael@poush.be · www.poush.be · +32 (0)486 892 956<br>Rue de la Croix Limont 11, B-5590 Ciney</div>
+  </div>
+</section>
+</main>
+<script>
+const sections=document.querySelectorAll("section[id]");
+const pills=document.querySelectorAll(".nav-pill");
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove("active"));const a=document.querySelector(`.nav-pill[data-id="${e.target.id}"]`);if(a){a.classList.add("active");a.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})}}});},{threshold:0.3});
+sections.forEach(s=>obs.observe(s));
+</script>
+
+</body></html>
