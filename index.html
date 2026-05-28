@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)file:///Users/michaeldebecker/Downloads/BMDElectricite_Poush_v1.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>État des Lieux Digital — BMD Électricité · Poush</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+:root{--black:#030505;--blue:#1c2b96;--yellow:#fabd05;--red:#fa3b2e;--green:#2eb078;--pink:#fa8fa3;--gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#e9ecef;--gray-600:#6c757d;--orange:#f59e0b;--font:"DM Sans",sans-serif;--mono:"DM Mono",monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#111;color:var(--black)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px}
+.nav-brand{display:flex;align-items:center;gap:12px}.nav-dots{display:flex;gap:5px}.nav-dot{width:9px;height:9px;border-radius:50%}
+.nav-logo{color:#fff;font-size:17px;font-weight:700;letter-spacing:-.3px}.nav-divider{width:1px;height:20px;background:#333}.nav-title{color:var(--yellow);font-size:13px;font-weight:500}
+.nav-pills{display:flex;gap:4px;overflow-x:auto}.nav-pill{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;color:#888;cursor:pointer;white-space:nowrap;transition:all .15s;border:1px solid transparent;text-decoration:none}
+.nav-pill:hover,.nav-pill.active{color:#fff;background:#222;border-color:#333}
+main{padding-top:56px}.slide{min-height:100vh;position:relative;overflow:hidden}.slide-inner{max-width:1100px;margin:0 auto;padding:64px 40px;width:100%}
+.slide-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+.slide-h1{font-size:36px;font-weight:700;line-height:1.1;margin-bottom:8px}.slide-sub{font-size:15px;color:var(--gray-600);margin-bottom:32px}
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--gray-200);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-title{font-size:13px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gray-100)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gauge-label{font-size:11px;font-weight:600;color:#555;text-align:center;line-height:1.3}.gauge-status{font-size:10px;font-weight:700;letter-spacing:.5px;text-align:center}
+.alert-box{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:14px 16px;margin-bottom:20px}
+.metric-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:8px;margin-bottom:5px}
+.metric-name{font-size:12px;font-weight:500;color:#444;display:flex;align-items:center;gap:8px}.metric-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.metric-val{font-size:12px;font-weight:700;font-family:var(--mono)}.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.kpi-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px;text-align:center}
+.kpi-val{font-size:40px;font-weight:800;line-height:1;margin-bottom:4px}.kpi-label{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.4px}.kpi-sub{font-size:11px;color:#aaa;margin-top:4px}
+.badge-inline{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-top:8px}
+.prog-wrap{margin-bottom:12px}.prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-label{font-size:11px;font-weight:600;color:#555}.prog-val{font-size:11px;font-weight:700;font-family:var(--mono)}
+.prog-track{height:7px;background:var(--gray-100);border-radius:4px;overflow:hidden}.prog-fill{height:100%;border-radius:4px}
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:4px;background:#f8f9fa}
+.bl-domain{font-size:12px;color:#444;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.tf-badge{padding:3px 9px;border-radius:12px;font-size:11px;font-weight:800;font-family:var(--mono);flex-shrink:0;margin-left:8px}
+.bar-chart{position:relative;height:130px;display:flex;align-items:flex-end;gap:2px;padding-bottom:20px;padding-left:32px}
+.bar-item{flex:1;border-radius:3px 3px 0 0}.axis-y{position:absolute;left:0;top:0;bottom:20px;display:flex;flex-direction:column;justify-content:space-between}
+.axis-label{font-size:9px;color:#ccc;font-family:var(--mono)}.axis-x{display:flex;justify-content:space-between;padding-left:32px;margin-top:4px}.axis-x span{font-size:9px;color:#bbb}
+.grid-line{position:absolute;left:32px;right:0;height:1px;background:#f1f3f5}
+.legend-row{display:flex;gap:12px;margin-top:10px}.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#888}.leg-dot{width:10px;height:10px;border-radius:2px}
+.ux-item{display:flex;gap:14px;padding:16px 18px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);margin-bottom:10px}
+.ux-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:1px}
+.ux-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px}.ux-desc{font-size:12px;color:#666;line-height:1.6}
+.ux-tag{display:inline-flex;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-top:6px}
+.geo-card{background:#fff;border-radius:12px;padding:18px;position:relative;overflow:hidden;border:1px solid var(--gray-200)}
+.geo-bar{position:absolute;top:0;left:0;right:0;height:3px}.geo-platform{font-size:15px;font-weight:800;color:var(--black);margin-bottom:6px;margin-top:4px}
+.geo-status{font-size:13px;font-weight:700;margin-bottom:10px}.geo-desc{font-size:12px;color:#666;line-height:1.6}
+.social-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;margin-bottom:6px}
+.s-left{display:flex;align-items:center;gap:10px}.s-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.s-name{font-size:13px;font-weight:700;color:var(--black)}.s-stats{font-size:11px;color:#888;margin-top:1px}
+.opp-card{display:flex;gap:16px;padding:18px;background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 1px 4px rgba(0,0,0,.04);margin-bottom:12px}
+.opp-num{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.opp-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:5px}.opp-desc{font-size:12px;color:#666;line-height:1.6}
+.opp-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.opp-tag{padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700}
+.impact-badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0;align-self:flex-start}
+.blue-box{background:var(--blue);border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;margin-top:16px}
+.blue-box-title{font-size:13px;font-weight:800;color:var(--yellow);margin-bottom:6px}.blue-box-desc{font-size:12px;color:#ccc;line-height:1.7}
+.explainer-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px}
+.exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.exp-name{font-size:14px;font-weight:800;color:var(--black)}.exp-abbr{font-size:11px;font-weight:600;color:#888;margin-top:2px;font-family:var(--mono)}
+.exp-badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.exp-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:10px}
+.exp-impact{font-size:12px;color:#444;line-height:1.5;background:var(--gray-50);border-radius:8px;padding:10px 12px;border-left:3px solid var(--gray-200)}
+.exp-analogy{background:var(--gray-50);border-radius:10px;padding:12px;margin-top:10px;display:flex;gap:10px;align-items:flex-start}
+.analogy-icon{font-size:18px;flex-shrink:0}.analogy-text{font-size:12px;color:#666;line-height:1.6;font-style:italic}
+.exp-scale{display:flex;gap:4px;margin-top:10px}.exp-scale-item{flex:1;border-radius:4px;padding:4px 6px;text-align:center;font-size:10px;font-weight:700}
+.slide-explain-tag{display:inline-flex;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:#fff8e0;color:#b45309;margin-bottom:12px}
+.cover-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.cover-bar{width:8px;display:flex;flex-direction:column;flex-shrink:0}.cover-bar-seg{flex:1}
+.cover-body{padding:80px 60px;flex:1}
+.cover-eyebrow{font-size:11px;font-weight:700;color:var(--yellow);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.cover-name{font-size:68px;font-weight:800;line-height:.9;color:#fff;margin-bottom:10px}
+.cover-url{font-family:var(--mono);font-size:16px;color:#555;margin-bottom:36px}
+.cover-line{width:70px;height:3px;background:var(--yellow);margin-bottom:24px}
+.cover-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
+.cover-pill{padding:6px 16px;border:1px solid #333;border-radius:20px;font-size:13px;font-weight:500;color:#ccc}
+.cover-meta{font-size:12px;color:#444}
+.closing-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.closing-body{padding:80px 60px;flex:1}
+.closing-sub{font-size:24px;color:#555;font-weight:300;margin-bottom:8px}
+.closing-title{font-size:56px;font-weight:800;color:#fff;line-height:.92;margin-bottom:20px}
+.closing-sep{width:70px;height:3px;background:var(--yellow);margin-bottom:28px}
+.closing-desc{font-size:14px;color:#999;max-width:560px;line-height:1.8;margin-bottom:36px}
+.closing-services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+.closing-svc{background:#111;border:1px solid #222;border-radius:12px;padding:16px}
+.closing-svc-icon{font-size:22px;margin-bottom:8px}.closing-svc-name{font-size:12px;font-weight:700;color:#fff;line-height:1.4}
+.closing-baseline{font-size:18px;font-weight:800;color:var(--yellow);margin-bottom:12px}
+.closing-contact{font-size:12px;color:#444;line-height:1.9}.closing-contact strong{color:#888}
+.bg-white{background:#fff}.bg-light{background:var(--gray-50)}
+.missing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mkw{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 12px}
+.mkw-name{font-size:12px;font-weight:600;color:#444;margin-bottom:4px}.mkw-vol{font-size:11px;color:#888;font-family:var(--mono)}
+.mkw-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;margin-top:4px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dots"><div class="nav-dot" style="background:#fa3b2e"></div><div class="nav-dot" style="background:#fabd05"></div><div class="nav-dot" style="background:#fa8fa3"></div><div class="nav-dot" style="background:#2eb078"></div><div class="nav-dot" style="background:#1c2b96"></div></div>
+    <span class="nav-logo">poush</span><div class="nav-divider"></div>
+    <span class="nav-title">État des Lieux Digital — BMD Électricité</span>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" data-id="cover" onclick="document.getElementById(&#39;cover&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Cover</button><button class="nav-pill" data-id="perf" onclick="document.getElementById(&#39;perf&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Performances</button><button class="nav-pill" data-id="config" onclick="document.getElementById(&#39;config&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Config. Technique</button><button class="nav-pill" data-id="autorite" onclick="document.getElementById(&#39;autorite&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Autorité SEO</button><button class="nav-pill" data-id="trafic" onclick="document.getElementById(&#39;trafic&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Trafic</button><button class="nav-pill" data-id="keywords" onclick="document.getElementById(&#39;keywords&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Mots-clés</button><button class="nav-pill" data-id="geo" onclick="document.getElementById(&#39;geo&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GEO / IA</button><button class="nav-pill" data-id="gmb" onclick="document.getElementById(&#39;gmb&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GMB &amp; Social</button><button class="nav-pill" data-id="opps" onclick="document.getElementById(&#39;opps&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Opportunités</button><button class="nav-pill" data-id="closing" onclick="document.getElementById(&#39;closing&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Poush</button>
+  </div>
+</nav>
+<main>
+<section id="cover" class="cover-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#fa3b2e"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div></div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">État des lieux digital · Mai 2026</div>
+    <div class="cover-name">BMD Électricité</div>
+    <div class="cover-url">www.bmd-electricite.be</div>
+    <div class="cover-line"></div>
+    <div style="font-size:14px;color:#888;margin-bottom:10px">Une analyse complète de votre écosystème digital :</div>
+    <div class="cover-pills">
+      <span class="cover-pill">🌐 Site Web</span><span class="cover-pill">🔍 SEO</span>
+      <span class="cover-pill">🤖 GEO / IA</span><span class="cover-pill">📍 Google My Business</span>
+      <span class="cover-pill">📱 Réseaux Sociaux</span>
+    </div>
+    <div class="cover-meta">Préparé par Poush · michael@poush.be · +32 (0)486 892 956</div>
+  </div>
+  <div style="position:absolute;right:60px;bottom:80px">
+    <div style="background:#1c2b96;border-radius:12px;padding:16px 20px;text-align:center">
+      <div style="font-size:11px;font-weight:700;color:#fabd05;letter-spacing:1px;margin-bottom:6px">SECTEUR</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.4">Électricité générale<br>Province de Namur 🇧🇪</div>
+      <div style="font-size:11px;color:#888;margin-top:6px">Particuliers · Entreprises · Institutions</div>
+    </div>
+  </div>
+</section><section id="perf" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">⚡ Performances</div>
+  <h2 class="slide-h1">Rapport PageSpeed Insights</h2>
+  <p class="slide-sub">Rapport du 28 mai 2026 · bmd-electricite.be</p>
+  <div class="alert-box" style="background:#e8f8f0;border:1px solid #2eb07840;margin-bottom:28px">
+    <span style="font-size:18px;flex-shrink:0">✅</span>
+    <div><div style="font-size:14px;font-weight:700;color:#2eb078">Très bonnes performances — 79 mobile · 93 desktop</div>
+    <div style="font-size:13px;color:#999;margin-top:2px">Un site onepager bien optimisé présente naturellement de bonnes performances techniques. Les scores confirment une base solide — particulièrement sur desktop (93/100). Le SEO 100/100 est parfait. L'accessibilité (83-86) représente la principale marge de progression.</div></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:24px">
+    <div class="card"><div class="card-title">📱 Mobile</div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="42" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">79</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#f59e0b">BON</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="28" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">86</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="16" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#2eb078" font-family="sans-serif">92</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">TRÈS BON</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+    <div class="card"><div class="card-title">🖥️ Desktop</div><div class="grid-4"><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="14" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#2eb078" font-family="sans-serif">93</text></svg><div class="gauge-label">Performances</div><div class="gauge-status" style="color:#2eb078">TRÈS BON</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="34" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#f59e0b" font-family="sans-serif">83</text></svg><div class="gauge-label">Accessibilité</div><div class="gauge-status" style="color:#f59e0b">MOYEN</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="16" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="18" font-weight="800" fill="#2eb078" font-family="sans-serif">92</text></svg><div class="gauge-label">Bonnes pratiques</div><div class="gauge-status" style="color:#2eb078">TRÈS BON</div></div><div class="gauge-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#f1f3f5" stroke-width="6"></circle><circle cx="40" cy="40" r="32" fill="none" stroke="#2eb078" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"></circle><text x="40" y="45" text-anchor="middle" font-size="16" font-weight="800" fill="#2eb078" font-family="sans-serif">100</text></svg><div class="gauge-label">SEO</div><div class="gauge-status" style="color:#2eb078">PARFAIT</div></div></div></div>
+  </div>
+</div>
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que mesurent ces 4 scores</h2>
+  <p class="slide-sub">Très bons scores globaux · accessibilité à renforcer</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Performances — 79 mobile · 93 desktop</div><div class="exp-abbr">VITESSE DE CHARGEMENT GLOBALE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Bon</div></div>
+      <div class="exp-desc">Le score Performances mesure la rapidité globale du site. 79 sur mobile est un bon résultat — seuil "vert" à 90. Sur desktop, le 93 est excellent. Un site onepager bénéficie structurellement d'une bonne performance car il n'a qu'une seule page à charger, sans navigation entre pages.</div>
+      <div class="exp-impact"><strong>Pour BMD :</strong> Un électricien est souvent cherché en urgence sur mobile ("électricien Namur urgence"). Un site rapide à charger est un avantage direct face aux concurrents dont les sites sont plus lourds.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Accessibilité — 86 mobile · 83 desktop</div><div class="exp-abbr">UTILISABILITÉ POUR TOUS</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ À améliorer</div></div>
+      <div class="exp-desc">L'accessibilité mesure si le site est utilisable par tous : contrastes de couleurs, attributs alt sur les images, structure des titres. Un score de 83-86 indique quelques points à corriger — probablement des contrastes sur certains éléments visuels ou des attributs manquants.</div>
+      <div class="exp-impact"><strong>Action simple :</strong> Vérifier les contrastes des textes sur fonds colorés et ajouter des attributs alt sur les images. Ces corrections rapides feraient passer l'accessibilité à 95+ et renforceraient aussi le score SEO.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Bonnes pratiques — 92/100</div><div class="exp-abbr">QUALITÉ &amp; SÉCURITÉ TECHNIQUE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Très bon</div></div>
+      <div class="exp-desc">Un score de 92 confirme que le site respecte presque intégralement les standards web modernes : HTTPS activé, pas d'erreurs JavaScript critiques, bibliothèques à jour. Seul un point mineur empêche le score parfait — la base technique est très saine.</div>
+      <div class="exp-impact"><strong>Point fort :</strong> Cette base technique solide est un bon point de départ pour toutes les évolutions futures du site — passage à un site multipages, ajout de pages services, blog...</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">SEO — 100/100</div><div class="exp-abbr">OPTIMISATION MOTEURS DE RECHERCHE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Parfait</div></div>
+      <div class="exp-desc">Un SEO technique parfait confirme que la page est correctement balisée, indexable et structurée. Pour BMD Électricité, cela signifie que Google peut trouver et lire le site sans obstacle. C'est une excellente fondation — même si le potentiel SEO actuel est limité par la structure onepager.</div>
+      <div class="exp-impact"><strong>Atout :</strong> Ce 100/100 garantit que si BMD passe à un site multipages avec des pages dédiées par service et par zone géographique, chaque nouvelle page sera techniquement indexée correctement dès sa création.</div>
+    </div>
+  </div>
+  <div class="blue-box"><div style="font-size:22px;flex-shrink:0">💡</div><div><div class="blue-box-title">Des performances techniques solides — le levier de croissance est ailleurs</div><div class="blue-box-desc">Les scores PageSpeed de BMD Électricité sont bons, particulièrement sur desktop. La vraie opportunité de croissance n'est pas technique mais stratégique : passer d'un site onepager à un site multipages permettrait de démultiplier la visibilité Google sur les requêtes locales à fort potentiel (électricien Namur, installation électrique Profondeville, mise en conformité électricité Belgique...).</div></div></div>
+</div>
+</section><section id="config" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">⚙️ Configuration Technique</div>
+  <h2 class="slide-h1">Fondations techniques — WordPress</h2>
+  <p class="slide-sub">robots.txt · sitemap · agents IA · bmd-electricite.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">🗺️ Indexation &amp; Structure</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>CMS</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">WordPress + Yoast SEO</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ WordPress</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Sitemap XML</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">bmd-electricite.be/sitemap_index.xml</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Présent</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>HTTPS / SSL</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Sécurisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Score SEO Lighthouse</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 100/100</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>Crawl Majestic</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">Semble interdit — à vérifier</div></div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">⚠ Semble interdit</span></div>
+      <div class="metric-row" style="background:#fff8e0"><div><div class="metric-name"><div class="metric-dot" style="background:#f59e0b"></div>Pages indexées Majestic</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">36 pages référentes · 10 domaines</div></div><span class="status-badge" style="background:#fff8e0;color:#d97706">⚠ 36 pages</span></div>
+    </div>
+    <div class="card"><div class="card-title">🤖 Accessibilité Agents IA</div>
+      <div style="font-size:12px;color:#555;line-height:1.6;margin-bottom:14px">Robots.txt Yoast standard — aucun contenu bloqué. Tous les crawlers IA ont accès au site.</div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>GPTBot (ChatGPT)</div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Google-Extended (Gemini)</div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>PerplexityBot</div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisé</span></div>
+      <div class="metric-row" style="background:#fff0ee"><div class="metric-name"><div class="metric-dot" style="background:#fa3b2e"></div>Schema.org / données structurées</div><span class="status-badge" style="background:#ffecec;color:#fa3b2e">⚠ Partiel</span></div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les indicateurs</div>
+  <h2 class="slide-h1">Ce que révèlent les fondations techniques</h2>
+  <p class="slide-sub">Configuration technique de bmd-electricite.be · Mai 2026</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">CMS — WordPress + Yoast SEO</div><div class="exp-abbr">SYSTÈME DE GESTION DE CONTENU</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Solide</div></div>
+      <div class="exp-desc">WordPress avec Yoast est la base idéale pour une évolution future. L'ajout de nouvelles pages (services, réalisations, zones d'intervention, blog) se fait sans intervention technique majeure. C'est un atout important pour la phase de croissance que traverse BMD Électricité.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Sitemap XML</div><div class="exp-abbr">CARTE DU SITE POUR GOOGLE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Présent</div></div>
+      <div class="exp-desc">Le sitemap est en place et généré automatiquement par Yoast. Actuellement, avec un site onepager, il ne contient qu'une seule page. Dès que le site sera enrichi de nouvelles pages (services, zones, blog), chacune sera automatiquement soumise à Google — accélérant leur indexation.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">HTTPS / SSL</div><div class="exp-abbr">SÉCURITÉ &amp; CONFIANCE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Sécurisé</div></div>
+      <div class="exp-desc">Le site est sécurisé — le cadenas vert est visible dans la barre d'adresse. Pour un électricien dont les clients partagent leurs coordonnées via un formulaire de contact, c'est un signal de confiance important et un prérequis Google. Correctement configuré.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Crawl Majestic — "Semble interdit"</div><div class="exp-abbr">ACCESSIBILITÉ AUX OUTILS SEO</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ À vérifier</div></div>
+      <div class="exp-desc">Majestic signale que son crawler pourrait être partiellement bloqué. Cela peut être dû à une configuration de cache, un pare-feu ou un plugin de sécurité WordPress qui bloque certains crawlers. Si confirmé, cela limite la capacité des outils SEO à analyser les liens entrants du site.</div>
+      <div class="exp-impact"><strong>Action :</strong> Vérifier dans WordPress si un plugin de sécurité (Wordfence, iThemes Security...) ou de cache bloque les user-agents de crawlers tierces. Autoriser explicitement MJ12bot (Majestic) ne présente aucun risque de sécurité.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Agents IA — GPTBot, Gemini, Perplexity</div><div class="exp-abbr">ACCESSIBILITÉ AUX IA GÉNÉRATIVES</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisés</div></div>
+      <div class="exp-desc">Aucun agent IA n'est bloqué — le contenu de BMD Électricité est accessible à ChatGPT, Gemini et Perplexity. C'est positif pour la visibilité GEO, même si le contenu actuel du site onepager est limité pour générer des réponses riches dans les IA.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Schema.org — Données structurées</div><div class="exp-abbr">BALISAGE SÉMANTIQUE · CHECK 28 MAI 2026</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Partiel</div></div>
+      <div class="exp-desc">Le test Google Rich Results (28 mai 2026) ne détecte qu'un seul type de donnée structurée : le <strong>Fil d'Ariane (BreadcrumbList)</strong>.</div>
+      <div class="exp-impact"><strong>Ce qui manque pour un électricien local :</strong> <code>LocalBusiness</code> / <code>Electrician</code> (adresse, téléphone, horaires, zone d'intervention), <code>Organization</code> (logo, coordonnées), et <code>FAQPage</code> (questions fréquentes sur l'électricité). Ces balises permettraient à Google d'afficher adresse, horaires et note directement dans les résultats — et aux IA de citer BMD avec précision sur les requêtes locales.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Site onepager — structure actuelle</div><div class="exp-abbr">OPPORTUNITÉ D'ÉVOLUTION</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 Levier de croissance</div></div>
+      <div class="exp-desc">Un site onepager est une excellente carte de visite digitale — rapide à charger, simple à naviguer. Cependant, il présente une limite SEO fondamentale : une seule page ne peut se positionner que sur un nombre très restreint de requêtes Google. Pour capter des prospects qui cherchent "électricien Namur", "installation électrique Profondeville" ou "mise en conformité électricité", des pages dédiées sont nécessaires.</div>
+      <div class="exp-impact"><strong>Évolution naturelle :</strong> Avec la croissance de BMD Électricité (~13 employés, 6 ans d'activité), passer à un site multipages est l'étape logique pour aligner la présence digitale avec l'ambition commerciale de l'entreprise.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">SEO Lighthouse 100/100</div><div class="exp-abbr">FONDATIONS PARFAITES</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Parfait</div></div>
+      <div class="exp-desc">Toutes les balises techniques sont en ordre : title, meta description, structure H1/H2, compatibilité mobile. C'est la condition nécessaire pour ranker — et une garantie que n'importe quelle nouvelle page créée sur ce WordPress sera techniquement bien configurée dès le départ.</div>
+    </div>
+  </div>
+</div>
+</section><section id="autorite" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">📊 Autorité SEO</div>
+  <h2 class="slide-h1">Autorité &amp; Backlinks</h2>
+  <p class="slide-sub">Données SEObserver · Majestic · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">📊 Métriques d'autorité</div>
+      <div class="grid-2" style="margin-bottom:16px">
+        <div class="kpi-card" style="border-top:3px solid #fa3b2e"><div class="kpi-val" style="color:#fa3b2e">0</div><div class="kpi-label">Trust Flow</div><div class="kpi-sub">À construire</div></div>
+        <div class="kpi-card" style="border-top:3px solid #f59e0b"><div class="kpi-val" style="color:#f59e0b">9</div><div class="kpi-label">Citation Flow</div><div class="kpi-sub">Ratio TF/CF : 0%</div></div>
+        <div class="kpi-card" style="border-top:3px solid #f59e0b"><div class="kpi-val" style="color:#f59e0b">10</div><div class="kpi-label">Domaines référents</div><div class="kpi-sub">36 pages référentes</div></div>
+        <div class="kpi-card" style="border-top:3px solid #fa3b2e"><div class="kpi-val" style="color:#fa3b2e">0</div><div class="kpi-label">Liens zero spam</div><div class="kpi-sub">sur 10 total</div></div>
+      </div>
+      <div style="background:#e8ecff;border:1px solid #1c2b9630;border-radius:10px;padding:14px">
+        <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:6px">💡 Contexte : site jeune en phase de construction d'autorité</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Un TrustFlow de 0 est le point de départ naturel pour un site créé en 2019 avec peu de contenu et de présence externe. L'absence de liens de qualité est une opportunité à saisir — pas une fatalité. Des actions ciblées permettraient de construire cette autorité rapidement.</div>
+      </div>
+    </div>
+    <div class="card"><div class="card-title">🔗 Top 10 backlinks détectés</div>
+      <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:8px;padding:10px 12px;margin-bottom:10px">
+        <div style="font-size:11px;font-weight:700;color:#c0392b;margin-bottom:4px">⚠ 10 backlinks sur 10 sont spam (100%)</div>
+        <div style="font-size:11px;color:#666;line-height:1.5">Tous les liens entrants détectés proviennent d'annuaires automatisés sans valeur SEO. Aucun lien de qualité (presse, partenaires, associations locales) n'a été détecté à ce jour.</div>
+      </div>
+      <div style="border:1px solid #e9ecef;border-radius:10px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;background:#1c2b96;padding:8px 14px;gap:8px">
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Domaine source</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Ancre</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:right;text-transform:uppercase">TF</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">domains.com.bz <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire de domaines</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bmd-electricite.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">seol.store <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bmd-electricite.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">newsblogsports.site <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Spam blog</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">best pinterest tool...</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">takes.homes <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bmd-electricite.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">onderde.be <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Site belge généraliste</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bmd-electricite.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">knows.sbs <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bmd-electricite.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">takes.sbs <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bmd-electricite.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">xploredomains.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire de domaines</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bmd-electricite.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">linkspreader.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bmd-electricite.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">starbacklinks.com <span style="font-size:9px;background:#ffecec;color:#fa3b2e;padding:1px 5px;border-radius:8px;margin-left:4px">spam</span></div><div style="font-size:10px;color:#aaa;margin-top:1px">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bmd-electricite.be</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fa3b2e;color:#fff">0</span></div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèle ce profil d'autorité</h2>
+  <p class="slide-sub">TrustFlow 0 · point de départ · forte marge de progression</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">TrustFlow 0 — autorité à construire</div><div class="exp-abbr">QUALITÉ DES LIENS ENTRANTS</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">💡 Point de départ</div></div>
+      <div class="exp-desc">Le TrustFlow mesure la qualité des liens pointant vers le site. Un TF de 0 signifie qu'aucun lien de qualité n'est encore détecté — c'est le profil type d'un jeune site local sans stratégie de netlinking active. Cela ne reflète pas la qualité réelle de BMD Électricité en tant qu'entreprise, mais bien le stade de développement de sa présence digitale.</div>
+      <div class="exp-impact"><strong>Potentiel :</strong> Un électricien actif depuis 6 ans avec ~13 employés et des chantiers dans toute la province de Namur a naturellement un réseau de clients, fournisseurs et partenaires qui pourraient devenir des sources de backlinks qualitatifs.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">CitationFlow 9 — quelques mentions</div><div class="exp-abbr">VOLUME DE LIENS · TOUS SPAM</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ À assainir</div></div>
+      <div class="exp-desc">Le CF de 9 provient uniquement de 10 annuaires automatiques (spam) qui listent l'URL du site sans apporter de valeur. Ces liens n'améliorent pas le TF mais peuvent, en quantité, être perçus négativement. La bonne nouvelle : il n'y a que 10 liens — le profil est facile à assainir via Google Disavow.</div>
+      <div class="exp-impact"><strong>Action :</strong> Soumettre un fichier Disavow pour ces 10 domaines spam remet le compteur à zéro et assainit le profil pour les futurs liens de qualité.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Sources de backlinks prioritaires</div><div class="exp-abbr">STRATÉGIE DE NETLINKING LOCAL</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 À activer</div></div>
+      <div class="exp-desc">Pour un électricien à Namur, les sources de backlinks les plus accessibles et pertinentes sont : les communes de la province de Namur (pages fournisseurs ou partenaires), les associations d'entreprises locales (UCM, BEP), les promoteurs immobiliers ou entrepreneurs généraux avec qui BMD travaille, et les sites de presse locale (L'Avenir).</div>
+      <div class="exp-impact"><strong>Objectif réaliste :</strong> 5 à 10 liens depuis des sites belges de qualité (TF 10+) porteraient le TrustFlow de BMD à 5-10 en 3 à 6 mois — suffisant pour commencer à améliorer les positions sur les requêtes locales.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Opportunité : annuaires professionnels belges</div><div class="exp-abbr">NETLINKING FACILE À ACTIVER</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Actions immédiates</div></div>
+      <div class="exp-desc">Plusieurs annuaires professionnels belges de qualité (TF 15-30) acceptent des inscriptions gratuites ou payantes : Pagesdor.be, Infobel.be, entreprises-belges.be, bobex.be, horeca-belgique.be (pour les interventions en restauration). Ces annuaires sont indexés par Google et génèrent aussi du trafic direct.</div>
+      <div class="exp-impact"><strong>Quick win :</strong> S'inscrire sur 5-10 annuaires professionnels belges sérieux représente quelques heures de travail et génère des backlinks de qualité modérée mais cohérents avec l'activité locale de BMD.</div>
+    </div>
+  </div>
+</div>
+</section><section id="trafic" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309">📈 Trafic Organique</div>
+  <h2 class="slide-h1">Évolution &amp; Tendances</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · 2024 → Mai 2026</p>
+  <div class="alert-box" style="background:#fff8e0;border:1px solid #fabd0540;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">💡</span>
+    <div><div style="font-size:13px;font-weight:700;color:#92400e">Trafic modeste avec un potentiel de croissance significatif</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Le trafic organique de BMD Électricité est limité par la structure onepager du site. Un pic a été observé en 2024, suivi d'une stabilisation à un niveau bas. La bonne nouvelle : une évolution vers un site multipages multiplierait ce trafic de façon substantielle.</div></div>
+  </div>
+  <div class="grid-3" style="margin-bottom:24px">
+    <div class="kpi-card" style="border-top:3px solid #f59e0b">
+      <div class="kpi-val" style="color:#f59e0b">~30</div>
+      <div class="kpi-label">Trafic mensuel estimé</div>
+      <div class="kpi-sub">visites/mois · SEMrush</div>
+      <div class="badge-inline" style="background:#fff8e0;color:#d97706">Limité par le onepager</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #fa3b2e">
+      <div class="kpi-val" style="color:#fa3b2e">8</div>
+      <div class="kpi-label">Mots-clés positionnés</div>
+      <div class="kpi-sub">Belgique · SEMrush</div>
+      <div class="badge-inline" style="background:#ffecec;color:#fa3b2e">Très peu de requêtes</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #1c2b96">
+      <div class="kpi-val" style="color:#1c2b96">0</div>
+      <div class="kpi-label">Trust Flow</div>
+      <div class="kpi-sub">Autorité à construire</div>
+      <div class="badge-inline" style="background:#e8ecff;color:#1c2b96">💡 Fort potentiel</div>
+    </div>
+  </div>
+  <div class="card" style="padding:24px">
+    <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:14px">Historique trafic SEMrush · 2024 → Mai 2026</div>
+    <div style="position:relative">
+      <div style="position:absolute;left:32px;right:0;top:0;bottom:20px"><div class="grid-line" style="top:0%"></div><div class="grid-line" style="top:50%"></div></div>
+      <div class="axis-y"><span class="axis-label">60</span><span class="axis-label">30</span><span class="axis-label">0</span></div>
+      <div class="bar-chart"><div class="bar-item" style="height:20%;background:#60a5fa"></div><div class="bar-item" style="height:25%;background:#60a5fa"></div><div class="bar-item" style="height:30%;background:#3b82f6"></div><div class="bar-item" style="height:35%;background:#3b82f6"></div><div class="bar-item" style="height:45%;background:#3b82f6"></div><div class="bar-item" style="height:55%;background:#2563eb"></div><div class="bar-item" style="height:70%;background:#2563eb"></div><div class="bar-item" style="height:90%;background:#2563eb"></div><div class="bar-item" style="height:100%;background:#1c2b96"></div><div class="bar-item" style="height:85%;background:#2563eb"></div><div class="bar-item" style="height:75%;background:#2563eb"></div><div class="bar-item" style="height:65%;background:#3b82f6"></div><div class="bar-item" style="height:55%;background:#3b82f6"></div><div class="bar-item" style="height:45%;background:#60a5fa"></div><div class="bar-item" style="height:35%;background:#60a5fa"></div><div class="bar-item" style="height:30%;background:#60a5fa"></div><div class="bar-item" style="height:35%;background:#3b82f6"></div><div class="bar-item" style="height:40%;background:#3b82f6"></div><div class="bar-item" style="height:45%;background:#3b82f6"></div><div class="bar-item" style="height:50%;background:#2563eb"></div><div class="bar-item" style="height:55%;background:#2563eb"></div><div class="bar-item" style="height:50%;background:#2563eb"></div><div class="bar-item" style="height:45%;background:#3b82f6"></div><div class="bar-item" style="height:40%;background:#3b82f6"></div><div class="bar-item" style="height:45%;background:#fabd05"></div></div>
+      <div class="axis-x"><span>Déb 24</span><span>Mid 24</span><span>Oct 24</span><span>Déb 25</span><span>Mai 26</span></div>
+    </div>
+    <div class="legend-row">
+      <div class="leg-item"><div class="leg-dot" style="background:#3b82f6"></div>Trafic faible (~10-20/mois)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#1c2b96"></div>Pic 2024 (~50-60/mois)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fabd05"></div>Niveau actuel (~30-40/mois)</div>
+    </div>
+  </div>
+</div>
+</section><section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">Ce que révèle ce trafic</h2>
+  <p class="slide-sub">Trafic limité par la structure onepager · potentiel réel sous-exploité</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">~30 visites/mois — en dessous du potentiel réel</div><div class="exp-abbr">TRAFIC ORGANIQUE ESTIMÉ</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Sous-exploité</div></div>
+      <div class="exp-desc">30 visites organiques par mois est faible pour une entreprise de 13 employés active sur toute la province de Namur. Ce chiffre ne reflète pas la taille ni la réputation réelle de BMD Électricité — il reflète la capacité limitée d'un site onepager à capter du trafic Google sur des requêtes multiples.</div>
+      <div class="exp-impact"><strong>Référence :</strong> Un électricien avec un site multipages bien référencé dans la région namuroise peut espérer 200 à 500 visites/mois organiques. Le potentiel de croissance est donc très significatif.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">La limite du onepager en SEO</div><div class="exp-abbr">CONTRAINTE STRUCTURELLE</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 À comprendre</div></div>
+      <div class="exp-desc">Un site onepager n'a qu'une seule URL. Google ne peut donc le positionner que sur quelques requêtes associées à cette page unique. Chaque service (installation électrique, mise en conformité, dépannage, borne de recharge...) et chaque zone géographique (Namur, Profondeville, Dinant, Andenne...) nécessiterait sa propre page pour capter le trafic local correspondant.</div>
+      <div class="exp-impact"><strong>Calcul simple :</strong> 5 services × 5 zones = 25 pages potentielles, chacune ciblant 50-200 recherches/mois. C'est le passage d'un site vitrine à un véritable générateur de leads.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Pic 2024 — signal positif</div><div class="exp-abbr">TRAFIC HISTORIQUE</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Signal positif</div></div>
+      <div class="exp-desc">Le pic de trafic observé en 2024 montre que le site a su générer de l'intérêt à un moment donné — probablement lors d'une mise à jour de contenu ou d'une campagne. Cela confirme que le site est techniquement capable de recevoir du trafic qualifié. La base est là.</div>
+      <div class="exp-impact"><strong>Ce qu'il faut maintenant :</strong> Transformer cette base en croissance structurelle et pérenne via du contenu local et des pages dédiées par service — plutôt que des pics ponctuels.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Requêtes locales — marché disponible</div><div class="exp-abbr">POTENTIEL DE TRAFIC NON CAPTÉ</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 Opportunité</div></div>
+      <div class="exp-desc">Les requêtes comme "électricien Namur" (320/mois), "installation électrique Namur" (140/mois), "dépannage électrique Namur" (90/mois), "borne de recharge voiture Namur" (210/mois) sont recherchées chaque mois par des prospects qui ne trouvent pas BMD aujourd'hui. Ce trafic existe — il va chez des concurrents.</div>
+      <div class="exp-impact"><strong>Opportunité chiffrée :</strong> Capter seulement 10% de ces recherches représenterait 75-100 visites qualifiées supplémentaires par mois — soit 2 à 3× le trafic actuel, avec une intention d'achat directe.</div>
+    </div>
+  </div>
+</div>
+</section><section id="keywords" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔑 Positionnements SEMrush</div>
+  <h2 class="slide-h1">Top positions Google</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · Mai 2026 · 8 mots-clés positionnés</p>
+  <div class="alert-box" style="background:#e8ecff;border:1px solid #1c2b9630;margin-bottom:16px">
+    <span style="font-size:18px;flex-shrink:0">💡</span>
+    <div><div style="font-size:13px;font-weight:700;color:#1c2b96">Seulement 8 mots-clés — le potentiel local est largement sous-exploité</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Avec une seule page, le site ne peut capter qu'un nombre très limité de requêtes. Les positions 7 sur "électricité namur" et 25 sur "electricien namur" montrent pourtant que Google reconnaît la pertinence locale — une base solide à amplifier.</div></div>
+  </div>
+  <div style="background:#fff;border:1px solid #e9ecef;border-radius:12px;overflow:hidden;margin-bottom:10px">
+    <div style="display:grid;grid-template-columns:2fr 70px 80px 120px;background:#1c2b96;padding:10px 16px;gap:8px">
+      <div style="font-size:11px;font-weight:700;color:#fff;text-transform:uppercase">Mot-clé</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Position</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Volume</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Type</div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">bmd</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#e6f9f0;color:#2eb078">3</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">50/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Marque</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">électricité namur</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff8e0;color:#b45309">7</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">320/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">electricien namur</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">25</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">320/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Local</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">électricité</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">36</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">1 900/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Générique</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">aes electricité</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">62</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">70/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Hors cible</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">a electricité</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">62</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">260/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Générique</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">imprimerie tubize</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">49</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">170/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Hors cible</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 80px 120px;padding:8px 16px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">imprimerie tubize</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;font-family:monospace;background:#fff0ee;color:#fa3b2e">54</span></div>
+  <div style="font-size:11px;text-align:center;color:#444;font-family:monospace">170/mois</div>
+  <div style="font-size:11px;text-align:center"><span style="background:#f1f3f5;color:#666;padding:2px 7px;border-radius:8px">Hors cible</span></div>
+</div>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#2eb078;display:inline-block"></span>Top 1-3</div>
+    <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block"></span>Top 4-10</div>
+    <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#fa3b2e;display:inline-block"></span>Position 11+</div>
+    <div style="margin-left:auto;font-size:10px;color:#aaa">Source : SEMrush via SEObserver · Belgique 🇧🇪</div>
+  </div>
+</div>
+</section><section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les données</div>
+  <h2 class="slide-h1">Ce que révèlent ces positions</h2>
+  <p class="slide-sub">Un signal local positif à amplifier avec du contenu dédié</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">"électricité namur" — position 7</div><div class="exp-abbr">REQUÊTE LOCALE COMMERCIALE</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚠ Position 7</div></div>
+      <div class="exp-desc">Être en position 7 sur "électricité namur" (320 recherches/mois) avec une seule page est un résultat encourageant — cela montre que Google reconnaît BMD Électricité comme un acteur local pertinent. Avec une page dédiée "Électricien à Namur" contenant du contenu ciblé et des avis clients, cette position pourrait passer en top 3.</div>
+      <div class="exp-impact"><strong>Impact d'une remontée :</strong> Passer de la position 7 à la position 1 sur "électricité namur" multiplierait le trafic de cette requête par 5 à 10 — soit 100 à 200 visites qualifiées supplémentaires par mois.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">"electricien namur" — position 25</div><div class="exp-abbr">REQUÊTE PRINCIPALE NON CAPTURÉE</div></div><div class="exp-badge" style="background:#fff0ee;color:#fa3b2e">⚠ Position 25</div></div>
+      <div class="exp-desc">"Electricien namur" est la requête principale pour un prospect qui cherche un électricien dans la région (320/mois). La position 25 signifie que BMD n'apparaît pas dans les premiers résultats — et donc ne capte quasiment aucun clic. Cette requête est pourtant la plus directement commerciale pour BMD.</div>
+      <div class="exp-impact"><strong>Objectif prioritaire :</strong> Une page dédiée "Électricien à Namur — BMD Électricité" avec description des services, zone d'intervention, témoignages et Schema.org LocalBusiness viserait le top 5 sur cette requête en 3 à 6 mois.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Requêtes hors cible — "imprimerie tubize"</div><div class="exp-abbr">POSITIONNEMENTS NON PERTINENTS</div></div><div class="exp-badge" style="background:#f8f9fa;color:#888">— Hors cible</div></div>
+      <div class="exp-desc">Deux positions sur "imprimerie tubize" sont complètement hors du cœur de métier de BMD Électricité. Ces positionnements sont probablement dus à des mentions ou liens croisés issus d'un annuaire. Ils ne génèrent aucun trafic utile et ne traduisent pas une présence stratégique sur ce terme.</div>
+      <div class="exp-impact"><strong>Pas d'action nécessaire</strong> — simplement le signal que le site a très peu de contenu ciblé, ce qui explique ces positionnements aléatoires. Du contenu spécifique à l'électricité namuroise remplacerait naturellement ces termes parasites.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Requêtes locales à fort potentiel — non adressées</div><div class="exp-abbr">OPPORTUNITÉ IMMÉDIATE</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 À conquérir</div></div>
+      <div class="exp-desc">Des requêtes à forte intention commerciale ne sont pas du tout adressées : "dépannage électrique namur" (90/mois), "installation tableau électrique namur" (70/mois), "borne de recharge électrique namur" (210/mois), "mise en conformité électrique belgique" (260/mois). Ces requêtes correspondent exactement aux services de BMD.</div>
+      <div class="exp-impact"><strong>Potentiel cumulé :</strong> Ces 4 requêtes seules représentent 630 recherches/mois de prospects à forte intention d'achat — soit 20 fois le trafic organique actuel de BMD Électricité.</div>
+    </div>
+  </div>
+</div>
+</section><section id="geo" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fabd0520;color:#b45309;border:1px solid #fabd0540">🤖 Visibilité GEO / IA</div>
+  <h2 class="slide-h1">Présence dans les IA génératives</h2>
+  <p class="slide-sub">Analyse mai 2026 · "électricien namur" · "bmd électricité" · "électricien province namur"</p>
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">ChatGPT</div><div class="geo-status" style="color:#fa3b2e">✗ Peu présent</div><div class="geo-desc">Avec un TF de 0 et très peu de contenu sur le web (site onepager, peu d'articles de presse, pas de blog), BMD Électricité est peu susceptible d'être cité dans les réponses ChatGPT sur "électricien à Namur". Les IA citent en priorité les entreprises avec une empreinte éditoriale visible sur le web.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#f59e0b"></div><div class="geo-platform">Gemini (Google)</div><div class="geo-status" style="color:#f59e0b">⚠ Partiel</div><div class="geo-desc">La fiche GMB (4,6★ · 11 avis) est indexée par Gemini. Sur la requête directe "bmd électricité namur", Gemini peut citer la fiche GMB. Sur les requêtes génériques "électricien namur", la visibilité dépend principalement du ranking Google — actuellement en position 7 pour "électricité namur".</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#fa3b2e"></div><div class="geo-platform">Perplexity</div><div class="geo-status" style="color:#fa3b2e">✗ Absent</div><div class="geo-desc">L'absence de contenu éditorial (blog, guides, FAQ) sur le site limite fortement la présence dans Perplexity. Les IA comme Perplexity s'appuient sur du contenu structuré et des FAQ pour construire leurs réponses sur les services locaux.</div></div>
+    <div class="geo-card"><div class="geo-bar" style="background:#2eb078"></div><div class="geo-platform">Opportunité GEO locale</div><div class="geo-status" style="color:#2eb078">💡 Fort potentiel</div><div class="geo-desc">Le secteur de l'électricité locale à Namur est encore peu structuré dans les IA. BMD Électricité, avec son ancienneté (6 ans), son équipe (~13 personnes) et sa zone de couverture (toute la province), a tous les atouts pour s'imposer comme référence IA locale — à condition d'avoir du contenu web à indexer.</div></div>
+  </div>
+  <div style="background:#e8f8f0;border:1px solid #2eb07840;border-radius:12px;padding:18px;display:flex;gap:12px">
+    <span style="font-size:20px;flex-shrink:0">💡</span>
+    <div>
+      <div style="font-size:13px;font-weight:800;color:#2eb078;margin-bottom:6px">La GEO commence par le contenu</div>
+      <div style="font-size:12px;color:#444;line-height:1.6">Pour être cité par les IA sur "électricien namur" ou "installation tableau électrique belgique", il faut que du contenu pertinent existe sur le web. Un site multipages avec des pages services (installation, dépannage, borne de recharge, mise en conformité) + Schema.org LocalBusiness + FAQ structurée = présence naturelle dans les réponses IA en 6-12 mois.</div>
+    </div>
+  </div>
+</div>
+</section><section id="gmb" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📍 GMB &amp; Réseaux Sociaux</div>
+  <h2 class="slide-h1">Présence locale &amp; sociale</h2>
+  <p class="slide-sub">Analyse réalisée en direct · Mai 2026</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">📍 Google My Business</div>
+      <div style="background:#e6f9f0;border:1px solid #2eb07840;border-radius:10px;padding:14px;margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="font-size:28px;font-weight:800;color:#2eb078;line-height:1">4,6</div>
+          <div>
+            <div style="color:#fabd05;font-size:16px;letter-spacing:2px">★★★★½</div>
+            <div style="font-size:11px;color:#888;margin-top:2px">11 avis Google · Mai 2026</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#2eb078;font-weight:700;margin-bottom:4px">✅ Bonne note — à développer avec plus d'avis</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Une note de 4,6/5 sur 11 avis reflète la qualité du service. Avec seulement 11 avis, augmenter le volume est une priorité — chaque nouvel avis positif renforce la visibilité dans Google Maps et le ranking local.</div>
+      </div>
+      <div style="background:#e8ecff;border-radius:10px;padding:14px">
+        <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:8px">📍 Fiche GMB</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px;color:#555;line-height:1.8">
+          <span style="color:#aaa">📍</span><span>Rue des Morgelines 10, 5100 Namur</span>
+          <span style="color:#aaa">📞</span><span>0470 37 58 33</span>
+          <span style="color:#aaa">✉️</span><span>info@bmd-electricite.be</span>
+          <span style="color:#aaa">🕐</span><span>Ouvert · Ferme à 17h00</span>
+          <span style="color:#aaa">⚡</span><span>Électricien · Province de Namur</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📱 Réseaux Sociaux</div>
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;color:#1877f2;font-weight:700;flex-shrink:0">f</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Facebook — @bmdelectricite</div><div style="font-size:10px;color:#aaa">facebook.com/bmdelectricite</div></div>
+          <span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Actif</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px">
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:18px;font-weight:800;color:#1877f2">861</div><div style="font-size:10px;color:#aaa">J'aime</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:18px;font-weight:800;color:#1877f2">1,1k</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+        </div>
+        <div style="font-size:11px;color:#555;font-style:italic">"Société d'électricité générale" · Contenu actif (chantiers, équipe, fleet)</div>
+      </div>
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#fce8f3;display:flex;align-items:center;justify-content:center;color:#e1306c;font-size:14px;flex-shrink:0">📷</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Instagram — @bmdelectricite</div><div style="font-size:10px;color:#aaa">instagram.com/bmdelectricite</div></div>
+          <span class="status-badge" style="background:#fff8e0;color:#d97706">⚠ À développer</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px">
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#e1306c">175</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#e1306c">46</div><div style="font-size:10px;color:#aaa">posts</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:11px;font-weight:600;color:#555;line-height:1.4">Entreprise<br>locale</div></div>
+        </div>
+        <div style="font-size:11px;color:#555;font-style:italic">"Société d'électricité générale · Bodart Loïc - Mosseray Stephane - Ducaté Robin · Province de Namur"</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="opps" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309;border:1px solid #fabd0540">🎯 Opportunités Prioritaires</div>
+  <h2 class="slide-h1">Top 5 axes d'action</h2>
+  <p class="slide-sub">BMD Électricité est en phase de croissance — voici les leviers digitaux pour l'accompagner</p>
+  <div class="opp-card"><div class="opp-num" style="background:#fa3b2e">01</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Passer à un site multipages — le levier principal</div><span class="impact-badge" style="background:#ffecec;color:#fa3b2e">Impact transformationnel</span></div><div class="opp-desc">C'est l'action la plus structurante. Un site avec des pages dédiées par service (installation, dépannage, tableau électrique, borne de recharge, mise en conformité) et par zone géographique (Namur, Profondeville, Dinant, Andenne, Gembloux...) permettrait de capter l'intégralité du trafic local disponible. BMD Électricité a l'activité, les références et l'équipe pour justifier un site à la hauteur de son ambition.</div><div class="opp-tags"><span class="opp-tag" style="background:#ffecec;color:#fa3b2e">Site multipages · WordPress</span><span class="opp-tag" style="background:#f1f3f5;color:#666">1-3 mois</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#1c2b96">02</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Schema.org LocalBusiness + Electrician</div><span class="impact-badge" style="background:#e8ecff;color:#1c2b96">GMB &amp; Rich snippets</span></div><div class="opp-desc">Ajouter Schema.org de type LocalBusiness et Electrician sur le site (adresse, téléphone, horaires, zone d'intervention, note GMB) permettrait à Google d'afficher ces informations directement dans les résultats de recherche. C'est une action rapide, réalisable sur le site actuel, qui améliore immédiatement la visibilité locale dans le pack Google Maps.</div><div class="opp-tags"><span class="opp-tag" style="background:#e8ecff;color:#1c2b96">Schema.org · WordPress</span><span class="opp-tag" style="background:#f1f3f5;color:#666">1 semaine</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#2eb078">03</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Amplifier les avis Google — de 11 vers 50+</div><span class="impact-badge" style="background:#e6f9f0;color:#2eb078">Confiance &amp; ranking local</span></div><div class="opp-desc">Avec 11 avis Google, BMD Électricité est sous le seuil où Google accorde une forte visibilité dans le Pack Local (idéalement 30+ avis). Mettre en place un processus systématique de demande d'avis après chaque intervention (email ou SMS de suivi) permettrait d'atteindre 50 avis en 3 à 6 mois. Chaque avis supplémentaire améliore directement le ranking Google Maps.</div><div class="opp-tags"><span class="opp-tag" style="background:#e6f9f0;color:#2eb078">GMB · Avis clients</span><span class="opp-tag" style="background:#f1f3f5;color:#666">3-6 mois</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fabd05">04</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title" style="color:#030505">Construire des backlinks locaux de qualité</div><span class="impact-badge" style="background:#fff8e0;color:#b45309">Autorité SEO</span></div><div class="opp-desc">Avec un TF de 0, tout backlink qualitatif a un impact immédiat. Les cibles prioritaires : s'inscrire sur les annuaires professionnels belges (Pagesdor.be, Infobel.be), demander une mention sur les sites des communes ou associations partenaires, et activer les relations presse locale (L'Avenir, BEP Namur). 5 à 10 liens de qualité suffiraient à lancer la dynamique d'autorité.</div><div class="opp-tags"><span class="opp-tag" style="background:#fff8e0;color:#b45309">Netlinking local</span><span class="opp-tag" style="background:#f1f3f5;color:#666">2-4 semaines</span></div></div></div>
+  <div class="opp-card"><div class="opp-num" style="background:#fa8fa3">05</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Corriger le crawl Majestic &amp; activer l'accessibilité</div><span class="impact-badge" style="background:#fde8f0;color:#c2185b">Technique rapide</span></div><div class="opp-desc">Deux actions rapides sur le site actuel : 1. Vérifier et corriger le blocage du crawl Majestic dans WordPress (plugin de sécurité ou cache) pour que les outils SEO analysent correctement le profil de liens. 2. Corriger les contrastes et attributs alt pour passer l'accessibilité de 83-86 à 95+ — ce qui améliore aussi le score SEO global.</div><div class="opp-tags"><span class="opp-tag" style="background:#fde8f0;color:#c2185b">WordPress · Technique</span><span class="opp-tag" style="background:#f1f3f5;color:#666">Quelques heures</span></div></div></div>
+</div>
+</section><section id="closing" class="closing-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#fa3b2e"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div></div>
+  <div class="closing-body">
+    <div class="closing-sub">BMD Électricité grandit —</div>
+    <div class="closing-title">votre présence digitale<br>peut suivre le rythme.</div>
+    <div class="closing-sep"></div>
+    <div class="closing-desc">Chez Poush, on accompagne les entreprises en croissance qui veulent que leur digital reflète leur vraie ambition. Un site vitrine a eu son utilité — il est temps de passer à la vitesse supérieure.</div>
+    <div class="closing-services">
+      <div class="closing-svc"><div class="closing-svc-icon">🌐</div><div class="closing-svc-name">Site multipages WordPress</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🔍</div><div class="closing-svc-name">SEO local Namur</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🤖</div><div class="closing-svc-name">Schema.org &amp; GEO / IA</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">⭐</div><div class="closing-svc-name">Stratégie avis &amp; GMB</div></div>
+    </div>
+    <div class="closing-baseline">Développeurs de votre potentiel</div>
+    <div class="closing-contact"><strong>Michael</strong> · michael@poush.be · www.poush.be · +32 (0)486 892 956<br>Rue de la Croix Limont 11, B-5590 Ciney</div>
+  </div>
+</section>
+</main>
+<script>
+const sections=document.querySelectorAll("section[id]");
+const pills=document.querySelectorAll(".nav-pill");
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove("active"));const a=document.querySelector(`.nav-pill[data-id="${e.target.id}"]`);if(a){a.classList.add("active");a.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})}}});},{threshold:0.3});
+sections.forEach(s=>obs.observe(s));
+</script>
+
+</body></html>
