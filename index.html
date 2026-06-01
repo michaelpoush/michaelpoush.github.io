@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComptaTeam · État des lieux digital · Poush</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+
+  :root {
+    --poush-red: #E8392A;
+    --poush-yellow: #F5C842;
+    --poush-pink: #F0A0B0;
+    --poush-green: #3CAF7A;
+    --poush-blue: #1E2D6E;
+    --poush-black: #111111;
+    --bg: #F4F5F7;
+    --white: #FFFFFF;
+    --text: #1A1A2E;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --card-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 32px;
+    overflow-x: auto;
+  }
+  nav::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 28px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--poush-red), var(--poush-yellow), var(--poush-pink), var(--poush-green), var(--poush-blue));
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+  .nav-pill {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .nav-pill:hover, .nav-pill.active {
+    background: var(--poush-blue);
+    color: white;
+    border-color: var(--poush-blue);
+  }
+
+  /* SECTIONS */
+  section {
+    min-height: 100vh;
+    padding: 100px 40px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* COVER */
+  #cover {
+    min-height: 100vh;
+    background: var(--poush-black);
+    max-width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .cover-bar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--poush-red) 20%, var(--poush-yellow) 40%, var(--poush-pink) 60%, var(--poush-green) 80%, var(--poush-blue) 100%);
+  }
+  .cover-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 80px 60px;
+    max-width: 900px;
+  }
+  .cover-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+  }
+  .cover-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 72px;
+    color: white;
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .cover-title span { color: var(--poush-yellow); }
+  .cover-subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.55);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 60px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 32px;
+  }
+  .cover-meta-item { }
+  .cover-meta-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+  .cover-meta-value {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    margin-bottom: 40px;
+  }
+  .section-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--poush-red);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    color: var(--poush-black);
+    line-height: 1.2;
+  }
+  .section-divider {
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--poush-red), var(--poush-yellow));
+    border-radius: 2px;
+    margin-top: 14px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: var(--card-shadow);
+  }
+  .card-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .card-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--poush-black);
+    line-height: 1;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* GRID */
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+  /* GAUGE SVG */
+  .gauges-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .gauge-group { }
+  .gauge-group-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--poush-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--poush-blue);
+  }
+  .gauges-row { display: flex; gap: 20px; justify-content: flex-start; }
+  .gauge-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .gauge-label { font-size: 11px; color: var(--muted); text-align: center; font-weight: 500; max-width: 80px; line-height: 1.3; }
+
+  /* STATUS BADGES */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .badge-green { background: #DCFCE7; color: #166534; }
+  .badge-orange { background: #FEF3C7; color: #92400E; }
+  .badge-red { background: #FEE2E2; color: #991B1B; }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; }
+  th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--border); }
+  td { padding: 12px 14px; border-bottom: 1px solid var(--border); font-size: 13px; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #F9FAFB; }
+
+  /* POSITION BADGES */
+  .pos-top3 { background: #DCFCE7; color: #166534; padding: 3px 10px; border-radius: 12px; font-weight: 700; font-size: 12px; }
+  .pos-top10 { background: #FEF3C7; color: #92400E; padding: 3px 10px; border-radius: 12px; font-weight: 700; font-size: 12px; }
+  .pos-other { background: #F3F4F6; color: #6B7280; padding: 3px 10px; border-radius: 12px; font-weight: 700; font-size: 12px; }
+
+  /* INSIGHT BOX */
+  .insight-box {
+    background: var(--poush-blue);
+    color: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-top: 24px;
+  }
+  .insight-box h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
+  .insight-box p { font-size: 15px; line-height: 1.6; }
+
+  /* EXPLAIN CARDS */
+  .explain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .explain-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid var(--poush-blue);
+  }
+  .explain-card h4 { font-size: 14px; font-weight: 700; color: var(--poush-black); margin-bottom: 8px; }
+  .explain-card .score-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .explain-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .explain-card .impact { font-size: 12px; color: var(--poush-blue); margin-top: 8px; font-weight: 500; }
+
+  /* OPPORTUNITY CARDS */
+  .opps-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .opp-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    box-shadow: var(--card-shadow);
+  }
+  .opp-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    flex-shrink: 0;
+    color: white;
+  }
+  .opp-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .opp-content p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .opp-meta { display: flex; gap: 10px; margin-top: 10px; }
+
+  /* CLOSING */
+  #closing {
+    background: var(--poush-black);
+    max-width: 100%;
+    padding: 80px;
+    min-height: auto;
+  }
+  .closing-bar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--poush-red) 20%, var(--poush-yellow) 40%, var(--poush-pink) 60%, var(--poush-green) 80%, var(--poush-blue) 100%);
+    border-radius: 3px;
+    margin-bottom: 48px;
+  }
+  .closing-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    color: white;
+    margin-bottom: 16px;
+  }
+  .closing-title span { color: var(--poush-yellow); }
+  .closing-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 48px;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 48px; }
+  .service-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .service-dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: 14px; }
+  .service-card h4 { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.4; }
+  .closing-contact { display: flex; gap: 32px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; }
+  .contact-item { }
+  .contact-label { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
+  .contact-value { font-size: 14px; color: rgba(255,255,255,0.75); font-weight: 500; }
+
+  /* GEO */
+  .geo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .geo-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .geo-icon { font-size: 28px; }
+  .geo-platform { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .geo-status { font-size: 13px; color: var(--muted); }
+
+  /* SOCIAL */
+  .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .social-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+  }
+  .social-platform { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+  .social-count { font-size: 28px; font-weight: 800; color: var(--poush-black); }
+  .social-unit { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .social-status { margin-top: 10px; }
+
+  /* GMB */
+  .gmb-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: var(--card-shadow);
+  }
+  .stars { color: #F5C842; font-size: 20px; }
+  .gmb-score { font-size: 48px; font-weight: 800; color: var(--poush-black); }
+
+  /* BAR CHART */
+  .bar-chart { display: flex; flex-direction: column; gap: 10px; }
+  .bar-row { display: flex; align-items: center; gap: 12px; }
+  .bar-label { font-size: 12px; width: 180px; flex-shrink: 0; color: var(--text); }
+  .bar-track { flex: 1; background: var(--border); border-radius: 4px; height: 20px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; transition: width 1s ease; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; }
+  .bar-val { font-size: 12px; font-weight: 600; width: 60px; text-align: right; color: var(--muted); }
+
+  /* TECH TABLE */
+  .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .tech-item {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--card-shadow);
+  }
+  .tech-name { font-size: 13px; font-weight: 600; color: var(--text); }
+  .tech-val { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+
+  /* CONTEXT */
+  #contexte section { padding-top: 100px; }
+  .context-intro {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 24px;
+    border-left: 5px solid var(--poush-yellow);
+  }
+  .context-intro p { font-size: 16px; color: var(--text); line-height: 1.8; }
+
+  /* TRAFIC CHARTS */
+  .trafic-charts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .chart-card { background: var(--white); border-radius: 12px; padding: 24px; box-shadow: var(--card-shadow); }
+  .chart-title { font-size: 13px; font-weight: 700; color: var(--poush-black); margin-bottom: 4px; }
+  .chart-sub { font-size: 11px; color: var(--muted); margin-bottom: 20px; }
+  .mini-bars { display: flex; align-items: flex-end; gap: 4px; height: 80px; }
+  .mini-bar { flex: 1; border-radius: 3px 3px 0 0; transition: all 0.3s; cursor: pointer; }
+  .mini-bar:hover { opacity: 0.8; }
+  .phases { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .phase { font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <button class="nav-pill active" data-id="cover" onclick="document.getElementById('cover').scrollIntoView({behavior:'smooth'})">Cover</button>
+  <button class="nav-pill" data-id="contexte" onclick="document.getElementById('contexte').scrollIntoView({behavior:'smooth'})">Contexte</button>
+  <button class="nav-pill" data-id="performances" onclick="document.getElementById('performances').scrollIntoView({behavior:'smooth'})">Performances</button>
+  <button class="nav-pill" data-id="explain-perf" onclick="document.getElementById('explain-perf').scrollIntoView({behavior:'smooth'})">↳ Explications</button>
+  <button class="nav-pill" data-id="config" onclick="document.getElementById('config').scrollIntoView({behavior:'smooth'})">Config. Technique</button>
+  <button class="nav-pill" data-id="explain-config" onclick="document.getElementById('explain-config').scrollIntoView({behavior:'smooth'})">↳ Explications</button>
+  <button class="nav-pill" data-id="autorite" onclick="document.getElementById('autorite').scrollIntoView({behavior:'smooth'})">Autorité SEO</button>
+  <button class="nav-pill" data-id="explain-autorite" onclick="document.getElementById('explain-autorite').scrollIntoView({behavior:'smooth'})">↳ Explications</button>
+  <button class="nav-pill" data-id="trafic" onclick="document.getElementById('trafic').scrollIntoView({behavior:'smooth'})">Trafic & Tendances</button>
+  <button class="nav-pill" data-id="explain-trafic" onclick="document.getElementById('explain-trafic').scrollIntoView({behavior:'smooth'})">↳ Explications</button>
+  <button class="nav-pill" data-id="keywords" onclick="document.getElementById('keywords').scrollIntoView({behavior:'smooth'})">Mots-clés</button>
+  <button class="nav-pill" data-id="explain-kw" onclick="document.getElementById('explain-kw').scrollIntoView({behavior:'smooth'})">↳ Explications</button>
+  <button class="nav-pill" data-id="geo" onclick="document.getElementById('geo').scrollIntoView({behavior:'smooth'})">GEO / IA</button>
+  <button class="nav-pill" data-id="explain-geo" onclick="document.getElementById('explain-geo').scrollIntoView({behavior:'smooth'})">↳ Explications</button>
+  <button class="nav-pill" data-id="social" onclick="document.getElementById('social').scrollIntoView({behavior:'smooth'})">GMB & Réseaux</button>
+  <button class="nav-pill" data-id="explain-social" onclick="document.getElementById('explain-social').scrollIntoView({behavior:'smooth'})">↳ Explications</button>
+  <button class="nav-pill" data-id="opportunites" onclick="document.getElementById('opportunites').scrollIntoView({behavior:'smooth'})">Opportunités</button>
+  <button class="nav-pill" data-id="closing" onclick="document.getElementById('closing').scrollIntoView({behavior:'smooth'})">Proposition Poush</button>
+</nav>
+
+<!-- COVER -->
+<div id="cover">
+  <div class="cover-bar"></div>
+  <div class="cover-body">
+    <span class="cover-tag">État des lieux digital · Juin 2026</span>
+    <h1 class="cover-title">Compta<span>Team</span></h1>
+    <p class="cover-subtitle">Analyse complète de la présence digitale — SEO, autorité, trafic, GEO/IA, réseaux sociaux et opportunités de croissance.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Prospect</div>
+        <div class="cover-meta-value">ComptaTeam</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Site web</div>
+        <div class="cover-meta-value">comptateam.be</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Secteur</div>
+        <div class="cover-meta-value">Fiduciaire · Comptabilité & Fiscalité</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Préparé par</div>
+        <div class="cover-meta-value">Poush · poush.be</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEXTE -->
+<section id="contexte">
+  <div class="section-header">
+    <span class="section-tag">01 — Contexte</span>
+    <h2 class="section-title">Qui est ComptaTeam ?</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="context-intro">
+    <p>Fondée en <strong>1964</strong> à Namur, ComptaTeam est une fiduciaire familiale qui accompagne <strong>+700 indépendants et sociétés</strong> en Belgique. L'équipe de ~8 experts (comptables, fiscalistes, expert-comptable certifié ITAA) propose une comptabilité et fiscalité digitalisées avec espace client en ligne, dashboard en temps réel et gestionnaire dédié par secteur. La fiduciaire couvre Namur, Liège, Charleroi et Bruxelles.</p>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-label">Fondée en</div>
+      <div class="card-value">1964</div>
+      <div class="card-desc">Plus de 60 ans d'expertise comptable</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Clients actifs</div>
+      <div class="card-value">+700</div>
+      <div class="card-desc">Indépendants, PME et professions libérales</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Équipe</div>
+      <div class="card-value">~8</div>
+      <div class="card-desc">Comptables, fiscalistes & expert-comptable ITAA</div>
+    </div>
+  </div>
+</section>
+
+<!-- PERFORMANCES -->
+<section id="performances">
+  <div class="section-header">
+    <span class="section-tag">02 — Performances</span>
+    <h2 class="section-title">Rapport PageSpeed Insights</h2>
+    <div class="section-divider"></div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:24px;">Analyse du 1 juin 2026 · pagespeed.web.dev</p>
+
+  <div class="gauges-grid">
+    <!-- MOBILE -->
+    <div class="gauge-group">
+      <div class="gauge-group-title">📱 Mobile</div>
+      <div class="gauges-row">
+        <div class="gauge-item">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#3CAF7A" stroke-width="8"
+              stroke-dasharray="239.4" stroke-dashoffset="28.7" stroke-linecap="round"
+              transform="rotate(-90 45 45)"/>
+            <text x="45" y="50" text-anchor="middle" font-size="20" font-weight="800" fill="#111" font-family="DM Sans">88</text>
+          </svg>
+          <span class="gauge-label">Performances</span>
+        </div>
+        <div class="gauge-item">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#F5C842" stroke-width="8"
+              stroke-dasharray="239.4" stroke-dashoffset="31.1" stroke-linecap="round"
+              transform="rotate(-90 45 45)"/>
+            <text x="45" y="50" text-anchor="middle" font-size="20" font-weight="800" fill="#111" font-family="DM Sans">87</text>
+          </svg>
+          <span class="gauge-label">Accessibilité</span>
+        </div>
+        <div class="gauge-item">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#3CAF7A" stroke-width="8"
+              stroke-dasharray="239.4" stroke-dashoffset="9.6" stroke-linecap="round"
+              transform="rotate(-90 45 45)"/>
+            <text x="45" y="50" text-anchor="middle" font-size="20" font-weight="800" fill="#111" font-family="DM Sans">96</text>
+          </svg>
+          <span class="gauge-label">Bonnes pratiques</span>
+        </div>
+        <div class="gauge-item">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#3CAF7A" stroke-width="8"
+              stroke-dasharray="239.4" stroke-dashoffset="0" stroke-linecap="round"
+              transform="rotate(-90 45 45)"/>
+            <text x="45" y="50" text-anchor="middle" font-size="18" font-weight="800" fill="#111" font-family="DM Sans">100</text>
+          </svg>
+          <span class="gauge-label">SEO</span>
+        </div>
+      </div>
+    </div>
+    <!-- DESKTOP -->
+    <div class="gauge-group">
+      <div class="gauge-group-title">🖥️ Desktop</div>
+      <div class="gauges-row">
+        <div class="gauge-item">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#3CAF7A" stroke-width="8"
+              stroke-dasharray="239.4" stroke-dashoffset="16.8" stroke-linecap="round"
+              transform="rotate(-90 45 45)"/>
+            <text x="45" y="50" text-anchor="middle" font-size="20" font-weight="800" fill="#111" font-family="DM Sans">93</text>
+          </svg>
+          <span class="gauge-label">Performances</span>
+        </div>
+        <div class="gauge-item">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#F5C842" stroke-width="8"
+              stroke-dasharray="239.4" stroke-dashoffset="33.5" stroke-linecap="round"
+              transform="rotate(-90 45 45)"/>
+            <text x="45" y="50" text-anchor="middle" font-size="20" font-weight="800" fill="#111" font-family="DM Sans">86</text>
+          </svg>
+          <span class="gauge-label">Accessibilité</span>
+        </div>
+        <div class="gauge-item">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#3CAF7A" stroke-width="8"
+              stroke-dasharray="239.4" stroke-dashoffset="9.6" stroke-linecap="round"
+              transform="rotate(-90 45 45)"/>
+            <text x="45" y="50" text-anchor="middle" font-size="20" font-weight="800" fill="#111" font-family="DM Sans">96</text>
+          </svg>
+          <span class="gauge-label">Bonnes pratiques</span>
+        </div>
+        <div class="gauge-item">
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#3CAF7A" stroke-width="8"
+              stroke-dasharray="239.4" stroke-dashoffset="0" stroke-linecap="round"
+              transform="rotate(-90 45 45)"/>
+            <text x="45" y="50" text-anchor="middle" font-size="18" font-weight="800" fill="#111" font-family="DM Sans">100</text>
+          </svg>
+          <span class="gauge-label">SEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box" style="margin-top:32px;">
+    <h4>Lecture rapide</h4>
+    <p>Les performances sont solides sur les deux appareils avec des scores entre 86 et 100. L'accessibilité (87/86) représente le principal axe d'amélioration — des ajustements de contraste, d'attributs ARIA et de structure de navigation permettraient d'atteindre le niveau vert sur les deux formats.</p>
+  </div>
+</section>
+
+<!-- EXPLAIN PERF -->
+<section id="explain-perf">
+  <div class="section-header">
+    <span class="section-tag">02 — Explications</span>
+    <h2 class="section-title">Que mesurent ces scores ?</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="explain-grid">
+    <div class="explain-card" style="border-left-color: var(--poush-green);">
+      <h4>🚀 Performances · 88/93</h4>
+      <div><span class="score-badge" style="background:#DCFCE7;color:#166534;">Bon</span></div>
+      <p>Mesure la rapidité de chargement perçue par l'utilisateur : vitesse d'affichage du premier contenu, stabilité visuelle, réactivité aux clics. Un score élevé signifie que les visiteurs voient le site s'afficher vite et sans saccade.</p>
+      <p class="impact">→ Impact direct sur le taux de rebond et l'expérience utilisateur</p>
+    </div>
+    <div class="explain-card" style="border-left-color: var(--poush-yellow);">
+      <h4>♿ Accessibilité · 87/86</h4>
+      <div><span class="score-badge" style="background:#FEF3C7;color:#92400E;">À améliorer</span></div>
+      <p>Évalue si le site est utilisable par tous, y compris les personnes avec des handicaps visuels ou moteurs. Cela inclut les contrastes de couleur, les balises alternatives sur les images, et la navigation au clavier.</p>
+      <p class="impact">→ Critère légal en Belgique (obligation WAI) et signal de qualité pour Google</p>
+    </div>
+    <div class="explain-card" style="border-left-color: var(--poush-green);">
+      <h4>✅ Bonnes pratiques · 96</h4>
+      <div><span class="score-badge" style="background:#DCFCE7;color:#166534;">Excellent</span></div>
+      <p>Vérifie si le site utilise les standards modernes du web : HTTPS, absence de bibliothèques vulnérables, console sans erreurs JavaScript, images optimisées. Un score élevé indique un code sain et sécurisé.</p>
+      <p class="impact">→ Signal de confiance pour les navigateurs et les moteurs de recherche</p>
+    </div>
+    <div class="explain-card" style="border-left-color: var(--poush-green);">
+      <h4>🔍 SEO Lighthouse · 100</h4>
+      <div><span class="score-badge" style="background:#DCFCE7;color:#166534;">Parfait</span></div>
+      <p>Valide les fondations techniques nécessaires à un bon référencement : balises title, meta descriptions, structure des titres (H1, H2…), liens crawlables, directives robots correctes. Le score 100 signifie que toutes les bases sont en ordre.</p>
+      <p class="impact">→ Condition nécessaire mais pas suffisante : le contenu et les backlinks restent décisifs</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIG TECHNIQUE -->
+<section id="config">
+  <div class="section-header">
+    <span class="section-tag">03 — Configuration Technique</span>
+    <h2 class="section-title">Fondations techniques</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-item">
+      <span class="tech-name">CMS</span>
+      <span class="tech-val">WordPress + Yoast SEO <span class="badge badge-green">✓</span></span>
+    </div>
+    <div class="tech-item">
+      <span class="tech-name">HTTPS / SSL</span>
+      <span class="tech-val">Actif & sécurisé <span class="badge badge-green">✓</span></span>
+    </div>
+    <div class="tech-item">
+      <span class="tech-name">Sitemap XML</span>
+      <span class="tech-val">Yoast · actif <span class="badge badge-green">✓</span></span>
+    </div>
+    <div class="tech-item">
+      <span class="tech-name">Score SEO Lighthouse</span>
+      <span class="tech-val">100 / 100 <span class="badge badge-green">✓</span></span>
+    </div>
+    <div class="tech-item">
+      <span class="tech-name">Crawl Majestic</span>
+      <span class="tech-val">Oui — données fiables <span class="badge badge-green">✓</span></span>
+    </div>
+    <div class="tech-item">
+      <span class="tech-name">Pages indexées Majestic</span>
+      <span class="tech-val">77 pages <span class="badge badge-orange">⚠</span></span>
+    </div>
+    <div class="tech-item">
+      <span class="tech-name">Agents IA (robots.txt)</span>
+      <span class="tech-val">GPTBot, Gemini, Perplexity ✓ <span class="badge badge-green">✓</span></span>
+    </div>
+    <div class="tech-item">
+      <span class="tech-name">Schema.org</span>
+      <span class="tech-val">Fil d'Ariane uniquement <span class="badge badge-orange">⚠ Partiel</span></span>
+    </div>
+  </div>
+  <div class="insight-box" style="margin-top:24px;">
+    <h4>Point d'attention</h4>
+    <p>Les fondations techniques sont solides (HTTPS, Sitemap, Score SEO 100). Deux axes à renforcer : le Schema.org qui se limite au Fil d'Ariane (manquent Organization, LocalBusiness, FAQPage), et les 77 pages indexées Majestic qui indiquent que de nombreuses pages du site n'ont pas encore acquis de notoriété externe.</p>
+  </div>
+</section>
+
+<!-- EXPLAIN CONFIG -->
+<section id="explain-config">
+  <div class="section-header">
+    <span class="section-tag">03 — Explications</span>
+    <h2 class="section-title">Que signifient ces éléments ?</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="explain-grid">
+    <div class="explain-card">
+      <h4>🔧 CMS WordPress + Yoast</h4>
+      <p>WordPress est le CMS le plus utilisé au monde. Couplé à Yoast SEO, il permet une gestion autonome du contenu avec des outils intégrés pour optimiser chaque page (title, meta, sitemap auto). C'est une base solide pour toute stratégie SEO.</p>
+      <p class="impact">→ Avantage : facilité de publication et d'optimisation sans développeur</p>
+    </div>
+    <div class="explain-card">
+      <h4>🔒 HTTPS / SSL</h4>
+      <p>Le protocole HTTPS chiffre les échanges entre le visiteur et le site. C'est un critère de confiance pour les utilisateurs (cadenas dans le navigateur) et un signal de qualité pour Google depuis 2014.</p>
+      <p class="impact">→ Obligatoire pour le RGPD et la confiance des prospects B2B</p>
+    </div>
+    <div class="explain-card">
+      <h4>🗺️ Sitemap XML</h4>
+      <p>Le sitemap est la "carte du site" envoyée à Google. Il liste toutes les pages à indexer et est mis à jour automatiquement par Yoast à chaque nouvelle publication. Google peut ainsi découvrir et indexer rapidement tout nouveau contenu.</p>
+      <p class="impact">→ Accélère l'indexation des nouveaux articles et pages de services</p>
+    </div>
+    <div class="explain-card">
+      <h4>📊 Score SEO Lighthouse 100</h4>
+      <p>Ce score valide que toutes les bases techniques SEO sont correctement implémentées : balises title, descriptions, structure des titres, attributs alt. C'est une condition nécessaire — pas suffisante — pour bien se positionner sur Google.</p>
+      <p class="impact">→ Les bases sont saines, le contenu et les backlinks font la différence</p>
+    </div>
+    <div class="explain-card">
+      <h4>📈 Pages indexées Majestic (77)</h4>
+      <p>Majestic comptabilise uniquement les pages qui ont reçu au moins un lien externe. 77 pages sur l'ensemble du site signifie que de nombreuses pages de contenu (articles, services) n'ont pas encore acquis de notoriété. C'est une opportunité de netlinking ciblé.</p>
+      <p class="impact">→ Développer les liens entrants pour élargir la surface indexée</p>
+    </div>
+    <div class="explain-card">
+      <h4>🤖 Agents IA autorisés</h4>
+      <p>Le fichier robots.txt n'interdit aucun agent d'intelligence artificielle (GPTBot d'OpenAI, Googlebot pour Gemini, PerplexityBot). Le site peut donc être cité et utilisé comme source par les IA génératives, ce qui est un avantage croissant pour la visibilité GEO.</p>
+      <p class="impact">→ Prêt pour la visibilité dans les réponses des IA</p>
+    </div>
+    <div class="explain-card">
+      <h4>🏷️ Schema.org — Partiel</h4>
+      <p>Les données structurées Schema.org permettent à Google de mieux comprendre votre contenu et d'afficher des résultats enrichis (étoiles, adresse, FAQ…). Seul le Fil d'Ariane est implémenté. Il manque les types clés : Organization (informations entreprise), LocalBusiness (adresse, horaires) et FAQPage (questions fréquentes).</p>
+      <p class="impact">→ Potentiel d'amélioration du CTR via les rich snippets dans Google</p>
+    </div>
+    <div class="explain-card">
+      <h4>🕷️ Crawl Majestic</h4>
+      <p>Majestic est un des outils de référence pour mesurer l'autorité des liens. "Crawl OK" signifie que le site est accessible et analysable, et que les données de backlinks sont fiables. C'est la base pour mesurer le TrustFlow et le CitationFlow.</p>
+      <p class="impact">→ Données d'autorité fiables et exploitables</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUTORITE SEO -->
+<section id="autorite">
+  <div class="section-header">
+    <span class="section-tag">04 — Autorité SEO</span>
+    <h2 class="section-title">Profil de backlinks</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="grid-4" style="margin-bottom:24px;">
+    <div class="card">
+      <div class="card-label">TrustFlow</div>
+      <div class="card-value" style="color:var(--poush-blue);">21</div>
+      <div class="card-desc">Qualité des liens entrants</div>
+    </div>
+    <div class="card">
+      <div class="card-label">CitationFlow</div>
+      <div class="card-value">24</div>
+      <div class="card-desc">Volume des liens entrants</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Domaines référents</div>
+      <div class="card-value">256</div>
+      <div class="card-desc">Sites pointant vers le domaine</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Ratio TF/CF</div>
+      <div class="card-value" style="color:var(--poush-yellow);">88%</div>
+      <div class="card-desc">Qualité relative du profil</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label" style="margin-bottom:16px;">Top 10 domaines référents (données SEObserver)</div>
+    <div class="bar-chart">
+      <div class="bar-row"><span class="bar-label">Annuaires automatiques (spam)</span><div class="bar-track"><div class="bar-fill" style="width:91%;background:var(--poush-red);">91%</div></div><span class="bar-val">~233 dom.</span></div>
+      <div class="bar-row"><span class="bar-label">comptateam.be (self)</span><div class="bar-track"><div class="bar-fill" style="width:3%;background:var(--poush-blue);"></div></div><span class="bar-val">TF 30</span></div>
+      <div class="bar-row"><span class="bar-label">Sources sectorielles</span><div class="bar-track"><div class="bar-fill" style="width:5%;background:var(--poush-green);"></div></div><span class="bar-val">~5 dom.</span></div>
+      <div class="bar-row"><span class="bar-label">Autres (newsletters, etc.)</span><div class="bar-track"><div class="bar-fill" style="width:3%;background:var(--poush-yellow);"></div></div><span class="bar-val">~18 dom.</span></div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-top:16px;">⚠️ La grande majorité des 256 domaines référents provient de liens automatisés (ancres Telegram/spam). Seuls ~5-10 domaines constituent de vrais liens éditoriaux de qualité.</p>
+  </div>
+
+  <div class="insight-box">
+    <h4>Analyse</h4>
+    <p>Le TrustFlow de 21 est correct pour une fiduciaire locale. Le ratio TF/CF de 88% est élevé, ce qui signifie que les quelques liens de qualité existants ont une réelle valeur. L'enjeu principal : une majorité des 256 domaines référents sont des backlinks automatiques (ancres de type "Telegram SEO"). Une stratégie de désaveu et de netlinking qualitatif (presse locale, partenaires, ITAA, CCI Namur) renforcerait sensiblement l'autorité réelle.</p>
+  </div>
+</section>
+
+<!-- EXPLAIN AUTORITE -->
+<section id="explain-autorite">
+  <div class="section-header">
+    <span class="section-tag">04 — Explications</span>
+    <h2 class="section-title">Comprendre l'autorité SEO</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="explain-grid">
+    <div class="explain-card">
+      <h4>🏆 TrustFlow (TF) · 21</h4>
+      <p>Le TrustFlow mesure la qualité des liens qui pointent vers votre site, calculée par Majestic à partir d'un réseau de sites de confiance. Plus un site reçoit des liens de sources réputées, plus son TF augmente. Un score de 21 est un point de départ solide pour une fiduciaire locale.</p>
+      <p class="impact">→ Améliorer le TF via des mentions dans la presse locale, des partenaires ITAA ou des associations professionnelles</p>
+    </div>
+    <div class="explain-card">
+      <h4>📊 CitationFlow (CF) · 24</h4>
+      <p>Le CitationFlow mesure simplement le nombre de liens reçus, sans tenir compte de leur qualité. Un CF proche du TF (ratio élevé) signifie que les liens sont majoritairement qualitatifs. Ici, le ratio de 88% est un signal positif — la plupart des liens comptés ont une vraie valeur.</p>
+      <p class="impact">→ Un ratio élevé signifie moins de "bruit" dans le profil de liens</p>
+    </div>
+    <div class="explain-card">
+      <h4>🌐 256 domaines référents</h4>
+      <p>Ce chiffre représente le nombre de sites distincts qui pointent vers comptateam.be. Pour Google, recevoir des liens de 256 domaines différents est plus valorisant que de recevoir 256 liens du même site. Attention : la majorité de ces domaines sont des annuaires automatiques sans valeur réelle.</p>
+      <p class="impact">→ Mieux vaut 20 liens de sites de qualité que 200 liens de spam</p>
+    </div>
+    <div class="explain-card">
+      <h4>⚠️ Backlinks automatiques</h4>
+      <p>Une grande partie du profil de liens provient d'ancres associées à des services de vente de liens (Telegram SEO). Ces liens n'apportent pas de valeur et peuvent, à terme, nuire au référencement. Un audit de désaveu via Google Search Console est recommandé pour nettoyer le profil.</p>
+      <p class="impact">→ Nettoyer le profil pour libérer le potentiel SEO réel du site</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRAFIC -->
+<section id="trafic">
+  <div class="section-header">
+    <span class="section-tag">05 — Trafic Organique</span>
+    <h2 class="section-title">Évolution & Tendances</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="trafic-charts">
+    <div class="chart-card">
+      <div class="chart-title">Trafic organique estimé (SEMrush)</div>
+      <div class="chart-sub">Visites mensuelles depuis Google · comptateam.be</div>
+      <div class="mini-bars">
+        <div class="mini-bar" style="height:35%;background:#E5E7EB;" title="Jan 2025"></div>
+        <div class="mini-bar" style="height:45%;background:#CBD5E1;" title="Fév 2025"></div>
+        <div class="mini-bar" style="height:55%;background:#94A3B8;" title="Mar 2025"></div>
+        <div class="mini-bar" style="height:70%;background:#64748B;" title="Avr 2025"></div>
+        <div class="mini-bar" style="height:80%;background:var(--poush-blue);" title="Mai 2025"></div>
+        <div class="mini-bar" style="height:90%;background:var(--poush-blue);" title="Jun 2025"></div>
+        <div class="mini-bar" style="height:100%;background:var(--poush-blue);" title="Jul 2025"></div>
+        <div class="mini-bar" style="height:95%;background:var(--poush-blue);" title="Aoû 2025"></div>
+        <div class="mini-bar" style="height:85%;background:#3CAF7A;" title="Sep 2025"></div>
+        <div class="mini-bar" style="height:90%;background:#3CAF7A;" title="Oct 2025"></div>
+        <div class="mini-bar" style="height:95%;background:#3CAF7A;" title="Nov 2025"></div>
+        <div class="mini-bar" style="height:100%;background:#3CAF7A;" title="Déc 2025"></div>
+      </div>
+      <div class="phases">
+        <span class="phase" style="background:#EFF6FF;color:#1E40AF;">📈 Croissance 2024-2025</span>
+        <span class="phase" style="background:#DCFCE7;color:#166534;">✅ Consolidation 2026</span>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Mots-clés positionnés (SEMrush)</div>
+      <div class="chart-sub">Évolution du nombre de keywords sur Google</div>
+      <div class="mini-bars">
+        <div class="mini-bar" style="height:30%;background:#E5E7EB;"></div>
+        <div class="mini-bar" style="height:40%;background:#CBD5E1;"></div>
+        <div class="mini-bar" style="height:50%;background:#94A3B8;"></div>
+        <div class="mini-bar" style="height:65%;background:#64748B;"></div>
+        <div class="mini-bar" style="height:75%;background:var(--poush-blue);"></div>
+        <div class="mini-bar" style="height:85%;background:var(--poush-blue);"></div>
+        <div class="mini-bar" style="height:100%;background:var(--poush-blue);"></div>
+        <div class="mini-bar" style="height:90%;background:var(--poush-blue);"></div>
+        <div class="mini-bar" style="height:80%;background:#3CAF7A;"></div>
+        <div class="mini-bar" style="height:85%;background:#3CAF7A;"></div>
+        <div class="mini-bar" style="height:90%;background:#3CAF7A;"></div>
+        <div class="mini-bar" style="height:95%;background:#3CAF7A;"></div>
+      </div>
+      <div class="phases">
+        <span class="phase" style="background:#FEF3C7;color:#92400E;">~10 mots-clés SEObserver</span>
+      </div>
+    </div>
+  </div>
+  <div class="grid-3" style="margin-top:24px;">
+    <div class="card">
+      <div class="card-label">Trafic estimé</div>
+      <div class="card-value" style="color:var(--poush-blue);">200-600</div>
+      <div class="card-desc">Visites organiques / mois (SEMrush)</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Topical TF</div>
+      <div class="card-value">Computers</div>
+      <div class="card-desc">Software / ERP — thématique IT/comptabilité</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Tendance</div>
+      <div class="card-value" style="color:var(--poush-green);">📈</div>
+      <div class="card-desc">Croissance régulière depuis 2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLAIN TRAFIC -->
+<section id="explain-trafic">
+  <div class="section-header">
+    <span class="section-tag">05 — Explications</span>
+    <h2 class="section-title">Comprendre le trafic organique</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="explain-grid">
+    <div class="explain-card">
+      <h4>🚦 Trafic organique estimé</h4>
+      <p>Le trafic organique représente les visiteurs qui arrivent via les résultats naturels de Google (hors publicité). SEMrush estime entre 200 et 600 visites/mois. Pour une fiduciaire locale, ce chiffre est encourageant — mais reste bien en dessous du potentiel d'un marché de +700 clients actifs.</p>
+      <p class="impact">→ Chaque doublement du trafic représente de nouveaux dossiers potentiels</p>
+    </div>
+    <div class="explain-card">
+      <h4>🔑 Mots-clés positionnés</h4>
+      <p>Un mot-clé "positionné" est une requête sur laquelle le site apparaît dans les 100 premiers résultats Google. Avec ~10 mots-clés SEObserver, le portefeuille de visibilité est concentré. Les requêtes à fort volume ("comptable Liège", "comptable Bruxelles") représentent un potentiel inexploité.</p>
+      <p class="impact">→ Multiplier les mots-clés positionnés via du contenu de blog ciblé</p>
+    </div>
+    <div class="explain-card">
+      <h4>📍 Topical TrustFlow "Computers"</h4>
+      <p>Le Topical TrustFlow indique la thématique dominante selon les liens reçus. "Computers / Software / ERP" reflète les contenus sur les logiciels comptables et les outils digitaux. C'est cohérent avec le positionnement "fiduciaire connectée" de ComptaTeam.</p>
+      <p class="impact">→ Renforcer cette thématique via des contenus sur les outils comptables digitaux</p>
+    </div>
+    <div class="explain-card">
+      <h4>📈 Tendance de croissance</h4>
+      <p>Le profil SEMrush montre une progression régulière depuis 2024, avec une consolidation en 2026. C'est un signal positif qui indique que le contenu existant (blog actif avec articles réguliers) commence à porter ses fruits. La tendance est favorable pour accélérer.</p>
+      <p class="impact">→ Le bon moment pour investir dans le SEO : la dynamique est déjà lancée</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOTS-CLES -->
+<section id="keywords">
+  <div class="section-header">
+    <span class="section-tag">06 — Mots-clés</span>
+    <h2 class="section-title">Top positions Google</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Mot-clé</th>
+          <th>Position</th>
+          <th>Volume / mois</th>
+          <th>Intent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>comptateam</td><td><span class="pos-top3">#1</span></td><td>110</td><td><span class="badge badge-blue">Marque</span></td></tr>
+        <tr><td>comptable namur</td><td><span class="pos-top3">#1</span></td><td>320</td><td><span class="badge badge-green">Local</span></td></tr>
+        <tr><td>renting ou leasing</td><td><span class="pos-top10">#13</span></td><td>210</td><td><span class="badge badge-orange">Informatif</span></td></tr>
+        <tr><td>fiscal team</td><td><span class="pos-top10">#7</span></td><td>170</td><td><span class="badge badge-blue">Marque</span></td></tr>
+        <tr><td>cessation</td><td><span class="pos-top10">#24</span></td><td>320</td><td><span class="badge badge-orange">Informatif</span></td></tr>
+        <tr><td>comptable liege</td><td><span class="pos-other">#26</span></td><td>390</td><td><span class="badge badge-green">Local</span></td></tr>
+        <tr><td>impot société belgique</td><td><span class="pos-other">#46</span></td><td>210</td><td><span class="badge badge-orange">Informatif</span></td></tr>
+        <tr><td>comptable herstal</td><td><span class="pos-other">#94</span></td><td>110</td><td><span class="badge badge-green">Local</span></td></tr>
+        <tr><td>augmentation tva belgique</td><td><span class="pos-other">#58</span></td><td>110</td><td><span class="badge badge-orange">Informatif</span></td></tr>
+        <tr><td>plan airbag</td><td><span class="pos-other">#66</span></td><td>170</td><td><span class="badge badge-orange">Informatif</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="insight-box">
+    <h4>Opportunités non exploitées</h4>
+    <p>ComptaTeam est #1 sur "comptable namur" (320 recherches/mois) — un positionnement local fort. En revanche, des requêtes à fort volume comme "comptable Liège" (#26, 390/mois), "comptable Bruxelles" ou "expert-comptable Belgique" restent hors du top 10. Ces marchés représentent un fort potentiel de croissance via du contenu ciblé et une stratégie de pages locales.</p>
+  </div>
+</section>
+
+<!-- EXPLAIN KEYWORDS -->
+<section id="explain-kw">
+  <div class="section-header">
+    <span class="section-tag">06 — Explications</span>
+    <h2 class="section-title">Comprendre les positions Google</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="explain-grid">
+    <div class="explain-card">
+      <h4>🥇 Position dans Google</h4>
+      <p>La position indique à quel rang votre page apparaît dans les résultats Google pour un mot-clé donné. Les positions 1-3 captent environ 50% des clics. À partir de la page 2 (position 11+), la visibilité est quasi nulle. Les positions 7-10 représentent une opportunité "prête à décoller" avec un peu d'optimisation.</p>
+      <p class="impact">→ Passer de #7 à #3 peut tripler le trafic sur une requête</p>
+    </div>
+    <div class="explain-card">
+      <h4>📊 Volume de recherche mensuel</h4>
+      <p>Le volume indique combien de personnes tapent ce mot-clé sur Google chaque mois en Belgique. "Comptable Liège" (390/mois) et "comptable namur" (320/mois) sont des requêtes avec un volume significatif et une intention commerciale directe.</p>
+      <p class="impact">→ Cibler les requêtes locales à fort volume = prospects qualifiés</p>
+    </div>
+    <div class="explain-card">
+      <h4>🏷️ Intent Marque vs Local vs Informatif</h4>
+      <p>Les mots-clés "Marque" (comptateam) attirent des gens qui vous connaissent déjà. Les mots-clés "Local" (comptable namur) attirent de nouveaux prospects en recherche active. Les mots-clés "Informatifs" (renting ou leasing) attirent des lecteurs en phase de découverte, convertibles en clients.</p>
+      <p class="impact">→ Équilibrer les trois types pour capter tout le tunnel d'acquisition</p>
+    </div>
+    <div class="explain-card">
+      <h4>📍 Mots-clés locaux — la priorité</h4>
+      <p>Pour une fiduciaire, les requêtes locales ("comptable + ville") sont les plus précieuses car elles traduisent une intention d'achat directe. Être #1 sur "comptable Namur" est excellent. S'imposer sur "comptable Liège" (#26 → #3) permettrait d'ouvrir un nouveau bassin de prospects qualifiés.</p>
+      <p class="impact">→ Créer une page dédiée et optimisée par ville cible</p>
+    </div>
+  </div>
+</section>
+
+<!-- GEO -->
+<section id="geo">
+  <div class="section-header">
+    <span class="section-tag">07 — GEO / Intelligence Artificielle</span>
+    <h2 class="section-title">Visibilité dans les IA génératives</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="geo-grid">
+    <div class="geo-card">
+      <span class="geo-icon">🤖</span>
+      <div>
+        <div class="geo-platform">ChatGPT (OpenAI)</div>
+        <div class="geo-status">Agents autorisés · <span class="badge badge-orange">Non vérifié en direct</span></div>
+      </div>
+    </div>
+    <div class="geo-card">
+      <span class="geo-icon">✨</span>
+      <div>
+        <div class="geo-platform">Google Gemini</div>
+        <div class="geo-status">Agents autorisés · <span class="badge badge-orange">Non vérifié en direct</span></div>
+      </div>
+    </div>
+    <div class="geo-card">
+      <span class="geo-icon">🔍</span>
+      <div>
+        <div class="geo-platform">Perplexity</div>
+        <div class="geo-status">Agents autorisés · <span class="badge badge-orange">Non vérifié en direct</span></div>
+      </div>
+    </div>
+    <div class="geo-card">
+      <span class="geo-icon">💻</span>
+      <div>
+        <div class="geo-platform">Microsoft Copilot</div>
+        <div class="geo-status">Agents autorisés · <span class="badge badge-orange">Non vérifié en direct</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="insight-box">
+    <h4>Contexte GEO</h4>
+    <p>Les agents IA (GPTBot, Gemini, PerplexityBot) sont autorisés dans le robots.txt — le site peut donc être lu et cité par les intelligences artificielles. La prochaine étape pour renforcer la visibilité GEO : implémenter les données structurées Schema.org manquantes (Organization, LocalBusiness, FAQPage) qui aident les IA à identifier ComptaTeam comme source fiable sur la comptabilité en Belgique.</p>
+  </div>
+</section>
+
+<!-- EXPLAIN GEO -->
+<section id="explain-geo">
+  <div class="section-header">
+    <span class="section-tag">07 — Explications</span>
+    <h2 class="section-title">Qu'est-ce que le GEO ?</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="explain-grid">
+    <div class="explain-card">
+      <h4>🧠 GEO — Generative Engine Optimization</h4>
+      <p>Le GEO est le référencement dans les réponses des IA génératives (ChatGPT, Gemini, Perplexity, Copilot). Quand un utilisateur demande "quel comptable à Namur ?", l'IA puise dans son index de sites web pour formuler une réponse. Être cité = être recommandé à des milliers d'utilisateurs.</p>
+      <p class="impact">→ Le GEO est le SEO de demain : anticiper maintenant crée un avantage concurrentiel durable</p>
+    </div>
+    <div class="explain-card">
+      <h4>🤖 Comment les IA choisissent leurs sources</h4>
+      <p>Les IA privilégient les sites qui parlent clairement de leur domaine d'expertise, qui ont une autorité reconnue (backlinks de qualité), et dont le contenu est bien structuré (Schema.org, titres clairs, FAQ). Un blog actif avec des articles experts est un atout majeur pour être cité.</p>
+      <p class="impact">→ Le blog de ComptaTeam (articles fiscaux réguliers) est un excellent signal pour les IA</p>
+    </div>
+    <div class="explain-card">
+      <h4>🏷️ Schema.org — le langage des IA</h4>
+      <p>Les données structurées Schema.org sont comme une carte d'identité que votre site présente aux moteurs de recherche et aux IA. Elles indiquent explicitement qui vous êtes, où vous êtes, ce que vous faites. Sans ces balises, les IA doivent deviner — et peuvent se tromper ou ignorer votre site.</p>
+      <p class="impact">→ Implémenter Organization, LocalBusiness et FAQPage est prioritaire</p>
+    </div>
+    <div class="explain-card">
+      <h4>🌱 Avantage first mover</h4>
+      <p>La majorité des fiduciaires belges ne pensent pas encore au GEO. En prenant de l'avance maintenant — Schema.org, contenu expert, autorité — ComptaTeam peut s'imposer comme référence dans les réponses IA sur la comptabilité en Belgique avant que la concurrence ne s'y mette.</p>
+      <p class="impact">→ La fenêtre d'opportunité est ouverte : agir en 2026 crée un avantage 2027-2028</p>
+    </div>
+  </div>
+</section>
+
+<!-- GMB & RESEAUX -->
+<section id="social">
+  <div class="section-header">
+    <span class="section-tag">08 — Présence locale & sociale</span>
+    <h2 class="section-title">GMB & Réseaux sociaux</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="gmb-card">
+      <div class="card-label" style="margin-bottom:12px;">📍 Google My Business</div>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+        <div class="gmb-score">4,3</div>
+        <div>
+          <div class="stars">★★★★☆</div>
+          <div style="font-size:13px;color:var(--muted);">3 avis Google</div>
+        </div>
+      </div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7;">
+        📍 Chaussée de Charleroi 83, 5000 Namur<br>
+        📞 +32 81 72 18 99<br>
+        🕒 Du lundi au vendredi<br>
+        🏷️ Comptable & fiscaliste
+      </div>
+      <div style="margin-top:14px;">
+        <span class="badge badge-orange">⚠ Seulement 3 avis</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label" style="margin-bottom:16px;">💬 Avis & réputation</div>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Google (3 avis · 4,3★)</div>
+        <div style="background:var(--bg);border-radius:8px;padding:10px;font-size:12px;color:var(--muted);font-style:italic;">"si vous avez besoin d'un coup de main pour remplir votre déclaration fiscale vous pouvez faire appel à ce bureau sans..."</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Facebook (8 avis · 100% recommandé)</div>
+        <div style="background:var(--bg);border-radius:8px;padding:10px;font-size:12px;color:var(--muted);font-style:italic;">"Mes affaires sont bien suivies désormais, merci à l'équipe !"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-grid">
+    <div class="social-card">
+      <div class="social-platform">LinkedIn</div>
+      <div class="social-count">215</div>
+      <div class="social-unit">abonnés</div>
+      <div class="social-status"><span class="badge badge-green">Actif</span></div>
+    </div>
+    <div class="social-card">
+      <div class="social-platform">Facebook</div>
+      <div class="social-count">—</div>
+      <div class="social-unit">abonnés exacts N/D</div>
+      <div class="social-status"><span class="badge badge-green">Actif · 100% recommandé</span></div>
+    </div>
+    <div class="social-card">
+      <div class="social-platform">X (Twitter)</div>
+      <div class="social-count">–</div>
+      <div class="social-unit">Mentionné sur le site</div>
+      <div class="social-status"><span class="badge badge-orange">À vérifier</span></div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <h4>Analyse</h4>
+    <p>La présence sociale est active mais le volume d'avis Google (3 avis) est le point faible le plus impactant. Pour une fiduciaire avec +700 clients, 3 avis Google est très en dessous du potentiel. Une campagne de collecte d'avis (email post-dossier, QR code en réunion) permettrait d'atteindre 50-100 avis et de renforcer la visibilité locale de manière significative.</p>
+  </div>
+</section>
+
+<!-- EXPLAIN SOCIAL -->
+<section id="explain-social">
+  <div class="section-header">
+    <span class="section-tag">08 — Explications</span>
+    <h2 class="section-title">Comprendre la présence locale & sociale</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="explain-grid">
+    <div class="explain-card">
+      <h4>📍 Google My Business (GMB)</h4>
+      <p>La fiche GMB est la carte de visite de ComptaTeam dans Google Maps et dans les résultats locaux. Quand quelqu'un cherche "comptable Namur", c'est souvent la fiche GMB qui s'affiche en premier. Sa complétude (horaires, photos, Q&A, posts réguliers) influence directement la visibilité locale.</p>
+      <p class="impact">→ Une fiche GMB optimisée génère des appels et demandes directes sans passer par le site</p>
+    </div>
+    <div class="explain-card">
+      <h4>⭐ Avis Google — 3 seulement</h4>
+      <p>Les avis Google sont un critère majeur de choix pour les prospects B2B. Avec +700 clients, ComptaTeam a un potentiel énorme de collecte d'avis qui reste inexploité. 3 avis est insuffisant pour générer de la confiance instantanée. Des concurrents avec 30-50 avis auront un avantage décisif dans les résultats locaux.</p>
+      <p class="impact">→ Objectif réaliste : 50 avis en 3 mois via une campagne simple auprès des clients existants</p>
+    </div>
+    <div class="explain-card">
+      <h4>💼 LinkedIn — 215 abonnés</h4>
+      <p>LinkedIn est le réseau idéal pour une fiduciaire B2B. Avec 215 abonnés, la page existe mais son audience reste limitée. Le contenu publié (actualités fiscales, conseils pratiques) a une vraie valeur — il s'agit maintenant d'amplifier la portée via une stratégie de croissance et d'engagement régulier.</p>
+      <p class="impact">→ 215 abonnés = point de départ, pas un plafond</p>
+    </div>
+    <div class="explain-card">
+      <h4>📣 Réseaux sociaux & notoriété locale</h4>
+      <p>Une présence active sur Facebook et LinkedIn permet d'entretenir la relation avec les clients existants, de démontrer l'expertise comptable/fiscale, et d'être visible auprès des nouvelles entreprises de la région. Chaque post sur une actualité fiscale positionne ComptaTeam comme expert de confiance.</p>
+      <p class="impact">→ Le blog actif (articles réguliers) devrait alimenter les réseaux pour amplifier la portée</p>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITES -->
+<section id="opportunites">
+  <div class="section-header">
+    <span class="section-tag">09 — Opportunités</span>
+    <h2 class="section-title">Top 5 axes d'action prioritaires</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="opps-grid">
+    <div class="opp-card">
+      <div class="opp-number" style="background:var(--poush-red);">1</div>
+      <div class="opp-content">
+        <h4>Collecte d'avis Google — impact immédiat</h4>
+        <p>Avec +700 clients actifs, ComptaTeam dispose d'une base idéale pour passer de 3 à 50+ avis Google. Un email simple, un QR code en réunion, ou une demande post-dossier suffisent. L'impact sur la visibilité locale (et la confiance des prospects) est direct et rapide.</p>
+        <div class="opp-meta">
+          <span class="badge badge-green">Impact fort</span>
+          <span class="badge badge-blue">Délai : 1-3 mois</span>
+        </div>
+      </div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-number" style="background:var(--poush-blue);">2</div>
+      <div class="opp-content">
+        <h4>Pages locales par ville — élargir le marché</h4>
+        <p>ComptaTeam est #1 sur "comptable Namur" mais seulement #26 sur "comptable Liège" (390 recherches/mois). Créer ou renforcer des pages dédiées par ville (Liège, Charleroi, Bruxelles) permettrait de capter un nouveau flux de prospects qualifiés en recherche active d'un comptable.</p>
+        <div class="opp-meta">
+          <span class="badge badge-green">Impact fort</span>
+          <span class="badge badge-blue">Délai : 3-6 mois</span>
+        </div>
+      </div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-number" style="background:var(--poush-yellow);">3</div>
+      <div class="opp-content">
+        <h4>Schema.org complet — visibilité Google & IA</h4>
+        <p>Implémenter Organization, LocalBusiness et FAQPage permettrait d'obtenir des rich snippets dans Google (plus de clics) et d'être mieux identifié par les IA génératives. C'est un investissement technique ponctuel à fort effet multiplicateur sur toutes les autres actions SEO.</p>
+        <div class="opp-meta">
+          <span class="badge badge-orange">Impact moyen-fort</span>
+          <span class="badge badge-blue">Délai : 1-2 mois</span>
+        </div>
+      </div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-number" style="background:var(--poush-green);">4</div>
+      <div class="opp-content">
+        <h4>Nettoyage profil de backlinks — santé SEO</h4>
+        <p>Une majorité des 256 domaines référents sont des liens spam (ancres Telegram). Un audit de désaveu via Google Search Console nettoyant ce profil permettrait de libérer le potentiel SEO réel du site et de protéger le TrustFlow existant (21) contre tout risque de pénalité algorithmique.</p>
+        <div class="opp-meta">
+          <span class="badge badge-orange">Impact moyen</span>
+          <span class="badge badge-blue">Délai : 1-2 mois</span>
+        </div>
+      </div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-number" style="background:var(--poush-pink);">5</div>
+      <div class="opp-content">
+        <h4>Accessibilité web — conformité & SEO</h4>
+        <p>Le score d'accessibilité de 87/86 indique des ajustements à apporter (contrastes, attributs ARIA, navigation clavier). Ces correctifs ont un double bénéfice : améliorer l'expérience pour tous les utilisateurs et renforcer les scores Lighthouse — un signal de qualité pris en compte par Google.</p>
+        <div class="opp-meta">
+          <span class="badge badge-orange">Impact moyen</span>
+          <span class="badge badge-blue">Délai : 1-3 mois</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<div id="closing">
+  <div class="closing-bar"></div>
+  <h2 class="closing-title">Développeurs de<br>votre <span>efficacité</span> digitale.</h2>
+  <p class="closing-sub">Chez Poush, nous transformons votre présence en ligne en un levier concret de croissance — avec rigueur, créativité et un accompagnement humain à chaque étape.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-dot" style="background:var(--poush-red);"></div>
+      <h4>Stratégie et audit digital de performances</h4>
+    </div>
+    <div class="service-card">
+      <div class="service-dot" style="background:var(--poush-yellow);"></div>
+      <h4>Optimisation continue et reporting SEO & GEO</h4>
+    </div>
+    <div class="service-card">
+      <div class="service-dot" style="background:var(--poush-green);"></div>
+      <h4>Refonte de site web</h4>
+    </div>
+    <div class="service-card">
+      <div class="service-dot" style="background:var(--poush-blue);"></div>
+      <h4>Community Management</h4>
+    </div>
+  </div>
+  <div class="closing-contact">
+    <div class="contact-item">
+      <div class="contact-label">Contact</div>
+      <div class="contact-value">Justine · Account Manager</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Téléphone</div>
+      <div class="contact-value">0486 892 956</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Email</div>
+      <div class="contact-value">justine.j@poush.be</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Site web</div>
+      <div class="contact-value">poush.be</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        document.querySelectorAll('.nav-pill').forEach(pill => {
+          pill.classList.toggle('active', pill.getAttribute('data-id') === id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('section[id], div[id]').forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
+</body>
+</html>
