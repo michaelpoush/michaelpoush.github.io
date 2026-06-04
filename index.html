@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)file:///Users/michaeldebecker/Downloads/BowlingMedia_Poush_v2_4.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>État des Lieux Digital — Bowling Media · Poush</title>
+<link href="./État des Lieux Digital — Bowling Media · Poush_files/css2" rel="stylesheet">
+<style>
+:root{--black:#030505;--blue:#1c2b96;--yellow:#fabd05;--red:#fa3b2e;--green:#2eb078;--pink:#fa8fa3;--gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#e9ecef;--gray-600:#6c757d;--orange:#f59e0b;--font:"DM Sans",sans-serif;--mono:"DM Mono",monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#111;color:var(--black)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px}
+.nav-brand{display:flex;align-items:center;gap:12px}.nav-dots{display:flex;gap:5px}.nav-dot{width:9px;height:9px;border-radius:50%}
+.nav-logo{color:#fff;font-size:17px;font-weight:700;letter-spacing:-.3px}.nav-divider{width:1px;height:20px;background:#333}.nav-title{color:var(--yellow);font-size:13px;font-weight:500}
+.nav-pills{display:flex;gap:4px;overflow-x:auto}.nav-pill{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;color:#888;cursor:pointer;white-space:nowrap;transition:all .15s;border:1px solid transparent;text-decoration:none}
+.nav-pill:hover,.nav-pill.active{color:#fff;background:#222;border-color:#333}
+main{padding-top:56px}.slide{min-height:100vh;position:relative;overflow:hidden}.slide-inner{max-width:1100px;margin:0 auto;padding:64px 40px;width:100%}
+.slide-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+.slide-h1{font-size:36px;font-weight:700;line-height:1.1;margin-bottom:8px}.slide-sub{font-size:15px;color:var(--gray-600);margin-bottom:32px}
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--gray-200);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-title{font-size:13px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gray-100)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gauge-label{font-size:11px;font-weight:600;color:#555;text-align:center;line-height:1.3}.gauge-status{font-size:10px;font-weight:700;letter-spacing:.5px;text-align:center}
+.alert-box{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:14px 16px;margin-bottom:20px}
+.metric-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:8px;margin-bottom:5px}
+.metric-name{font-size:12px;font-weight:500;color:#444;display:flex;align-items:center;gap:8px}.metric-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.metric-val{font-size:12px;font-weight:700;font-family:var(--mono)}.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.kpi-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px;text-align:center}
+.kpi-val{font-size:40px;font-weight:800;line-height:1;margin-bottom:4px}.kpi-label{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.4px}.kpi-sub{font-size:11px;color:#aaa;margin-top:4px}
+.badge-inline{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-top:8px}
+.prog-wrap{margin-bottom:12px}.prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-label{font-size:11px;font-weight:600;color:#555}.prog-val{font-size:11px;font-weight:700;font-family:var(--mono)}
+.prog-track{height:7px;background:var(--gray-100);border-radius:4px;overflow:hidden}.prog-fill{height:100%;border-radius:4px}
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:4px;background:#f8f9fa}
+.bl-domain{font-size:12px;color:#444;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.tf-badge{padding:3px 9px;border-radius:12px;font-size:11px;font-weight:800;font-family:var(--mono);flex-shrink:0;margin-left:8px}
+.bar-chart{position:relative;height:130px;display:flex;align-items:flex-end;gap:2px;padding-bottom:20px;padding-left:32px}
+.bar-item{flex:1;border-radius:3px 3px 0 0}.axis-y{position:absolute;left:0;top:0;bottom:20px;display:flex;flex-direction:column;justify-content:space-between}
+.axis-label{font-size:9px;color:#ccc;font-family:var(--mono)}.axis-x{display:flex;justify-content:space-between;padding-left:32px;margin-top:4px}.axis-x span{font-size:9px;color:#bbb}
+.grid-line{position:absolute;left:32px;right:0;height:1px;background:#f1f3f5}
+.legend-row{display:flex;gap:12px;margin-top:10px}.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#888}.leg-dot{width:10px;height:10px;border-radius:2px}
+.ux-item{display:flex;gap:14px;padding:16px 18px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);margin-bottom:10px}
+.ux-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:1px}
+.ux-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px}.ux-desc{font-size:12px;color:#666;line-height:1.6}
+.ux-tag{display:inline-flex;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-top:6px}
+.geo-card{background:#fff;border-radius:12px;padding:18px;position:relative;overflow:hidden;border:1px solid var(--gray-200)}
+.geo-bar{position:absolute;top:0;left:0;right:0;height:3px}.geo-platform{font-size:15px;font-weight:800;color:var(--black);margin-bottom:6px;margin-top:4px}
+.geo-status{font-size:13px;font-weight:700;margin-bottom:10px}.geo-desc{font-size:12px;color:#666;line-height:1.6}
+.social-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;margin-bottom:6px}
+.s-left{display:flex;align-items:center;gap:10px}.s-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.s-name{font-size:13px;font-weight:700;color:var(--black)}.s-stats{font-size:11px;color:#888;margin-top:1px}
+.opp-card{display:flex;gap:16px;padding:18px;background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 1px 4px rgba(0,0,0,.04);margin-bottom:12px}
+.opp-num{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.opp-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:5px}.opp-desc{font-size:12px;color:#666;line-height:1.6}
+.opp-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.opp-tag{padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700}
+.impact-badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0;align-self:flex-start}
+.blue-box{background:var(--blue);border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;margin-top:16px}
+.blue-box-title{font-size:13px;font-weight:800;color:var(--yellow);margin-bottom:6px}.blue-box-desc{font-size:12px;color:#ccc;line-height:1.7}
+.explainer-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px}
+.exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.exp-name{font-size:14px;font-weight:800;color:var(--black)}.exp-abbr{font-size:11px;font-weight:600;color:#888;margin-top:2px;font-family:var(--mono)}
+.exp-badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.exp-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:10px}
+.exp-impact{font-size:12px;color:#444;line-height:1.5;background:var(--gray-50);border-radius:8px;padding:10px 12px;border-left:3px solid var(--gray-200)}
+.exp-analogy{background:var(--gray-50);border-radius:10px;padding:12px;margin-top:10px;display:flex;gap:10px;align-items:flex-start}
+.analogy-icon{font-size:18px;flex-shrink:0}.analogy-text{font-size:12px;color:#666;line-height:1.6;font-style:italic}
+.exp-scale{display:flex;gap:4px;margin-top:10px}.exp-scale-item{flex:1;border-radius:4px;padding:4px 6px;text-align:center;font-size:10px;font-weight:700}
+.slide-explain-tag{display:inline-flex;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:#fff8e0;color:#b45309;margin-bottom:12px}
+.cover-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.cover-bar{width:8px;display:flex;flex-direction:column;flex-shrink:0}.cover-bar-seg{flex:1}
+.cover-body{padding:80px 60px;flex:1}
+.cover-eyebrow{font-size:11px;font-weight:700;color:var(--yellow);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.cover-name{font-size:68px;font-weight:800;line-height:.9;color:#fff;margin-bottom:10px}
+.cover-url{font-family:var(--mono);font-size:16px;color:#555;margin-bottom:36px}
+.cover-line{width:70px;height:3px;background:var(--yellow);margin-bottom:24px}
+.cover-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
+.cover-pill{padding:6px 16px;border:1px solid #333;border-radius:20px;font-size:13px;font-weight:500;color:#ccc}
+.cover-meta{font-size:12px;color:#444}
+.closing-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.closing-body{padding:80px 60px;flex:1}
+.closing-sub{font-size:24px;color:#555;font-weight:300;margin-bottom:8px}
+.closing-title{font-size:56px;font-weight:800;color:#fff;line-height:.92;margin-bottom:20px}
+.closing-sep{width:70px;height:3px;background:var(--yellow);margin-bottom:28px}
+.closing-desc{font-size:14px;color:#999;max-width:560px;line-height:1.8;margin-bottom:36px}
+.closing-services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+.closing-svc{background:#111;border:1px solid #222;border-radius:12px;padding:16px}
+.closing-svc-icon{font-size:22px;margin-bottom:8px}.closing-svc-name{font-size:12px;font-weight:700;color:#fff;line-height:1.4}
+.closing-baseline{font-size:18px;font-weight:800;color:var(--yellow);margin-bottom:12px}
+.closing-contact{font-size:12px;color:#444;line-height:1.9}.closing-contact strong{color:#888}
+.bg-white{background:#fff}.bg-light{background:var(--gray-50)}
+.missing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mkw{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 12px}
+.mkw-name{font-size:12px;font-weight:600;color:#444;margin-bottom:4px}.mkw-vol{font-size:11px;color:#888;font-family:var(--mono)}
+.mkw-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;margin-top:4px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dots"><div class="nav-dot" style="background:#fa3b2e"></div><div class="nav-dot" style="background:#fabd05"></div><div class="nav-dot" style="background:#fa8fa3"></div><div class="nav-dot" style="background:#2eb078"></div><div class="nav-dot" style="background:#1c2b96"></div></div>
+    <span class="nav-logo">poush</span><div class="nav-divider"></div>
+    <span class="nav-title">État des Lieux Digital — Bowling Media</span>
+  </div>
+  <div class="nav-pills"><button class="nav-pill active" data-id="cover" onclick="document.getElementById(&#39;cover&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Cover</button><button class="nav-pill" data-id="geo" onclick="document.getElementById(&#39;geo&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">SEO &amp; GEO</button><button class="nav-pill" data-id="trafic" onclick="document.getElementById(&#39;trafic&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Trafic</button><button class="nav-pill" data-id="keywords" onclick="document.getElementById(&#39;keywords&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Mots-clés</button><button class="nav-pill" data-id="autorite" onclick="document.getElementById(&#39;autorite&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Backlinks</button><button class="nav-pill" data-id="gmb" onclick="document.getElementById(&#39;gmb&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GMB &amp; Social</button><button class="nav-pill" data-id="config" onclick="document.getElementById(&#39;config&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Config. Technique</button><button class="nav-pill" data-id="opps" onclick="document.getElementById(&#39;opps&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Opportunités</button><button class="nav-pill" data-id="closing" onclick="document.getElementById(&#39;closing&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Poush</button></div>
+</nav>
+<main><section id="cover" class="cover-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#fa3b2e"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div></div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">État des lieux digital · Mai 2026</div>
+    <div class="cover-name">Bowling Media</div>
+    <div class="cover-url">www.bowling-media.com</div>
+    <div class="cover-line"></div>
+    <div style="font-size:14px;color:#888;margin-bottom:10px">Une analyse complète de votre écosystème digital :</div>
+    <div class="cover-pills">
+      <span class="cover-pill">🔍 SEO &amp; GEO / IA</span>
+      <span class="cover-pill">📍 Google My Business</span>
+      <span class="cover-pill">🌐 Config. Technique</span>
+      <span class="cover-pill">📈 Trafic &amp; Mots-clés</span>
+      <span class="cover-pill">📱 Réseaux Sociaux</span>
+    </div>
+    <div class="cover-meta">Préparé par Poush · michael@poush.be · +32 (0)486 892 956</div>
+  </div>
+  <div style="position:absolute;right:60px;bottom:80px">
+    <div style="background:#1c2b96;border-radius:12px;padding:16px 20px;text-align:center">
+      <div style="font-size:11px;font-weight:700;color:#fabd05;letter-spacing:1px;margin-bottom:6px">SECTEUR</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.4">Affichage digital 🎳<br>Bowling &amp; Loisirs</div>
+      <div style="font-size:11px;color:#888;margin-top:6px">🌍 Europe · USA · Australie</div>
+    </div>
+  </div>
+</section><section id="geo" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔍 SEO &amp; Visibilité GEO / IA</div>
+  <h2 class="slide-h1">Votre positionnement dans les moteurs et les IA</h2>
+  <p class="slide-sub">Analyse mai 2026 · bowling-media.com · Marché international</p>
+
+  <!-- Point fort GEO déjà acquis -->
+  <div class="alert-box" style="background:#e8f8f0;border:1px solid #2eb07840;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">✅</span>
+    <div><div style="font-size:14px;font-weight:700;color:#2eb078">Gemini cite déjà Bowling Media comme "référence internationale dans l'affichage digital pour centres de loisirs"</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Vérifié en mai 2026 : sur la requête directe, Gemini décrit spontanément Bowling Media avec les bons attributs — basée à Jemeppe-sur-Sambre, installations sur mesure, dynamisme et rentabilité. Une reconnaissance IA déjà acquise, qu'il s'agit désormais de consolider.</div></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <!-- Présence actuelle par IA -->
+    <div class="card">
+      <div class="card-title">🤖 Présence dans les IA génératives</div>
+      <div class="geo-card" style="border:none;padding:0;margin-bottom:10px">
+        <div class="geo-bar" style="background:#2eb078"></div>
+        <div style="flex:1">
+          <div class="geo-platform">Gemini (Google)</div>
+          <div class="geo-status" style="color:#2eb078">✓ Bien présent</div>
+          <div class="geo-desc">La fiche GMB, le TrustFlow 18 et les liens depuis IAAPA et BPAA sont des signaux forts captés par Gemini. Sur la requête directe "bowling media", la marque est décrite avec précision.</div>
+        </div>
+      </div>
+      <div class="geo-card" style="border:none;padding:0;margin-bottom:10px">
+        <div class="geo-bar" style="background:#f59e0b"></div>
+        <div style="flex:1">
+          <div class="geo-platform">ChatGPT &amp; Perplexity</div>
+          <div class="geo-status" style="color:#f59e0b">⚡ Levier à activer</div>
+          <div class="geo-desc">Sur les requêtes anglophones génériques ("digital signage bowling alley", "LED screens bowling center"), Bowling Media n'est pas encore systématiquement cité. C'est précisément là que réside le potentiel de croissance le plus direct.</div>
+        </div>
+      </div>
+      <div class="geo-card" style="border:none;padding:0;margin-bottom:10px">
+        <div class="geo-bar" style="background:#2eb078"></div>
+        <div style="flex:1">
+          <div class="geo-platform">Claude (Anthropic)</div>
+          <div class="geo-status" style="color:#2eb078">✓ Présent dans les données</div>
+          <div class="geo-desc">Claude connaît Bowling Media — société belge basée à Jemeppe-sur-Sambre, spécialisée dans les systèmes d'affichage LED sur mesure pour centres de bowling et de loisirs, présente en Europe, USA et Australie. La marque figure dans les données d'entraînement du modèle, ce qui confirme une empreinte web suffisante pour être référencée.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leviers GEO -->
+    <div class="card">
+      <div class="card-title">💡 Leviers pour dominer les réponses IA</div>
+      <div style="font-size:12px;color:#555;line-height:1.8">
+        <div style="padding:7px 0;border-bottom:1px solid #f1f3f5;display:flex;gap:10px"><span style="color:#2eb078;font-weight:700;flex-shrink:0">01</span><span>Activer le balisage <strong>Schema.org Organization + Product</strong> — Google a fait évoluer ses exigences de structuration des données : c'est un levier de visibilité encore inexploité qui permettrait aux IA de citer Bowling Media avec encore plus de précision et de confiance.</span></div>
+        <div style="padding:7px 0;border-bottom:1px solid #f1f3f5;display:flex;gap:10px"><span style="color:#2eb078;font-weight:700;flex-shrink:0">02</span><span>Créer des <strong>pages FAQ structurées EN</strong> — les IA s'appuient sur du contenu Q&amp;A pour construire leurs réponses. "How much does a bowling LED screen cost?", "Which bowling centers use Bowling Media?" sont autant d'entrées directes dans les réponses ChatGPT et Perplexity.</span></div>
+        <div style="padding:7px 0;display:flex;gap:10px"><span style="color:#2eb078;font-weight:700;flex-shrink:0">03</span><span>Publier des <strong>case studies clients EN</strong> par marché (USA, Australie, UK) — chaque installation documentée devient une source citée dans les réponses IA sur les requêtes locales anglophones.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Opportunité de niche -->
+  <div style="background:#e8ecff;border:1px solid #1c2b9630;border-radius:12px;padding:18px;display:flex;gap:12px">
+    <span style="font-size:20px;flex-shrink:0">🎯</span>
+    <div>
+      <div style="font-size:13px;font-weight:800;color:#1c2b96;margin-bottom:6px">Fenêtre d'opportunité : dominer la niche avant la concurrence</div>
+      <div style="font-size:12px;color:#444;line-height:1.6">Le secteur de l'équipement numérique pour bowlings est encore très peu structuré dans les IA génératives. La plupart des concurrents de Bowling Media n'ont pas de stratégie GEO active. Activer ces leviers maintenant permettrait de s'imposer comme la référence IA mondiale de la niche — avant que la concurrence ne se réveille sur ce terrain.</div>
+    </div>
+  </div>
+</div>
+</section><section id="trafic" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📈 Trafic Organique — Vue Internationale</div>
+  <h2 class="slide-h1">Analyse par marché · USA · Canada · France · Australie</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Données vérifiées en direct · Mai 2026</p>
+  <div class="alert-box" style="background:#e8ecff;border:1px solid #1c2b9630;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">🔍</span>
+    <div><div style="font-size:13px;font-weight:700;color:#1c2b96">Seul le marché USA dispose de données SEMrush exploitables</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Vérifié en direct sur SEObserver (mai 2026) : Canada 🇨🇦, France 🇫🇷 et Australie 🇦🇺 affichent 0 donnée SEMrush. Ce n'est pas une absence d'activité — c'est la limite des outils de mesure face à un marché de niche internationale à très faibles volumes de recherche.</div></div>
+  </div>
+
+  <!-- TABLEAU RÉCAP 4 PAYS -->
+  <div class="grid-4" style="margin-bottom:24px">
+    <div class="kpi-card" style="border-top:3px solid #2563eb">
+      <div style="font-size:22px;text-align:center;margin-bottom:4px">🇺🇸</div>
+      <div class="kpi-val" style="color:#2563eb;font-size:28px">~10-170</div>
+      <div class="kpi-label">USA · visites/mois</div>
+      <div class="kpi-sub">Données réelles disponibles</div>
+      <div class="badge-inline" style="background:#e8ecff;color:#1c2b96">📊 Données disponibles</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #aaa">
+      <div style="font-size:22px;text-align:center;margin-bottom:4px">🇨🇦</div>
+      <div class="kpi-val" style="color:#aaa;font-size:28px">—</div>
+      <div class="kpi-label">Canada · visites/mois</div>
+      <div class="kpi-sub">Non mesuré par SEMrush</div>
+      <div class="badge-inline" style="background:#f1f3f5;color:#888">Niche non mesurée</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #aaa">
+      <div style="font-size:22px;text-align:center;margin-bottom:4px">🇫🇷</div>
+      <div class="kpi-val" style="color:#aaa;font-size:28px">—</div>
+      <div class="kpi-label">France · visites/mois</div>
+      <div class="kpi-sub">Non mesuré par SEMrush</div>
+      <div class="badge-inline" style="background:#f1f3f5;color:#888">Niche non mesurée</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #aaa">
+      <div style="font-size:22px;text-align:center;margin-bottom:4px">🇦🇺</div>
+      <div class="kpi-val" style="color:#aaa;font-size:28px">—</div>
+      <div class="kpi-label">Australie · visites/mois</div>
+      <div class="kpi-sub">Non mesuré par SEMrush</div>
+      <div class="badge-inline" style="background:#f1f3f5;color:#888">Niche non mesurée</div>
+    </div>
+  </div>
+
+  <!-- GRAPHIQUE USA réel -->
+  <div class="card" style="padding:24px;margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+      <span style="font-size:20px">🇺🇸</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#030505">Trafic organique USA — données réelles SEMrush</div>
+        <div style="font-size:11px;color:#888">Juillet 2024 → Mai 2026 · Source : SEMrush via SEObserver</div>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div style="position:absolute;left:32px;right:0;top:0;bottom:20px">
+        <div class="grid-line" style="top:0%"></div>
+        <div class="grid-line" style="top:33%"></div>
+        <div class="grid-line" style="top:66%"></div>
+      </div>
+      <div class="axis-y"><span class="axis-label">300</span><span class="axis-label">200</span><span class="axis-label">100</span><span class="axis-label">0</span></div>
+      <div class="bar-chart"><div class="bar-item" style="height:36%;background:#3b82f6"></div><div class="bar-item" style="height:48%;background:#3b82f6"></div><div class="bar-item" style="height:33%;background:#3b82f6"></div><div class="bar-item" style="height:33%;background:#3b82f6"></div><div class="bar-item" style="height:59%;background:#2563eb"></div><div class="bar-item" style="height:74%;background:#2563eb"></div><div class="bar-item" style="height:81%;background:#1c2b96"></div><div class="bar-item" style="height:83%;background:#1c2b96"></div><div class="bar-item" style="height:69%;background:#2563eb"></div><div class="bar-item" style="height:70%;background:#2563eb"></div><div class="bar-item" style="height:53%;background:#2563eb"></div><div class="bar-item" style="height:44%;background:#3b82f6"></div><div class="bar-item" style="height:44%;background:#3b82f6"></div><div class="bar-item" style="height:43%;background:#3b82f6"></div><div class="bar-item" style="height:33%;background:#3b82f6"></div><div class="bar-item" style="height:33%;background:#3b82f6"></div><div class="bar-item" style="height:100%;background:#fabd05"></div><div class="bar-item" style="height:36%;background:#3b82f6"></div><div class="bar-item" style="height:33%;background:#3b82f6"></div><div class="bar-item" style="height:35%;background:#3b82f6"></div><div class="bar-item" style="height:36%;background:#fa3b2e"></div><div class="bar-item" style="height:30%;background:#fa3b2e"></div><div class="bar-item" style="height:19%;background:#fa3b2e"></div><div class="bar-item" style="height:7%;background:#fa3b2e"></div><div class="bar-item" style="height:7%;background:#fa3b2e"></div></div>
+      <div class="axis-x"><span>Jul 24</span><span>Oct 24</span><span>Jan 25</span><span>Apr 25</span><span>Jul 25</span><span>Oct 25</span><span>Jan 26</span><span>Mai 26</span></div>
+    </div>
+    <div class="legend-row" style="margin-top:12px">
+      <div class="leg-item"><div class="leg-dot" style="background:#3b82f6"></div>Trafic stable (75-100/mois)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#1c2b96"></div>Pic Jan 2025 (~170/mois)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fabd05"></div>Pic isolé Jul-Sep 2025 (~210/mois)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fa3b2e"></div>Déclin 2026 (~10/mois)</div>
+    </div>
+  </div>
+
+  <!-- ANALYSE USA -->
+  <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:12px;padding:16px;display:flex;gap:12px;margin-bottom:16px">
+    <span style="font-size:20px;flex-shrink:0">⚠️</span>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#c0392b;margin-bottom:4px">USA : chute du trafic en 2026 — signal à surveiller</div>
+      <div style="font-size:12px;color:#555;line-height:1.6">Après un pic à ~170/mois en janvier 2025 et un rebond ponctuel à ~210 en juillet 2025, le trafic USA est en déclin marqué depuis début 2026, atteignant ~10 visites/mois en mai 2026. Ce chiffre reste très faible en valeur absolue pour une niche B2B — mais la tendance descendante mérite attention. Causes possibles : évolution des algorithmes Google sur des requêtes de niche, contenu EN à rafraîchir, concurrence accrue sur certaines requêtes.</div>
+    </div>
+  </div>
+
+  <!-- GRILLE 4 PAYS -->
+  <div class="grid-2">
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <span style="font-size:18px">🇨🇦</span>
+        <div class="card-title" style="margin:0">Canada</div>
+        <span class="status-badge" style="background:#f1f3f5;color:#888;margin-left:auto">Non mesuré</span>
+      </div>
+      <div style="font-size:11px;color:#555;line-height:1.7;margin-bottom:10px">SEMrush Canada ne détecte aucun positionnement pour bowling-media.com. Le marché canadien compte pourtant des centaines de centres de bowling — le potentiel existe, mais le site n'est pas encore visible sur Google.ca.</div>
+      <div style="background:#e8ecff;border-radius:8px;padding:10px">
+        <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:4px">💡 Requêtes à cibler</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">• bowling alley digital signage canada<br>• LED screens bowling center canada<br>• bowling entertainment technology</div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <span style="font-size:18px">🇫🇷</span>
+        <div class="card-title" style="margin:0">France</div>
+        <span class="status-badge" style="background:#f1f3f5;color:#888;margin-left:auto">Non mesuré</span>
+      </div>
+      <div style="font-size:11px;color:#555;line-height:1.7;margin-bottom:10px">Aucun positionnement détecté sur Google.fr. La France compte ~150 centres de bowling actifs. C'est le marché francophone le plus porteur pour Bowling Media — et le plus facile à adresser avec du contenu FR déjà existant sur le site.</div>
+      <div style="background:#e8ecff;border-radius:8px;padding:10px">
+        <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:4px">💡 Requêtes à cibler</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">• affichage digital bowling france<br>• écran LED bowling alley<br>• modernisation bowling numérique</div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <span style="font-size:18px">🇦🇺</span>
+        <div class="card-title" style="margin:0">Australie</div>
+        <span class="status-badge" style="background:#f1f3f5;color:#888;margin-left:auto">Non mesuré</span>
+      </div>
+      <div style="font-size:11px;color:#555;line-height:1.7;margin-bottom:10px">Aucun positionnement détecté sur Google.com.au. L'Australie est pourtant citée comme marché actif pour Bowling Media (installations existantes). Les volumes de recherche sont faibles mais les prospects très qualifiés — un lien depuis un client australien serait le levier SEO le plus direct.</div>
+      <div style="background:#e8ecff;border-radius:8px;padding:10px">
+        <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:4px">💡 Requêtes à cibler</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">• bowling digital signage australia<br>• LED screens bowling centre australia<br>• bowling alley technology upgrade</div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <span style="font-size:18px">🌍</span>
+        <div class="card-title" style="margin:0">Ce que les outils ne mesurent pas</div>
+      </div>
+      <div style="font-size:11px;color:#555;line-height:1.7;margin-bottom:10px">SEMrush mesure le trafic estimé depuis Google.com/Google.ca etc. Il ne mesure pas le trafic direct (prospects qui tapent l'URL), les visites depuis les salons (IAAPA, BowlExpo), les partages LinkedIn, ni les accès via QR code sur du matériel imprimé.</div>
+      <div style="background:#e8f8f0;border-radius:8px;padding:10px">
+        <div style="font-size:11px;font-weight:700;color:#2eb078;margin-bottom:4px">✅ Source de vérité recommandée</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Google Search Console donne le trafic réel par pays, requête et page. C'est le tableau de bord indispensable pour piloter la stratégie internationale de Bowling Media.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-explain-tag">Comprendre les métriques</div>
+  <h2 class="slide-h1">La logique du trafic B2B niche mondiale</h2>
+  <p class="slide-sub">Faibles volumes, haute valeur · chaque visiteur est un prospect qualifié</p>
+  <div class="grid-2">
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Trafic niche ≠ trafic faible</div><div class="exp-abbr">QUALITÉ AVANT QUANTITÉ</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✓ Logique B2B</div></div>
+      <div class="exp-desc">Dans un marché B2B aussi spécialisé que l'équipement LED pour bowlings, les volumes de trafic ne se comparent pas à un e-commerce grand public. Un site qui génère 100 visites/mois depuis des gérants de centres de loisirs aux USA, en Allemagne ou en Australie vaut bien plus qu'un site avec 10 000 visiteurs non qualifiés. Chaque visiteur organique de Bowling Media représente un prospect potentiel à fort panier moyen.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Version EN — principal levier de croissance</div><div class="exp-abbr">USA · AUSTRALIE · UK</div></div><div class="exp-badge" style="background:#e8ecff;color:#1c2b96">💡 À activer</div></div>
+      <div class="exp-desc">Les USA comptent plus de 5 000 centres de bowling. Ces marchés recherchent en anglais — "digital signage bowling alley", "LED screens bowling center". La version EN du site est la porte d'entrée vers ces marchés. Renforcer le contenu EN avec des pages spécifiques par pays et par produit est le levier de croissance le plus direct.</div>
+      <div class="exp-impact"><strong>Potentiel :</strong> Se positionner dans le top 3 sur "digital signage for bowling" représenterait plusieurs dizaines de leads B2B supplémentaires par mois depuis les marchés anglophones.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">La tendance USA 2026 — signal à adresser</div><div class="exp-abbr">DONNÉES SEMRUSH USA</div></div><div class="exp-badge" style="background:#fff8e0;color:#b45309">⚡ À surveiller</div></div>
+      <div class="exp-desc">Les données SEMrush USA montrent une décroissance du trafic depuis début 2026, après un pic en janvier 2025. Ce signal mérite attention : il peut indiquer une évolution des algorithmes Google sur des requêtes de niche, ou un contenu EN à rafraîchir. C'est précisément le moment d'activer une stratégie de contenu ciblée.</div>
+    </div>
+    <div class="explainer-card">
+      <div class="exp-top"><div><div class="exp-name">Google Search Console — source de vérité</div><div class="exp-abbr">PILOTAGE INTERNATIONAL</div></div><div class="exp-badge" style="background:#e6f9f0;color:#2eb078">✅ Recommandé</div></div>
+      <div class="exp-desc">SEMrush mesure une estimation du trafic. Google Search Console donne le trafic réel par pays, requête et page. C'est l'outil indispensable pour piloter précisément la stratégie internationale de Bowling Media et identifier les requêtes sur lesquelles le site gagne ou perd du terrain.</div>
+    </div>
+  </div>
+</div>
+</section><section id="keywords" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔑 Stratégie de mots-clés</div>
+  <h2 class="slide-h1">Les requêtes à conquérir — marché par marché</h2>
+  <p class="slide-sub">B2B niche mondiale · FR + EN · Europe · USA · Australie</p>
+  <div style="background:#e8ecff;border:1px solid #1c2b9630;border-radius:12px;padding:20px;margin-bottom:16px">
+  <div style="font-size:13px;font-weight:700;color:#1c2b96;margin-bottom:8px">💡 Marché niche mondial — les requêtes à conquérir</div>
+  <div style="font-size:12px;color:#555;line-height:1.6;margin-bottom:12px">Les volumes de recherche sont faibles — c'est la nature du B2B de niche. Mais la valeur commerciale de chaque visiteur est élevée. Voici les requêtes prioritaires à activer par marché.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+    <div style="background:#fff;border-radius:8px;padding:10px">
+      <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:6px">🎯 Requêtes EN à conquérir (USA/UK/AU)</div>
+      <div style="font-size:11px;color:#555;line-height:1.8">• digital signage bowling alley<br>• LED screens bowling center<br>• bowling lane digital display<br>• bowling entertainment technology<br>• bowling alley modernization<br>• interactive bowling screens</div>
+    </div>
+    <div style="background:#fff;border-radius:8px;padding:10px">
+      <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:6px">🎯 Requêtes FR à renforcer (Europe)</div>
+      <div style="font-size:11px;color:#555;line-height:1.8">• affichage digital bowling<br>• écran LED bowling<br>• bowling media système<br>• animation bowling personnalisée<br>• modernisation centre bowling<br>• logiciel diffusion bowling</div>
+    </div>
+  </div>
+</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">🌍 Marchés anglophones — priorité de croissance</div>
+      <div style="margin-bottom:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f1f3f5">
+          <div style="font-size:12px;font-weight:600">🇺🇸 USA — 5 000+ centres de bowling</div>
+          <span style="background:#e8ecff;color:#1c2b96;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700">Priorité #1</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f1f3f5">
+          <div style="font-size:12px;font-weight:600">🇦🇺 Australie — marché actif</div>
+          <span style="background:#e6f9f0;color:#2eb078;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700">Installations existantes</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f1f3f5">
+          <div style="font-size:12px;font-weight:600">🇬🇧 UK — bowling culture forte</div>
+          <span style="background:#fff8e0;color:#b45309;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700">À développer</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0">
+          <div style="font-size:12px;font-weight:600">🇫🇷🇩🇪 Europe francophone &amp; germanique</div>
+          <span style="background:#fff8e0;color:#b45309;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700">Potentiel</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📝 Contenus à créer — impact SEO &amp; GEO</div>
+      <div style="font-size:11px;color:#555;line-height:1.9">
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5">📄 "How to modernize your bowling alley with LED" (EN)</div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5">📄 "ROI of digital signage in bowling centers" (EN)</div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5">📄 Pages localisées : /en/usa · /en/australia · /en/uk</div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5">📄 Case studies clients par région</div>
+        <div style="padding:5px 0">📄 FAQ Schema.org — questions prospects type</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="autorite" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔗 Autorité &amp; Backlinks</div>
+  <h2 class="slide-h1">Un profil d'autorité sectoriel unique — à amplifier</h2>
+  <p class="slide-sub">Source : Majestic via SEObserver · Mai 2026 · Topical Trust Flow : Sports / Bowling 🎳</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">📊 Positionnement vs concurrents</div>
+      <div style="font-size:12px;color:#555;line-height:1.7;margin-bottom:14px">Avec un TrustFlow de 18 et un Topical Trust Flow 100% centré sur le bowling, Bowling Media dispose d'un profil d'autorité thématique que peu de concurrents directs peuvent revendiquer. Les liens depuis IAAPA (TF47) et la BPAA (TF21) — les deux plus grandes organisations mondiales du secteur — sont des signaux de confiance forts aux yeux de Google.</div>
+      <div class="grid-2" style="margin-bottom:14px">
+        <div class="kpi-card" style="border-top:3px solid #2eb078"><div class="kpi-val" style="color:#2eb078">18</div><div class="kpi-label">Trust Flow</div><div class="kpi-sub">Sports · Bowling 🎳</div></div>
+        <div class="kpi-card" style="border-top:3px solid #1c2b96"><div class="kpi-val" style="color:#1c2b96">31</div><div class="kpi-label">Domaines référents</div><div class="kpi-sub">Sources qualitatives</div></div>
+      </div>
+      <div style="background:#e8f8f0;border:1px solid #2eb07840;border-radius:10px;padding:12px">
+        <div style="font-size:11px;font-weight:700;color:#2eb078;margin-bottom:4px">✅ Topical Trust Flow parfaitement aligné</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">L'autorité thématique "Sports/Bowling" est un actif rare — Google valorise directement cette cohérence pour positionner le site sur les requêtes de la niche. C'est une fondation solide sur laquelle construire.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔗 Top 10 backlinks — sources actives</div>
+      <div style="border:1px solid #e9ecef;border-radius:10px;overflow:hidden;margin-bottom:10px">
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;background:#1c2b96;padding:8px 14px;gap:8px">
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Domaine source</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Ancre</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:right;text-transform:uppercase">TF</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">iaapa.org</div><div style="font-size:10px;color:#aaa">IAAPA — Assoc. mondiale parcs de loisirs</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic"></div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">47</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">bowltech.eu</div><div style="font-size:10px;color:#aaa">BowlTech Europe</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">partner image</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">37</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">bpaa.com</div><div style="font-size:10px;color:#aaa">BPAA — Bowling Proprietors Assoc. of America</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bowling-media.com</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">21</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">pwba.com</div><div style="font-size:10px;color:#aaa">PWBA — Professional Women's Bowling Assoc.</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bowling media</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">17</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">loisirsindoor.com</div><div style="font-size:10px;color:#aaa">Loisirs Indoor France</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bowling média</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">8</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">bowlingnews.fr</div><div style="font-size:10px;color:#aaa">Bowling News France</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">URL directe</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">2</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">bowlingmedia.com</div><div style="font-size:10px;color:#aaa">bowlingmedia.com (variation URL)</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic"></div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">2</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">seanrashbowling.com</div><div style="font-size:10px;color:#aaa">Sean Rash — champion pro bowling</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">picture</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">annuaire-bowling.com</div><div style="font-size:10px;color:#aaa">Annuaire bowling francophone</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bowling media</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">0</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">domains.com.bz</div><div style="font-size:10px;color:#aaa">Annuaire automatisé</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">bowling-media.com</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#aaa;color:#fff">0</span></div>
+</div>
+      </div>
+      <div style="background:#e8ecff;border-radius:8px;padding:10px">
+        <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:4px">⚡ Levier : backlinks anglophones</div>
+        <div style="font-size:11px;color:#555;line-height:1.5">Chaque installation USA/Australie est une opportunité de lien depuis le site du centre équipé. Des médias spécialisés EN (Bowling Industry Magazine, Bowlers Journal) et les associations locales (USBC, Bowls Australia) sont les cibles prioritaires pour renforcer l'autorité sur les marchés anglophones.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="gmb" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📍 GMB &amp; Réseaux Sociaux</div>
+  <h2 class="slide-h1">Présence locale &amp; sociale — le levier ROI le plus immédiat</h2>
+  <p class="slide-sub">Analyse réalisée en direct · Mai 2026</p>
+
+  <div class="alert-box" style="background:#e8f8f0;border:1px solid #2eb07840;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">💡</span>
+    <div><div style="font-size:14px;font-weight:700;color:#2eb078">Google My Business — l'action à plus fort ROI immédiat</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Une fiche GMB bien alimentée est directement indexée par Google, Gemini et Maps. C'est souvent la première chose qu'un prospect voit avant même de visiter le site. Et c'est gratuit.</div></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:24px">
+    <!-- GMB actuel + optimisations -->
+    <div class="card">
+      <div class="card-title">📍 Fiche Google My Business</div>
+      <div style="background:#e6f9f0;border:1px solid #2eb07840;border-radius:10px;padding:14px;margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="font-size:28px;font-weight:800;color:#2eb078;line-height:1">5,0</div>
+          <div>
+            <div style="color:#fabd05;font-size:16px;letter-spacing:2px">★★★★★</div>
+            <div style="font-size:11px;color:#888;margin-top:2px">2 avis Google · Mai 2026</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Note parfaite — un actif précieux à amplifier avec un volume d'avis plus important.</div>
+      </div>
+      <div style="background:#e8ecff;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:8px">📍 Fiche actuelle</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px;color:#555;line-height:1.8">
+          <span style="color:#aaa">📍</span><span>Rue de la Centrale 9a, 5190 Jemeppe-sur-Sambre</span>
+          <span style="color:#aaa">📞</span><span>071 18 69 85</span>
+          <span style="color:#aaa">🕐</span><span>Ouvert · Ferme à 18h00</span>
+          <span style="color:#aaa">🎳</span><span>Fournisseur de matériel audiovisuel</span>
+        </div>
+      </div>
+      <!-- Optimisations -->
+      <div style="background:#fff8e0;border:1px solid #fabd0540;border-radius:10px;padding:14px">
+        <div style="font-size:12px;font-weight:700;color:#b45309;margin-bottom:10px">⚡ Leviers d'optimisation de la fiche</div>
+        <div style="font-size:11px;color:#555;line-height:1.9">
+          <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700;flex-shrink:0">→</span><span><strong>Ajouter les photos d'installations internationales</strong> — centres équipés en USA, Australie, Europe. Une fiche avec photos d'installations concrètes génère bien plus de clics qu'une fiche vide.</span></div>
+          <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700;flex-shrink:0">→</span><span><strong>Description bilingue FR/EN</strong> — intégrer les mots-clés stratégiques ("digital signage bowling", "LED screens bowling center") dans la description pour capter les recherches anglophones directes.</span></div>
+          <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700;flex-shrink:0">→</span><span><strong>Posts GMB réguliers</strong> — chaque nouvelle installation est un post idéal : photo, pays, type de centre. Google favorise les fiches actives dans son ranking Maps.</span></div>
+          <div style="padding:5px 0;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700;flex-shrink:0">→</span><span><strong>Collecte d'avis post-installation</strong> — un email automatique envoyé après chaque mise en service permettrait de passer rapidement de 2 à 20+ avis et de renforcer la crédibilité auprès de chaque nouveau prospect.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Réseaux sociaux -->
+    <div class="card">
+      <div class="card-title">📱 Réseaux Sociaux</div>
+
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;color:#1877f2;font-weight:700;flex-shrink:0">f</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Facebook</div></div>
+          <span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 1 700 abonnés</span>
+        </div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Bonne base. <strong>À exploiter :</strong> documenter chaque installation avec photos avant/après, témoignages gérants, vidéos d'ambiance. Ce contenu "terrain" est le plus engageant pour une audience professionnelle.</div>
+      </div>
+
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#fce8f3;display:flex;align-items:center;justify-content:center;color:#e1306c;font-size:14px;flex-shrink:0">📷</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Instagram — @bowlingmedia</div></div>
+          <span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 742 · 109 posts</span>
+        </div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Compte EN actif — bonne direction. <strong>À exploiter :</strong> Reels courts de mise en service (les écrans qui s'allument, les pistes transformées), très performants sur Instagram. Taguer les centres clients pour élargir la portée organique.</div>
+      </div>
+
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;color:#0077b5;font-weight:700;flex-shrink:0">in</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">LinkedIn</div></div>
+          <span class="status-badge" style="background:#fff8e0;color:#d97706">⚡ 119 abonnés</span>
+        </div>
+        <div style="font-size:11px;color:#555;line-height:1.7">C'est le canal le plus sous-exploité au regard du potentiel B2B. <strong>À activer :</strong> publications sur les nouvelles installations par pays, présence aux salons (IAAPA, BowlExpo), témoignages de gérants. Ce contenu touche directement les décideurs — là où Facebook et Instagram n'atteignent pas.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section id="config" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">⚙️ Configuration Technique &amp; Schema.org</div>
+  <h2 class="slide-h1">Des fondations solides — et des leviers encore disponibles</h2>
+  <p class="slide-sub">robots.txt · sitemap · agents IA · bowling-media.com · Mai 2026</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">✅ Ce qui est déjà en place</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>CMS</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">WordPress + WooCommerce + Yoast · Multilingue FR/EN</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Opérationnel</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Sitemap XML</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">bowling-media.com/sitemap_index.xml — FR + EN</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Présent</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>HTTPS / SSL</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Sécurisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Score SEO Lighthouse</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 100/100</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Agents IA (GPTBot, Gemini, Perplexity)</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisés</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⚡ Leviers techniques disponibles</div>
+      <div style="font-size:12px;color:#555;line-height:1.7;margin-bottom:14px">Google a progressivement renforcé l'importance des données structurées pour les résultats enrichis et la visibilité dans les IA. Bowling Media dispose aujourd'hui d'une base technique solide — les leviers ci-dessous permettraient d'en tirer encore plus de valeur.</div>
+
+      <div style="background:#e8ecff;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:6px">🏷️ Schema.org — données structurées</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Actuellement : Fil d'Ariane uniquement. Les types <strong>Organization</strong> (identité de marque, présence internationale, réseaux sociaux) et <strong>Product</strong> (pages écrans LED, logiciel Studio) sont des leviers directs pour les rich snippets Google et les citations dans les IA génératives.</div>
+      </div>
+
+      <div style="background:#e8f8f0;border-radius:10px;padding:14px">
+        <div style="font-size:12px;font-weight:700;color:#2eb078;margin-bottom:6px">⚙️ Schema.org Service — décrire les prestations</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Les animations Bowling Media sont des <strong>services sur mesure</strong>, pas des produits physiques. Le type Schema.org <code>Service</code> est le bon levier : il permet à Google et aux IA de comprendre et citer précisément ce que Bowling Media propose — installation d'écrans LED, logiciel de diffusion, maintenance — et dans quels pays. Combiné à <code>Organization</code>, c'est le duo Schema.org le plus pertinent pour ce profil B2B.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="opps" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309;border:1px solid #fabd0540">🎯 Leviers Prioritaires</div>
+  <h2 class="slide-h1">5 leviers pour amplifier votre position mondiale</h2>
+  <p class="slide-sub">Bowling Media est leader de sa niche — voici comment consolider et étendre cette position digitalement</p>
+
+  <div class="opp-card"><div class="opp-num" style="background:#2eb078">01</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Activer Schema.org &amp; données structurées — visibilité IA immédiate</div><span class="impact-badge" style="background:#e6f9f0;color:#2eb078">GEO · Rich snippets · IA</span></div><div class="opp-desc">Google a progressivement renforcé l'importance des données structurées pour les résultats enrichis et les réponses des IA génératives. Activer Schema.org Organization (identité internationale, réseaux sociaux) + Product (pages écrans et logiciel) + FAQPage (questions prospects EN) placerait Bowling Media en tête des citations dans ChatGPT et Perplexity sur les requêtes anglophones — là où les concurrents sont encore absents.</div><div class="opp-tags"><span class="opp-tag" style="background:#e6f9f0;color:#2eb078">Schema.org · WordPress · IA</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#1c2b96">02</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Stratégie de contenu EN — dominer les marchés anglophones</div><span class="impact-badge" style="background:#e8ecff;color:#1c2b96">USA · Australie · UK</span></div><div class="opp-desc">4 à 6 articles EN ciblés ("How to modernize your bowling alley", "ROI of digital signage", "Bowling entertainment trends 2026") + des pages localisées par pays (/en/usa, /en/australia) + des case studies clients anglophones. Ce contenu positionnerait Bowling Media comme la référence SEO mondiale de la niche et alimenterait naturellement les citations dans les IA génératives.</div><div class="opp-tags"><span class="opp-tag" style="background:#e8ecff;color:#1c2b96">Blog EN · Pages pays · Case studies</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#fabd05">03</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title" style="color:#030505">Google My Business — amplifier la note et le volume d'avis</div><span class="impact-badge" style="background:#fff8e0;color:#b45309">ROI immédiat · Confiance B2B</span></div><div class="opp-desc">Une note 5/5 est un actif précieux. Mettre en place un processus de collecte d'avis post-installation (email automatique après mise en service) permettrait de multiplier rapidement ce volume. Plus d'avis = plus de confiance pour un prospect B2B qui vérifie la réputation = plus de conversions directes depuis Google Maps et Gemini.</div><div class="opp-tags"><span class="opp-tag" style="background:#fff8e0;color:#b45309">GMB · Avis clients · Email post-installation</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#fa8fa3">04</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">LinkedIn — canal B2B international à fort potentiel</div><span class="impact-badge" style="background:#fde8f0;color:#c2185b">Lead generation B2B</span></div><div class="opp-desc">119 abonnés LinkedIn est très en dessous du potentiel pour un leader mondial de sa niche. LinkedIn est le canal où se trouvent les gérants de chaînes de bowling et directeurs d'exploitation. Des publications régulières sur les nouvelles installations, les salons internationaux (IAAPA, BowlExpo) et les témoignages clients créeraient un flux de leads B2B entrants difficile à reproduire sur d'autres canaux.</div><div class="opp-tags"><span class="opp-tag" style="background:#fde8f0;color:#c2185b">LinkedIn · Décideurs internationaux</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#fa3b2e">05</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Backlinks anglophones — consolider l'autorité sur les marchés cibles</div><span class="impact-badge" style="background:#ffecec;color:#fa3b2e">Autorité internationale</span></div><div class="opp-desc">Chaque installation Bowling Media dans le monde est une opportunité de lien qualitatif depuis le site du centre équipé. Associé à des mentions dans des médias spécialisés EN (Bowling Industry Magazine, Bowlers Journal) et des associations locales (USBC, Bowls Australia), cela renforcerait directement l'autorité du site sur les marchés anglophones et accélérerait le positionnement sur les requêtes EN prioritaires.</div><div class="opp-tags"><span class="opp-tag" style="background:#ffecec;color:#fa3b2e">Netlinking · Partenaires clients</span></div></div></div>
+</div>
+</section><section id="closing" class="closing-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#fa3b2e"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div></div>
+  <div class="closing-body">
+    <div class="closing-sub">Bowling Media est leader mondial —</div>
+    <div class="closing-title">activons ensemble<br>les leviers qui restent.</div>
+    <div class="closing-sep"></div>
+    <div class="closing-desc">La reconnaissance sectorielle est là. Les fondations techniques sont solides. Il s'agit maintenant d'activer les leviers digitaux qui transformeront cette position de leader en visibilité dominante sur tous les marchés cibles.</div>
+    <div class="closing-services">
+      <div class="closing-svc"><div class="closing-svc-icon">🤖</div><div class="closing-svc-name">Schema.org &amp; GEO / IA</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🌍</div><div class="closing-svc-name">Contenu EN · Marchés anglophones</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">⭐</div><div class="closing-svc-name">GMB &amp; stratégie avis</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">💼</div><div class="closing-svc-name">LinkedIn B2B international</div></div>
+    </div>
+    <div class="closing-baseline">Développeurs de votre potentiel</div>
+    <div class="closing-contact"><strong>Michael</strong> · michael@poush.be · www.poush.be · +32 (0)486 892 956<br>Rue de la Croix Limont 11, B-5590 Ciney</div>
+  </div>
+</section>
+</main>
+<script>
+const sections=document.querySelectorAll("section[id]");
+const pills=document.querySelectorAll(".nav-pill");
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove("active"));const a=document.querySelector(`.nav-pill[data-id="${e.target.id}"]`);if(a){a.classList.add("active");a.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})}}});},{threshold:0.3});
+sections.forEach(s=>obs.observe(s));
+</script>
+
+</body></html>
