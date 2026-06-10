@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///Users/michaeldebecker/Downloads/Gramitherm_Poush_v1_1.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>État des Lieux Digital — Gramitherm · Poush</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+:root{--black:#030505;--blue:#1c2b96;--yellow:#fabd05;--red:#fa3b2e;--green:#2eb078;--pink:#fa8fa3;--gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#e9ecef;--gray-600:#6c757d;--orange:#f59e0b;--font:"DM Sans",sans-serif;--mono:"DM Mono",monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#111;color:var(--black)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px}
+.nav-brand{display:flex;align-items:center;gap:12px}.nav-dots{display:flex;gap:5px}.nav-dot{width:9px;height:9px;border-radius:50%}
+.nav-logo{color:#fff;font-size:17px;font-weight:700;letter-spacing:-.3px}.nav-divider{width:1px;height:20px;background:#333}.nav-title{color:var(--yellow);font-size:13px;font-weight:500}
+.nav-pills{display:flex;gap:4px;overflow-x:auto}.nav-pill{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;color:#888;cursor:pointer;white-space:nowrap;transition:all .15s;border:1px solid transparent;text-decoration:none}
+.nav-pill:hover,.nav-pill.active{color:#fff;background:#222;border-color:#333}
+main{padding-top:56px}.slide{min-height:100vh;position:relative;overflow:hidden}.slide-inner{max-width:1100px;margin:0 auto;padding:64px 40px;width:100%}
+.slide-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+.slide-h1{font-size:36px;font-weight:700;line-height:1.1;margin-bottom:8px}.slide-sub{font-size:15px;color:var(--gray-600);margin-bottom:32px}
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--gray-200);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-title{font-size:13px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gray-100)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gauge-label{font-size:11px;font-weight:600;color:#555;text-align:center;line-height:1.3}.gauge-status{font-size:10px;font-weight:700;letter-spacing:.5px;text-align:center}
+.alert-box{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:14px 16px;margin-bottom:20px}
+.metric-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:8px;margin-bottom:5px}
+.metric-name{font-size:12px;font-weight:500;color:#444;display:flex;align-items:center;gap:8px}.metric-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.metric-val{font-size:12px;font-weight:700;font-family:var(--mono)}.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.kpi-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px;text-align:center}
+.kpi-val{font-size:40px;font-weight:800;line-height:1;margin-bottom:4px}.kpi-label{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.4px}.kpi-sub{font-size:11px;color:#aaa;margin-top:4px}
+.badge-inline{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-top:8px}
+.prog-wrap{margin-bottom:12px}.prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-label{font-size:11px;font-weight:600;color:#555}.prog-val{font-size:11px;font-weight:700;font-family:var(--mono)}
+.prog-track{height:7px;background:var(--gray-100);border-radius:4px;overflow:hidden}.prog-fill{height:100%;border-radius:4px}
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:4px;background:#f8f9fa}
+.bl-domain{font-size:12px;color:#444;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.tf-badge{padding:3px 9px;border-radius:12px;font-size:11px;font-weight:800;font-family:var(--mono);flex-shrink:0;margin-left:8px}
+.bar-chart{position:relative;height:130px;display:flex;align-items:flex-end;gap:2px;padding-bottom:20px;padding-left:32px}
+.bar-item{flex:1;border-radius:3px 3px 0 0}.axis-y{position:absolute;left:0;top:0;bottom:20px;display:flex;flex-direction:column;justify-content:space-between}
+.axis-label{font-size:9px;color:#ccc;font-family:var(--mono)}.axis-x{display:flex;justify-content:space-between;padding-left:32px;margin-top:4px}.axis-x span{font-size:9px;color:#bbb}
+.grid-line{position:absolute;left:32px;right:0;height:1px;background:#f1f3f5}
+.legend-row{display:flex;gap:12px;margin-top:10px}.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#888}.leg-dot{width:10px;height:10px;border-radius:2px}
+.ux-item{display:flex;gap:14px;padding:16px 18px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);margin-bottom:10px}
+.ux-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:1px}
+.ux-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px}.ux-desc{font-size:12px;color:#666;line-height:1.6}
+.ux-tag{display:inline-flex;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-top:6px}
+.geo-card{background:#fff;border-radius:12px;padding:18px;position:relative;overflow:hidden;border:1px solid var(--gray-200)}
+.geo-bar{position:absolute;top:0;left:0;right:0;height:3px}.geo-platform{font-size:15px;font-weight:800;color:var(--black);margin-bottom:6px;margin-top:4px}
+.geo-status{font-size:13px;font-weight:700;margin-bottom:10px}.geo-desc{font-size:12px;color:#666;line-height:1.6}
+.social-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;margin-bottom:6px}
+.s-left{display:flex;align-items:center;gap:10px}.s-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.s-name{font-size:13px;font-weight:700;color:var(--black)}.s-stats{font-size:11px;color:#888;margin-top:1px}
+.opp-card{display:flex;gap:16px;padding:18px;background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 1px 4px rgba(0,0,0,.04);margin-bottom:12px}
+.opp-num{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.opp-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:5px}.opp-desc{font-size:12px;color:#666;line-height:1.6}
+.opp-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.opp-tag{padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700}
+.impact-badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0;align-self:flex-start}
+.blue-box{background:var(--blue);border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;margin-top:16px}
+.blue-box-title{font-size:13px;font-weight:800;color:var(--yellow);margin-bottom:6px}.blue-box-desc{font-size:12px;color:#ccc;line-height:1.7}
+.explainer-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px}
+.exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.exp-name{font-size:14px;font-weight:800;color:var(--black)}.exp-abbr{font-size:11px;font-weight:600;color:#888;margin-top:2px;font-family:var(--mono)}
+.exp-badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.exp-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:10px}
+.exp-impact{font-size:12px;color:#444;line-height:1.5;background:var(--gray-50);border-radius:8px;padding:10px 12px;border-left:3px solid var(--gray-200)}
+.exp-analogy{background:var(--gray-50);border-radius:10px;padding:12px;margin-top:10px;display:flex;gap:10px;align-items:flex-start}
+.analogy-icon{font-size:18px;flex-shrink:0}.analogy-text{font-size:12px;color:#666;line-height:1.6;font-style:italic}
+.exp-scale{display:flex;gap:4px;margin-top:10px}.exp-scale-item{flex:1;border-radius:4px;padding:4px 6px;text-align:center;font-size:10px;font-weight:700}
+.slide-explain-tag{display:inline-flex;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:#fff8e0;color:#b45309;margin-bottom:12px}
+.cover-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.cover-bar{width:8px;display:flex;flex-direction:column;flex-shrink:0}.cover-bar-seg{flex:1}
+.cover-body{padding:80px 60px;flex:1}
+.cover-eyebrow{font-size:11px;font-weight:700;color:var(--yellow);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.cover-name{font-size:68px;font-weight:800;line-height:.9;color:#fff;margin-bottom:10px}
+.cover-url{font-family:var(--mono);font-size:16px;color:#555;margin-bottom:36px}
+.cover-line{width:70px;height:3px;background:var(--yellow);margin-bottom:24px}
+.cover-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
+.cover-pill{padding:6px 16px;border:1px solid #333;border-radius:20px;font-size:13px;font-weight:500;color:#ccc}
+.cover-meta{font-size:12px;color:#444}
+.closing-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.closing-body{padding:80px 60px;flex:1}
+.closing-sub{font-size:24px;color:#555;font-weight:300;margin-bottom:8px}
+.closing-title{font-size:56px;font-weight:800;color:#fff;line-height:.92;margin-bottom:20px}
+.closing-sep{width:70px;height:3px;background:var(--yellow);margin-bottom:28px}
+.closing-desc{font-size:14px;color:#999;max-width:560px;line-height:1.8;margin-bottom:36px}
+.closing-services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+.closing-svc{background:#111;border:1px solid #222;border-radius:12px;padding:16px}
+.closing-svc-icon{font-size:22px;margin-bottom:8px}.closing-svc-name{font-size:12px;font-weight:700;color:#fff;line-height:1.4}
+.closing-baseline{font-size:18px;font-weight:800;color:var(--yellow);margin-bottom:12px}
+.closing-contact{font-size:12px;color:#444;line-height:1.9}.closing-contact strong{color:#888}
+.bg-white{background:#fff}.bg-light{background:var(--gray-50)}
+.missing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mkw{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 12px}
+.mkw-name{font-size:12px;font-weight:600;color:#444;margin-bottom:4px}.mkw-vol{font-size:11px;color:#888;font-family:var(--mono)}
+.mkw-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;margin-top:4px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dots"><div class="nav-dot" style="background:#2eb078"></div><div class="nav-dot" style="background:#fabd05"></div><div class="nav-dot" style="background:#fa3b2e"></div><div class="nav-dot" style="background:#1c2b96"></div><div class="nav-dot" style="background:#fa8fa3"></div></div>
+    <span class="nav-logo">poush</span><div class="nav-divider"></div>
+    <span class="nav-title">État des Lieux Digital — Gramitherm</span>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill" data-id="cover" onclick="document.getElementById(&#39;cover&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Cover</button><button class="nav-pill" data-id="geo" onclick="document.getElementById(&#39;geo&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">SEO &amp; GEO</button><button class="nav-pill" data-id="trafic" onclick="document.getElementById(&#39;trafic&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Trafic</button><button class="nav-pill" data-id="keywords" onclick="document.getElementById(&#39;keywords&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Mots-clés</button><button class="nav-pill" data-id="autorite" onclick="document.getElementById(&#39;autorite&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Backlinks</button><button class="nav-pill" data-id="gmb" onclick="document.getElementById(&#39;gmb&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GMB &amp; Social</button><button class="nav-pill" data-id="config" onclick="document.getElementById(&#39;config&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Config. Technique</button><button class="nav-pill" data-id="opps" onclick="document.getElementById(&#39;opps&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Opportunités</button><button class="nav-pill active" data-id="closing" onclick="document.getElementById(&#39;closing&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Poush</button>
+  </div>
+</nav>
+<main>
+<section id="cover" class="cover-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div><div class="cover-bar-seg" style="background:#fa3b2e"></div></div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">État des lieux digital · Juin 2026</div>
+    <div class="cover-name">Gramitherm</div>
+    <div class="cover-url">www.gramitherm.eu</div>
+    <div class="cover-line"></div>
+    <div style="font-size:14px;color:#888;margin-bottom:10px">Une analyse complète de votre écosystème digital :</div>
+    <div class="cover-pills">
+      <span class="cover-pill">🔍 SEO &amp; GEO / IA</span>
+      <span class="cover-pill">📍 Google My Business</span>
+      <span class="cover-pill">🌐 Config. Technique</span>
+      <span class="cover-pill">📈 Trafic &amp; Mots-clés</span>
+      <span class="cover-pill">📱 Réseaux Sociaux</span>
+    </div>
+    <div class="cover-meta">Préparé par Poush · michael@poush.be · +32 (0)486 892 956</div>
+  </div>
+  <div style="position:absolute;right:60px;bottom:80px">
+    <div style="background:#2eb078;border-radius:12px;padding:16px 20px;text-align:center">
+      <div style="font-size:11px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:6px;opacity:.8">SECTEUR</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.4">Isolant biosourcé 🌿<br>Fibres d'herbe · Made in BE</div>
+      <div style="font-size:11px;color:#fff;margin-top:6px;opacity:.7">Construction durable · Europe</div>
+    </div>
+  </div>
+</section><section id="geo" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">🔍 SEO &amp; Visibilité GEO / IA</div>
+  <h2 class="slide-h1">Une marque reconnue dans l'écosystème green — avec des leviers GEO à activer</h2>
+  <p class="slide-sub">Analyse juin 2026 · gramitherm.eu · Marché BE + FR + Europe</p>
+
+  <div class="alert-box" style="background:#e8f8f0;border:1px solid #2eb07840;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">✅</span>
+    <div><div style="font-size:14px;font-weight:700;color:#2eb078">Gemini génère un résumé complet sur Gramitherm — reconnaissance IA déjà acquise</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Sur la requête "Gramitherm isolant", Gemini décrit spontanément le produit, ses avantages (bilan carbone négatif, fibres d'herbe locales, circuit court) et même les nuances (odeur lors de l'installation). C'est une présence IA remarquable, nourrie par les 125 domaines référents et les mentions dans des médias spécialisés construction durable.</div></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-title">🤖 Présence dans les IA génératives</div>
+      <div style="border-left:4px solid #2eb078;padding:10px 12px;margin-bottom:10px;background:#f8fffe;border-radius:0 8px 8px 0">
+        <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:2px">Gemini (Google)</div>
+        <div style="font-size:11px;color:#2eb078;font-weight:600;margin-bottom:4px">✓ Très bien présent</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Gemini cite Gramitherm avec précision : fibres d'herbe, bilan carbone négatif, Sambreville, circuit court. Les backlinks depuis natureplus.org, ecoconso.be et ETH Zurich sont des signaux forts captés par Google. La marque est clairement identifiée comme acteur de référence de l'isolation biosourcée.</div>
+      </div>
+      <div style="border-left:4px solid #f59e0b;padding:10px 12px;margin-bottom:10px;background:#fffdf5;border-radius:0 8px 8px 0">
+        <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:2px">ChatGPT &amp; Perplexity</div>
+        <div style="font-size:11px;color:#f59e0b;font-weight:600;margin-bottom:4px">⚡ Levier à activer</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Sur les requêtes génériques "meilleur isolant biosourcé", "isolation écologique belgique" ou "insulation herbe", Gramitherm n'est pas encore cité systématiquement. L'absence de Schema.org et de contenu FAQ structuré limite la présence dans ces IA malgré le bon profil de backlinks.</div>
+      </div>
+      <div style="border-left:4px solid #f59e0b;padding:10px 12px;margin-bottom:10px;background:#fffdf5;border-radius:0 8px 8px 0">
+        <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:2px">Perplexity</div>
+        <div style="font-size:11px;color:#f59e0b;font-weight:600;margin-bottom:4px">⚡ Levier à activer</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Perplexity s'appuie sur du contenu Q&amp;A structuré. Des pages FAQ ("Quelle est la valeur lambda de Gramitherm ?", "Comment installer les panneaux Gramitherm ?") amplifieraient significativement la présence sur ce moteur IA.</div>
+      </div>
+      <div style="border-left:4px solid #2eb078;padding:10px 12px;background:#f8fffe;border-radius:0 8px 8px 0">
+        <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:2px">Claude (Anthropic)</div>
+        <div style="font-size:11px;color:#2eb078;font-weight:600;margin-bottom:4px">✓ Marque connue</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Gramitherm figure dans les données d'entraînement de Claude comme innovateur belge en isolation biosourcée à base de fibres d'herbe. Une présence établie que Schema.org et du contenu éditorial consolidera encore.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Leviers GEO — niche biosourcée en forte croissance</div>
+      <div style="font-size:12px;color:#555;line-height:1.7;margin-bottom:14px">La thématique isolation biosourcée et construction durable est en forte croissance dans les IA génératives — les questions sur les matériaux écologiques, le bilan carbone et la rénovation durable sont parmi les plus posées dans ChatGPT et Perplexity par les particuliers et les professionnels du bâtiment.</div>
+
+      <div style="background:#e8f8f0;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#2eb078;margin-bottom:8px">Actions prioritaires</div>
+        <div style="font-size:11px;color:#555;line-height:1.9">
+          <div style="padding:4px 0;border-bottom:1px solid #d4f0e4;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Activer <strong>Schema.org Product</strong> sur chaque référence (panneau, rouleau) — Google a évolué ses exigences : c'est un levier de visibilité inexploité qui ouvrirait les rich snippets et Google Shopping pour les requêtes produit</span></div>
+          <div style="padding:4px 0;border-bottom:1px solid #d4f0e4;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Activer <strong>Schema.org Organization</strong> avec certifications (Solar Impulse, natureplus, Green Business Award) et zone de distribution Europe — les IA citent les marques certifiées en priorité</span></div>
+          <div style="padding:4px 0;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Créer des <strong>pages FAQ structurées</strong> : performances thermiques, applications, comparatif vs laine de verre, installation... Du contenu Q&amp;A que les IA utilisent directement</span></div>
+        </div>
+      </div>
+
+      <div style="background:#e8ecff;border-radius:8px;padding:12px">
+        <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:4px">🎯 Requêtes à conquérir</div>
+        <div style="font-size:11px;color:#555;line-height:1.8">isolation biosourcée belgique · isolant naturel combles · panneau isolant écologique · isolation fibres végétales · meilleur isolant thermique naturel · isolant bilan carbone négatif · rénovation écologique isolation</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="trafic" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309">📈 Trafic Organique</div>
+  <h2 class="slide-h1">Une dynamique de croissance interrompue — un signal à adresser</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · 2024 → Juin 2026</p>
+
+  <div class="alert-box" style="background:#fff8e0;border:1px solid #fabd0540;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">⚡</span>
+    <div><div style="font-size:13px;font-weight:700;color:#b45309">Pic de ~1 500 visites/mois en 2025 — déclin progressif depuis fin 2025</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Le trafic de gramitherm.eu avait connu une belle progression jusqu'en mi-2025. Depuis, une tendance à la baisse s'est installée. Ce signal peut indiquer une évolution des algorithmes Google sur les requêtes biosourcées, ou un contenu SEO à rafraîchir. C'est précisément le moment d'activer une stratégie de contenu ciblée pour inverser la tendance.</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">📊 Historique trafic · 2024 → Juin 2026</div>
+      <div style="position:relative;margin:10px 0 14px">
+        <div style="display:flex;align-items:flex-end;gap:3px;height:90px;padding:0 0 16px">
+          <div class="bar-item" style="height:20%;background:#60a5fa"></div><div class="bar-item" style="height:25%;background:#3b82f6"></div><div class="bar-item" style="height:30%;background:#3b82f6"></div><div class="bar-item" style="height:40%;background:#2563eb"></div><div class="bar-item" style="height:55%;background:#2563eb"></div><div class="bar-item" style="height:70%;background:#1c2b96"></div><div class="bar-item" style="height:85%;background:#1c2b96"></div><div class="bar-item" style="height:100%;background:#1c2b96"></div><div class="bar-item" style="height:90%;background:#1c2b96"></div><div class="bar-item" style="height:80%;background:#fabd05"></div><div class="bar-item" style="height:70%;background:#fabd05"></div><div class="bar-item" style="height:60%;background:#fabd05"></div><div class="bar-item" style="height:55%;background:#fabd05"></div><div class="bar-item" style="height:50%;background:#fabd05"></div><div class="bar-item" style="height:45%;background:#fa3b2e"></div><div class="bar-item" style="height:40%;background:#fa3b2e"></div><div class="bar-item" style="height:35%;background:#fa3b2e"></div><div class="bar-item" style="height:30%;background:#fa3b2e"></div><div class="bar-item" style="height:25%;background:#fa3b2e"></div><div class="bar-item" style="height:20%;background:#fa3b2e"></div><div class="bar-item" style="height:18%;background:#fa3b2e"></div><div class="bar-item" style="height:15%;background:#fa3b2e"></div><div class="bar-item" style="height:12%;background:#fa3b2e"></div><div class="bar-item" style="height:10%;background:#fa3b2e"></div><div class="bar-item" style="height:8%;background:#fa3b2e"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:#aaa">
+          <span>Jul 24</span><span>Jan 25</span><span>Pic ~1 500/mois</span><span>Jan 26</span><span>Jun 26</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="kpi-card" style="border-top:3px solid #1c2b96">
+          <div class="kpi-val" style="color:#1c2b96">~1 500</div>
+          <div class="kpi-label">Pic mensuel 2025</div>
+          <div class="kpi-sub">visites organiques</div>
+        </div>
+        <div class="kpi-card" style="border-top:3px solid #fa3b2e">
+          <div class="kpi-val" style="color:#fa3b2e">↘</div>
+          <div class="kpi-label">Tendance 2026</div>
+          <div class="kpi-sub">À inverser</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">💡 Pourquoi ce déclin — et comment le renverser</div>
+      <div style="font-size:11px;color:#555;line-height:1.8">
+        <div style="padding:7px 0;border-bottom:1px solid #f1f3f5;display:flex;gap:8px"><span style="color:#1c2b96;font-weight:700;flex-shrink:0">→</span><span><strong>Site Nuxt.js sans Schema.org</strong> — Google ne peut pas enrichir les résultats de recherche de Gramitherm. Aucun rich snippet, aucun rating affiché, aucun prix visible dans les SERPs. C'est un désavantage concurrentiel direct.</span></div>
+        <div style="padding:7px 0;border-bottom:1px solid #f1f3f5;display:flex;gap:8px"><span style="color:#1c2b96;font-weight:700;flex-shrink:0">→</span><span><strong>12 mots-clés positionnés uniquement</strong> — principalement sur la marque. Les requêtes génériques à fort volume ("isolant biosourcé", "panneau isolant naturel") ne sont pas encore capturées.</span></div>
+        <div style="padding:7px 0;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700;flex-shrink:0">→</span><span><strong>Fenêtre d'opportunité</strong> — la thématique biosourcée est portée par les réglementations RE2020 et les enjeux climatiques. Avec la bonne stratégie SEO/GEO, Gramitherm peut reprendre sa croissance et s'imposer comme la référence digitale de l'isolation verte en Europe francophone.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="keywords" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔑 Top 12 Positionnements</div>
+  <h2 class="slide-h1">Position #1 sur la marque — les requêtes génériques à fort volume restent à conquérir</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · Juin 2026 · 12 mots-clés positionnés</p>
+
+  <div class="alert-box" style="background:#e8ecff;border:1px solid #1c2b9630;margin-bottom:16px">
+    <span style="font-size:18px;flex-shrink:0">💡</span>
+    <div><div style="font-size:13px;font-weight:700;color:#1c2b96">Curieuse présence sur "ubakus" — un calculateur thermique sans lien avec Gramitherm</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Plusieurs positions concernent "ubakus" (calculateur thermique allemand) — probablement via du contenu technique sur le site qui mentionne cet outil. Ce n'est pas un positionnement produit. Les vraies requêtes à conquérir sont "isolant végétal" (#29, 1 300 recherches/mois) et les variantes "panneau isolant naturel", "isolation biosourcée" qui ne sont pas encore dans le top 20.</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <div style="border:1px solid #e9ecef;border-radius:10px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:2fr 70px 90px;background:#1c2b96;padding:8px 14px;gap:8px">
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Mot-clé</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Position</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Volume</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">gramitherm</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">ubakus</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fff8e0;color:#b45309">10</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">590/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">ubakus france</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fff8e0;color:#b45309">8</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">320/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">ubacus</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">13</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">170/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">isolant vegetal</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">29</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">1 300/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">isolant végétal</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">22</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">1 300/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">ukabus</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">13</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">260/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">scie isolant</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">59</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">210/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">cegram</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">47</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">ecogramm</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">21</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">ubakus logiciel</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">16</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">140/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">ubakus thermique</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">13</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">90/mois</div>
+</div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#2eb078;display:inline-block"></span>Top 1-3</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block"></span>Top 4-10</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#fa3b2e;display:inline-block"></span>Position 11+</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">🎯 Requêtes prioritaires non encore capturées</div>
+      <div style="font-size:11px;color:#555;line-height:1.9">
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>isolation biosourcée belgique</span><span style="color:#2eb078;font-weight:600">~480/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>panneau isolant naturel</span><span style="color:#2eb078;font-weight:600">~720/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>isolation thermique écologique</span><span style="color:#f59e0b;font-weight:600">~590/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>isolant bilan carbone négatif</span><span style="color:#2eb078;font-weight:600">~210/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>isolation combles naturelle belgique</span><span style="color:#2eb078;font-weight:600">~390/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>grass insulation belgium</span><span style="color:#2eb078;font-weight:600">~180/mois (EN)</span></div>
+        <div style="padding:5px 0;display:flex;justify-content:space-between"><span>isolant fibres herbe</span><span style="color:#2eb078;font-weight:600">~260/mois</span></div>
+      </div>
+      <div style="background:#e8f8f0;border-radius:8px;padding:10px;margin-top:10px">
+        <div style="font-size:11px;color:#555;line-height:1.6"><strong>Avantage unique :</strong> Gramitherm est le seul fabricant mondial d'isolant en fibres d'herbe — aucun concurrent ne peut prendre ses requêtes de niche. Avec du contenu ciblé, ces positions sont rapidement acquises.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="autorite" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔗 Autorité &amp; Backlinks</div>
+  <h2 class="slide-h1">Un profil d'autorité remarquable — ETH Zurich, Solar Impulse, PwC, natureplus</h2>
+  <p class="slide-sub">Source : Majestic via SEObserver · Juin 2026 · 117 backlinks · 101 zero spam · Topical : Science / Environment</p>
+
+  <div class="alert-box" style="background:#e8f8f0;border:1px solid #2eb07840;margin-bottom:20px">
+    <span style="font-size:18px;flex-shrink:0">🏆</span>
+    <div><div style="font-size:14px;font-weight:700;color:#2eb078">ETH Zurich (TF76), PwC Belgique (TF32), Solar Impulse Foundation (TF23) — des liens que peu de PME peuvent revendiquer</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">La présence de Gramitherm dans la base Solar Impulse (solutions durables mondiales) et dans les resources de l'ETH Zurich (grande école polytechnique suisse) témoigne d'une reconnaissance internationale de l'innovation. Ces liens ultra-qualitatifs dans la thématique exacte sont des actifs SEO exceptionnels.</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">📊 Profil d'autorité</div>
+      <div class="grid-2" style="margin-bottom:14px">
+        <div class="kpi-card" style="border-top:3px solid #2eb078"><div class="kpi-val" style="color:#2eb078">16</div><div class="kpi-label">Trust Flow</div><div class="kpi-sub">Science · Environment</div></div>
+        <div class="kpi-card" style="border-top:3px solid #1c2b96"><div class="kpi-val" style="color:#1c2b96">125</div><div class="kpi-label">Domaines référents</div><div class="kpi-sub">101 zero spam</div></div>
+      </div>
+      <div style="background:#e8f8f0;border:1px solid #2eb07840;border-radius:10px;padding:12px;margin-bottom:10px">
+        <div style="font-size:11px;font-weight:700;color:#2eb078;margin-bottom:4px">✅ Topical Trust Flow Science/Environment — parfaitement aligné</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Google valorise directement la cohérence thématique des liens entrants. Tous les domaines qui citent Gramitherm sont dans la thématique construction durable, éco-matériaux, environnement. C'est un actif SEO rare qui justifie un TF au-dessus de la moyenne pour le secteur.</div>
+      </div>
+      <div style="background:#e8ecff;border-radius:10px;padding:12px">
+        <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:4px">⚡ Potentiel de croissance — 125 → 250+ domaines</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Les fabricants d'isolants biosourcés leaders en Europe (Steico, Knauf Insulation) affichent des TF de 40-60 avec 500+ domaines. Gramitherm a la qualité thématique — amplifier le volume de domaines qualitatifs est le levier principal pour améliorer les positions sur les requêtes génériques.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔗 Top 10 backlinks — une sélection remarquable</div>
+      <div style="border:1px solid #e9ecef;border-radius:10px;overflow:hidden;margin-bottom:10px">
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;background:#1c2b96;padding:8px 14px;gap:8px">
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Domaine source</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Ancre</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:right;text-transform:uppercase">TF</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">investsud.be</div><div style="font-size:10px;color:#aaa">Invest.Sud Wallonie — agence développement économique</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic"></div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">35</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">ecoconso.be</div><div style="font-size:10px;color:#aaa">Ecoconso.be — guide consommation durable BE</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">gramitherm</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">34</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">roofland.com</div><div style="font-size:10px;color:#aaa">Roofland — distributeur toiture</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">site web</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">32</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">natureplus.org</div><div style="font-size:10px;color:#aaa">natureplus — label européen matériaux durables</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">gramitherm europe sa</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">28</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">acoustix.be</div><div style="font-size:10px;color:#aaa">Acoustix.be — isolation acoustique</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">gramitherm</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">24</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">bouwenwonen.net</div><div style="font-size:10px;color:#aaa">Bouwen &amp; Wonen — media construction NL</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">gramitherm</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">23</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">leplongeoir.substack.com</div><div style="font-size:10px;color:#aaa">Substack — newsletter matériaux durables</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">gramitherm</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">22</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">cd2e.com</div><div style="font-size:10px;color:#aaa">CD2E — centre ressources éco-construction FR</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">gramitherm matériaux biosourcés</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">23</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">solarimpulse.com</div><div style="font-size:10px;color:#aaa">Solar Impulse Foundation — solutions durables mondiales</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">solution website</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">16</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">gintlemen.be</div><div style="font-size:10px;color:#aaa">Gintlemen.be — architecte réalisations</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">découvrez le site web</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">13</span></div>
+</div>
+      </div>
+      <div style="background:#fff8e0;border-radius:8px;padding:10px">
+        <div style="font-size:11px;font-weight:700;color:#b45309;margin-bottom:4px">💡 Leviers d'acquisition prioritaires</div>
+        <div style="font-size:11px;color:#555;line-height:1.5">Confédération Construction Belge, CSTC (Centre Scientifique Construction), magazines spécialisés (Batinfo, Le Moniteur), chaque prescripteur et architecte qui a posé du Gramitherm sur ses projets. Le réseau de distributeurs (gramishop.eu, revendeurs) est aussi une source naturelle de liens entrants.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="gmb" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📍 GMB &amp; Réseaux Sociaux</div>
+  <h2 class="slide-h1">Présence locale &amp; sociale active — des leviers d'amplification concrets</h2>
+  <p class="slide-sub">Analyse réalisée en direct · Juin 2026</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">📍 Google My Business</div>
+      <div style="background:#e6f9f0;border:1px solid #2eb07840;border-radius:10px;padding:14px;margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="font-size:28px;font-weight:800;color:#2eb078;line-height:1">4,5</div>
+          <div>
+            <div style="color:#fabd05;font-size:16px;letter-spacing:2px">★★★★½</div>
+            <div style="font-size:11px;color:#888;margin-top:2px">33 avis Google · Juin 2026</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#2eb078;font-weight:700;margin-bottom:4px">✅ Excellente note — volume d'avis à amplifier</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">4,5/5 est une note remarquable. Avec 33 avis, la fiche commence à avoir du poids dans Google Maps. Des fabricants comparables affichent 80 à 150 avis — amplifier ce volume renforcerait le ranking local et la crédibilité aux yeux des installateurs et particuliers.</div>
+      </div>
+
+      <div style="background:#e8ecff;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:8px">📍 Fiche actuelle</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px;color:#555;line-height:1.8">
+          <span style="color:#aaa">📍</span><span>Boulevard de l'Europe 87, Sambreville</span>
+          <span style="color:#aaa">📞</span><span>071 80 04 46</span>
+          <span style="color:#aaa">🕐</span><span>Ouvert · Ferme à 17h00</span>
+          <span style="color:#aaa">🌿</span><span>Fabricant isolant biosourcé</span>
+          <span style="color:#aaa">📣</span><span>Google Ads actifs</span>
+        </div>
+      </div>
+
+      <div style="background:#fff8e0;border:1px solid #fabd0540;border-radius:10px;padding:14px">
+        <div style="font-size:12px;font-weight:700;color:#b45309;margin-bottom:8px">⚡ Leviers d'optimisation</div>
+        <div style="font-size:11px;color:#555;line-height:1.9">
+          <div style="padding:4px 0;border-bottom:1px solid #fef3cd;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Photos de l'usine, du processus de fabrication, des chantiers réalisés</span></div>
+          <div style="padding:4px 0;border-bottom:1px solid #fef3cd;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Posts réguliers : nouvelles certifications, chantiers de référence, actualités biosourcées</span></div>
+          <div style="padding:4px 0;border-bottom:1px solid #fef3cd;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Email post-livraison pour les prescripteurs et installateurs professionnels</span></div>
+          <div style="padding:4px 0;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Répondre systématiquement à tous les avis — signal de sérieux fort</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📱 Réseaux Sociaux</div>
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;color:#0077b5;font-weight:700;flex-shrink:0">in</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">LinkedIn — Gramitherm</div></div>
+          <span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 6 000 abonnés</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px">
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#0077b5">6 000</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:11px;font-weight:600;color:#555;line-height:1.4">11-50<br>employés</div></div>
+        </div>
+        <div style="font-size:11px;color:#555;font-style:italic;margin-bottom:4px">"high-performance bio-based insulation for sustainable construction"</div>
+        <div style="font-size:11px;color:#555;line-height:1.6"><strong>Canal fort :</strong> 6 000 abonnés est excellent pour un fabricant de niche. <strong>À exploiter :</strong> publications sur les chantiers de référence, les certifications obtenues, les actualités RE2020/décarbonation du bâtiment. Ce contenu touche directement les architectes, bureaux d'études et maîtres d'ouvrage.</div>
+      </div>
+
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;color:#1877f2;font-weight:700;flex-shrink:0">f</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Facebook — @Gramitherm.eu</div></div>
+          <span class="status-badge" style="background:#fff8e0;color:#d97706">⚡ 427 abonnés</span>
+        </div>
+        <div style="font-size:11px;color:#555;font-style:italic;margin-bottom:4px">"The natural grass-based insulation 🌿 · Made in Europe · Circular · Low carbon"</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Canal grand public à développer. <strong>À exploiter :</strong> contenu pédagogique (comment Gramitherm est fabriqué, bilan carbone, comparatif vs laine de verre), témoignages de particuliers ayant rénové avec Gramitherm. Ce contenu peut générer du partage naturel dans les communautés éco-rénovation.</div>
+      </div>
+
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#fce8f3;display:flex;align-items:center;justify-content:center;color:#e1306c;font-size:14px;flex-shrink:0">📷</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Instagram — @gramitherm.eu</div></div>
+          <span class="status-badge" style="background:#fff8e0;color:#d97706">⚡ À développer</span>
+        </div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Compte présent mais données non accessibles sans connexion. <strong>À exploiter :</strong> visuels de chantiers (pose de panneaux, résultats avant/après thermique), contenu esthétique sur les matériaux naturels. L'aspect visuel de l'herbe compressée est fort — Instagram est un canal naturellement adapté.</div>
+      </div>
+
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#ffecec;display:flex;align-items:center;justify-content:center;color:#fa3b2e;font-size:14px;flex-shrink:0">▶</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">YouTube — Canal Gramitherm</div></div>
+          <span class="status-badge" style="background:#e8ecff;color:#1c2b96">⚡ Fort potentiel</span>
+        </div>
+        <div style="font-size:11px;color:#555;line-height:1.6">YouTube est un moteur de recherche à part entière. Des vidéos de pose étape par étape, de présentation de l'usine ou de témoignages clients se positionnent durablement sur des requêtes comme "comment poser isolant biosourcé" — et génèrent des backlinks naturels.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="config" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">⚙️ Configuration Technique &amp; Schema.org</div>
+  <h2 class="slide-h1">Site Nuxt.js moderne — Schema.org complètement absent, priorité absolue</h2>
+  <p class="slide-sub">robots.txt · sitemap · agents IA · gramitherm.eu · Juin 2026</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">✅ Ce qui est en place</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>CMS / Framework</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">Nuxt.js (Vue.js) · Site moderne et performant</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Opérationnel</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Sitemap XML</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">gramitherm.eu/sitemap_index.xml · nuxt-robots</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Présent</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>HTTPS / SSL</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Sécurisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Agents IA</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">GPTBot, Gemini, Perplexity autorisés</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisés</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078">Site multilingue</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">FR · NL · DE · EN</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 4 langues</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🚨 Schema.org — aucun balisage détecté</div>
+      <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:10px;padding:14px;margin-bottom:14px">
+        <div style="font-size:12px;font-weight:700;color:#c0392b;margin-bottom:6px">❌ Zéro données structurées détectées par Google</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Le test Google Rich Results confirme : gramitherm.eu ne contient aucun balisage Schema.org. Pour un fabricant de produits isolants avec des certifications, des distributeurs, des chantiers de référence et un catalogue produit multilingue, c'est une opportunité de visibilité majeure inexploitée.</div>
+      </div>
+
+      <div style="background:#e8ecff;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:6px">🏷️ Schema.org Product — catalogue isolants</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Activer <strong>Product</strong> sur chaque référence (panneau mur, rouleau combles, dalle sol) avec valeur lambda, épaisseur, certifications : accès immédiat aux <strong>rich snippets Google</strong> et à Google Shopping sur les requêtes produit. C'est le levier le plus impactant pour le trafic e-commerce.</div>
+      </div>
+
+      <div style="background:#e8f8f0;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#2eb078;margin-bottom:6px">🏢 Schema.org Organization</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Activer <strong>Organization</strong> avec certifications (Solar Impulse, natureplus, Green Business Award), zone de distribution Europe, réseaux sociaux : ancrage fort de l'identité Gramitherm dans les IA génératives sur les requêtes "isolant biosourcé certifié".</div>
+      </div>
+
+      <div style="background:#fff8e0;border-radius:10px;padding:14px">
+        <div style="font-size:12px;font-weight:700;color:#b45309;margin-bottom:6px">❓ Schema.org FAQPage</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Activer <strong>FAQPage</strong> sur les pages techniques (performances, installation, comparatif) permettrait à Google d'afficher les réponses directement dans les SERPs — et à Perplexity/ChatGPT de citer Gramitherm sur les questions techniques des particuliers et professionnels.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div></section><section id="opps" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309;border:1px solid #fabd0540">🎯 Leviers Prioritaires</div>
+  <h2 class="slide-h1">5 leviers pour que la visibilité digitale reflète l'innovation du produit</h2>
+  <p class="slide-sub">Gramitherm a un produit unique au monde et des références exceptionnelles — le digital doit être à la hauteur</p>
+
+  <div class="opp-card"><div class="opp-num" style="background:#fa3b2e">01</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Activer Schema.org — la priorité absolue sur Nuxt.js</div><span class="impact-badge" style="background:#ffecec;color:#fa3b2e">Rich snippets · GEO · Google Shopping</span></div><div class="opp-desc">Google a évolué ses exigences de balisage — et gramitherm.eu ne dispose actuellement d'aucune donnée structurée. C'est la lacune la plus impactante à combler. Activer Product (catalogue isolants avec lambda, épaisseur, certifications), Organization (identité, certifications Solar Impulse/natureplus, zone Europe) et FAQPage (questions techniques) transformerait la visibilité de Gramitherm dans Google Shopping, les rich snippets et les réponses IA en quelques semaines.</div><div class="opp-tags"><span class="opp-tag" style="background:#ffecec;color:#fa3b2e">Schema.org · Nuxt.js · IA · Rich snippets</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#1c2b96">02</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Conquérir les requêtes génériques biosourcées — SEO on-page ciblé</div><span class="impact-badge" style="background:#e8ecff;color:#1c2b96">Trafic organique · Croissance</span></div><div class="opp-desc">Gramitherm est #1 sur sa marque mais invisible sur les requêtes qui amènent de nouveaux prospects : "isolant biosourcé belgique" (480/mois), "panneau isolant naturel" (720/mois), "isolation combles naturelle" (390/mois). Le site dispose déjà des pages par application (murs, combles, planchers, acoustique, extérieur) — c'est une bonne base. Le levier est dans l'optimisation SEO on-page de ces pages existantes : balises titre, méta-descriptions, contenu enrichi avec les bons mots-clés, et FAQ structurée par page. Compléter avec des articles de fond sur les matériaux biosourcés inverserait le déclin de trafic et captureraient un flux régulier de visiteurs qualifiés.</div><div class="opp-tags"><span class="opp-tag" style="background:#e8ecff;color:#1c2b96">SEO · Pages applications · Blog</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#2eb078">03</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Amplifier les certifications comme leviers GEO — Solar Impulse, natureplus, Green Business Award</div><span class="impact-badge" style="background:#e6f9f0;color:#2eb078">Autorité · Citations IA · Backlinks</span></div><div class="opp-desc">Les certifications de Gramitherm (Solar Impulse 1 000+ solutions, natureplus label européen, Green Business Award Suisse) sont des actifs GEO exceptionnels. Les IA génératives privilégient les marques certifiées dans leurs réponses sur les matériaux durables. Créer une page dédiée "Nos certifications et reconnaissances" + l'intégrer dans Schema.org Organization amplifierait significativement les citations dans ChatGPT, Perplexity et Gemini sur les requêtes comparatives.</div><div class="opp-tags"><span class="opp-tag" style="background:#e6f9f0;color:#2eb078">Certifications · GEO · IA · Autorité</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#fabd05">04</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title" style="color:#030505">Amplifier les avis GMB — réseau de prescripteurs professionnels</div><span class="impact-badge" style="background:#fff8e0;color:#b45309">Confiance · Ranking local · B2B</span></div><div class="opp-desc">4,5★ sur 33 avis est une excellente base. Mettre en place un processus de demande d'avis auprès des installateurs professionnels, architectes et maîtres d'ouvrage après chaque chantier permettrait de passer rapidement de 33 à 100+ avis. Dans le secteur de la construction, les avis professionnels ont un poids particulier — un prescripteur qui valide publiquement Gramitherm influence des dizaines de projets.</div><div class="opp-tags"><span class="opp-tag" style="background:#fff8e0;color:#b45309">GMB · Avis professionnels · Maps</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#fa8fa3">05</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Activer YouTube comme moteur SEO — tutoriels pose et témoignages</div><span class="impact-badge" style="background:#fde8f0;color:#c2185b">SEO YouTube · Backlinks · Trafic</span></div><div class="opp-desc">YouTube est le 2e moteur de recherche mondial. Des vidéos de pose (comment installer Gramitherm dans les combles, les murs, les planchers), des témoignages de professionnels et une visite de l'usine de Sambreville se positionneraient durablement sur des requêtes à forte intention. Ces vidéos génèrent aussi des backlinks naturels quand des blogs construction les intègrent — un levier SEO doublement efficace.</div><div class="opp-tags"><span class="opp-tag" style="background:#fde8f0;color:#c2185b">YouTube · Tutoriels pose · Backlinks</span></div></div></div>
+</div>
+</section><section id="closing" class="closing-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div><div class="cover-bar-seg" style="background:#fa3b2e"></div></div>
+  <div class="closing-body">
+    <div class="closing-sub">Gramitherm a l'innovation, les certifications et les références —</div>
+    <div class="closing-title">faisons en sorte que<br>Google le sache aussi.</div>
+    <div class="closing-sep"></div>
+    <div class="closing-desc">ETH Zurich, Solar Impulse, natureplus, PwC Belgique — Gramitherm est reconnu par les plus grandes institutions mondiales du développement durable. Le digital doit maintenant refléter cette excellence. Avec Schema.org, une stratégie SEO ciblée et une présence GEO activée, Gramitherm peut s'imposer comme la référence digitale de l'isolation biosourcée en Europe.</div>
+    <div class="closing-services">
+      <div class="closing-svc"><div class="closing-svc-icon">🏷️</div><div class="closing-svc-name">Schema.org Product &amp; GEO</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🔍</div><div class="closing-svc-name">SEO biosourcé &amp; contenu</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🏆</div><div class="closing-svc-name">Certifications &amp; autorité IA</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">▶️</div><div class="closing-svc-name">YouTube &amp; vidéos pose</div></div>
+    </div>
+    <div class="closing-baseline">Développeurs de votre potentiel</div>
+    <div class="closing-contact"><strong>Michael</strong> · michael@poush.be · www.poush.be · +32 (0)486 892 956<br>Rue de la Croix Limont 11, B-5590 Ciney</div>
+  </div>
+</section>
+</main>
+<script>
+const sections=document.querySelectorAll("section[id]");
+const pills=document.querySelectorAll(".nav-pill");
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove("active"));const a=document.querySelector(`.nav-pill[data-id="${e.target.id}"]`);if(a){a.classList.add("active");a.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})}}});},{threshold:0.3});
+sections.forEach(s=>obs.observe(s));
+</script>
+
+</body></html>
