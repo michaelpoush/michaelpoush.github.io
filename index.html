@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)file:///Users/michaeldebecker/Downloads/Dolfin_Poush_v1.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>État des Lieux Digital — Dolfin · Poush</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+:root{--black:#030505;--blue:#1c2b96;--yellow:#fabd05;--red:#fa3b2e;--green:#2eb078;--pink:#fa8fa3;--gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#e9ecef;--gray-600:#6c757d;--orange:#f59e0b;--font:"DM Sans",sans-serif;--mono:"DM Mono",monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#111;color:var(--black)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px}
+.nav-brand{display:flex;align-items:center;gap:12px}.nav-dots{display:flex;gap:5px}.nav-dot{width:9px;height:9px;border-radius:50%}
+.nav-logo{color:#fff;font-size:17px;font-weight:700;letter-spacing:-.3px}.nav-divider{width:1px;height:20px;background:#333}.nav-title{color:var(--yellow);font-size:13px;font-weight:500}
+.nav-pills{display:flex;gap:4px;overflow-x:auto}.nav-pill{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;color:#888;cursor:pointer;white-space:nowrap;transition:all .15s;border:1px solid transparent;text-decoration:none}
+.nav-pill:hover,.nav-pill.active{color:#fff;background:#222;border-color:#333}
+main{padding-top:56px}.slide{min-height:100vh;position:relative;overflow:hidden}.slide-inner{max-width:1100px;margin:0 auto;padding:64px 40px;width:100%}
+.slide-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+.slide-h1{font-size:36px;font-weight:700;line-height:1.1;margin-bottom:8px}.slide-sub{font-size:15px;color:var(--gray-600);margin-bottom:32px}
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--gray-200);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-title{font-size:13px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gray-100)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gauge-label{font-size:11px;font-weight:600;color:#555;text-align:center;line-height:1.3}.gauge-status{font-size:10px;font-weight:700;letter-spacing:.5px;text-align:center}
+.alert-box{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:14px 16px;margin-bottom:20px}
+.metric-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:8px;margin-bottom:5px}
+.metric-name{font-size:12px;font-weight:500;color:#444;display:flex;align-items:center;gap:8px}.metric-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.metric-val{font-size:12px;font-weight:700;font-family:var(--mono)}.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.kpi-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px;text-align:center}
+.kpi-val{font-size:40px;font-weight:800;line-height:1;margin-bottom:4px}.kpi-label{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.4px}.kpi-sub{font-size:11px;color:#aaa;margin-top:4px}
+.badge-inline{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-top:8px}
+.prog-wrap{margin-bottom:12px}.prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-label{font-size:11px;font-weight:600;color:#555}.prog-val{font-size:11px;font-weight:700;font-family:var(--mono)}
+.prog-track{height:7px;background:var(--gray-100);border-radius:4px;overflow:hidden}.prog-fill{height:100%;border-radius:4px}
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:4px;background:#f8f9fa}
+.bl-domain{font-size:12px;color:#444;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.tf-badge{padding:3px 9px;border-radius:12px;font-size:11px;font-weight:800;font-family:var(--mono);flex-shrink:0;margin-left:8px}
+.bar-chart{position:relative;height:130px;display:flex;align-items:flex-end;gap:2px;padding-bottom:20px;padding-left:32px}
+.bar-item{flex:1;border-radius:3px 3px 0 0}.axis-y{position:absolute;left:0;top:0;bottom:20px;display:flex;flex-direction:column;justify-content:space-between}
+.axis-label{font-size:9px;color:#ccc;font-family:var(--mono)}.axis-x{display:flex;justify-content:space-between;padding-left:32px;margin-top:4px}.axis-x span{font-size:9px;color:#bbb}
+.grid-line{position:absolute;left:32px;right:0;height:1px;background:#f1f3f5}
+.legend-row{display:flex;gap:12px;margin-top:10px}.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#888}.leg-dot{width:10px;height:10px;border-radius:2px}
+.ux-item{display:flex;gap:14px;padding:16px 18px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);margin-bottom:10px}
+.ux-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:1px}
+.ux-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px}.ux-desc{font-size:12px;color:#666;line-height:1.6}
+.ux-tag{display:inline-flex;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-top:6px}
+.geo-card{background:#fff;border-radius:12px;padding:18px;position:relative;overflow:hidden;border:1px solid var(--gray-200)}
+.geo-bar{position:absolute;top:0;left:0;right:0;height:3px}.geo-platform{font-size:15px;font-weight:800;color:var(--black);margin-bottom:6px;margin-top:4px}
+.geo-status{font-size:13px;font-weight:700;margin-bottom:10px}.geo-desc{font-size:12px;color:#666;line-height:1.6}
+.social-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;margin-bottom:6px}
+.s-left{display:flex;align-items:center;gap:10px}.s-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.s-name{font-size:13px;font-weight:700;color:var(--black)}.s-stats{font-size:11px;color:#888;margin-top:1px}
+.opp-card{display:flex;gap:16px;padding:18px;background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 1px 4px rgba(0,0,0,.04);margin-bottom:12px}
+.opp-num{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.opp-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:5px}.opp-desc{font-size:12px;color:#666;line-height:1.6}
+.opp-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.opp-tag{padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700}
+.impact-badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0;align-self:flex-start}
+.blue-box{background:var(--blue);border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;margin-top:16px}
+.blue-box-title{font-size:13px;font-weight:800;color:var(--yellow);margin-bottom:6px}.blue-box-desc{font-size:12px;color:#ccc;line-height:1.7}
+.explainer-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px}
+.exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.exp-name{font-size:14px;font-weight:800;color:var(--black)}.exp-abbr{font-size:11px;font-weight:600;color:#888;margin-top:2px;font-family:var(--mono)}
+.exp-badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.exp-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:10px}
+.exp-impact{font-size:12px;color:#444;line-height:1.5;background:var(--gray-50);border-radius:8px;padding:10px 12px;border-left:3px solid var(--gray-200)}
+.exp-analogy{background:var(--gray-50);border-radius:10px;padding:12px;margin-top:10px;display:flex;gap:10px;align-items:flex-start}
+.analogy-icon{font-size:18px;flex-shrink:0}.analogy-text{font-size:12px;color:#666;line-height:1.6;font-style:italic}
+.exp-scale{display:flex;gap:4px;margin-top:10px}.exp-scale-item{flex:1;border-radius:4px;padding:4px 6px;text-align:center;font-size:10px;font-weight:700}
+.slide-explain-tag{display:inline-flex;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:#fff8e0;color:#b45309;margin-bottom:12px}
+.cover-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.cover-bar{width:8px;display:flex;flex-direction:column;flex-shrink:0}.cover-bar-seg{flex:1}
+.cover-body{padding:80px 60px;flex:1}
+.cover-eyebrow{font-size:11px;font-weight:700;color:var(--yellow);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.cover-name{font-size:68px;font-weight:800;line-height:.9;color:#fff;margin-bottom:10px}
+.cover-url{font-family:var(--mono);font-size:16px;color:#555;margin-bottom:36px}
+.cover-line{width:70px;height:3px;background:var(--yellow);margin-bottom:24px}
+.cover-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
+.cover-pill{padding:6px 16px;border:1px solid #333;border-radius:20px;font-size:13px;font-weight:500;color:#ccc}
+.cover-meta{font-size:12px;color:#444}
+.closing-slide{background:var(--black);color:#fff;min-height:100vh;display:flex;position:relative;overflow:hidden}
+.closing-body{padding:80px 60px;flex:1}
+.closing-sub{font-size:24px;color:#555;font-weight:300;margin-bottom:8px}
+.closing-title{font-size:56px;font-weight:800;color:#fff;line-height:.92;margin-bottom:20px}
+.closing-sep{width:70px;height:3px;background:var(--yellow);margin-bottom:28px}
+.closing-desc{font-size:14px;color:#999;max-width:560px;line-height:1.8;margin-bottom:36px}
+.closing-services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+.closing-svc{background:#111;border:1px solid #222;border-radius:12px;padding:16px}
+.closing-svc-icon{font-size:22px;margin-bottom:8px}.closing-svc-name{font-size:12px;font-weight:700;color:#fff;line-height:1.4}
+.closing-baseline{font-size:18px;font-weight:800;color:var(--yellow);margin-bottom:12px}
+.closing-contact{font-size:12px;color:#444;line-height:1.9}.closing-contact strong{color:#888}
+.bg-white{background:#fff}.bg-light{background:var(--gray-50)}
+.missing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mkw{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 12px}
+.mkw-name{font-size:12px;font-weight:600;color:#444;margin-bottom:4px}.mkw-vol{font-size:11px;color:#888;font-family:var(--mono)}
+.mkw-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;margin-top:4px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dots"><div class="nav-dot" style="background:#fa3b2e"></div><div class="nav-dot" style="background:#fabd05"></div><div class="nav-dot" style="background:#fa8fa3"></div><div class="nav-dot" style="background:#2eb078"></div><div class="nav-dot" style="background:#1c2b96"></div></div>
+    <span class="nav-logo">poush</span><div class="nav-divider"></div>
+    <span class="nav-title">État des Lieux Digital — Dolfin</span>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill" data-id="cover" onclick="document.getElementById(&#39;cover&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Cover</button><button class="nav-pill" data-id="geo" onclick="document.getElementById(&#39;geo&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">SEO &amp; GEO</button><button class="nav-pill" data-id="trafic" onclick="document.getElementById(&#39;trafic&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Trafic</button><button class="nav-pill" data-id="keywords" onclick="document.getElementById(&#39;keywords&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Mots-clés</button><button class="nav-pill" data-id="autorite" onclick="document.getElementById(&#39;autorite&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Backlinks</button><button class="nav-pill" data-id="gmb" onclick="document.getElementById(&#39;gmb&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GMB &amp; Social</button><button class="nav-pill" data-id="config" onclick="document.getElementById(&#39;config&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Config. Technique</button><button class="nav-pill active" data-id="opps" onclick="document.getElementById(&#39;opps&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Opportunités</button><button class="nav-pill" data-id="closing" onclick="document.getElementById(&#39;closing&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Poush</button>
+  </div>
+</nav>
+<main>
+<section id="cover" class="cover-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#8B4513"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div></div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">État des lieux digital · Juin 2026</div>
+    <div class="cover-name">Dolfin</div>
+    <div class="cover-url">www.dolfin.be</div>
+    <div class="cover-line"></div>
+    <div style="font-size:14px;color:#888;margin-bottom:10px">Une analyse complète de votre écosystème digital :</div>
+    <div class="cover-pills">
+      <span class="cover-pill">🔍 SEO &amp; GEO / IA</span>
+      <span class="cover-pill">📍 Google My Business</span>
+      <span class="cover-pill">🌐 Config. Technique</span>
+      <span class="cover-pill">📈 Trafic &amp; Mots-clés</span>
+      <span class="cover-pill">📱 Réseaux Sociaux</span>
+    </div>
+    <div class="cover-meta">Préparé par Poush · michael@poush.be · +32 (0)486 892 956</div>
+  </div>
+  <div style="position:absolute;right:60px;bottom:80px">
+    <div style="background:#5C3317;border-radius:12px;padding:16px 20px;text-align:center">
+      <div style="font-size:11px;font-weight:700;color:#fabd05;letter-spacing:1px;margin-bottom:6px">SECTEUR</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.4">Chocolaterie premium 🍫<br>E-commerce · B2C &amp; B2B</div>
+      <div style="font-size:11px;color:#ccc;margin-top:6px">Made in Belgium since 1989 · 🌍 Export mondial</div>
+    </div>
+  </div>
+</section><section id="geo" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔍 SEO &amp; Visibilité GEO / IA</div>
+  <h2 class="slide-h1">Une marque reconnue — avec des leviers GEO encore inexploités</h2>
+  <p class="slide-sub">Analyse juin 2026 · dolfin.be · Marché BE + FR + Export</p>
+
+  <div class="alert-box" style="background:#e8f8f0;border:1px solid #2eb07840;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">✅</span>
+    <div><div style="font-size:14px;font-weight:700;color:#2eb078">Dolfin est #1 sur sa marque — et référencée dans l'écosystème chocolat mondial</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Avec un TrustFlow de 27 et des liens depuis Fairtrade.net (TF48), des blogs chocolat internationaux et des magazines gastronomiques, Dolfin bénéficie d'une autorité thématique Food réelle. Les positions #1 sur "dolfin", "chocolat dolfin" et "dolfin chocolat" confirment une marque bien ancrée dans Google.</div></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-title">🤖 Présence dans les IA génératives</div>
+      <div style="border-left:4px solid #2eb078;padding:10px 12px;margin-bottom:10px;background:#f8fffe;border-radius:0 8px 8px 0">
+        <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:2px">Gemini (Google)</div>
+        <div style="font-size:11px;color:#2eb078;font-weight:600;margin-bottom:4px">✓ Bien présent</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Sur la requête directe "Dolfin chocolat Belgique", Gemini affiche la marque avec ses attributs : chocolat belge premium, mélange d'ingrédients naturels, production durable. La fiche GMB et les nombreuses mentions web nourrissent bien la réponse.</div>
+      </div>
+      <div style="border-left:4px solid #f59e0b;padding:10px 12px;margin-bottom:10px;background:#fffdf5;border-radius:0 8px 8px 0">
+        <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:2px">ChatGPT</div>
+        <div style="font-size:11px;color:#f59e0b;font-weight:600;margin-bottom:4px">⚡ Levier à activer</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Sur les requêtes génériques "meilleur chocolat belge", "chocolat bio Belgique" ou "chocolat éthique", Dolfin n'est pas encore systématiquement cité face à Côte d'Or, Neuhaus ou Pierre Marcolini. Du contenu structuré autour de la durabilité et des ingrédients activeraient cette présence.</div>
+      </div>
+      <div style="border-left:4px solid #f59e0b;padding:10px 12px;margin-bottom:10px;background:#fffdf5;border-radius:0 8px 8px 0">
+        <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:2px">Perplexity</div>
+        <div style="font-size:11px;color:#f59e0b;font-weight:600;margin-bottom:4px">⚡ Levier à activer</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">L'absence de Schema.org Product et de FAQ structurée limite la présence dans Perplexity sur les requêtes d'achat ("où acheter chocolat Dolfin", "meilleure tablette chocolat belge"). Ce sont pourtant des requêtes à forte intention commerciale.</div>
+      </div>
+      <div style="border-left:4px solid #2eb078;padding:10px 12px;background:#f8fffe;border-radius:0 8px 8px 0">
+        <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:2px">Claude (Anthropic)</div>
+        <div style="font-size:11px;color:#2eb078;font-weight:600;margin-bottom:4px">✓ Marque connue</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Dolfin figure dans les données d'entraînement de Claude comme chocolaterie belge premium connue pour ses recettes originales (épices, fleurs, thés). Une présence établie qui peut être amplifiée avec du contenu éditorial riche.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Leviers GEO — différenciation par l'expertise</div>
+      <div style="font-size:12px;color:#555;line-height:1.7;margin-bottom:14px">Dolfin a un positionnement unique : chocolat artisanal, durable, aux associations d'ingrédients inédites. C'est précisément ce type de contenu différenciant que les IA valorisent dans leurs réponses sur les requêtes premium.</div>
+
+      <div style="background:#e8ecff;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:8px">Actions prioritaires</div>
+        <div style="font-size:11px;color:#555;line-height:1.9">
+          <div style="padding:4px 0;border-bottom:1px solid #e8ecf5;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Activer <strong>Schema.org Product</strong> sur chaque tablette — Google a évolué ses exigences de balisage produit e-commerce : prix, disponibilité, avis, ingrédients. Un levier de visibilité direct dans Google Shopping et les rich snippets.</span></div>
+          <div style="padding:4px 0;border-bottom:1px solid #e8ecf5;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Créer des <strong>pages éditoriales thématiques</strong> : "Le cacao durable chez Dolfin", "Comment nous sélectionnons nos épices", "La démarche TOHI"... Du contenu d'autorité que les IA citent naturellement.</span></div>
+          <div style="padding:4px 0;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Activer <strong>Schema.org Organization</strong> avec liens réseaux sociaux, certifications (Fairtrade, bio) et zone de distribution — pour ancrer l'identité de marque dans les réponses IA internationales.</span></div>
+        </div>
+      </div>
+
+      <div style="background:#fff8e0;border-radius:8px;padding:12px">
+        <div style="font-size:11px;font-weight:700;color:#b45309;margin-bottom:4px">🎯 Requêtes à conquérir</div>
+        <div style="font-size:11px;color:#555;line-height:1.8">chocolat bio belgique · chocolat éthique fairtrade · meilleur chocolat artisanal belge · chocolat épices originales · tablette chocolat haut de gamme · chocolat cadeau entreprise</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="trafic" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📈 Trafic Organique</div>
+  <h2 class="slide-h1">Une dynamique de trafic solide — avec un signal de déclin récent à adresser</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · 2024 → Juin 2026</p>
+
+  <div class="alert-box" style="background:#fff8e0;border:1px solid #fabd0540;margin-bottom:24px">
+    <span style="font-size:18px;flex-shrink:0">⚡</span>
+    <div><div style="font-size:13px;font-weight:700;color:#b45309">1 000 à 3 000 visites/mois en 2024-2025 — tendance à la baisse depuis début 2026</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Le trafic organique de Dolfin.be a atteint un pic solide entre mi-2024 et fin 2025, puis montre une décroissance depuis début 2026. Ce signal mérite attention : il peut refléter une évolution des algorithmes Google, une concurrence accrue sur les requêtes génériques chocolat, ou un contenu SEO à actualiser.</div></div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:24px">
+    <div class="kpi-card" style="border-top:3px solid #1c2b96">
+      <div class="kpi-val" style="color:#1c2b96">~1 500</div>
+      <div class="kpi-label">Pic de trafic mensuel</div>
+      <div class="kpi-sub">visites/mois · 2024-2025</div>
+      <div class="badge-inline" style="background:#e8ecff;color:#1c2b96">Niveau historique</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #fa3b2e">
+      <div class="kpi-val" style="color:#fa3b2e">↘</div>
+      <div class="kpi-label">Tendance 2026</div>
+      <div class="kpi-sub">Déclin à surveiller</div>
+      <div class="badge-inline" style="background:#ffecec;color:#fa3b2e">⚡ À adresser</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid #2eb078">
+      <div class="kpi-val" style="color:#2eb078">164</div>
+      <div class="kpi-label">Mots-clés positionnés</div>
+      <div class="kpi-sub">Belgique · SEMrush</div>
+      <div class="badge-inline" style="background:#e6f9f0;color:#2eb078">Base solide</div>
+    </div>
+  </div>
+
+  <div class="card" style="padding:24px">
+    <div style="font-size:12px;font-weight:700;color:#030505;margin-bottom:14px">Historique trafic SEMrush · Juillet 2024 → Juin 2026 · Belgique</div>
+    <div style="position:relative">
+      <div style="position:absolute;left:32px;right:0;top:0;bottom:20px">
+        <div class="grid-line" style="top:0%"></div>
+        <div class="grid-line" style="top:50%"></div>
+      </div>
+      <div class="axis-y"><span class="axis-label">3k</span><span class="axis-label">1.5k</span><span class="axis-label">0</span></div>
+      <div class="bar-chart"><div class="bar-item" style="height:30%;background:#3b82f6"></div><div class="bar-item" style="height:35%;background:#3b82f6"></div><div class="bar-item" style="height:40%;background:#3b82f6"></div><div class="bar-item" style="height:45%;background:#3b82f6"></div><div class="bar-item" style="height:55%;background:#2563eb"></div><div class="bar-item" style="height:65%;background:#2563eb"></div><div class="bar-item" style="height:70%;background:#2563eb"></div><div class="bar-item" style="height:80%;background:#1c2b96"></div><div class="bar-item" style="height:100%;background:#1c2b96"></div><div class="bar-item" style="height:90%;background:#1c2b96"></div><div class="bar-item" style="height:85%;background:#2563eb"></div><div class="bar-item" style="height:75%;background:#2563eb"></div><div class="bar-item" style="height:80%;background:#1c2b96"></div><div class="bar-item" style="height:70%;background:#2563eb"></div><div class="bar-item" style="height:65%;background:#2563eb"></div><div class="bar-item" style="height:60%;background:#3b82f6"></div><div class="bar-item" style="height:55%;background:#3b82f6"></div><div class="bar-item" style="height:50%;background:#fabd05"></div><div class="bar-item" style="height:45%;background:#fabd05"></div><div class="bar-item" style="height:40%;background:#fabd05"></div><div class="bar-item" style="height:35%;background:#fabd05"></div><div class="bar-item" style="height:30%;background:#fa3b2e"></div><div class="bar-item" style="height:25%;background:#fa3b2e"></div><div class="bar-item" style="height:20%;background:#fa3b2e"></div><div class="bar-item" style="height:18%;background:#fa3b2e"></div></div>
+      <div class="axis-x"><span>Jul 24</span><span>Oct 24</span><span>Jan 25</span><span>Apr 25</span><span>Jul 25</span><span>Oct 25</span><span>Jan 26</span><span>Jun 26</span></div>
+    </div>
+    <div class="legend-row">
+      <div class="leg-item"><div class="leg-dot" style="background:#2563eb"></div>Croissance 2024</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#1c2b96"></div>Pic 2025 (~1 500-3 000/mois)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fabd05"></div>Déclin progressif</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fa3b2e"></div>Niveau actuel 2026</div>
+    </div>
+  </div>
+</div>
+</section><section id="keywords" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔑 Top 20 Positionnements</div>
+  <h2 class="slide-h1">164 mots-clés positionnés — dominance marque, génériques à conquérir</h2>
+  <p class="slide-sub">Source : SEMrush via SEObserver · Belgique 🇧🇪 · Juin 2026</p>
+
+  <div class="alert-box" style="background:#e8ecff;border:1px solid #1c2b9630;margin-bottom:16px">
+    <span style="font-size:18px;flex-shrink:0">💡</span>
+    <div><div style="font-size:13px;font-weight:700;color:#1c2b96">Positions #1 solides sur la marque — le levier de croissance est sur les requêtes génériques</div>
+    <div style="font-size:12px;color:#999;margin-top:2px">Dolfin est parfaitement positionné sur ses requêtes de marque. L'opportunité de croissance réside dans les requêtes génériques à fort volume : "chocolat belge", "chocolat bio", "meilleur chocolat artisanal" — des requêtes où les concurrents premium sont déjà présents.</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <div style="border:1px solid #e9ecef;border-radius:10px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:2fr 70px 90px;background:#1c2b96;padding:8px 14px;gap:8px">
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Mot-clé</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Position</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:center;text-transform:uppercase">Volume</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">dolfin</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolat dolfin</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">dolfin chocolat</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">dolfin chocolate</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#e6f9f0;color:#2eb078">1</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">долфин</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#e6f9f0;color:#2eb078">2</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">dolfi chocolat</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#e6f9f0;color:#2eb078">3</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">est ce que le chocolat périme</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fff8e0;color:#b45309">9</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">320/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">le chocolat se périme t il</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fff8e0;color:#b45309">8</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">210/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">tohi</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fff8e0;color:#b45309">6</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolat date dépassée</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fff8e0;color:#b45309">8</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">170/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolat péremption</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#fff8e0;color:#b45309">9</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">260/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolat poivre</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">15</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">590/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolat belge marque</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">26</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">880/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolat belgique</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">30</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">2 400/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">grains de café chocolat</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">30</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">480/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolat piment</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">48</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">590/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolats bio</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">61</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">1 300/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">billes de chocolat</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">46</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">720/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolate powder</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">21</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div><div style="display:grid;grid-template-columns:2fr 70px 90px;padding:7px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div style="font-size:12px;font-weight:600;color:#030505">chocolat coco</div>
+  <div style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#ffecec;color:#fa3b2e">33</span></div>
+  <div style="font-size:11px;text-align:center;color:#888">—/mois</div>
+</div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#2eb078;display:inline-block"></span>Top 1-3</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block"></span>Top 4-10</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#fa3b2e;display:inline-block"></span>Position 11+</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">🎯 Requêtes à fort potentiel — non encore capturées</div>
+      <div style="font-size:11px;color:#555;line-height:1.9">
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>meilleur chocolat belge artisanal</span><span style="color:#2eb078;font-weight:600">~500/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>chocolat bio équitable belgique</span><span style="color:#2eb078;font-weight:600">~320/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>chocolat fairtrade belgique</span><span style="color:#2eb078;font-weight:600">~260/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>chocolat cadeau entreprise belgique</span><span style="color:#1c2b96;font-weight:600">~180/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>tablette chocolat épices originales</span><span style="color:#2eb078;font-weight:600">~150/mois</span></div>
+        <div style="padding:5px 0;border-bottom:1px solid #f1f3f5;display:flex;justify-content:space-between"><span>achat chocolat haut de gamme en ligne</span><span style="color:#1c2b96;font-weight:600">~400/mois</span></div>
+        <div style="padding:5px 0;display:flex;justify-content:space-between"><span>chocolat belge export cadeau</span><span style="color:#2eb078;font-weight:600">~90/mois</span></div>
+      </div>
+      <div style="background:#e8f8f0;border-radius:8px;padding:10px;margin-top:10px">
+        <div style="font-size:11px;color:#555;line-height:1.6"><strong>Segment B2B à activer :</strong> le segment "chocolat cadeau entreprise" est peu adressé par Dolfin.be actuellement. C'est pourtant un marché à fort panier moyen, peu compétitif SEO, et parfaitement aligné avec le positionnement premium de la marque.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="autorite" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">🔗 Autorité &amp; Backlinks</div>
+  <h2 class="slide-h1">Un profil d'autorité food international — Fairtrade en tête</h2>
+  <p class="slide-sub">Source : Majestic via SEObserver · Juin 2026 · Topical : Business / Food &amp; Related Products</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">📊 Profil d'autorité</div>
+      <div class="grid-2" style="margin-bottom:14px">
+        <div class="kpi-card" style="border-top:3px solid #2eb078"><div class="kpi-val" style="color:#2eb078">27</div><div class="kpi-label">Trust Flow</div><div class="kpi-sub">Food &amp; Related Products</div></div>
+        <div class="kpi-card" style="border-top:3px solid #1c2b96"><div class="kpi-val" style="color:#1c2b96">290</div><div class="kpi-label">Domaines référents</div><div class="kpi-sub">127 zero spam</div></div>
+      </div>
+      <div style="background:#e8f8f0;border:1px solid #2eb07840;border-radius:10px;padding:12px;margin-bottom:10px">
+        <div style="font-size:11px;font-weight:700;color:#2eb078;margin-bottom:4px">✅ Fairtrade.net TF48 — lien premium de référence</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Être référencé par Fairtrade International est un signal d'autorité et d'engagement durable exceptionnel. Ce lien TF48 dans la thématique exacte de Dolfin contribue directement au positionnement Google sur les requêtes liées au chocolat éthique et durable.</div>
+      </div>
+      <div style="background:#e8ecff;border-radius:10px;padding:12px">
+        <div style="font-size:11px;font-weight:700;color:#1c2b96;margin-bottom:4px">⚡ Écart vs concurrents premium</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">Les chocolatiers premium belges bien positionnés sur Google (Pierre Marcolini, Neuhaus) affichent des TF de 35 à 50+ avec 500 à 2 000 domaines référents. Dolfin a la cohérence thématique — l'amplification du volume de domaines qualitatifs est le levier de croissance principal.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔗 Top 10 backlinks</div>
+      <div style="border:1px solid #e9ecef;border-radius:10px;overflow:hidden;margin-bottom:10px">
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;background:#1c2b96;padding:8px 14px;gap:8px">
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Domaine source</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase">Ancre</div>
+          <div style="font-size:10px;font-weight:700;color:#fff;text-align:right;text-transform:uppercase">TF</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">fairtrade.net</div><div style="font-size:10px;color:#aaa">Fairtrade International</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">dolfin</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">48</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">smallbeerpress.com</div><div style="font-size:10px;color:#aaa">Small Beer Press — littérature</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">dolfin</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">34</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">belgiumschocolatesource.com</div><div style="font-size:10px;color:#aaa">Belgium's Chocolate Source</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">discover dolfin's website</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">33</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">cacaoweb.net</div><div style="font-size:10px;color:#aaa">CacaoWeb — guide chocolat</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">dolfin</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">27</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">chocolatewrappers.info</div><div style="font-size:10px;color:#aaa">Chocolate Wrappers — référence</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">dolfin</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">30</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">lapingourmand.com</div><div style="font-size:10px;color:#aaa">Le Lapin Gourmand — blog food</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">dolfin</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#2eb078;color:#fff">27</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">a-z.be</div><div style="font-size:10px;color:#aaa">A-Z.be — annuaire belge</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">dolfin</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">20</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">nordljus.co.uk</div><div style="font-size:10px;color:#aaa">Nordljus — épicerie fine UK</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">dolfin</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">19</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#f8f9fa;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">eclecticlibrarian.net</div><div style="font-size:10px;color:#aaa">Eclectic Librarian — blog EN</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">dolfin</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">16</span></div>
+</div><div style="display:grid;grid-template-columns:2fr 1fr 50px;padding:8px 14px;gap:8px;border-bottom:1px solid #f1f3f5;background:#fff;align-items:center">
+  <div><div style="font-size:12px;font-weight:600;color:#030505">vroom.be</div><div style="font-size:10px;color:#aaa">Vroom.be — média auto belge</div></div>
+  <div style="font-size:11px;color:#888;font-style:italic">dolfin</div>
+  <div style="text-align:right"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:800;background:#f59e0b;color:#fff">19</span></div>
+</div>
+      </div>
+      <div style="background:#fff8e0;border-radius:8px;padding:10px">
+        <div style="font-size:11px;font-weight:700;color:#b45309;margin-bottom:4px">💡 Leviers d'acquisition prioritaires</div>
+        <div style="font-size:11px;color:#555;line-height:1.5">Presse gastronomique BE/FR (Le Soir, La Libre, Elle Belgique), épiceries fines partenaires (distributeurs UK, DE, US), blogs chocolat internationaux, guides cadeaux en ligne. Chaque revendeur Dolfin dans le monde est une opportunité de lien naturel et qualitatif.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="gmb" class="slide bg-light">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8f8f0;color:#2eb078">📍 GMB &amp; Réseaux Sociaux</div>
+  <h2 class="slide-h1">Une présence sociale active — avec des leviers d'optimisation concrets</h2>
+  <p class="slide-sub">Analyse réalisée en direct · Juin 2026</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">📍 Google My Business</div>
+      <div style="background:#fff8e0;border:1px solid #fabd0540;border-radius:10px;padding:14px;margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="font-size:28px;font-weight:800;color:#f59e0b;line-height:1">4,0</div>
+          <div>
+            <div style="color:#fabd05;font-size:16px;letter-spacing:2px">★★★★☆</div>
+            <div style="font-size:11px;color:#888;margin-top:2px">61 avis Google · Juin 2026</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#b45309;font-weight:700;margin-bottom:4px">⚡ Note correcte — volume et score à améliorer</div>
+        <div style="font-size:11px;color:#555;line-height:1.6">4,0/5 est en dessous des attentes pour une marque premium comme Dolfin. 61 avis est un volume acceptable mais perfectible — des chocolatiers comparables affichent 150 à 300+ avis. Activer une stratégie de collecte post-achat (email ou QR code en boutique) amplifierait rapidement ce volume et la note globale.</div>
+      </div>
+      <div style="background:#e8ecff;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:8px">📍 Fiche actuelle</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px;color:#555;line-height:1.8">
+          <span style="color:#aaa">📍</span><span>Av. Robert Schuman 172, 1401 Nivelles</span>
+          <span style="color:#aaa">📞</span><span>02 366 24 24</span>
+          <span style="color:#aaa">🕐</span><span>Fermé · Ouvre mercredi à 09h00</span>
+          <span style="color:#aaa">🍫</span><span>Épicerie spécialisée · Chocolaterie</span>
+        </div>
+      </div>
+      <div style="background:#e8f8f0;border-radius:10px;padding:14px">
+        <div style="font-size:12px;font-weight:700;color:#2eb078;margin-bottom:8px">⚡ Leviers d'optimisation</div>
+        <div style="font-size:11px;color:#555;line-height:1.9">
+          <div style="padding:4px 0;border-bottom:1px solid #d4f0e4;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Photos haute qualité des tablettes et du lieu de production</span></div>
+          <div style="padding:4px 0;border-bottom:1px solid #d4f0e4;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Posts GMB réguliers : nouvelles tablettes, engagements durables, saisons</span></div>
+          <div style="padding:4px 0;border-bottom:1px solid #d4f0e4;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Email post-achat avec lien direct vers la fiche GMB pour les avis</span></div>
+          <div style="padding:4px 0;display:flex;gap:8px"><span style="color:#2eb078;font-weight:700">→</span><span>Répondre à tous les avis existants — signal de qualité fort pour Google</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📱 Réseaux Sociaux</div>
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;color:#1877f2;font-weight:700;flex-shrink:0">f</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Facebook — @DolfinChocolateOfficial</div></div>
+          <span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 8 500 abonnés</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px">
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#1877f2">8 500</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#1877f2">76</div><div style="font-size:10px;color:#aaa">avis · 86% ✓</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:11px;font-weight:600;color:#555;line-height:1.4">Actif<br>régulier</div></div>
+        </div>
+        <div style="font-size:11px;color:#555;line-height:1.6"><strong>À exploiter :</strong> davantage de contenu "behind the scenes" (fabrication, sélection des épices, processus durable), Stories et Reels courtes sur les nouvelles créations. Le format vidéo génère 3x plus d'engagement que les photos statiques.</div>
+      </div>
+
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#fce8f3;display:flex;align-items:center;justify-content:center;color:#e1306c;font-size:14px;flex-shrink:0">📷</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">Instagram — @dolfin_chocolate</div></div>
+          <span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ 5 727 abonnés</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px">
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#e1306c">5 727</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#e1306c">178</div><div style="font-size:10px;color:#aaa">posts</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:11px;font-weight:600;color:#555;line-height:1.4">🌍 EN<br>actif</div></div>
+        </div>
+        <div style="font-size:11px;color:#555;font-style:italic;margin-bottom:6px">"The Art of Blending · Premium chocolates since 1989 · Made in Belgium · Shipping worldwide"</div>
+        <div style="font-size:11px;color:#555;line-height:1.6"><strong>À exploiter :</strong> UGC (user generated content) — encourager les clients à partager leur dégustation avec un hashtag Dolfin. Partenariats avec des influenceurs food/chocolat pour amplifier la portée sur les marchés export (FR, UK, DE).</div>
+      </div>
+
+      <div style="background:#f8f9fa;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:32px;height:32px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;color:#0077b5;font-weight:700;flex-shrink:0">in</div>
+          <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#030505">LinkedIn — Dolfin SA</div></div>
+          <span class="status-badge" style="background:#fff8e0;color:#d97706">⚡ 456 abonnés</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px">
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:16px;font-weight:800;color:#0077b5">456</div><div style="font-size:10px;color:#aaa">abonnés</div></div>
+          <div style="background:#fff;border-radius:6px;padding:6px;text-align:center"><div style="font-size:11px;font-weight:600;color:#555;line-height:1.4">11-50<br>employés</div></div>
+        </div>
+        <div style="font-size:11px;color:#555;line-height:1.6"><strong>Canal B2B sous-exploité :</strong> le segment cadeaux d'entreprise (séminaires, events, coffrets personnalisés) se décide sur LinkedIn. Des publications sur les offres B2B, les partenariats et les certifications durables toucheraient directement les décideurs RH et marketing.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="config" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#e8ecff;color:#1c2b96">⚙️ Configuration Technique &amp; Schema.org</div>
+  <h2 class="slide-h1">Une base e-commerce solide — des leviers Schema.org à activer</h2>
+  <p class="slide-sub">robots.txt · sitemap · agents IA · dolfin.be · Juin 2026</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">✅ Ce qui est déjà en place</div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>CMS</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">WordPress + WooCommerce + Yoast SEO</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ E-commerce complet</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Sitemap XML</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">dolfin.be/sitemap_index.xml · Yoast</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Présent</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>HTTPS / SSL</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Sécurisé</span></div>
+      <div class="metric-row" style="background:#f0fff8"><div><div class="metric-name"><div class="metric-dot" style="background:#2eb078"></div>Agents IA</div><div style="font-size:11px;color:#aaa;padding-left:16px;margin-top:2px">GPTBot, Gemini, Perplexity autorisés</div></div><span class="status-badge" style="background:#e6f9f0;color:#2eb078">✓ Autorisés</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⚡ Leviers Schema.org — e-commerce non exploité</div>
+      <div style="font-size:12px;color:#555;line-height:1.6;margin-bottom:14px">Google a renforcé ses standards de balisage pour les sites e-commerce. Dolfin.be dispose d'un catalogue produit riche mais aucun balisage Schema.org Product n'est actif — c'est un levier direct sur Google Shopping et les rich snippets.</div>
+
+      <div style="background:#fff0ee;border:1px solid #fca59e;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#c0392b;margin-bottom:6px">🏷️ Schema.org Product — priorité absolue</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Actuellement : Fil d'Ariane uniquement. Pour un e-commerce de chocolat premium, activer <strong>Product</strong> (nom, prix, disponibilité, avis, ingrédients, image) sur chaque tablette permettrait d'apparaître dans <strong>Google Shopping</strong> et dans les résultats enrichis — avec note et prix directement affichés dans les SERPs. Avantage concurrentiel immédiat sur les requêtes produit.</div>
+      </div>
+
+      <div style="background:#e8ecff;border-radius:10px;padding:14px;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:#1c2b96;margin-bottom:6px">🏢 Schema.org Organization</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Activer <strong>Organization</strong> avec certifications (Fairtrade, bio), réseaux sociaux, zone de distribution internationale renforcerait la présence de la marque dans les IA génératives sur les requêtes "chocolat durable belgique" et "chocolate ethique".</div>
+      </div>
+
+      <div style="background:#e8f8f0;border-radius:10px;padding:14px">
+        <div style="font-size:12px;font-weight:700;color:#2eb078;margin-bottom:6px">⭐ Schema.org AggregateRating</div>
+        <div style="font-size:11px;color:#555;line-height:1.7">Activer les avis agrégés (note moyenne, nombre d'avis) sur les pages produit permettrait d'afficher les étoiles ★★★★★ directement dans les résultats Google — un signal de confiance visuel qui augmente significativement le taux de clics.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="opps" class="slide bg-white">
+<div class="slide-inner">
+  <div class="slide-tag" style="background:#fff8e0;color:#b45309;border:1px solid #fabd0540">🎯 Leviers Prioritaires</div>
+  <h2 class="slide-h1">5 leviers pour amplifier la visibilité et les ventes en ligne</h2>
+  <p class="slide-sub">Dolfin a les fondations — voici comment transformer l'expertise produit en croissance digitale</p>
+
+  <div class="opp-card"><div class="opp-num" style="background:#fa3b2e">01</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Activer Schema.org Product sur le catalogue — Google Shopping &amp; rich snippets</div><span class="impact-badge" style="background:#ffecec;color:#fa3b2e">E-commerce · Conversions directes</span></div><div class="opp-desc">C'est le levier le plus impactant pour un e-commerce de cette qualité. Google a évolué ses exigences de balisage produit — activer Schema.org Product (prix, disponibilité, avis, ingrédients) sur chaque tablette Dolfin permettrait d'apparaître dans Google Shopping avec les étoiles et le prix directement dans les résultats. Pour des requêtes comme "chocolat poivre tablette" ou "chocolat épices belgique", Dolfin serait visible avant même que le prospect clique.</div><div class="opp-tags"><span class="opp-tag" style="background:#ffecec;color:#fa3b2e">Schema.org Product · WooCommerce · Google Shopping</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#1c2b96">02</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Adresser le déclin de trafic 2026 — contenu SEO à actualiser</div><span class="impact-badge" style="background:#e8ecff;color:#1c2b96">Trafic organique · Croissance</span></div><div class="opp-desc">Le déclin de trafic observé depuis début 2026 est le signal prioritaire à adresser. Les causes probables : des pages produit peu optimisées sur les requêtes génériques, un contenu éditorial vieillissant, ou une concurrence accrue sur les requêtes chocolat premium. Un audit SEO on-page ciblé sur les 20 meilleures pages + une stratégie de contenu renouvelée (nouveaux articles, guides d'achat, pages thématiques durabilité) inverserait cette tendance.</div><div class="opp-tags"><span class="opp-tag" style="background:#e8ecff;color:#1c2b96">SEO on-page · Contenu · Trafic organique</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#2eb078">03</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Activer le segment B2B — cadeaux d'entreprise en ligne</div><span class="impact-badge" style="background:#e6f9f0;color:#2eb078">B2B · Fort panier moyen</span></div><div class="opp-desc">Le marché des cadeaux d'entreprise (séminaires, fêtes de fin d'année, incentives, coffrets personnalisés) représente un potentiel non adressé par Dolfin.be. Une page dédiée "Cadeaux d'entreprise Dolfin" avec configurateur de coffrets, commandes en volume et contact B2B, combinée à une présence LinkedIn renforcée, ouvrirait un canal de revenus récurrent à fort panier moyen — sans dépendance aux pics saisonniers grand public.</div><div class="opp-tags"><span class="opp-tag" style="background:#e6f9f0;color:#2eb078">B2B · Cadeaux entreprise · LinkedIn</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#fabd05">04</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title" style="color:#030505">Amplifier les avis GMB — de 61 à 150+ avis</div><span class="impact-badge" style="background:#fff8e0;color:#b45309">Confiance · Ranking local</span></div><div class="opp-desc">Avec 4,0★ et 61 avis, la fiche GMB est en dessous du potentiel pour une marque de cette notoriété. Un email post-achat automatique (déclenché 7 jours après livraison) avec lien direct vers la fiche Google est l'action la plus simple et la plus rentable. Chaque avis positif améliore la note globale, le ranking dans Google Maps, et la crédibilité pour les IA génératives qui s'appuient sur ces signaux.</div><div class="opp-tags"><span class="opp-tag" style="background:#fff8e0;color:#b45309">GMB · Email automation · Avis</span></div></div></div>
+
+  <div class="opp-card"><div class="opp-num" style="background:#fa8fa3">05</div><div style="flex:1"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px"><div class="opp-title">Stratégie de contenu éditorial — durabilité &amp; expertise</div><span class="impact-badge" style="background:#fde8f0;color:#c2185b">SEO · GEO · Autorité</span></div><div class="opp-desc">Dolfin a un positionnement éditorial fort (durabilité, Fairtrade, ingrédients naturels, TOHI) qui est peu exploité sur le site. Des articles de fond — "Comment Dolfin sélectionne ses fèves de cacao", "Notre démarche Fairtrade en chiffres", "Les épices du monde dans nos tablettes" — sont des contenus qui positionnent sur des requêtes longue traîne, génèrent des backlinks naturels depuis la presse spécialisée, et sont naturellement cités par les IA génératives dans leurs réponses sur le chocolat éthique et premium.</div><div class="opp-tags"><span class="opp-tag" style="background:#fde8f0;color:#c2185b">Blog · Durabilité · SEO longue traîne</span></div></div></div>
+</div>
+</section><section id="closing" class="closing-slide">
+  <div class="cover-bar"><div class="cover-bar-seg" style="background:#8B4513"></div><div class="cover-bar-seg" style="background:#fabd05"></div><div class="cover-bar-seg" style="background:#2eb078"></div><div class="cover-bar-seg" style="background:#1c2b96"></div><div class="cover-bar-seg" style="background:#fa8fa3"></div></div>
+  <div class="closing-body">
+    <div class="closing-sub">Dolfin crée du chocolat d'exception —</div>
+    <div class="closing-title">faisons en sorte que<br>Google le sache aussi.</div>
+    <div class="closing-sep"></div>
+    <div class="closing-desc">La marque, l'expertise et les fondations sont là. Il s'agit maintenant d'activer les leviers qui transformeront la visibilité digitale en croissance concrète — plus de trafic qualifié, plus de conversions, un segment B2B ouvert.</div>
+    <div class="closing-services">
+      <div class="closing-svc"><div class="closing-svc-icon">🏷️</div><div class="closing-svc-name">Schema.org Product &amp; Shopping</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">🔍</div><div class="closing-svc-name">SEO on-page &amp; contenu</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">💼</div><div class="closing-svc-name">Segment B2B cadeaux</div></div>
+      <div class="closing-svc"><div class="closing-svc-icon">⭐</div><div class="closing-svc-name">GMB &amp; stratégie avis</div></div>
+    </div>
+    <div class="closing-baseline">Développeurs de votre potentiel</div>
+    <div class="closing-contact"><strong>Michael</strong> · michael@poush.be · www.poush.be · +32 (0)486 892 956<br>Rue de la Croix Limont 11, B-5590 Ciney</div>
+  </div>
+</section>
+</main>
+<script>
+const sections=document.querySelectorAll("section[id]");
+const pills=document.querySelectorAll(".nav-pill");
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove("active"));const a=document.querySelector(`.nav-pill[data-id="${e.target.id}"]`);if(a){a.classList.add("active");a.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})}}});},{threshold:0.3});
+sections.forEach(s=>obs.observe(s));
+</script>
+
+</body></html>
