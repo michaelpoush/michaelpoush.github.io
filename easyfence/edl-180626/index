@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///Users/michaeldebecker/Downloads/easyfence_1.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>État des lieux digital — Easy Fence 2026</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0d0d0d;
+    --dark: #1a1a1a;
+    --white: #ffffff;
+    --light: #f5f5f3;
+    --accent: #fa3b2e;
+    --accent2: #fabd05;
+    --green: #2eb078;
+    --red: #ef4444;
+    --orange: #fabd05;
+    --blue: #3b82f6;
+    --gray: #6b7280;
+    --gray-light: #e5e7eb;
+    --gray-mid: #9ca3af;
+    --card-bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-light: #6b7280;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--text); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10,10,10,0.97); backdrop-filter: blur(12px);
+    padding: 0 28px; height: 48px; display: flex; align-items: center;
+    justify-content: space-between; gap: 12px;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .nav-dots { display: flex; gap: 5px; }
+  .nav-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .nav-logo { color: white; font-weight: 800; font-size: 14px; letter-spacing: 0.04em; }
+  .nav-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.2); }
+  .nav-title { font-size: 12px; color: rgba(255,255,255,0.45); white-space: nowrap; }
+  .nav-pills { display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto; }
+  button.nav-pill {
+    background: transparent; border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.65); font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 500; padding: 4px 13px; border-radius: 20px;
+    cursor: pointer; transition: all 0.2s; white-space: nowrap; letter-spacing: 0.02em;
+  }
+  button.nav-pill:hover { background: rgba(255,255,255,0.12); color: white; border-color: rgba(255,255,255,0.35); }
+
+  /* SLIDES */
+  .slide { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 80px 60px; }
+  .slide-dark { background: var(--black); color: var(--white); }
+  .slide-light { background: var(--white); }
+  .slide-gray { background: var(--light); }
+  .slide-accent { background: var(--accent); color: var(--white); }
+
+  /* COVER */
+  .cover-slide {
+    min-height: 100vh; background: #0a0a0a; display: flex; flex-direction: column;
+    justify-content: center; padding: 80px 0 60px; position: relative; overflow: hidden;
+  }
+  .cover-bar {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+    display: flex; flex-direction: column;
+  }
+  .cover-bar-seg { flex: 1; }
+  .cover-body { padding: 0 72px; max-width: 800px; }
+  .cover-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #fabd05; margin-bottom: 20px;
+  }
+  .cover-name {
+    font-size: clamp(52px, 7vw, 96px); font-weight: 900; line-height: 0.95;
+    color: white; margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .cover-url {
+    font-family: 'Courier New', monospace; font-size: 14px;
+    color: rgba(255,255,255,0.35); margin-bottom: 28px; letter-spacing: 0.02em;
+  }
+  .cover-line { width: 56px; height: 3px; background: #fabd05; margin-bottom: 28px; border-radius: 2px; }
+  .cover-intro { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 18px; }
+  .cover-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 56px; }
+  .cover-pill {
+    border: 1px solid rgba(255,255,255,0.18); border-radius: 20px;
+    padding: 6px 14px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.7);
+  }
+  .cover-credit { font-size: 12px; color: rgba(255,255,255,0.3); }
+  .cover-sector {
+    position: absolute; bottom: 48px; right: 72px;
+    background: #1c2b96; border-radius: 12px; padding: 20px 24px; min-width: 220px;
+  }
+  .cover-sector-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+  .cover-sector-title { font-size: 17px; font-weight: 900; color: white; margin-bottom: 4px; }
+  .cover-sector-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
+  .cover-sector-tags { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+  /* SECTION DIVIDERS */
+  .section-header { background: var(--dark); color: var(--white); min-height: 60vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 80px; position: relative; overflow: hidden; }
+  .section-header::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(232,80,10,0.08) 0%, transparent 60%); }
+  .section-num { font-size: 120px; font-weight: 900; color: rgba(255,255,255,0.04); line-height: 1; margin-bottom: -20px; }
+  .section-title { font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.1; }
+  .section-desc { font-size: 16px; color: rgba(255,255,255,0.5); margin-top: 16px; max-width: 500px; }
+
+  /* CONTENT */
+  .slide-title { font-size: clamp(24px, 3vw, 36px); font-weight: 800; margin-bottom: 8px; }
+  .slide-subtitle { font-size: 14px; color: var(--text-light); margin-bottom: 40px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* CARDS */
+  .cards { display: grid; gap: 20px; }
+  .cards-2 { grid-template-columns: repeat(2, 1fr); }
+  .cards-3 { grid-template-columns: repeat(3, 1fr); }
+  .cards-4 { grid-template-columns: repeat(4, 1fr); }
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+  .card-dark { background: #111; border-color: #222; color: white; }
+  .card-accent { background: var(--accent); border-color: var(--accent); color: white; }
+  .card-value { font-size: clamp(28px, 4vw, 48px); font-weight: 900; line-height: 1; margin-bottom: 8px; }
+  .card-label { font-size: 13px; color: var(--text-light); font-weight: 500; }
+  .card-label-dark { font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 500; }
+  .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+  .card p { font-size: 14px; line-height: 1.6; color: var(--text-light); }
+
+  /* STATUS BADGES */
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+  .badge-ok { background: rgba(46,176,120,0.12); color: #0d5c38; }
+  .badge-warn { background: rgba(250,189,5,0.18); color: #5c4200; }
+  .badge-error { background: rgba(250,59,46,0.12); color: #8b1a14; }
+  .badge-new { background: #e0e7ff; color: #3730a3; }
+  .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 10px 16px; background: #f9fafb; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); border-bottom: 2px solid var(--border); }
+  td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafafa; }
+  .td-url { font-family: monospace; font-size: 12px; color: var(--blue); }
+
+  /* GEO CARDS */
+  .geo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .geo-card { border: 2px solid var(--border); border-radius: 16px; padding: 28px; }
+  .geo-card.present { border-color: rgba(46,176,120,0.5); background: rgba(46,176,120,0.06); }
+  .geo-card.absent { border-color: rgba(250,59,46,0.4); background: rgba(250,59,46,0.04); }
+  .geo-card.unknown { border-color: #d1d5db; background: #f8f8f8; }
+  .geo-icon { font-size: 28px; margin-bottom: 12px; }
+  .geo-name { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+  .geo-status { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+  .geo-quote { font-size: 13px; line-height: 1.6; color: var(--text-light); font-style: italic; border-left: 3px solid var(--accent); padding-left: 12px; }
+
+  /* ALERT BOX */
+  .alert { border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; }
+  .alert-error { background: rgba(250,59,46,0.06); border: 1px solid rgba(250,59,46,0.3); }
+  .alert-warn { background: rgba(250,189,5,0.08); border: 1px solid rgba(250,189,5,0.4); }
+  .alert-ok { background: rgba(46,176,120,0.08); border: 1px solid rgba(46,176,120,0.35); }
+  .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .alert-content { flex: 1; }
+  .alert-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .alert-text { font-size: 13px; line-height: 1.6; color: var(--text-light); }
+
+  /* COMPARISON */
+  .compare-row { display: grid; grid-template-columns: 200px 1fr 1fr; gap: 0; border-bottom: 1px solid var(--border); }
+  .compare-row:first-child { background: #f9fafb; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray); }
+  .compare-cell { padding: 14px 20px; font-size: 13px; }
+  .compare-cell:not(:first-child) { border-left: 1px solid var(--border); }
+
+  /* PROGRESS BAR */
+  .progress-wrap { margin-bottom: 16px; }
+  .progress-label { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 13px; font-weight: 600; }
+  .progress-bar { height: 8px; background: var(--gray-light); border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 4px; transition: width 1s; }
+
+  /* ECOMMERCE SECTION */
+  .ecom-matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .ecom-col { border-radius: 12px; padding: 28px; }
+  .ecom-col-pros { background: rgba(46,176,120,0.07); border: 2px solid #86efac; }
+  .ecom-col-cons { background: rgba(250,59,46,0.06); border: 2px solid #fca5a5; }
+  .ecom-col h3 { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
+  .ecom-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 13px; line-height: 1.5; }
+  .ecom-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+
+  /* OPPORTUNITY CARDS */
+  .opp-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; display: grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items: start; }
+  .opp-num { width: 48px; height: 48px; border-radius: 10px; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; flex-shrink: 0; }
+  .opp-title { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+  .opp-desc { font-size: 13px; line-height: 1.6; color: var(--text-light); }
+  .opp-impact { text-align: right; flex-shrink: 0; }
+  .opp-impact-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 4px; }
+  .opp-impact-val { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px; }
+  .impact-high { background: rgba(250,59,46,0.12); color: #991b1b; }
+  .impact-med { background: rgba(250,189,5,0.18); color: #5c4200; }
+  .impact-low { background: #e0e7ff; color: #3730a3; }
+
+  /* CLOSING */
+  #closing { background: var(--black); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 80px; position: relative; overflow: hidden; }
+  #closing::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(232,80,10,0.1) 0%, transparent 70%); }
+  .closing-title { font-size: clamp(32px, 5vw, 56px); font-weight: 900; color: white; line-height: 1.1; margin-bottom: 24px; position: relative; }
+  .closing-title span { color: var(--accent); }
+  .closing-sub { font-size: 16px; color: rgba(255,255,255,0.4); margin-bottom: 64px; position: relative; }
+  .team-grid { display: flex; gap: 48px; flex-wrap: wrap; justify-content: center; position: relative; }
+  .team-card { text-align: left; }
+  .team-name { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; }
+  .team-role { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .team-contact { font-size: 13px; color: rgba(255,255,255,0.6); }
+  .closing-address { margin-top: 64px; font-size: 12px; color: rgba(255,255,255,0.2); position: relative; }
+
+  /* UTILITIES */
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 12px; background: var(--gray-light); color: var(--gray); }
+  .tag-accent { background: rgba(232,80,10,0.1); color: var(--accent); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+  .highlight { background: rgba(250,59,46,0.06); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 14px; line-height: 1.6; }
+  .mono { font-family: monospace; font-size: 12px; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
+  strong.ok { color: #16a34a; }
+  strong.warn { color: #d97706; }
+  strong.err { color: #dc2626; }
+
+  @media (max-width: 900px) {
+    .slide { padding: 80px 32px 48px; }
+    .cards-2, .cards-3, .cards-4, .two-col, .three-col, .geo-grid, .ecom-matrix { grid-template-columns: 1fr; }
+    nav { padding: 10px 16px; gap: 6px; }
+    .cover-meta { gap: 24px; }
+    .compare-row { grid-template-columns: 1fr; }
+    .opp-card { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dots">
+      <div class="nav-dot" style="background:#fa3b2e"></div>
+      <div class="nav-dot" style="background:#fabd05"></div>
+      <div class="nav-dot" style="background:#fa8fa3"></div>
+      <div class="nav-dot" style="background:#2eb078"></div>
+      <div class="nav-dot" style="background:#1c2b96"></div>
+    </div>
+    <span class="nav-logo">poush</span>
+    <div class="nav-divider"></div>
+    <span class="nav-title">État des Lieux Digital — Easy Fence</span>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill" onclick="document.getElementById(&#39;cover&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Cover</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;contexte&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Contexte</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;geo&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">SEO &amp; GEO</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;trafic&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Trafic</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;keywords&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Mots-clés</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;backlinks&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Backlinks</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;gmb&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">GMB &amp; Social</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;tech&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Config. Technique</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;ecommerce&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">E-commerce</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;opportunites&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Opportunités</button>
+    <button class="nav-pill" onclick="document.getElementById(&#39;closing&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Poush</button>
+  </div>
+</nav>
+
+<!-- COVER -->
+<section id="cover" class="cover-slide">
+  <div class="cover-bar">
+    <div class="cover-bar-seg" style="background:#fa3b2e"></div>
+    <div class="cover-bar-seg" style="background:#fabd05"></div>
+    <div class="cover-bar-seg" style="background:#fa8fa3"></div>
+    <div class="cover-bar-seg" style="background:#2eb078"></div>
+    <div class="cover-bar-seg" style="background:#1c2b96"></div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">État des lieux digital · Juin 2026</div>
+    <div class="cover-name">Easy Fence</div>
+    <div class="cover-url">www.easyfence.be</div>
+    <div class="cover-line"></div>
+    <div class="cover-intro">Une analyse complète de votre écosystème digital :</div>
+    <div class="cover-pills">
+      <span class="cover-pill">🔍 SEO &amp; GEO / IA</span>
+      <span class="cover-pill">📍 Google My Business</span>
+      <span class="cover-pill">🌐 Config. Technique</span>
+      <span class="cover-pill">📈 Trafic &amp; Mots-clés</span>
+      <span class="cover-pill">🛒 Stratégie E-commerce</span>
+      <span class="cover-pill">📱 Réseaux Sociaux</span>
+    </div>
+    <div class="cover-credit">Préparé par Poush · michael@poush.be · +32 (0)486 892 956</div>
+  </div>
+  <div class="cover-sector">
+    <div class="cover-sector-label">Secteur</div>
+    <div class="cover-sector-title">Clôtures &amp; Portails 🌿</div>
+    <div class="cover-sector-sub">Vente &amp; conseil spécialisé</div>
+    <div class="cover-sector-tags">Particuliers · Professionnels · Belgique</div>
+  </div>
+</section>
+
+<!-- CONTEXTE -->
+<section id="contexte" class="slide slide-light">
+  <div class="slide-title">Contexte &amp; enjeux</div>
+  <div class="slide-subtitle">Bilan depuis janvier 2025</div>
+  <div class="two-col">
+    <div>
+      <div class="highlight">
+        Easy Fence nous a sollicités en janvier 2025 pour un audit complet SEO &amp; UX. Faute de temps et de ressources en interne, les recommandations n'ont été que partiellement implémentées. Un poste dédié à la création de contenu sera désormais mis en place en interne. Aujourd'hui, l'objectif est de reprendre le contrôle des performances organiques avec un accompagnement Poush.
+      </div>
+      <div style="margin-top: 28px;">
+        <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px;">Trois enjeux majeurs identifiés</h3>
+        <div class="alert alert-error">
+          <div class="alert-icon">🔧</div>
+          <div class="alert-content">
+            <div class="alert-title">Migration technologique</div>
+            <div class="alert-text">Le site Laravel doit migrer vers PrestaShop. Cette migration est l'occasion de corriger structurellement toutes les lacunes SEO identifiées et de repartir sur une base saine.</div>
+          </div>
+        </div>
+        <div class="alert alert-warn">
+          <div class="alert-icon">🛒</div>
+          <div class="alert-content">
+            <div class="alert-title">Question e-commerce</div>
+            <div class="alert-text">La pertinence d'un webshop pour les clôtures (produits volumineux, logistique complexe) fait débat. Un modèle hybride est envisagé — à valider dans cet audit.</div>
+          </div>
+        </div>
+        <div class="alert alert-ok">
+          <div class="alert-icon">📈</div>
+          <div class="alert-content">
+            <div class="alert-title">Réduction de la dépendance au Paid</div>
+            <div class="alert-text">En 2025, 63,6 % du trafic provenait de Google Ads. L'objectif est de rééquilibrer en faveur de l'organique via SEO &amp; GEO.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 20px;">Recommandations 2025 — Suivi</h3>
+      <table>
+        <thead>
+          <tr><th>Recommandation</th><th>Statut</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Redirect non-www → www</td><td><span class="badge badge-ok">Résolu ✅</span></td></tr>
+          <tr><td>Gestion des erreurs 404</td><td><span class="badge badge-warn">Partiel — page blanche sans navigation</span></td></tr>
+          <tr><td>Schema.org</td><td><span class="badge badge-error">Non implémenté ✗</span></td></tr>
+          <tr><td>Architecture mega-menu proposée</td><td><span class="badge badge-error">Non respectée ✗</span></td></tr>
+          <tr><td>Optimisation des métadonnées</td><td><span class="badge badge-error">Non implémenté ✗</span></td></tr>
+          <tr><td>Blog — alimentation régulière</td><td><span class="badge badge-error">Non respecté — 4 articles en 2024</span></td></tr>
+          <tr><td>FAQ existante</td><td><span class="badge badge-ok">Présente ✅ — levier IA à exploiter</span></td></tr>
+          <tr><td>Page À propos</td><td><span class="badge badge-error">Non créée ✗</span></td></tr>
+          <tr><td>UGC — page "Nos réalisations"</td><td><span class="badge badge-error">Non implémenté ✗</span></td></tr>
+          <tr><td>E-shop / accessoires en ligne</td><td><span class="badge badge-error">Absent ✗</span></td></tr>
+          <tr><td>Trafic de marque dominant</td><td><span class="badge badge-warn">En évolution — encore ~100% organique</span></td></tr>
+          <tr><td>Optimisation SEO pages &amp; catégories</td><td><span class="badge badge-error">Non implémenté ✗</span></td></tr>
+          <tr><td>Optimisation des fiches produits</td><td><span class="badge badge-error">Non implémenté ✗</span></td></tr>
+          <tr><td>Stratégie de backlinks</td><td><span class="badge badge-warn">En évolution — sans stratégie définie</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SEO & GEO HEADER -->
+<div class="section-header">
+  <div class="section-num">01</div>
+  <div class="section-title">SEO &amp; GEO</div>
+  <div class="section-desc">Visibilité Google et présence sur les moteurs de réponse IA</div>
+</div>
+
+<!-- SEO & GEO CONTENT -->
+<section id="geo" class="slide slide-light">
+  <div class="slide-title">Présence dans les IA génératives</div>
+  <div class="slide-subtitle">Requête testée : "meilleurs fournisseurs de clôtures en Belgique" — 1 requête · résultats variables selon session</div>
+
+  <div class="geo-grid">
+    <div class="geo-card present">
+      <div class="geo-icon">✦</div>
+      <div class="geo-name">Google Gemini</div>
+      <div class="geo-status" style="color: #16a34a;">✅ Présent &amp; bien positionné</div>
+      <div class="geo-quote">"Un acteur digital majeur en Belgique, très orienté Do It Yourself mais offrant aussi d'excellents conseils. Ils proposent des catalogues très complets de clôtures modernes, panneaux occultants et portails avec un excellent rapport qualité/prix."</div>
+      <div style="margin-top: 12px; font-size: 12px; color: var(--gray);">Cité en section 2 — "Meilleurs sites web et distributeurs spécialisés"</div>
+    </div>
+
+    <div class="geo-card present">
+      <div class="geo-icon">🤖</div>
+      <div class="geo-name">ChatGPT</div>
+      <div class="geo-status" style="color: #16a34a;">✅ Présent — cité #2 sur la requête</div>
+      <div class="geo-quote">"Excellent choix pour les particuliers qui veulent acheter directement en ligne ou en showroom. Large gamme de clôtures, portails et solutions occultantes avec accompagnement personnalisé."</div>
+      <div style="margin-top: 12px; font-size: 12px; color: var(--gray);">Cité #2 dans le top fournisseurs · présent dans le tableau "meilleurs sites web" · recommandé pour maison individuelle &amp; clôture aluminium design</div>
+    </div>
+
+    <div class="geo-card absent">
+      <div class="geo-icon">🔮</div>
+      <div class="geo-name">Perplexity</div>
+      <div class="geo-status" style="color: #dc2626;">❌ Absent sur cette requête</div>
+      <div class="geo-quote">Easyfence n'est pas cité sur "meilleurs fournisseurs de clôtures en Belgique". Perplexity s'appuie sur la recherche web en temps réel — l'absence reflète directement le manque de contenu textuel optimisé et de backlinks sur des sources thématiques que Perplexity indexe.</div>
+    </div>
+
+    <div class="geo-card absent">
+      <div class="geo-icon">✦</div>
+      <div class="geo-name">Claude (Anthropic)</div>
+      <div class="geo-status" style="color: #dc2626;">❌ Absent sur cette requête</div>
+      <div class="geo-quote">Easyfence n'est pas cité sur "meilleurs fournisseurs de clôtures en Belgique". Les données d'entraînement de Claude sont antérieures à certaines évolutions du site — sans contenu de référence ni mentions tierces suffisantes, la marque n'émerge pas sur les requêtes génériques.</div>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top: 32px;">
+    <strong>Note méthodologique :</strong> Ces résultats portent sur une seule requête — les réponses des IA varient selon la formulation, la session et la date. L'enjeu GEO aujourd'hui n'est pas seulement d'apparaître sur une recherche précise, mais de <strong>construire un volume de mentions de marque et de citations</strong> sur des sources que les IA consomment : articles de blog thématiques, backlinks de qualité, Schema.org, fiches GMB enrichies, avis clients. Plus easyfence.be est cité dans des contenus tiers fiables, plus les IA l'intégreront naturellement dans leurs réponses — sur toutes les formulations possibles.
+  </div>
+
+  <div style="margin-top: 32px;">
+    <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px;">Concurrents cités par Gemini sur la même requête</h3>
+    <div class="cards cards-4">
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">Betafence</div>
+        <div style="font-size: 12px; color: var(--text-light);">Fabricant historique — "référence absolue"</div>
+      </div>
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">Établ. Majois</div>
+        <div style="font-size: 12px; color: var(--text-light);">majois.com — grossiste Wallonie</div>
+      </div>
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">Clôtures Leblanc</div>
+        <div style="font-size: 12px; color: var(--text-light);">cloturesleblanc.be — expert pose</div>
+      </div>
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">Clôtures Deman</div>
+        <div style="font-size: 12px; color: var(--text-light);">cloturesdeman.be — budget</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAFIC HEADER -->
+<div class="section-header">
+  <div class="section-num">02</div>
+  <div class="section-title">Trafic</div>
+  <div class="section-desc">Analyse des canaux d'acquisition — données de référence jan. 2025</div>
+</div>
+
+<!-- TRAFIC CONTENT -->
+<section id="trafic" class="slide slide-gray">
+  <div class="slide-title">Acquisition — canaux &amp; trafic organique</div>
+  <div class="slide-subtitle">GA4 référence : jan. 2024 – jan. 2025 (toutes sources) · SEMrush via SEObserver : juin 2026 (organique uniquement)</div>
+
+  <div class="alert alert-warn" style="margin-bottom: 32px;">
+    <div class="alert-icon">💡</div>
+    <div class="alert-content">
+      <div class="alert-title">Pourquoi les chiffres SEMrush semblent-ils si faibles comparés à GA4 ?</div>
+      <div class="alert-text">GA4 (jan. 2024 – jan. 2025) mesurait <strong>l'intégralité du trafic toutes sources confondues</strong> — dont 63,6 % provenait de Google Ads (45 000 sessions payantes). Le trafic organique réel dans GA4 ne représentait que <strong>8 305 sessions sur 12 mois</strong>, soit <strong>~692 sessions/mois en moyenne</strong>. SEMrush, lui, n'estime <strong>que le trafic organique</strong>, et uniquement par extrapolation des positions trackées — ce qui est structurellement inférieur au GA4 total, et également en dessous du GA4 organique réel car SEMrush ne capte pas toutes les requêtes de marque.</div>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-bottom: 32px;">
+    <div>
+      <h3 style="font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 16px;">GA4 — jan. 2024 → jan. 2025 (toutes sources)</h3>
+      <div class="cards cards-2" style="margin-bottom: 20px;">
+        <div class="card">
+          <div class="card-value">70 937</div>
+          <div class="card-label">Sessions totales · 12 mois</div>
+        </div>
+        <div class="card" style="border-color: #fca5a5;">
+          <div class="card-value" style="color: var(--red);">63,6%</div>
+          <div class="card-label">Part Google Ads</div>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Paid Search (Ads)</span><span style="color: var(--red);">45 140 sessions</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:63.6%; background: var(--red);"></div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Direct</span><span>9 233 sessions</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:13%; background: var(--blue);"></div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span style="font-weight:700;">Organic Search</span><span style="color: var(--green); font-weight:700;">8 305 sessions</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:11.7%; background: var(--green);"></div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Paid Social</span><span>5 980 sessions</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:8.4%; background: var(--orange);"></div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Email + Social organique</span><span>1 601 sessions</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:2.3%; background: var(--gray-mid);"></div></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 16px;">SEMrush via SEObserver — trafic organique juin 2026</h3>
+      <div class="cards" style="margin-bottom: 20px;">
+        <div class="card" style="border-color: rgba(46,176,120,0.5);">
+          <div class="card-value" style="color: var(--green);">~1 000–1 500</div>
+          <div class="card-label">Visites organiques estimées / mois · juin 2026</div>
+        </div>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px;">
+        <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 14px;">Comparaison trafic organique estimé</div>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 10px;">
+          <div style="flex:1; font-size: 13px; color: var(--text-light);">GA4 organique moy./mois<br><span style="font-size:11px; color:var(--gray);">8 305 sessions ÷ 12 mois</span></div>
+          <div style="font-size: 22px; font-weight: 900; color: var(--blue);">~692</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; padding: 10px; background: rgba(46,176,120,0.07); border-radius: 8px;">
+          <div style="flex:1; font-size: 13px; color: var(--text-light);">SEMrush organique actuel<br><span style="font-size:11px; color:var(--gray);">estimation juin 2026</span></div>
+          <div style="font-size: 22px; font-weight: 900; color: var(--green);">~1 000–1 500</div>
+        </div>
+        <div style="margin-top: 12px; font-size: 12px; color: var(--text-light); line-height: 1.6;">
+          Le trafic organique mensuel estimé a <strong>quasiment doublé</strong> depuis la période de référence — et ce sans stratégie SEO active. C'est un signal encourageant qui confirme le potentiel de croissance avec un accompagnement structuré.
+        </div>
+      </div>
+
+      <div class="alert alert-error">
+        <div class="alert-icon">🔴</div>
+        <div class="alert-content">
+          <div class="alert-title">Trafic organique quasi exclusivement de marque</div>
+          <div class="alert-text">3 mots-clés hors marque commencent à apparaître (<em>cloture en treillis</em>, <em>treillis pour cloture</em>, <em>clôture jardin treillis</em>) en positions 4–6 — premier signal positif, encore marginal.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <strong>Lecture combinée :</strong> La dépendance au Paid Search (63,6 % du trafic total sur jan. 2024–jan. 2025) est le risque principal. Le trafic organique progresse modestement sans intervention — preuve que chaque levier activé (contenu, mots-clés hors marque, Schema.org, backlinks) amplifierait significativement ce plancher de trafic garanti et réduirait la dépendance aux campagnes payantes.
+  </div>
+</section>
+
+<!-- MOTS-CLÉS HEADER -->
+<div class="section-header">
+  <div class="section-num">03</div>
+  <div class="section-title">Mots-clés</div>
+  <div class="section-desc">Positions organiques et opportunités de positionnement</div>
+</div>
+
+<!-- MOTS-CLÉS CONTENT -->
+<section id="keywords" class="slide slide-light">
+  <div class="slide-title">Positionnement organique actuel</div>
+  <div class="slide-subtitle">Source : audit jan. 2025 — données à valider via SEObserver / GSC</div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px;">Top 20 positions organiques</h3>
+      <div style="font-size: 11px; color: var(--gray); margin-bottom: 12px;">Source : SEMrush via SEObserver · Belgique · juin 2026</div>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Mot-clé</th><th>Position</th><th>Volume</th><th>Type</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>easyfence ath avis</td><td style="font-weight:700; color:var(--green);">1</td><td>880</td><td><span class="badge" style="background:rgba(250,59,46,0.12);color:#991b1b;">Marque</span></td></tr>
+          <tr><td>2</td><td>easyfence</td><td style="font-weight:700; color:var(--green);">1</td><td>480</td><td><span class="badge" style="background:rgba(250,59,46,0.12);color:#991b1b;">Marque</span></td></tr>
+          <tr><td>3</td><td>easy fence</td><td style="font-weight:700; color:var(--green);">1</td><td>260</td><td><span class="badge" style="background:rgba(250,59,46,0.12);color:#991b1b;">Marque</span></td></tr>
+          <tr><td>4</td><td>easyfence gosselies</td><td style="font-weight:700; color:var(--green);">1</td><td>140</td><td><span class="badge" style="background:rgba(250,59,46,0.12);color:#991b1b;">Marque</span></td></tr>
+          <tr><td>5</td><td>easyfence ath</td><td style="font-weight:700; color:var(--green);">1</td><td>110</td><td><span class="badge" style="background:rgba(250,59,46,0.12);color:#991b1b;">Marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>6</td><td>cloture en treillis</td><td style="font-weight:700; color:var(--green);">4</td><td>110</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>7</td><td>treillis pour cloture</td><td style="font-weight:700; color:var(--green);">4</td><td>110</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>8</td><td>cloture et portail</td><td style="font-weight:700; color:var(--green);">4</td><td>140</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>9</td><td>cloture noisetier</td><td style="font-weight:700; color:var(--orange);">5</td><td>140</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>10</td><td>brise vue cloture</td><td style="font-weight:700; color:var(--orange);">6</td><td>210</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>11</td><td>clôture jardin treillis</td><td style="font-weight:700; color:var(--orange);">6</td><td>140</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>12</td><td>cloture treillis</td><td style="font-weight:700; color:var(--orange);">6</td><td>140</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>13</td><td>treillis cloture</td><td style="font-weight:700; color:var(--orange);">6</td><td>140</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>14</td><td>portail cloture</td><td style="font-weight:700; color:var(--orange);">6</td><td>140</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>15</td><td>portail pour cloture</td><td style="font-weight:700; color:var(--orange);">7</td><td>110</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>16</td><td>draaipoorten <span style="font-size:10px;color:var(--gray);">🇧🇪 NL</span></td><td style="font-weight:700; color:var(--orange);">12</td><td>110</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(46,176,120,0.07);"><td>17</td><td>clotures</td><td style="font-weight:700; color:var(--orange);">19</td><td>320</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(250,59,46,0.06);"><td>18</td><td>cloture</td><td style="font-weight:700; color:var(--red);">33</td><td>1 900</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr style="background:rgba(250,59,46,0.06);"><td>19</td><td>cloture gabion</td><td style="font-weight:700; color:var(--red);">46</td><td>390</td><td><span class="badge badge-ok">Hors marque</span></td></tr>
+          <tr><td>20</td><td>easyfence ath avis <span style="font-size:10px;color:var(--gray);">🇧🇪 NL</span></td><td style="font-weight:700; color:var(--green);">1</td><td>880</td><td><span class="badge" style="background:rgba(250,59,46,0.12);color:#991b1b;">Marque NL</span></td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-ok" style="margin-top: 12px;">
+        <div class="alert-icon">📈</div>
+        <div class="alert-content">
+          <div class="alert-title">15 positions hors marque détectées — signal positif</div>
+          <div class="alert-text">En jan. 2025, le trafic organique était à 100% de marque. Aujourd'hui, 15 mots-clés hors marque apparaissent dans le top 50 — dont 8 en top 10. C'est une évolution naturelle, sans stratégie de contenu active.</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 6px;">Comparatif mots-clés stratégiques</h3>
+      <div style="font-size: 11px; color: var(--gray); margin-bottom: 16px;">Audit jan. 2025 → SEMrush via SEObserver juin 2026 · Belgique FR</div>
+      <table>
+        <thead>
+          <tr><th>Mot-clé</th><th>Volume</th><th>Jan. 2025</th><th>Juin 2026</th><th>Évolution</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:600;">cloture jardin</td>
+            <td>2 900</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--red);">Absent</td>
+            <td><span class="badge badge-error">Aucune</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">cloture</td>
+            <td>1 900</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--orange); font-weight:700;">33</td>
+            <td><span class="badge badge-warn">Apparition</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">brise vue jardin</td>
+            <td>1 900</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--orange); font-weight:700;">40</td>
+            <td><span class="badge badge-warn">Apparition</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">brise vue</td>
+            <td>1 600</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--orange); font-weight:700;">45</td>
+            <td><span class="badge badge-warn">Apparition</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">cloture rigide</td>
+            <td>1 000</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--red);">Absent</td>
+            <td><span class="badge badge-error">Aucune</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">portail coulissant</td>
+            <td>590</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--orange); font-weight:700;">58</td>
+            <td><span class="badge badge-warn">Apparition</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">gabion cloture</td>
+            <td>390</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--orange); font-weight:700;">46</td>
+            <td><span class="badge badge-warn">Apparition</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">brise vue pour cloture</td>
+            <td>170</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--green); font-weight:700;">7</td>
+            <td><span class="badge badge-ok">Top 10 ✅</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">cloture en panneau rigide</td>
+            <td>210</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--orange); font-weight:700;">53</td>
+            <td><span class="badge badge-warn">Apparition</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">cloture en beton</td>
+            <td>590</td>
+            <td style="color:var(--red);">Absent</td>
+            <td style="color:var(--red);">Absent</td>
+            <td><span class="badge badge-error">Aucune</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="highlight" style="margin-top: 16px;">
+        <strong>Lecture :</strong> 7 mots-clés hors marque sont apparus naturellement depuis jan. 2025 — aucune stratégie de contenu active. Le levier principal reste <strong>cloture jardin</strong> (2 900 recherches/mois) : toujours absent malgré un potentiel majeur.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BACKLINKS HEADER -->
+<div class="section-header">
+  <div class="section-num">04</div>
+  <div class="section-title">Backlinks</div>
+  <div class="section-desc">Profil de popularité et autorité de domaine</div>
+</div>
+
+<!-- BACKLINKS CONTENT -->
+<section id="backlinks" class="slide slide-gray">
+  <div class="slide-title">Popularité du site</div>
+  <div class="slide-subtitle">Source : SEMrush &amp; Majestic via SEObserver · juin 2026</div>
+
+  <div class="two-col" style="margin-bottom: 36px;">
+    <div>
+      <h3 style="font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 16px;">Easy Fence — état actuel</h3>
+      <div class="cards cards-2" style="gap: 12px; margin-bottom: 24px;">
+        <div class="card" style="border-color: rgba(46,176,120,0.5);">
+          <div class="card-value" style="color: var(--green);">15</div>
+          <div class="card-label">TrustFlow</div>
+        </div>
+        <div class="card">
+          <div class="card-value">26</div>
+          <div class="card-label">CitationFlow</div>
+        </div>
+        <div class="card" style="border-color: rgba(46,176,120,0.5);">
+          <div class="card-value" style="color: var(--green);">23</div>
+          <div class="card-label">Domaines référents</div>
+        </div>
+        <div class="card">
+          <div class="card-value">82</div>
+          <div class="card-label">Pages référentes</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 12px;">Évolution TrustFlow — Easy Fence</h3>
+      <div style="background: white; border: 1px solid var(--border); border-radius: 10px; padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+          <div style="text-align:center; flex:1; padding: 12px; background:#f9fafb; border-radius:8px;">
+            <div style="font-size:28px; font-weight:900; color:var(--gray);">~3</div>
+            <div style="font-size:11px; color:var(--gray); margin-top:4px;">Jan. 2025</div>
+          </div>
+          <div style="font-size:24px; color:var(--gray-mid);">→</div>
+          <div style="text-align:center; flex:1; padding: 12px; background:rgba(46,176,120,0.07); border-radius:8px; border: 2px solid #86efac;">
+            <div style="font-size:28px; font-weight:900; color:var(--green);">15</div>
+            <div style="font-size:11px; color:var(--green); margin-top:4px;">Juin 2026</div>
+          </div>
+          <div style="font-size:24px; color:var(--gray-mid);">=</div>
+          <div style="text-align:center; flex:1; padding: 12px; background:rgba(46,176,120,0.07); border-radius:8px;">
+            <div style="font-size:28px; font-weight:900; color:var(--green);">×5</div>
+            <div style="font-size:11px; color:var(--green); margin-top:4px;">Sans stratégie active</div>
+          </div>
+        </div>
+        <div style="font-size: 12px; color: var(--text-light); line-height: 1.6; border-top: 1px solid var(--border); padding-top: 12px;">Progression naturelle via la notoriété de la marque. Avec une stratégie d'acquisition structurée, l'objectif TrustFlow 30+ est atteignable.</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 16px;">Comparatif concurrents — juin 2026</h3>
+      <table>
+        <thead>
+          <tr><th>Domaine</th><th>TrustFlow</th><th>CitFlow</th><th>Dom. réf.</th><th>Trafic SEMrush/mois</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:rgba(46,176,120,0.07);">
+            <td style="font-weight:800;">easyfence.be</td>
+            <td style="font-weight:900; color:var(--green);">15 🏆</td>
+            <td>26</td>
+            <td>23</td>
+            <td style="color:var(--orange); font-weight:600;">~1 000–1 500</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;">leboutte.be</td>
+            <td style="font-weight:700; color:var(--orange);">13 <span style="font-size:10px; color:var(--red);">↓ était 25</span></td>
+            <td>19</td>
+            <td>366</td>
+            <td style="color:var(--green); font-weight:600;">~40 000–60 000</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;">casanoov.be</td>
+            <td style="font-weight:700; color:var(--orange);">6</td>
+            <td>11</td>
+            <td>57</td>
+            <td style="color:var(--orange); font-weight:600;">~1 000–3 000</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;">oogarden.be</td>
+            <td style="font-weight:700; color:var(--red);">4 <span style="font-size:10px; color:var(--red);">↓ était ~15</span></td>
+            <td>21</td>
+            <td>101</td>
+            <td style="color:var(--green); font-weight:600;">~40 000–60 000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert alert-ok" style="margin-top: 16px;">
+        <div class="alert-icon">🏆</div>
+        <div class="alert-content">
+          <div class="alert-title">TrustFlow : easyfence.be devant tous ses concurrents</div>
+          <div class="alert-text">Avec un TrustFlow de 15, easyfence.be dépasse oogarden.be (4), casanoov.be (6) et leboutte.be (13). C'est un signal de qualité des liens reçus — moins de liens mais de meilleure valeur.</div>
+        </div>
+      </div>
+      <div class="alert alert-warn" style="margin-top: 12px;">
+        <div class="alert-icon">📊</div>
+        <div class="alert-content">
+          <div class="alert-title">L'écart de trafic SEMrush s'explique par le contenu</div>
+          <div class="alert-text">leboutte.be et oogarden.be génèrent 40× plus de trafic organique grâce à leurs milliers de fiches produit optimisées — pas uniquement grâce à leurs backlinks.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3 style="font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 16px;">Leviers d'acquisition de liens</h3>
+    <div class="cards cards-4" style="gap: 16px;">
+      <div class="card">
+        <h3>Partenaires installateurs</h3>
+        <p>Tous les installateurs qui posent des clôtures easyfence doivent citer le site avec un lien. Source naturelle, qualitative et thématique.</p>
+      </div>
+      <div class="card">
+        <h3>Presse &amp; blogs jardin/déco</h3>
+        <p>Communiqués sur les nouveaux produits, articles invités sur des blogs d'aménagement extérieur belges, mentions dans les guides d'achat.</p>
+      </div>
+      <div class="card">
+        <h3>Annuaires spécialisés</h3>
+        <p>Inscription sur les annuaires de bricolage, jardinage et aménagement extérieur. Liens simples à obtenir, impact rapide sur les domaines référents.</p>
+      </div>
+      <div class="card" style="border-color: rgba(250,59,46,0.4); background: rgba(250,59,46,0.04);">
+        <h3 style="color: var(--accent);">Crispy Links — plateforme Poush</h3>
+        <p>Stratégie d'achat de backlinks pilotée via notre plateforme dédiée Crispy Links. Sélection de domaines thématiques à fort TrustFlow, publication d'articles sponsorisés sur des sites partenaires qualifiés. Levier puissant pour accélérer la progression du profil de liens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GMB & SOCIAL HEADER -->
+<div class="section-header">
+  <div class="section-num">05</div>
+  <div class="section-title">GMB &amp; Social</div>
+  <div class="section-desc">Présence locale et réseaux sociaux</div>
+</div>
+
+<!-- GMB & SOCIAL CONTENT -->
+<section id="gmb" class="slide slide-light">
+  <div class="slide-title">Google My Business</div>
+  <div class="slide-subtitle">Deux établissements — données juin 2026</div>
+
+  <div class="cards cards-2" style="margin-bottom: 40px;">
+    <div class="card" style="border-color: rgba(46,176,120,0.5);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 16px;">
+        <div>
+          <div style="font-size: 18px; font-weight: 900; margin-bottom: 4px;">Easyfence Gosselies</div>
+          <div style="font-size: 13px; color: var(--text-light);">Chau. de Fleurus 123, 6041 Charleroi · 071 40 31 60</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size: 24px; font-weight: 900; color: var(--orange);">4,3 ⭐</div>
+          <div style="font-size: 12px; color: var(--text-light);">43 avis</div>
+        </div>
+      </div>
+      <div class="alert alert-error" style="margin:0;">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-content">
+          <div class="alert-title">Catégorie incorrecte</div>
+          <div class="alert-text">"Magasin d'articles pour l'aménagement paysager" — trop générique. Corriger en "Revendeur de clôtures" ou catégorie équivalente.</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="border-color: rgba(46,176,120,0.5);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 16px;">
+        <div>
+          <div style="font-size: 18px; font-weight: 900; margin-bottom: 4px;">Easyfence Ath</div>
+          <div style="font-size: 13px; color: var(--text-light);">Rue du Sûr Abri 11, 7810 Ath · 068 26 41 11</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size: 24px; font-weight: 900; color: var(--green);">4,9 ⭐</div>
+          <div style="font-size: 12px; color: var(--text-light);">82 avis</div>
+        </div>
+      </div>
+      <div class="alert alert-error" style="margin:0;">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-content">
+          <div class="alert-title">Catégorie incorrecte</div>
+          <div class="alert-text">"Magasin d'articles pour l'aménagement paysager" — même problème. Gosselies affiche 43 avis seulement vs 82 à Ath : levier de collecte d'avis à activer sur le showroom principal.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="slide-title" style="font-size: 20px; margin-bottom: 8px;">Réseaux sociaux</div>
+      <table>
+        <thead><tr><th>Réseau</th><th>Profil</th><th>Abonnés</th><th>Recommandation</th></tr></thead>
+        <tbody>
+          <tr><td>Facebook</td><td class="td-url">easyfence.official</td><td style="font-weight:700;">547</td><td>Levier de croissance — partager réalisations clients</td></tr>
+          <tr><td>Instagram</td><td class="td-url">easyfence.official</td><td style="font-weight:700;">277 <span style="font-size:11px;color:var(--gray);">· 48 posts</span></td><td>Visuel produit + chantiers — fort potentiel organique</td></tr>
+          <tr><td>LinkedIn</td><td class="td-url">easyfence</td><td style="font-weight:700;">193</td><td>Cible pro — prescripteurs, installateurs, partenaires</td></tr>
+          <tr><td>YouTube</td><td class="td-url">@easyfence.official</td><td style="font-weight:700;">8 <span style="font-size:11px;color:var(--gray);">· 16 vidéos</span></td><td>Tutoriels installation — fort levier SEO Google</td></tr>
+        </tbody>
+      </table>
+
+      <div class="highlight" style="margin-top: 20px;">
+        <strong>Stratégie sociale coordonnée — levier inexploité :</strong> Easyfence est présent sur 4 plateformes mais chacune fonctionne en silo, sans ligne éditoriale commune ni calendrier de publication. Les audiences restent faibles sur tous les réseaux. Une stratégie coordonnée — un contenu produit une fois, décliné sur chaque canal (vidéo YouTube → Reel Instagram → post Facebook → article LinkedIn) — permettrait de maximiser la portée sans multiplier les efforts de création. C'est aussi un levier direct pour le GEO : les réseaux sociaux alimentent les sources que les IA consultent pour citer des marques.
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px;">Leviers à activer — GMB</h3>
+      <div class="cards" style="gap: 12px;">
+        <div class="card">
+          <h3>Corriger les catégories GMB</h3>
+          <p>Remplacer "aménagement paysager" par une catégorie précise liée aux clôtures et portails sur les deux fiches.</p>
+        </div>
+        <div class="card">
+          <h3>Collecter des avis Gosselies</h3>
+          <p>43 avis vs 82 à Ath pour le showroom principal — mettre en place un process de sollicitation systématique post-visite.</p>
+        </div>
+        <div class="card">
+          <h3>Posts GMB réguliers</h3>
+          <p>Publications mensuelles avec photos de réalisations, promotions saisonnières et nouveaux produits. Impact direct sur la visibilité locale.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH HEADER -->
+<div class="section-header">
+  <div class="section-num">06</div>
+  <div class="section-title">Config Technique<br>&amp; Schema.org</div>
+  <div class="section-desc">Audit des fondations SEO techniques — juin 2026</div>
+</div>
+
+<!-- TECH CONTENT -->
+<section id="tech" class="slide slide-gray">
+  <div class="slide-title">État technique — juin 2026</div>
+  <div class="slide-subtitle">Collecte directe via Chrome — site actuel en Laravel</div>
+
+  <div class="two-col" style="margin-bottom: 40px;">
+    <div>
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px;">Problèmes critiques détectés</h3>
+
+      <div class="alert alert-error">
+        <div class="alert-icon">🔴</div>
+        <div class="alert-content">
+          <div class="alert-title">Placeholder non remplacé — Meta description portails</div>
+          <div class="alert-text"><span class="mono">/produits/portails</span> — "garantie XX ans" visible dans le code source. Affiché en production sur Google.</div>
+        </div>
+      </div>
+      <div class="alert alert-error">
+        <div class="alert-icon">🔴</div>
+        <div class="alert-content">
+          <div class="alert-title">Placeholder non remplacé — Meta description portillons</div>
+          <div class="alert-text"><span class="mono">/produits/portillons</span> — meta description = "meta.description home". Page sans description réelle.</div>
+        </div>
+      </div>
+      <div class="alert alert-error">
+        <div class="alert-icon">🔴</div>
+        <div class="alert-content">
+          <div class="alert-title">Title manquant — Page magasin Gosselies</div>
+          <div class="alert-text">SERP Google affiche "meta.title magasin gosselies" — placeholder visible publiquement dans les résultats de recherche.</div>
+        </div>
+      </div>
+      <div class="alert alert-error">
+        <div class="alert-icon">🔴</div>
+        <div class="alert-content">
+          <div class="alert-title">Métadonnées identiques sur toutes les fiches produit</div>
+          <div class="alert-text">Ex : <span class="mono">/produits/clotures/cloture-vision</span> a le même title, H1 et meta description que <span class="mono">/produits/clotures</span>. Google voit du contenu dupliqué sur toutes les URL produit.</div>
+        </div>
+      </div>
+      <div class="alert alert-error">
+        <div class="alert-icon">🔴</div>
+        <div class="alert-content">
+          <div class="alert-title">Blog absent du sitemap.xml</div>
+          <div class="alert-text">Les 10 articles de blog ne sont pas déclarés dans <span class="mono">/sitemap.xml</span>. Indexation aléatoire et incomplète par Google.</div>
+        </div>
+      </div>
+      <div class="alert alert-warn">
+        <div class="alert-icon">🟡</div>
+        <div class="alert-content">
+          <div class="alert-title">Contenu très thin sur clôtures &amp; portillons</div>
+          <div class="alert-text"><span class="mono">/produits/clotures</span> = 181 mots · <span class="mono">/produits/portillons</span> = 164 mots. Insuffisant pour se positionner sur des requêtes compétitives (minimum 600–800 mots pour les pages catégories).</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px;">Points résolus &amp; points positifs</h3>
+      <div class="alert alert-ok">
+        <div class="alert-icon">✅</div>
+        <div class="alert-content">
+          <div class="alert-title">Redirect non-www résolu</div>
+          <div class="alert-text">easyfence.be → www.easyfence.be fonctionne correctement. Problème signalé en jan. 2025, désormais corrigé.</div>
+        </div>
+      </div>
+      <div class="alert alert-warn">
+        <div class="alert-icon">🟡</div>
+        <div class="alert-content">
+          <div class="alert-title">Page 404 — code HTTP correct, expérience inexistante</div>
+          <div class="alert-text">Le serveur retourne bien un code 404 (bon pour le SEO), mais la page affichée est une page blanche avec uniquement "404 Not Found" — aucun menu, aucun environnement du site. Un visiteur sur une URL cassée n'a aucun moyen de continuer sa navigation. À corriger lors de la migration PrestaShop.</div>
+        </div>
+      </div>
+      <div class="alert alert-ok">
+        <div class="alert-icon">✅</div>
+        <div class="alert-content">
+          <div class="alert-title">Sitemap + robots.txt corrects</div>
+          <div class="alert-text">Sitemap déclaré dans robots.txt, accès libre aux robots. Structure de base saine. (À compléter avec les articles de blog.)</div>
+        </div>
+      </div>
+      <div class="alert alert-ok">
+        <div class="alert-icon">✅</div>
+        <div class="alert-content">
+          <div class="alert-title">Site bilingue FR / NL</div>
+          <div class="alert-text">Le site est disponible en français et en néerlandais — levier important pour couvrir le marché belge francophone et flamand.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px;">Schema.org — levier inexploité</h3>
+      <div class="highlight">
+        Aucun balisage Schema.org détecté sur l'ensemble du site. C'est un levier de visibilité directement actionnable, particulièrement important pour le GEO et le référencement local. Lors de la migration PrestaShop, le duo <strong>Organization + LocalBusiness</strong> (un par showroom) doit être implémenté en priorité, complété par <strong>Product</strong> sur les fiches produit.
+      </div>
+      <table>
+        <thead><tr><th>Type Schema</th><th>Page cible</th><th>Bénéfice</th></tr></thead>
+        <tbody>
+          <tr><td>Organization</td><td class="td-url">Toutes les pages</td><td>Entité connue des IA</td></tr>
+          <tr><td>LocalBusiness</td><td class="td-url">/magasins/gosselies, /ath</td><td>SEO local renforcé</td></tr>
+          <tr><td>Product</td><td class="td-url">Fiches produit</td><td>Rich snippets Google</td></tr>
+          <tr><td>FAQPage</td><td class="td-url">/faq</td><td>Position 0 potentielle</td></tr>
+          <tr><td>BreadcrumbList</td><td class="td-url">Toutes les pages</td><td>Arborescence SERP</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- E-COMMERCE HEADER -->
+<div class="section-header">
+  <div class="section-num">07</div>
+  <div class="section-title">Analyse<br>E-commerce</div>
+  <div class="section-desc">Évaluation de la stratégie webshop dans le contexte PrestaShop</div>
+</div>
+
+<!-- E-COMMERCE CONTENT -->
+<section id="ecommerce" class="slide slide-light">
+  <div class="slide-title">La question e-commerce</div>
+  <div class="slide-subtitle">Vendre des clôtures en ligne : pertinent ? Pour quels produits ?</div>
+
+  <div class="highlight" style="margin-bottom: 32px;">
+    La migration vers PrestaShop offre une plateforme naturellement orientée e-commerce. Mais pour des produits volumineux (palettes, poteaux, panneaux), la question n'est pas binaire. Notre analyse identifie deux catégories de produits avec des logiques opposées.
+  </div>
+
+  <div class="cards cards-2" style="margin-bottom: 40px;">
+    <div class="card" style="border: 2px solid #fca5a5; background: rgba(250,59,46,0.06);">
+      <div style="font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red); margin-bottom: 12px;">❌ E-commerce complexe</div>
+      <div style="font-size: 20px; font-weight: 900; margin-bottom: 8px;">Grandes clôtures &amp; portails</div>
+      <div style="font-size: 13px; color: var(--text-light); margin-bottom: 16px;">Panneaux rigides, portails coulissants, clôtures Vision, bois massif…</div>
+      <ul style="font-size: 13px; line-height: 2; list-style: none; padding: 0;">
+        <li>🔴 Logistique : palettes volumineuses, transporteurs spéciaux</li>
+        <li>🔴 Retours quasi impossibles (poids, coût)</li>
+        <li>🔴 Paiement en ligne décalé vs livraison longue</li>
+        <li>🔴 Concurrence directe avec oogarden.be / leboutte.be (budget colossal)</li>
+        <li>🔴 Coût acquisition Google Shopping très élevé</li>
+        <li>🟡 Configurateur déjà en place = substitut efficace</li>
+      </ul>
+      <div style="margin-top: 16px; padding: 12px; background: white; border-radius: 8px; font-size: 13px; font-weight: 700; color: var(--red);">→ Recommandation : fiches produit avec CTA devis, sans paiement en ligne</div>
+    </div>
+    <div class="card" style="border: 2px solid #86efac; background: rgba(46,176,120,0.07);">
+      <div style="font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green); margin-bottom: 12px;">✅ E-commerce pertinent</div>
+      <div style="font-size: 20px; font-weight: 900; margin-bottom: 8px;">Petites pièces &amp; accessoires</div>
+      <div style="font-size: 13px; color: var(--text-light); margin-bottom: 16px;">Piquets, visserie, clips, accessoires de pose, protections anti-corrosion…</div>
+      <ul style="font-size: 13px; line-height: 2; list-style: none; padding: 0;">
+        <li>🟢 Colis standards — Bpost / Colissimo compatibles</li>
+        <li>🟢 Retours gérables (petit volume)</li>
+        <li>🟢 Upselling naturel lors d'une commande principale</li>
+        <li>🟢 Fidélisation clients existants (réapprovisionnement)</li>
+        <li>🟢 Faible coût logistique vs marge accessoires</li>
+        <li>🟢 PrestaShop = infrastructure toute prête</li>
+      </ul>
+      <div style="margin-top: 16px; padding: 12px; background: white; border-radius: 8px; font-size: 13px; font-weight: 700; color: var(--green);">→ Recommandation : webshop accessoires avec paiement en ligne</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px;">Modèle hybride recommandé</h3>
+      <div class="cards" style="gap: 12px;">
+        <div class="card" style="background: #1a1a1a; color: white; border: none;">
+          <h3 style="color: var(--accent);">Niveau 1 — Fiches produit riches (grands articles)</h3>
+          <p style="color: rgba(255,255,255,0.7);">Pages produit complètes (photos HD, specs, vidéo installation, avis) avec CTA "Demander mon devis" et "Configurer en ligne". Bénéfice SEO immédiat sans la complexité logistique.</p>
+        </div>
+        <div class="card" style="background: #1a1a1a; color: white; border: none;">
+          <h3 style="color: var(--accent2);">Niveau 2 — Webshop accessoires</h3>
+          <p style="color: rgba(255,255,255,0.7);">Catalogue e-commerce limité aux pièces légères et standardisées. Génère du trafic qualifié (longue traîne), fidélise les clients, crée un flux de commandes régulier.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px;">Benchmark concurrents en ligne</h3>
+      <table>
+        <thead><tr><th>Concurrent</th><th>Modèle</th><th>Trafic organique</th></tr></thead>
+        <tbody>
+          <tr><td><strong>oogarden.be</strong></td><td>Full e-commerce</td><td style="color:var(--green);font-weight:700;">27 775/mois</td></tr>
+          <tr><td><strong>leboutte.be</strong></td><td>Full e-commerce</td><td style="color:var(--green);font-weight:700;">29 199/mois</td></tr>
+          <tr><td><strong>casanoov.be</strong></td><td>Full e-commerce</td><td style="color:var(--orange);font-weight:700;">~9 000/mois</td></tr>
+          <tr style="background: rgba(250,59,46,0.06);"><td><strong>easyfence.be</strong></td><td>Devis + Configurateur</td><td style="color:var(--red);font-weight:800;">~1 000/mois*</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size: 11px; color: var(--gray); margin-top: 8px;">* Estimation organique hors trafic de marque</div>
+      <div class="alert alert-warn" style="margin-top: 16px;">
+        <div class="alert-icon">💡</div>
+        <div class="alert-content">
+          <div class="alert-title">L'écart de trafic s'explique aussi par le contenu</div>
+          <div class="alert-text">oogarden.be et leboutte.be ont du trafic organique massif grâce à leurs milliers de fiches produit optimisées — pas uniquement grâce à la fonctionnalité d'achat en ligne. Des fiches produit riches sur easyfence.be généreraient du trafic même sans paiement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITÉS HEADER -->
+<div class="section-header" style="background: var(--accent);">
+  <div class="section-num" style="color: rgba(255,255,255,0.1);">08</div>
+  <div class="section-title">Opportunités</div>
+  <div class="section-desc">Leviers à activer — par priorité</div>
+</div>
+
+<!-- OPPORTUNITÉS CONTENT -->
+<section id="opportunites" class="slide slide-gray">
+  <div class="slide-title">Plan d'action en deux phases</div>
+  <div class="slide-subtitle">Une stratégie continue — des résultats avant la migration, amplifiés après</div>
+
+  <div class="highlight" style="margin-bottom: 40px;">
+    La migration vers PrestaShop prendra du temps — choix du prestataire, développement, tests, mise en ligne. Ce délai est une <strong>opportunité à saisir</strong> : nous pouvons amorcer des résultats SEO &amp; GEO concrets sur le site actuel dès maintenant, de sorte que la transition vers le nouveau site s'appuie sur une dynamique organique déjà enclenchée plutôt que de repartir de zéro.
+  </div>
+
+  <!-- PHASE 1 -->
+  <div style="margin-bottom: 48px;">
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom: 28px;">
+      <div style="background: var(--accent); color:white; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; padding: 8px 20px; border-radius:4px; white-space:nowrap;">Phase 1</div>
+      <div>
+        <div style="font-size:20px; font-weight:900;">Maintenant — sur le site actuel</div>
+        <div style="font-size:13px; color:var(--gray); margin-top:2px;">Amorcer les signaux SEO &amp; GEO avant la migration · Site Laravel</div>
+      </div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">1</div>
+      <div>
+        <div class="opp-title">Corriger les 3 placeholders critiques en production</div>
+        <div class="opp-desc">Meta description portails ("garantie XX ans"), meta description portillons ("meta.description home"), title page Gosselies ("meta.title magasin gosselies"). Visibles dans les SERP Google aujourd'hui — correction possible en quelques heures, impact immédiat sur le CTR et la crédibilité.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-high">Critique</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">2</div>
+      <div>
+        <div class="opp-title">Enrichir les pages catégories — clôtures, portillons, portails</div>
+        <div class="opp-desc">Pages catégories à 164–181 mots actuellement. Minimum 600–800 mots de contenu optimisé avec H2, champ lexical riche et maillage interne. Objectif : amorcer les premières positions sur "cloture jardin" (2 900/mois), "brise vue jardin" (1 900), "portail coulissant" (590) — encore absents aujourd'hui. Ce contenu sera transposé tel quel sur PrestaShop et continuera de progresser après la migration.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-high">Fort</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">3</div>
+      <div>
+        <div class="opp-title">Ajouter le blog au sitemap &amp; publier 2 articles/mois</div>
+        <div class="opp-desc">Les 10 articles existants sont absents du sitemap.xml — à corriger immédiatement. Lancer ensuite un calendrier éditorial de 2 articles/mois ciblant les requêtes informationnelles ("comment installer une clôture rigide", "quelle hauteur de clôture en Belgique"…). Chaque article publié maintenant accumule de l'autorité avant même la migration — et sera hébergé sur PrestaShop dans la continuité.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-high">Fort</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">4</div>
+      <div>
+        <div class="opp-title">Optimisation GEO — consolider la présence dans les IA génératives</div>
+        <div class="opp-desc">Easyfence est cité sur Gemini et ChatGPT mais absent sur Perplexity et Claude. Trois leviers actionnables dès maintenant : implémenter Schema.org <strong>Organization</strong> sur le site actuel (entité marque reconnue par les IA), enrichir les pages catégories avec des contenus de référence (les IA citent ce qu'elles lisent sur le web), et développer les mentions de marque sur des sources tierces — backlinks, articles, GMB. Chaque action SEO de Phase 1 alimente directement la visibilité GEO sur les 4 plateformes.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-high">Fort</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">5</div>
+      <div>
+        <div class="opp-title">GMB — corriger les catégories &amp; activer la collecte d'avis</div>
+        <div class="opp-desc">Remplacer "aménagement paysager" par une catégorie précise sur les deux fiches. Mettre en place une séquence de sollicitation d'avis post-visite pour Gosselies (43 avis vs 82 à Ath). Les avis Google sont un signal local indépendant du site — ils progressent pendant que PrestaShop se construit et renforcent la crédibilité dans les réponses des IA locales.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-med">Moyen</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">6</div>
+      <div>
+        <div class="opp-title">Lancer la stratégie backlinks via Crispy Links &amp; partenaires</div>
+        <div class="opp-desc">Démarrer l'acquisition de liens thématiques via Crispy Links (domaines jardin/bricolage/aménagement extérieur) en parallèle de l'activation des partenaires installateurs et des annuaires spécialisés. Les liens pointant vers le site actuel seront transmis à PrestaShop via les redirections 301 — l'autorité accumulée (TrustFlow actuellement ×5 en 18 mois sans stratégie) ne sera pas perdue.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-med">Moyen</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">7</div>
+      <div>
+        <div class="opp-title">Stratégie social media coordonnée</div>
+        <div class="opp-desc">Easyfence est présent sur 4 plateformes (Facebook 547 · Instagram 277 · LinkedIn 193 · YouTube 8) sans ligne éditoriale commune. Mettre en place un calendrier de publication unifié : un contenu produit une fois, décliné sur chaque canal (vidéo YouTube → Reel Instagram → post Facebook → article LinkedIn). Réalisations clients, tutoriels d'installation, nouveaux produits. Chaque mention sur les réseaux alimente la notoriété de marque et les citations dans les IA génératives.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-med">Moyen</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">8</div>
+      <div>
+        <div class="opp-title">Mise en place du suivi de performance — Phase 1</div>
+        <div class="opp-desc">Avant toute action, établir une baseline chiffrée des indicateurs clés : <strong>GSC</strong> (impressions, clics, positions par page), <strong>SEObserver</strong> (TrustFlow, évolution des positions, comparatif concurrents), <strong>GMB</strong> (vues de fiches, appels, itinéraires demandés). Points de contrôle mensuels pour ajuster la stratégie en continu. Ces données documenteront les gains obtenus avant la migration et guideront les priorités de construction PrestaShop.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-med">Continu</div></div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div>
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom: 28px;">
+      <div style="background: #1a1a1a; color:white; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; padding: 8px 20px; border-radius:4px; white-space:nowrap;">Phase 2</div>
+      <div>
+        <div style="font-size:20px; font-weight:900;">Migration &amp; post-lancement PrestaShop</div>
+        <div style="font-size:13px; color:var(--gray); margin-top:2px;">Construire sur des fondations saines · Amplifier les résultats amorcés · Maintenir la performance</div>
+      </div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num" style="background:#1a1a1a;">A</div>
+      <div>
+        <div class="opp-title">Intégrer les bonnes pratiques SEO &amp; GEO dès la construction</div>
+        <div class="opp-desc">La migration est l'occasion de tout corriger structurellement en une fois : métadonnées uniques par page, Schema.org complet (Organization + LocalBusiness + Product + FAQPage), blog intégré au sitemap, page 404 avec navigation, URL cohérentes. Le contenu produit en Phase 1 est directement intégré dans les fiches et pages du nouveau site sans perte d'autorité.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-high">Fondamental</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num" style="background:#1a1a1a;">B</div>
+      <div>
+        <div class="opp-title">Redirections 301 — préserver l'autorité accumulée en Phase 1</div>
+        <div class="opp-desc">Toute URL modifiée lors de la migration doit être redirigée en 301 vers son équivalent PrestaShop. Les backlinks acquis via Crispy Links, les positions organiques amorcées sur les mots-clés hors marque, les signaux GMB — tout est transmis au nouveau site si les redirections sont correctement implémentées. C'est la condition sine qua non pour ne pas perdre les acquis de Phase 1.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-high">Critique</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num" style="background:#1a1a1a;">C</div>
+      <div>
+        <div class="opp-title">Fiches produit riches + webshop accessoires</div>
+        <div class="opp-desc">Fiches produit complètes pour les grandes clôtures &amp; portails (400+ mots, photos HD, specs, avis) avec CTA devis — sans paiement en ligne. Webshop e-commerce pour les accessoires (piquets, visserie, clips) : logistique simple, upselling naturel, fidélisation clients. PrestaShop fournit l'infrastructure, le contenu et l'autorité amorcés en Phase 1 alimentent les fiches dès le premier jour.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-high">Fort</div></div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num" style="background:#1a1a1a;">D</div>
+      <div>
+        <div class="opp-title">Suivi de performance post-lancement &amp; optimisation continue</div>
+        <div class="opp-desc">Comparer les KPIs post-migration avec la baseline établie en Phase 1 pour mesurer l'impact réel de la transition. Tableau de bord GA4 + GSC + SEObserver avec objectifs définis : réduire la dépendance au Paid Search de 63,6 % à moins de 40 % en 18 mois, porter le trafic organique de ~1 000–1 500/mois à 5 000+/mois, atteindre un TrustFlow 30+. Continuer la stratégie contenu, backlinks et GEO initiée en Phase 1.</div>
+      </div>
+      <div class="opp-impact"><div class="opp-impact-label">Impact</div><div class="opp-impact-val impact-med">Continu</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="closing">
+  <div class="closing-title">Développeurs<br>de votre <span>potentiel</span></div>
+  <div class="closing-sub">Nous sommes prêts à accompagner Easy Fence dans cette prochaine étape.</div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-name">Michael Debecker</div>
+      <div class="team-role">Sales Manager &amp; Customer Experience</div>
+      <div class="team-contact">michael@poush.be · +32 486 89 29 56</div>
+    </div>
+  </div>
+  <div class="closing-address">Rue de la Croix Limont 11 · B-5590 Ciney · poush.be</div>
+</section>
+
+
+</body></html>
